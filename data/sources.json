@@ -1,0 +1,1159 @@
+{
+ "bhava": {
+  "ಸಂತೋಷ": {
+   "english": "Happy",
+   "status": "direct",
+   "rala": [
+    "ಸಂತೋಷದ",
+    "ಸಂತುಷ್ಟ",
+    "ಖುಷಿಯಾದ",
+    "ನೆಮ್ಮದಿಯ",
+    "ಭಾಗ್ಯವಂತನಾದ"
+   ]
+  },
+  "ತುಂಟತನ": {
+   "english": "Playful",
+   "status": "gap",
+   "rala": [
+    "ದ್ರೋಹ ಮಾಡು ⟨foul play⟩",
+    "ನಾಟಕಕಾರ ⟨playwright⟩",
+    "ಚಕ್ಕರ್ ಕೊಡು ⟨play truant⟩"
+   ]
+  },
+  "ಉದ್ರೇಕ": {
+   "english": "Aroused",
+   "status": "shaped",
+   "rala": [
+    "ಉದ್ರೇಕಗೊಳ್ಳು",
+    "ಪ್ರಚೋದಿಸು",
+    "ಕೆರಳಿಸು"
+   ]
+  },
+  "ಕೀಟಲೆ": {
+   "english": "Cheeky",
+   "status": "shaped",
+   "rala": [
+    "ಉದ್ಧಟ",
+    "ಒರಟುತನದ",
+    "ದುರಹಂಕಾರದ"
+   ]
+  },
+  "ತೃಪ್ತಿ": {
+   "english": "Content",
+   "status": "shaped",
+   "rala": [
+    "ತೃಪ್ತ",
+    "ತೃಪ್ತಿ",
+    "ಪರಿವಿಡಿ ⟨table of contents⟩",
+    "ತೇವಾಂಶ ⟨moisture content⟩"
+   ]
+  },
+  "ನಿರಾಳ": {
+   "english": "Free",
+   "status": "shaped",
+   "rala": [
+    "ಮುಕ್ತ",
+    "ಸ್ವತಂತ್ರ",
+    "ಕರಮುಕ್ತ ⟨duty-free⟩"
+   ]
+  },
+  "ಹಿಗ್ಗು": {
+   "english": "Joyful",
+   "status": "shaped",
+   "rala": [
+    "ಸಂತೋಷ",
+    "ಉಲ್ಲಾಸ",
+    "ಹರ್ಷ"
+   ]
+  },
+  "ಆಸಕ್ತಿ": {
+   "english": "Interested",
+   "status": "direct",
+   "rala": [
+    "ಆಸಕ್ತಿ ಇರುವ",
+    "ಸಂಬಂಧವುಳ್ಳ",
+    "ಪಕ್ಷಪಾತದ ⟨interested party⟩"
+   ]
+  },
+  "ಕುತೂಹಲ": {
+   "english": "Curious",
+   "status": "direct",
+   "rala": [
+    "ಕುತೂಹಲಕಾರಿ",
+    "ಕುತೂಹಲವುಳ್ಳ"
+   ]
+  },
+  "ಕೆದಕು": {
+   "english": "Inquisitive",
+   "status": "shaped",
+   "rala": [
+    "ಕೆದಕುವ",
+    "ಶೋಧಿಸುವ",
+    "ವಿಚಾರಮಾಡುವ"
+   ]
+  },
+  "ಹೆಮ್ಮೆ": {
+   "english": "Proud",
+   "status": "gap",
+   "rala": []
+  },
+  "ಸಾರ್ಥಕ": {
+   "english": "Successful",
+   "status": "shaped",
+   "rala": [
+    "ಯಶಸ್ವಿ",
+    "ವಿಜಯಿ",
+    "ವಿಜೇತ"
+   ]
+  },
+  "ಆತ್ಮವಿಶ್ವಾಸ": {
+   "english": "Confident",
+   "status": "direct",
+   "rala": [
+    "ವಿಶ್ವಾಸವುಳ್ಳ",
+    "ನೆಚ್ಚಿಕೆಯ",
+    "ಧೈರ್ಯದ"
+   ]
+  },
+  "ಒಪ್ಪಿಗೆ": {
+   "english": "Accepted",
+   "status": "gap",
+   "rala": [
+    "ಅಂಗೀಕೃತ ಟೆಂಡರ್ ⟨accepted tender⟩",
+    "ಅಂಗೀಕೃತ ಠೇವಣಿ ⟨accepted deposit⟩",
+    "ಸ್ವೀಕೃತ"
+   ]
+  },
+  "ಗೌರವ": {
+   "english": "Respected",
+   "status": "shaped",
+   "rala": [
+    "ಆ ಸಂಬಂಧವಾದ ⟨with respect to⟩",
+    "ಸಂಬಂಧಿಸಿದಂತೆ ⟨in respect of⟩"
+   ]
+  },
+  "ಮನ್ನಣೆ": {
+   "english": "Valued",
+   "status": "shaped",
+   "rala": [
+    "ಏಕಮೌಲ್ಯ ⟨single-valued⟩",
+    "ಮೌಲ್ಯ ಸಂದಾಯ ⟨value payable⟩"
+   ]
+  },
+  "ಶಕ್ತಿ": {
+   "english": "Powerful",
+   "status": "direct",
+   "rala": [
+    "ಶಕ್ತಿಶಾಲಿ",
+    "ಶಕ್ತಿವಂತ",
+    "ಶಕ್ತನಾದ"
+   ]
+  },
+  "ಧೈರ್ಯ": {
+   "english": "Courageous",
+   "status": "direct",
+   "rala": [
+    "ಧೈರ್ಯದ",
+    "ಕೆಚ್ಚೆದೆಯ",
+    "ಎದೆಗಾರಿಕೆಯ"
+   ]
+  },
+  "ಹೊಳಹು": {
+   "english": "Creative",
+   "status": "direct",
+   "rala": [
+    "ಸೃಜನಾತ್ಮಕ",
+    "ರಚನಾತ್ಮಕ"
+   ]
+  },
+  "ನೆಮ್ಮದಿ": {
+   "english": "Peaceful",
+   "status": "shaped",
+   "rala": [
+    "ಶಾಂತಿಯ",
+    "ಶಾಂತಿಯುತ"
+   ]
+  },
+  "ಪ್ರೀತಿ": {
+   "english": "Loving",
+   "status": "gap",
+   "rala": [
+    "ನೆರಳು ಪ್ರಿಯ ⟨shade-loving⟩"
+   ]
+  },
+  "ಕೃತಜ್ಞತೆ": {
+   "english": "Thankful",
+   "status": "direct",
+   "rala": [
+    "ಕೃತಜ್ಞ",
+    "ಕೃತಜ್ಞನಾದ"
+   ]
+  },
+  "ನಂಬಿಕೆ": {
+   "english": "Trusting",
+   "status": "shaped",
+   "rala": [
+    "ನಂಬಿಕೆ",
+    "ವಿಶ್ವಾಸ",
+    "ನ್ಯಾಸ ಖಾತೆ ⟨trust account⟩",
+    "ಟ್ರಸ್ಟ್ ಆಡಳಿತ"
+   ]
+  },
+  "ಸೂಕ್ಷ್ಮ": {
+   "english": "Sensitive",
+   "status": "direct",
+   "rala": [
+    "ಸೂಕ್ಷ್ಮಗ್ರಾಹಿ",
+    "ಸಂವೇದನಾಶೀಲ",
+    "ಸೂಕ್ಷ್ಮ"
+   ]
+  },
+  "ಸಲಿಗೆ": {
+   "english": "Intimate",
+   "status": "direct",
+   "rala": [
+    "ಸಲಿಗೆ",
+    "ಅನ್ಯೋನ್ಯ",
+    "ಆತ್ಮೀಯ",
+    "ನಿಕಟ"
+   ]
+  },
+  "ಭರವಸೆ": {
+   "english": "Optimistic",
+   "status": "direct",
+   "rala": [
+    "ಆಶಾವಾದದ",
+    "ಆಶಾಪೂರ್ಣ"
+   ]
+  },
+  "ಆಸೆ": {
+   "english": "Hopeful",
+   "status": "direct",
+   "rala": [
+    "ಭರವಸೆಯ",
+    "ಆಶಾದಾಯಕ"
+   ]
+  },
+  "ಸ್ಫೂರ್ತಿ": {
+   "english": "Inspired",
+   "status": "gap",
+   "rala": []
+  },
+  "ಅಚ್ಚರಿ": {
+   "english": "Surprised",
+   "status": "direct",
+   "rala": [
+    "ಆಶ್ಚರ್ಯ",
+    "ವಿಸ್ಮಯ",
+    "ಅನಿರೀಕ್ಷಿತ",
+    "ಹಠಾತ್ ತನಿಖೆ ⟨surprise inspection⟩"
+   ]
+  },
+  "ಬೆಚ್ಚು": {
+   "english": "Startled",
+   "status": "direct",
+   "rala": [
+    "ಚಕಿತಗೊಳಿಸು",
+    "ಗಾಬರಿಪಡಿಸು",
+    "ಬೆದರಿಸು"
+   ]
+  },
+  "ಆಘಾತ": {
+   "english": "Shocked",
+   "status": "direct",
+   "rala": [
+    "ಆಘಾತ",
+    "ದಿಗಿಲುಂಟುಮಾಡು",
+    "ವಿದ್ಯುದಾಘಾತ ⟨electric shock⟩"
+   ]
+  },
+  "ಎದೆಗುಂದು": {
+   "english": "Dismayed",
+   "status": "direct",
+   "rala": [
+    "ಎದೆಗುಂದಿಸು",
+    "ಅಧೈರ್ಯ",
+    "ದಿಗಿಲು",
+    "ಹತಾಶೆ"
+   ]
+  },
+  "ಗೊಂದಲ": {
+   "english": "Confused",
+   "status": "shaped",
+   "rala": [
+    "ತುಕ್ಕುಗೆಂಪು ⟨confused flour beetle⟩"
+   ]
+  },
+  "ಭ್ರಮೆ ಕಳಚು": {
+   "english": "Disillusioned",
+   "status": "direct",
+   "rala": [
+    "ಭ್ರಮನಿರಸನಗೊಂಡ"
+   ]
+  },
+  "ಕಂಗೆಡು": {
+   "english": "Perplexed",
+   "status": "direct",
+   "rala": [
+    "ಕಂಗೆಡಿಸು",
+    "ವಿಭ್ರಾಂತಿ ತರು"
+   ]
+  },
+  "ಬೆರಗು": {
+   "english": "Amazed",
+   "status": "direct",
+   "rala": [
+    "ಬೆರಗುಗೊಳಿಸು",
+    "ಆಶ್ಚರ್ಯಗೊಳ್ಳು",
+    "ಚಕಿತನಾಗು"
+   ]
+  },
+  "ದಂಗು": {
+   "english": "Astonished",
+   "status": "direct",
+   "rala": [
+    "ವಿಸ್ಮಯವನ್ನುಂಟುಮಾಡು",
+    "ಅಚ್ಚರಿಗೊಳಿಸು"
+   ]
+  },
+  "ಭಯಭಕ್ತಿ": {
+   "english": "Awe",
+   "status": "direct",
+   "rala": [
+    "ಭಯಮಿಶ್ರಿತ ಗೌರವ",
+    "ಭಯ ತುಂಬಿದ ಗೌರವ"
+   ]
+  },
+  "ಉತ್ಸಾಹ": {
+   "english": "Excited",
+   "status": "direct",
+   "rala": [
+    "ಉತ್ತೇಜಿತ",
+    "ಉದ್ರಿಕ್ತ",
+    "ಉತ್ಸಾಹ"
+   ]
+  },
+  "ತವಕ": {
+   "english": "Eager",
+   "status": "direct",
+   "rala": [
+    "ತವಕ",
+    "ಕಾತರದ",
+    "ಉತ್ಸುಕ",
+    "ಉತ್ಕಟ"
+   ]
+  },
+  "ಹುರುಪು": {
+   "english": "Energetic",
+   "status": "direct",
+   "rala": [
+    "ಹುರುಪು",
+    "ಉತ್ಸಾಹ",
+    "ಶಕ್ತಿಯುತವಾದ"
+   ]
+  },
+  "ಬೇಸರ": {
+   "english": "Bad",
+   "status": "gap",
+   "rala": [
+    "ಕೆಟ್ಟ",
+    "ದುರ್ವರ್ತನೆ ⟨bad behaviour⟩",
+    "ವಸೂಲಾಗದ ಸಾಲ ⟨bad debt⟩",
+    "ವೈಮನಸ್ಯ ⟨bad blood⟩"
+   ]
+  },
+  "ಬೇಜಾರು": {
+   "english": "Bored",
+   "status": "gap",
+   "rala": []
+  },
+  "ಉದಾಸೀನ": {
+   "english": "Indifferent",
+   "status": "direct",
+   "rala": [
+    "ಉದಾಸೀನ",
+    "ಅಸಡ್ಡೆಯ",
+    "ತಟಸ್ಥ"
+   ]
+  },
+  "ಅಸಡ್ಡೆ": {
+   "english": "Apathetic",
+   "status": "direct",
+   "rala": [
+    "ನಿರಾಸಕ್ತ",
+    "ಆಸಕ್ತಿಯಿಲ್ಲದ",
+    "ಭಾವಶೂನ್ಯ"
+   ]
+  },
+  "ಧಾವಂತ": {
+   "english": "Busy",
+   "status": "shaped",
+   "rala": [
+    "ಕಾರ್ಯಮಗ್ನ",
+    "ಬಿಡುವಿಲ್ಲದ",
+    "ನಿರತ"
+   ]
+  },
+  "ಒತ್ತಡ": {
+   "english": "Pressured",
+   "status": "direct",
+   "rala": [
+    "ಒತ್ತಡ",
+    "ರಕ್ತ ಒತ್ತಡ ⟨blood pressure⟩",
+    "ವಾತಾವರಣದ ಒತ್ತಡ"
+   ]
+  },
+  "ಆತುರ": {
+   "english": "Rushed",
+   "status": "shaped",
+   "rala": [
+    "ಧಾವಿಸು",
+    "ಮುನ್ನುಗ್ಗು",
+    "ತೀವ್ರಗತಿ"
+   ]
+  },
+  "ತಳಮಳ": {
+   "english": "Stressed",
+   "status": "shaped",
+   "rala": [
+    "ಒತ್ತಡ",
+    "ಪ್ರತಿಬಲ ⟨tensile stress⟩",
+    "ಕರ್ತನ ಪ್ರತಿಬಲ ⟨shear stress⟩"
+   ]
+  },
+  "ಹೈರಾಣ": {
+   "english": "Overwhelmed",
+   "status": "shaped",
+   "rala": [
+    "ಮುಳುಗಿಹೋಗು",
+    "ಭಾವಪರವಶಗೊಳ್ಳು"
+   ]
+  },
+  "ಚಡಪಡಿಕೆ": {
+   "english": "Restless",
+   "status": "direct",
+   "rala": [
+    "ಚಡಪಡಿಸುವ",
+    "ತಳಮಳ",
+    "ವ್ಯಾಕುಲ",
+    "ಅಶಾಂತ"
+   ]
+  },
+  "ದಣಿವು": {
+   "english": "Tired",
+   "status": "shaped",
+   "rala": [
+    "ದಣಿದ ಮಣ್ಣು ⟨tired soil⟩"
+   ]
+  },
+  "ತೂಕಡಿಕೆ": {
+   "english": "Sleepy",
+   "status": "shaped",
+   "rala": [
+    "ತೂಕಡಿಸುವ",
+    "ನಿದ್ದೆ",
+    "ಜಡನಾದ"
+   ]
+  },
+  "ಅನ್ಯಮನಸ್ಕ": {
+   "english": "Unfocused",
+   "status": "direct",
+   "rala": [
+    "ಅನ್ಯಮನಸ್ಕ",
+    "ಏಕಾಗ್ರತೆಯಿಲ್ಲದ",
+    "ಮರೆಗುಳಿ"
+   ]
+  },
+  "ಭಯ": {
+   "english": "Fearful",
+   "status": "direct",
+   "rala": [
+    "ಭಯ",
+    "ಹೆದರಿಕೆ",
+    "ಅಂಜಿಕೆ",
+    "ಭೀತಿ",
+    "ದಿಗಿಲು",
+    "ಆತಂಕ",
+    "ಗಾಬರಿ"
+   ]
+  },
+  "ಹೆದರಿಕೆ": {
+   "english": "Scared",
+   "status": "direct",
+   "rala": [
+    "ಹೆದರಿಕೆ",
+    "ಗಾಬರಿ",
+    "ಭೀತಿ",
+    "ಬೆದರುಗೊಂಬೆ ⟨scarecrow⟩"
+   ]
+  },
+  "ಅಸಹಾಯಕತೆ": {
+   "english": "Helpless",
+   "status": "direct",
+   "rala": [
+    "ಅಸಹಾಯಕ",
+    "ದಿಕ್ಕಿಲ್ಲದ",
+    "ತಬ್ಬಲಿ"
+   ]
+  },
+  "ಅಂಜಿಕೆ": {
+   "english": "Frightened",
+   "status": "direct",
+   "rala": [
+    "ಹೆದರಿಸು",
+    "ಭಯಪಡಿಸು",
+    "ದಿಗಿಲುಗೊಳಿಸು"
+   ]
+  },
+  "ಆತಂಕ": {
+   "english": "Anxious",
+   "status": "direct",
+   "rala": [
+    "ಆತಂಕಗೊಂಡ",
+    "ವ್ಯಾಕುಲತೆ",
+    "ಚಿಂತಾಕ್ರಾಂತ",
+    "ತಲ್ಲಣಗೊಂಡ"
+   ]
+  },
+  "ಚಿಂತೆ": {
+   "english": "Worried",
+   "status": "direct",
+   "rala": [
+    "ಚಿಂತೆ",
+    "ಕಳವಳ",
+    "ಆತಂಕ",
+    "ಪೇಚಾಟ"
+   ]
+  },
+  "ಕಳವಳ": {
+   "english": "Overwhelmed",
+   "status": "shaped",
+   "rala": [
+    "ಕಳವಳಗೊಂಡ",
+    "ವ್ಯಾಕುಲ"
+   ]
+  },
+  "ಅಳುಕು": {
+   "english": "Insecure",
+   "status": "direct",
+   "rala": [
+    "ಅಭದ್ರ",
+    "ಅಸುರಕ್ಷಿತ",
+    "ರಕ್ಷಣೆ ರಹಿತ"
+   ]
+  },
+  "ಕೊರತೆ": {
+   "english": "Inadequate",
+   "status": "shaped",
+   "rala": [
+    "ಸಾಕಾಗದ",
+    "ಅಸಮರ್ಥ",
+    "ಕೊರತೆಯುಳ್ಳ"
+   ]
+  },
+  "ಕೀಳರಿಮೆ": {
+   "english": "Inferior",
+   "status": "shaped",
+   "rala": [
+    "ಕೀಳು",
+    "ಕಳಪೆ",
+    "ಕೆಳದರ್ಜೆಯ"
+   ]
+  },
+  "ದುರ್ಬಲ": {
+   "english": "Weak",
+   "status": "direct",
+   "rala": [
+    "ದುರ್ಬಲ",
+    "ಬಲಹೀನ",
+    "ನಿರ್ಬಲ"
+   ]
+  },
+  "ದಂಡ": {
+   "english": "Worthless",
+   "status": "shaped",
+   "rala": [
+    "ಅಯೋಗ್ಯ"
+   ]
+  },
+  "ಲೆಕ್ಕಕ್ಕಿಲ್ಲ": {
+   "english": "Insignificant",
+   "status": "direct",
+   "rala": [
+    "ಕ್ಷುಲ್ಲಕ",
+    "ಅತ್ಯಲ್ಪ",
+    "ನಿಕೃಷ್ಟ"
+   ]
+  },
+  "ತಿರಸ್ಕಾರ": {
+   "english": "Rejected",
+   "status": "shaped",
+   "rala": [
+    "ಸೋತ ಅಭ್ಯರ್ಥಿ ⟨rejected candidate⟩",
+    "ತಿರಸ್ಕರಿಸತಕ್ಕದ್ದು",
+    "ಹಕ್ಕು ಸಾಧನೆಗಳು ⟨rejected claims⟩"
+   ]
+  },
+  "ಹೊರಗಿಡು": {
+   "english": "Excluded",
+   "status": "gap",
+   "rala": []
+  },
+  "ಕಿರುಕುಳ": {
+   "english": "Persecuted",
+   "status": "direct",
+   "rala": [
+    "ಕಿರುಕುಳ ಕೊಡು",
+    "ಪೀಡಿಸು",
+    "ಹಿಂಸಿಸು"
+   ]
+  },
+  "ಬೆದರಿಕೆ": {
+   "english": "Threatened",
+   "status": "gap",
+   "rala": []
+  },
+  "ನಡುಕ": {
+   "english": "Nervous",
+   "status": "shaped",
+   "rala": [
+    "ನಡುಗುವ",
+    "ಅಂಜುಬುರುಕ",
+    "ನರವ್ಯೂಹ ⟨nervous system⟩"
+   ]
+  },
+  "ಬಟಾಬಯಲು": {
+   "english": "Exposed",
+   "status": "shaped",
+   "rala": [
+    "ಗುಟ್ಟುರಟ್ಟಾದ",
+    "ಸುರಕ್ಷಣೆ ಇಲ್ಲದ",
+    "ಬಹಿರಂಗಗೊಳಿಸಿದ"
+   ]
+  },
+  "ಕೋಪ": {
+   "english": "Angry",
+   "status": "direct",
+   "rala": [
+    "ಕೋಪ",
+    "ಸಿಟ್ಟು",
+    "ಸಿಡುಕು",
+    "ರೋಷ",
+    "ಮುನಿಸು",
+    "ಕ್ರೋಧ",
+    "ತಾಪ"
+   ]
+  },
+  "ಕೈಕೊಟ್ಟರು": {
+   "english": "Let down",
+   "status": "gap",
+   "rala": [
+    "ಹಾಲೊಸರಿಕೆ ⟨milk let-down⟩"
+   ]
+  },
+  "ದ್ರೋಹ": {
+   "english": "Betrayed",
+   "status": "direct",
+   "rala": [
+    "ದ್ರೋಹ ಮಾಡು",
+    "ವಿಶ್ವಾಸಘಾತ",
+    "ವಂಚಿಸು"
+   ]
+  },
+  "ಅಸಮಾಧಾನ": {
+   "english": "Resentful",
+   "status": "direct",
+   "rala": [
+    "ಅಸಮಾಧಾನ",
+    "ಜಿದ್ದು",
+    "ಕರುಬು",
+    "ಹಗೆತನ"
+   ]
+  },
+  "ಅವಮಾನ": {
+   "english": "Humiliated",
+   "status": "direct",
+   "rala": [
+    "ಅವಮಾನಿಸು",
+    "ತೇಜೋವಧೆ",
+    "ಮರ್ಯಾದೆ ಕಳೆ"
+   ]
+  },
+  "ಅವಮರ್ಯಾದೆ": {
+   "english": "Disrespected",
+   "status": "direct",
+   "rala": [
+    "ಅಗೌರವ",
+    "ಅವಮಾನ",
+    "ಉಪೇಕ್ಷೆ",
+    "ಅವಮರ್ಯಾದೆ"
+   ]
+  },
+  "ಗೇಲಿ": {
+   "english": "Ridiculed",
+   "status": "direct",
+   "rala": [
+    "ಅಪಹಾಸ್ಯ",
+    "ಗೇಲಿ",
+    "ಅವಹೇಳನ",
+    "ಅಣಕಿಸು"
+   ]
+  },
+  "ಕಹಿ": {
+   "english": "Bitter",
+   "status": "shaped",
+   "rala": [
+    "ಹಾಗಲಕಾಯಿ ⟨bitter gourd⟩",
+    "ಕಹಿಗುಳಿಗೆ ⟨bitter pill⟩",
+    "ಕ್ರೂರ",
+    "ಕಠಿಣ"
+   ]
+  },
+  "ಆಕ್ರೋಶ": {
+   "english": "Indignant",
+   "status": "shaped",
+   "rala": [
+    "ಕುಪಿತ",
+    "ಕೆರಳಿದ",
+    "ರೇಗಿದ"
+   ]
+  },
+  "ಭಂಗ": {
+   "english": "Violated",
+   "status": "gap",
+   "rala": [
+    "ಉಲ್ಲಂಘಿಸು ⟨violate a rule⟩",
+    "ಮಾನಭಂಗ ⟨sexual assault⟩"
+   ]
+  },
+  "ಸಿಟ್ಟು": {
+   "english": "Mad",
+   "status": "direct",
+   "rala": [
+    "ಸಿಟ್ಟು",
+    "ಹುಚ್ಚು ⟨insane⟩",
+    "ಮತಿಗೆಟ್ಟ"
+   ]
+  },
+  "ರೊಚ್ಚು": {
+   "english": "Furious",
+   "status": "direct",
+   "rala": [
+    "ರೋಷಾವೇಶದ",
+    "ಕ್ರೋಧಾವಿಷ್ಟ",
+    "ಉಗ್ರ",
+    "ಪ್ರಚಂಡ"
+   ]
+  },
+  "ಹೊಟ್ಟೆಕಿಚ್ಚು": {
+   "english": "Jealous",
+   "status": "shaped",
+   "rala": [
+    "ಅಸೂಯೆಯ",
+    "ಮಾತ್ಸರ್ಯದ"
+   ]
+  },
+  "ಜಗಳಗಂಟ": {
+   "english": "Aggressive",
+   "status": "direct",
+   "rala": [
+    "ಆಕ್ರಮಣಶೀಲ",
+    "ಜಗಳಗಂಟ",
+    "ಮೇಲೆ ಬೀಳುವ"
+   ]
+  },
+  "ಕೆರಳಿಕೆ": {
+   "english": "Provoked",
+   "status": "direct",
+   "rala": [
+    "ಕೆರಳಿಸು",
+    "ಕೆಣಕು",
+    "ಪ್ರಚೋದಿಸು",
+    "ರೇಗಿಸು"
+   ]
+  },
+  "ಹಗೆತನ": {
+   "english": "Hostile",
+   "status": "direct",
+   "rala": [
+    "ಹಗೆಯ",
+    "ವೈರದ",
+    "ಶತ್ರುತ್ವದ",
+    "ಪ್ರತಿಕೂಲ"
+   ]
+  },
+  "ರೇಜಿಗೆ": {
+   "english": "Frustrated",
+   "status": "shaped",
+   "rala": [
+    "ಆಶಾಭಂಗ ಹೊಂದಿದ",
+    "ವಿಫಲವಾದ",
+    "ಭಗ್ನ",
+    "ನಿಷ್ಫಲಗೊಳಿಸು"
+   ]
+  },
+  "ಕೆಂಡಾಮಂಡಲ": {
+   "english": "Infuriated",
+   "status": "shaped",
+   "rala": [
+    "ರೇಗಿಸು",
+    "ಕೆರಳಿಸು"
+   ]
+  },
+  "ಕಿರಿಕಿರಿ": {
+   "english": "Annoyed",
+   "status": "direct",
+   "rala": [
+    "ಕಿರಿಕಿರಿಮಾಡು",
+    "ರೇಗಿಸು",
+    "ಕಾಡಿಸು"
+   ]
+  },
+  "ಬಿಗುಮಾನ": {
+   "english": "Distant",
+   "status": "direct",
+   "rala": [
+    "ಬಿಗುಮಾನದ",
+    "ಸಲಿಗೆ ಇಲ್ಲದ",
+    "ದೂರದ"
+   ]
+  },
+  "ಮುದುಡು": {
+   "english": "Withdrawn",
+   "status": "shaped",
+   "rala": [
+    "ವಾಪಸ್ಸು ಪಡೆದ ⟨withdrawn application⟩",
+    "ಹಿಂದಕ್ಕೆ ಪಡೆದ"
+   ]
+  },
+  "ಮರಗಟ್ಟು": {
+   "english": "Numb",
+   "status": "direct",
+   "rala": [
+    "ಮರಗಟ್ಟಿದ",
+    "ಜೋಮುಹಿಡಿದ",
+    "ಜಡವಾದ"
+   ]
+  },
+  "ಟೀಕೆ": {
+   "english": "Critical",
+   "status": "shaped",
+   "rala": [
+    "ಕ್ರಾಂತಿಕೋನ ⟨critical angle⟩",
+    "ವಿಷಮ ಮೌಲ್ಯ ⟨critical value⟩",
+    "ವಿಮರ್ಶಾತ್ಮಕ"
+   ]
+  },
+  "ಅನುಮಾನ": {
+   "english": "Skeptical",
+   "status": "direct",
+   "rala": [
+    "ಅನುಮಾನ",
+    "ಸಂಶಯ",
+    "ಸಂದೇಹ",
+    "ಶಂಕೆ"
+   ]
+  },
+  "ಉಡಾಫೆ": {
+   "english": "Dismissive",
+   "status": "shaped",
+   "rala": [
+    "ತಳ್ಳಿಹಾಕು",
+    "ನಿರ್ಲಕ್ಷಿಸು",
+    "ವಜಾ ಮಾಡು ⟨dismiss from service⟩"
+   ]
+  },
+  "ಅಸಹ್ಯ": {
+   "english": "Disgusted",
+   "status": "direct",
+   "rala": [
+    "ಅಸಹ್ಯ",
+    "ಜಿಗುಪ್ಸೆ",
+    "ಹೇಸಿಕೆ",
+    "ರೋಸು",
+    "ವಾಕರಿಕೆ"
+   ]
+  },
+  "ಒಪ್ಪದಿರು": {
+   "english": "Disapproving",
+   "status": "direct",
+   "rala": [
+    "ಅಸಮ್ಮತಿ",
+    "ಮೆಚ್ಚದಿರು",
+    "ಒಪ್ಪದಿರು"
+   ]
+  },
+  "ಕೊಂಕು": {
+   "english": "Judgmental",
+   "status": "shaped",
+   "rala": [
+    "ನ್ಯಾಯಾಧೀಶ ⟨judge⟩",
+    "ಜಿಲ್ಲಾ ನ್ಯಾಯಾಧೀಶ ⟨district judge⟩",
+    "ಖಂಡನೆ"
+   ]
+  },
+  "ಮುಜುಗರ": {
+   "english": "Embarrassed",
+   "status": "direct",
+   "rala": [
+    "ಮುಜುಗರ ಉಂಟಾದ"
+   ]
+  },
+  "ನಿರಾಸೆ": {
+   "english": "Disappointed",
+   "status": "direct",
+   "rala": [
+    "ನಿರಾಶೆಗೊಂಡ",
+    "ಆಶಾಭಂಗ",
+    "ಹತಾಶೆ"
+   ]
+  },
+  "ಹೌಹಾರು": {
+   "english": "Appalled",
+   "status": "direct",
+   "rala": [
+    "ದಿಗ್ಭ್ರಮೆಗೊಂಡ",
+    "ಭೀತ",
+    "ಗಾಬರಿಗೊಂಡ"
+   ]
+  },
+  "ರೋಸು": {
+   "english": "Revolted",
+   "status": "shaped",
+   "rala": [
+    "ದಂಗೆ ⟨rebellion⟩",
+    "ಬಂಡಾಯ",
+    "ವಿದ್ರೋಹ"
+   ]
+  },
+  "ಘೋರ": {
+   "english": "Awful",
+   "status": "shaped",
+   "rala": [
+    "ಭಯಾನಕವಾದ",
+    "ಭೀಕರ"
+   ]
+  },
+  "ವಾಕರಿಕೆ": {
+   "english": "Nauseated",
+   "status": "direct",
+   "rala": [
+    "ವಾಕರಿಕೆ",
+    "ಓಕರಿಕೆ",
+    "ಹೊಟ್ಟೆ ತೊಳಸು"
+   ]
+  },
+  "ಹೇಸಿಗೆ": {
+   "english": "Detestable",
+   "status": "direct",
+   "rala": [
+    "ಹೇಸು",
+    "ಅಸಹ್ಯಪಡು",
+    "ಹೇಸಿಗೆ ಪಡು"
+   ]
+  },
+  "ಜಿಗುಪ್ಸೆ": {
+   "english": "Repelled",
+   "status": "direct",
+   "rala": [
+    "ಜಿಗುಪ್ಸೆಗೊಳಿಸು",
+    "ಹಿಮ್ಮೆಟ್ಟಿಸು",
+    "ವಿಕರ್ಷಿಸು"
+   ]
+  },
+  "ದಿಗಿಲು": {
+   "english": "Horrified",
+   "status": "direct",
+   "rala": [
+    "ದಿಗಿಲುಗೊಳಿಸು",
+    "ಭಯಹುಟ್ಟಿಸು",
+    "ದಿಕ್ಕುಗೆಡಿಸು"
+   ]
+  },
+  "ಹಿಂಜರಿಕೆ": {
+   "english": "Hesitant",
+   "status": "direct",
+   "rala": [
+    "ಹಿಂಜರಿಯುವ",
+    "ಹಿಮ್ಮೆಟ್ಟುವ",
+    "ಶಂಕೆಯುಳ್ಳ"
+   ]
+  },
+  "ದುಃಖ": {
+   "english": "Sad",
+   "status": "direct",
+   "rala": [
+    "ದುಃಖಕರ",
+    "ವಿಷಾದಕರ",
+    "ಶೋಚನೀಯ",
+    "ಕುಗ್ಗಿದ",
+    "ಸೊರಗಿದ",
+    "ಅಮಂಗಳ ⟨inauspicious⟩"
+   ]
+  },
+  "ಒಂಟಿತನ": {
+   "english": "Lonely",
+   "status": "direct",
+   "rala": [
+    "ಒಂಟಿ",
+    "ಏಕಾಂಗಿ",
+    "ಒಬ್ಬನೇ"
+   ]
+  },
+  "ಏಕಾಂಗಿ": {
+   "english": "Isolated",
+   "status": "shaped",
+   "rala": [
+    "ಪ್ರತ್ಯೇಕಿಸಿದ",
+    "ಬೇರ್ಪಡಿಸಿದ",
+    "ಪ್ರತ್ಯೇಕ ಸ್ಥಳ"
+   ]
+  },
+  "ತಬ್ಬಲಿ": {
+   "english": "Abandoned",
+   "status": "shaped",
+   "rala": [
+    "ತೊರೆದ ಪ್ರದೇಶ ⟨abandoned area⟩",
+    "ತಬ್ಬಲಿ"
+   ]
+  },
+  "ದುರ್ಬಲತೆ": {
+   "english": "Vulnerable",
+   "status": "gap",
+   "rala": [
+    "ಸುಭೇದ್ಯ",
+    "ಭೇದ್ಯ",
+    "ದುರ್ಬಲ ಸ್ಥಿತಿ ⟨vulnerable stage⟩"
+   ]
+  },
+  "ಬಲಿಪಶು": {
+   "english": "Victimised",
+   "status": "direct",
+   "rala": [
+    "ಬಲಿಪಶುಮಾಡು",
+    "ಪೀಡಿಸು",
+    "ಸತಾಯಿಸು"
+   ]
+  },
+  "ನಾಜೂಕು": {
+   "english": "Fragile",
+   "status": "direct",
+   "rala": [
+    "ನಾಜೂಕಾದ",
+    "ಭಂಗುರ",
+    "ಶಿಥಿಲ"
+   ]
+  },
+  "ಹತಾಶೆ": {
+   "english": "Despair",
+   "status": "direct",
+   "rala": [
+    "ಹತಾಶೆ",
+    "ನಿರಾಶೆ",
+    "ಎದೆಗುಂದು",
+    "ಆಸೆಗೆಡು"
+   ]
+  },
+  "ಅಳಲು": {
+   "english": "Grief",
+   "status": "direct",
+   "rala": [
+    "ಅಳಲು",
+    "ಶೋಕ",
+    "ಸಂಕಟ",
+    "ಕೊರಗು",
+    "ವ್ಯಥೆ"
+   ]
+  },
+  "ಕೈಲಾಗದು": {
+   "english": "Powerless",
+   "status": "shaped",
+   "rala": [
+    "ಶಕ್ತಿಹೀನ",
+    "ಬಲಹೀನ",
+    "ದುರ್ಬಲ"
+   ]
+  },
+  "ಪಾಪಪ್ರಜ್ಞೆ": {
+   "english": "Guilty",
+   "status": "shaped",
+   "rala": [
+    "ಅಪರಾಧಿ",
+    "ತಪ್ಪಿತಸ್ಥ",
+    "ದೋಷಿ",
+    "ಅಪರಾಧಿ ಮನೋಭಾವ ⟨guilty mind⟩"
+   ]
+  },
+  "ನಾಚಿಕೆ": {
+   "english": "Ashamed",
+   "status": "shaped",
+   "rala": [
+    "ಅವಮಾನಗೊಂಡ",
+    "ಮಾನಗೆಟ್ಟ"
+   ]
+  },
+  "ಪಶ್ಚಾತ್ತಾಪ": {
+   "english": "Remorseful",
+   "status": "direct",
+   "rala": [
+    "ಪಶ್ಚಾತ್ತಾಪ",
+    "ಅನುತಾಪ",
+    "ಮರುಕ"
+   ]
+  },
+  "ಖಿನ್ನತೆ": {
+   "english": "Depressed",
+   "status": "shaped",
+   "rala": [
+    "ದಲಿತ ವರ್ಗ ⟨depressed classes⟩",
+    "ಶೋಷಿತ",
+    "ಕುಗ್ಗಿದ",
+    "ನಿರುತ್ಸಾಹದ"
+   ]
+  },
+  "ಕುಗ್ಗು": {
+   "english": "Inferior",
+   "status": "shaped",
+   "rala": [
+    "ಕುಗ್ಗಿದ",
+    "ಇಳಿದ",
+    "ತಗ್ಗಿದ"
+   ]
+  },
+  "ಬರಿದು": {
+   "english": "Empty",
+   "status": "shaped",
+   "rala": [
+    "ಬರಿದು",
+    "ಖಾಲಿ",
+    "ಪೊಳ್ಳು",
+    "ಶೂನ್ಯ"
+   ]
+  },
+  "ನೋವು": {
+   "english": "Hurt",
+   "status": "direct",
+   "rala": [
+    "ನೋವು",
+    "ನೋಯಿಸು",
+    "ಗಾಯ",
+    "ಸಾಧಾರಣ ಗಾಯ ⟨simple hurt, IPC⟩"
+   ]
+  },
+  "ಆಶಾಭಂಗ": {
+   "english": "Disappointed",
+   "status": "direct",
+   "rala": [
+    "ಆಶಾಭಂಗ",
+    "ನಿರಾಶೆಗೊಂಡ"
+   ]
+  },
+  "ಸಂಕೋಚ": {
+   "english": "Embarrassed",
+   "status": "shaped",
+   "rala": [
+    "ಮುಜುಗರ ಉಂಟಾದ"
+   ]
+  }
+ }
+}

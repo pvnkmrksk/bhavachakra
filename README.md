@@ -1,511 +1,351 @@
 # ಭಾವಚಕ್ರ · three feeling wheels in Kannada
 
-**[Open the wheels →](https://bhava.kutuhula.in/)**
+**[bhava.kutuhula.in](https://bhava.kutuhula.in/)**
 
-353 words across three maps of the same territory:
+353 words, three maps of the same territory. Every ring of every wheel is listed below.
 
 | wheel | built from | words |
 |---|---|---:|
-| **ಭಾವಚಕ್ರ** *bhava* | the English feeling wheel, translated and then argued with | 130 |
-| **ಒಡಲ ಚಕ್ರ** *odalu* | the part of the body Kannada sites each feeling in | 106 |
-| **ರಸಚಕ್ರ** *rasa* | the nine rasas of the Nāṭyaśāstra, opened out into daily Kannada | 117 |
+| **ಭಾವಚಕ್ರ** `bhava` | the English feeling wheel, translated and then argued with | 130 |
+| **ಒಡಲ ಚಕ್ರ** `odalu` | the part of the body Kannada sites each feeling in | 106 |
+| **ರಸಚಕ್ರ** `rasa` | the nine rasas of the Nāṭyaśāstra, opened out into daily Kannada | 117 |
 
-The site is for reading the words. This README is the extended cut: it carries the dictionary evidence, the misfires and the counts, which are diagnostics.
-
-## The lookup
+**The words live in [`data/bhava.md`](data/bhava.md), [`data/odalu.md`](data/odalu.md) and [`data/rasa.md`](data/rasa.md)** — plain indented lists, meant to be edited by hand. Everything else in this repository is generated from them by `python3 scripts/build.py`: the site, this README, [`data/wheels.json`](data/wheels.json) and [`data/words.csv`](data/words.csv). How the words were found, and what the dictionary returned for each one, is in [METHOD.md](METHOD.md).
 
 ```
-GET https://rala-search.rala-search.workers.dev/?q=<english word>
-
-{ "query": str,
-  "count": int,
-  "results": [ { "kannada", "definition", "type", "source" } ] }
+- ಶೃಂಗಾರ | śṛṅgāra | love, the erotic
+  sthayi: ರತಿ · rati, desire
+  note: prose about the word
+  - ಒಲವು | olavu | fondness
+    - ಪ್ರೀತಿ | prīti | love
+      also: ಮಮತೆ | mamate | attachment-love ;; ಅಕ್ಕರೆ | akkare | fondness
 ```
-
-Calls were made one at a time with 0.35 s between them and without the `X-Rala-Intent: primary` header, so none of this reached rala's own search analytics. [alar.ink](https://alar.ink) was never queried — Alar arrives here only through rala's reversal of it.
-
-rala matches whole words against definition text, so a query only finds the exact form the dictionary happens to use: `annoyed` returns nothing, `annoy` returns thirteen entries. [`scripts/rala.py`](scripts/rala.py) fixes this client-side with a morphological expander — 26 suffix rules, longest first, doubled-consonant undo, and one level of recursion so `playfully → playful → play`.
-
-```
-loneliness  → loneliness, lonely, lone
-frustrated  → frustrated, frustrat, frustrate
-victimised  → victimised, victimise, victimize
-stopped     → stopped, stopp, stoppe, stop
-```
-
-Of the 52 words that first came back empty, morphology alone recovered 38. The last 14 needed hand-picked synonyms — `repelled → repulse`, `boredom → tedium`, `skeptical → sceptic` — which is the part stemming cannot reach, and the argument for a thesaurus layer inside the worker rather than in every client.
-
-## What rala returned, for ಭಾವಚಕ್ರ
-
-| | count | meaning |
-|---|---:|---|
-| `direct` | 73 | the dictionary's top hit is the word on the wheel |
-| `shaped` | 45 | rala had it, but buried in technical noise or in the wrong register |
-| `gap` | 12 | no usable entry; the word comes from Kannada usage |
-| | **130** | |
-
-Where rala is excellent: fear, anger and grief. Seven graded fear words, four for doubt, and ತೇಜೋವಧೆ — "the murder of someone's lustre" — for *humiliate*.
-
-Where it falls down it falls down structurally, because rala's bulk is Padakanaja, which is administrative, legal, scientific and agricultural:
-
-| query | what rala returned |
-|---|---|
-| `stressed` | ಪ್ರತಿಬಲ — tensile stress, shear stress |
-| `confused` | ತುಕ್ಕುಗೆಂಪು — the confused flour beetle |
-| `let down` | ಹಾಲೊಸರಿಕೆ — milk let-down, the dairy term |
-| `loving` | ನೆರಳು ಪ್ರಿಯ — shade-loving, of plants |
-| `depressed` | ದಲಿತ, ಶೋಷಿತ — from the phrase "depressed classes" |
-| `accepted` | ಅಂಗೀಕೃತ ಟೆಂಡರ್ — accepted tender |
-| `tired` | ದಣಿದ ಮಣ್ಣು — tired soil |
-| `critical` | ಕ್ರಾಂತಿಕೋನ — critical angle |
-| `proud / inspired / boredom / threatened` | nothing at all |
 
 ## ಭಾವಚಕ್ರ — the English feeling wheel, translated and then argued with
 
+*Seven core feelings, three rings — the English feeling wheel put into Kannada, seams and all.*
+
 ### ಸಂತೋಷ · Happy — *santōṣa*
 
-- **ಸಂತೋಷ** · *santōṣa* · Happy · `direct`
+- **ಸಂತೋಷ** · *santōṣa* · Happy
   - also said: **ಖುಷಿ** *khuṣi* gladness, the most casual, **ಹರ್ಷ** *harṣa* joy, elevated, **ಆನಂದ** *ānanda* bliss, **ಸಂತಸ** *santasa* gladness, softer, **ಹಿಗ್ಗು** *higgu* swelling delight
-  - rala returned: ಸಂತೋಷದ, ಸಂತುಷ್ಟ, ಖುಷಿಯಾದ, ನೆಮ್ಮದಿಯ, ಭಾಗ್ಯವಂತನಾದ
   - rala also returns ಭಾಗ್ಯವಂತ / ಅದೃಷ್ಟಶಾಲಿ — 'lucky'. English *happy* still carries its old root *hap*, chance. Kannada keeps luck and gladness in separate words.
-  - **ತುಂಟತನ** · *ṭuṇṭatana* · Playful · `gap`
-    - rala returned: ದ್ರೋಹ ಮಾಡು ⟨foul play⟩, ನಾಟಕಕಾರ ⟨playwright⟩, ಚಕ್ಕರ್ ಕೊಡು ⟨play truant⟩
+  - **ತುಂಟತನ** · *ṭuṇṭatana* · Playful
     - A clean miss. rala only knows *play* as the noun — foul play, playwright, child's play. The felt state is ತುಂಟತನ, the mischief of a child you are not actually angry with.
-    - **ಉದ್ರೇಕ** · *udrēka* · Aroused · `shaped`
-      - rala returned: ಉದ್ರೇಕಗೊಳ್ಳು, ಪ್ರಚೋದಿಸು, ಕೆರಳಿಸು
+    - **ಉದ್ರೇಕ** · *udrēka* · Aroused
       - In Kannada ಉದ್ರೇಕ is not primarily erotic — a crowd, a temper and a nerve can all be ಉದ್ರಿಕ್ತ. It means charged, and the charge can go either way.
-    - **ಕೀಟಲೆ** · *kīṭale* · Cheeky · `shaped`
-      - rala returned: ಉದ್ಧಟ, ಒರಟುತನದ, ದುರಹಂಕಾರದ
+    - **ಕೀಟಲೆ** · *kīṭale* · Cheeky
       - rala's ಉದ್ಧಟ / ದುರಹಂಕಾರ are genuinely insulting. Cheeky is affectionate — that is ಕೀಟಲೆ, teasing you are allowed to do.
-  - **ತೃಪ್ತಿ** · *tṛpti* · Content · `shaped`
+  - **ತೃಪ್ತಿ** · *tṛpti* · Content
     - also said: **ಸಂತೃಪ್ತಿ** *santṛpti* full satisfaction, **ತಣಿವು** *taṇivu* slaked, **ಸಮಾಧಾನ** *samādhāna* settledness
-    - rala returned: ತೃಪ್ತ, ತೃಪ್ತಿ, ಪರಿವಿಡಿ ⟨table of contents⟩, ತೇವಾಂಶ ⟨moisture content⟩
     - The right word was in there, sitting under moisture content and table of contents. ತೃಪ್ತಿ is satiety — the feeling after a meal, and after a life.
-    - **ನಿರಾಳ** · *nirāḷa* · Free · `shaped`
-      - rala returned: ಮುಕ್ತ, ಸ್ವತಂತ್ರ, ಕರಮುಕ್ತ ⟨duty-free⟩
+    - **ನಿರಾಳ** · *nirāḷa* · Free
       - ಮುಕ್ತ and ಸ್ವತಂತ್ರ are freedoms of status — liberated, independent, tax-exempt. The *feeling* of free is ನಿರಾಳ: unclenched, the breath after the weight comes off.
-    - **ಹಿಗ್ಗು** · *higgu* · Joyful · `shaped`
-      - rala returned: ಸಂತೋಷ, ಉಲ್ಲಾಸ, ಹರ್ಷ
-      - ಹರ್ಷ and ಉಲ್ಲಾಸ are correct and Sanskritic. ಹಿಗ್ಗು is the native verb-noun: to swell. Joy as something that expands you.
-  - **ಆಸಕ್ತಿ** · *āsakti* · Interested · `direct`
-    - rala returned: ಆಸಕ್ತಿ ಇರುವ, ಸಂಬಂಧವುಳ್ಳ, ಪಕ್ಷಪಾತದ ⟨interested party⟩
-    - **ಕುತೂಹಲ** · *kutūhala* · Curious · `direct`
-      - rala returned: ಕುತೂಹಲಕಾರಿ, ಕುತೂಹಲವುಳ್ಳ
-    - **ಕೆದಕು** · *kedaku* · Inquisitive · `shaped`
+    - **ಹಿಗ್ಗು** · *higgu* · Joyful
+      - To swell. Joy as something that expands you — the same verb for dough rising and for a chest filling.
+  - **ಆಸಕ್ತಿ** · *āsakti* · Interested
+    - **ಕುತೂಹಲ** · *kutūhala* · Curious
+    - **ಕೆದಕು** · *kedaku* · Inquisitive
       - also said: **ಜಿಜ್ಞಾಸೆ** *jijñāse* the wish to know, **ಕುತೂಹಲ** *kutūhala* curiosity, **ಶೋಧ** *śōdha* searching out
-      - rala returned: ಕೆದಕುವ, ಶೋಧಿಸುವ, ವಿಚಾರಮಾಡುವ
-      - ಕೆದಕು is to poke at a thing that was sitting quietly, and it keeps the faint rudeness English *inquisitive* also carries. ಜಿಜ್ಞಾಸೆ is the same impulse with the rudeness taken out.
-  - **ಹೆಮ್ಮೆ** · *hemme* · Proud · `gap`
+      - ಕೆದಕು is to poke at a thing that was sitting quietly, and it keeps the faint rudeness English *inquisitive* also carries. ಜಿಜ್ಞಾಸೆ is the same impulse pointed at ideas rather than at people.
+  - **ಹೆಮ್ಮೆ** · *hemme* · Proud
     - also said: **ಅಭಿಮಾನ** *abhimāna* pride as loyalty, **ಗರ್ವ** *garva* pride, tipping toward vanity, **ಅಹಂಕಾರ** *ahaṅkāra* the pride that has gone bad, **ಗತ್ತು** *gattu* swagger
     - rala returns nothing at all for *proud*. And Kannada would resist a single answer anyway: ಹೆಮ್ಮೆ is warm pride in someone, ಅಭಿಮಾನ is pride-as-loyalty, ಅಹಂಕಾರ is the pride that has gone bad. English collapses all three.
-    - **ಸಾರ್ಥಕ** · *sārthaka* · Successful · `shaped`
-      - rala returned: ಯಶಸ್ವಿ, ವಿಜಯಿ, ವಿಜೇತ
+    - **ಸಾರ್ಥಕ** · *sārthaka* · Successful
       - ಯಶಸ್ವಿ is the outcome — you won. ಸಾರ್ಥಕ is the feeling — it had meaning, it was worth it. Only one of those belongs on an emotion wheel.
-    - **ಆತ್ಮವಿಶ್ವಾಸ** · *ātma-viśvāsa* · Confident · `direct`
-      - rala returned: ವಿಶ್ವಾಸವುಳ್ಳ, ನೆಚ್ಚಿಕೆಯ, ಧೈರ್ಯದ
+    - **ಆತ್ಮವಿಶ್ವಾಸ** · *ātma-viśvāsa* · Confident
       - Literally 'self-trust'. Kannada builds confidence out of the same root as trusting another person.
-  - **ಒಪ್ಪಿಗೆ** · *oppige* · Accepted · `gap`
-    - rala returned: ಅಂಗೀಕೃತ ಟೆಂಡರ್ ⟨accepted tender⟩, ಅಂಗೀಕೃತ ಠೇವಣಿ ⟨accepted deposit⟩, ಸ್ವೀಕೃತ
+  - **ಒಪ್ಪಿಗೆ** · *oppige* · Accepted
     - Every hit is procurement paperwork. And Kannada has no noun for *the felt state of being accepted* — you say it as something others did: ನನ್ನನ್ನು ಒಪ್ಪಿಕೊಂಡರು, 'they took me in'. The feeling lives in a verb, not a noun.
-    - **ಗೌರವ** · *gaurava* · Respected · `shaped`
-      - rala returned: ಆ ಸಂಬಂಧವಾದ ⟨with respect to⟩, ಸಂಬಂಧಿಸಿದಂತೆ ⟨in respect of⟩
+    - **ಗೌರವ** · *gaurava* · Respected
       - rala only found the clerical *in respect of*. ಗೌರವ is the real word, and in Kannada it is something you give, actively, not something you passively have.
-    - **ಮನ್ನಣೆ** · *mannaṇe* · Valued · `shaped`
-      - rala returned: ಏಕಮೌಲ್ಯ ⟨single-valued⟩, ಮೌಲ್ಯ ಸಂದಾಯ ⟨value payable⟩
+    - **ಮನ್ನಣೆ** · *mannaṇe* · Valued
       - ಮೌಲ್ಯ is price. ಮನ್ನಣೆ is being recognised and given your due — the thing people leave jobs for the lack of.
-  - **ಶಕ್ತಿ** · *śakti* · Powerful · `direct`
-    - rala returned: ಶಕ್ತಿಶಾಲಿ, ಶಕ್ತಿವಂತ, ಶಕ್ತನಾದ
-    - **ಧೈರ್ಯ** · *dhairya* · Courageous · `direct`
+  - **ಶಕ್ತಿ** · *śakti* · Powerful
+    - **ಧೈರ್ಯ** · *dhairya* · Courageous
       - also said: **ಕೆಚ್ಚು** *keccu* embers-courage, **ಎದೆಗಾರಿಕೆ** *edegārike* nerve, **ದಿಟ್ಟತನ** *diṭṭatana* boldness, **ಛಲ** *chala* resolve
-      - rala returned: ಧೈರ್ಯದ, ಕೆಚ್ಚೆದೆಯ, ಎದೆಗಾರಿಕೆಯ
       - ಧೈರ್ಯ is steadiness under fear. The native alternatives rala offers are more physical: ಕೆಚ್ಚು is heat in the chest, ಎದೆಗಾರಿಕೆ is literally chest-having.
-    - **ಹೊಳಹು** · *hoḷahu* · Creative · `direct`
+    - **ಹೊಳಹು** · *hoḷahu* · Creative
       - also said: **ಸೃಜನಶೀಲತೆ** *sṛjanaśīlate* creativity, **ಕಲ್ಪನೆ** *kalpane* imagining, **ಸ್ಫೂರ್ತಿ** *sphūrti* inspiration
-      - rala returned: ಸೃಜನಾತ್ಮಕ, ರಚನಾತ್ಮಕ
       - The flash — the moment a thing occurs to you. Names the event rather than the faculty.
-  - **ನೆಮ್ಮದಿ** · *nemmadi* · Peaceful · `shaped`
+  - **ನೆಮ್ಮದಿ** · *nemmadi* · Peaceful
     - also said: **ಶಾಂತಿ** *śānti* peace, as the absence of conflict, **ಸಮಾಧಾನ** *samādhāna* being consoled, **ನಿರಾಳ** *nirāḷa* unclenched
-    - rala returned: ಶಾಂತಿಯ, ಶಾಂತಿಯುತ
     - The single most important correction on this wheel. ಶಾಂತಿ is peace as the absence of war — treaties, ceasefires, ಶಾಂತಿ ಸಭೆ. ನೆಮ್ಮದಿ is peace of mind, and it is what people actually pray for.
-    - **ಪ್ರೀತಿ** · *prīti* · Loving · `gap`
+    - **ಪ್ರೀತಿ** · *prīti* · Loving
       - also said: **ಮಮತೆ** *mamate* attachment-love, **ವಾತ್ಸಲ್ಯ** *vātsalya* tenderness flowing downward, **ಅಕ್ಕರೆ** *akkare* fondness, **ಒಲವು** *olavu* leaning toward
-      - rala returned: ನೆರಳು ಪ್ರಿಯ ⟨shade-loving⟩
       - The only match in 478,680 entries was a botany term for shade-loving plants. Kannada is not short of love words — ಪ್ರೀತಿ, ಮಮತೆ, ವಾತ್ಸಲ್ಯ, ಅಕ್ಕರೆ, ಒಲವು — the dictionary just isn't built to find them from English.
-    - **ಕೃತಜ್ಞತೆ** · *kṛtajñate* · Thankful · `direct`
-      - rala returned: ಕೃತಜ್ಞ, ಕೃತಜ್ಞನಾದ
+    - **ಕೃತಜ್ಞತೆ** · *kṛtajñate* · Thankful
       - Literally 'knowing what was done'. Gratitude as accurate memory.
-  - **ನಂಬಿಕೆ** · *nambike* · Trusting · `shaped`
-    - rala returned: ನಂಬಿಕೆ, ವಿಶ್ವಾಸ, ನ್ಯಾಸ ಖಾತೆ ⟨trust account⟩, ಟ್ರಸ್ಟ್ ಆಡಳಿತ
+  - **ನಂಬಿಕೆ** · *nambike* · Trusting
     - Buried under thirty entries of trust deeds and trust accounts. ನಂಬಿಕೆ also means belief and superstition — in Kannada, trusting a person and believing a thing are one act.
-    - **ಸೂಕ್ಷ್ಮ** · *sūkṣma* · Sensitive · `direct`
-      - rala returned: ಸೂಕ್ಷ್ಮಗ್ರಾಹಿ, ಸಂವೇದನಾಶೀಲ, ಸೂಕ್ಷ್ಮ
+    - **ಸೂಕ್ಷ್ಮ** · *sūkṣma* · Sensitive
       - ಸೂಕ್ಷ್ಮ means fine-grained, subtle-perceiving. Calling someone ಸೂಕ್ಷ್ಮ is praise — unlike English 'sensitive', which is half an accusation.
-    - **ಸಲಿಗೆ** · *salige* · Intimate · `direct`
+    - **ಸಲಿಗೆ** · *salige* · Intimate
       - also said: **ಆತ್ಮೀಯತೆ** *ātmīyate* closeness, **ಅನ್ಯೋನ್ಯ** *anyōnya* mutual, easy with each other, **ನಿಕಟ** *nikaṭa* near
-      - rala returned: ಸಲಿಗೆ, ಅನ್ಯೋನ್ಯ, ಆತ್ಮೀಯ, ನಿಕಟ
       - ಸಲಿಗೆ has no English word. It is the earned licence to be informal with someone — to tease them, take their food, drop the honorific. Intimacy defined as permission, not as feeling.
-  - **ಭರವಸೆ** · *bharavase* · Optimistic · `direct`
+  - **ಭರವಸೆ** · *bharavase* · Optimistic
     - also said: **ಆಶಾವಾದ** *āśāvāda* optimism, as a stance, **ನಿರೀಕ್ಷೆ** *nirīkṣe* expectation, **ನಂಬಿಕೆ** *nambike* trust, belief
-    - rala returned: ಆಶಾವಾದದ, ಆಶಾಪೂರ್ಣ
     - ಭರವಸೆ is also the word for a promise or an assurance. Optimism, in Kannada, is something somebody gave you.
-    - **ಆಸೆ** · *āse* · Hopeful · `direct`
+    - **ಆಸೆ** · *āse* · Hopeful
       - also said: **ಆಶೆ** *āśe* hope, the Sanskrit form, **ಹಂಬಲ** *hambala* yearning, **ಬಯಕೆ** *bayake* wish
-      - rala returned: ಭರವಸೆಯ, ಆಶಾದಾಯಕ
       - The plainest possible word: wish, want, hope, all one. Kannada does not separate hoping from wanting.
-    - **ಸ್ಫೂರ್ತಿ** · *sphūrti* · Inspired · `gap`
+    - **ಸ್ಫೂರ್ತಿ** · *sphūrti* · Inspired
       - No result. ಸ್ಫೂರ್ತಿ is the everyday word — a sudden welling-up, the same root as a spark.
 
 ### ಅಚ್ಚರಿ · Surprised — *accari*
 
-- **ಅಚ್ಚರಿ** · *accari* · Surprised · `direct`
+- **ಅಚ್ಚರಿ** · *accari* · Surprised
   - also said: **ಆಶ್ಚರ್ಯ** *āścarya* surprise, the Sanskrit form, **ವಿಸ್ಮಯ** *vismaya* astonishment, **ಬೆರಗು** *beragu* wonder that stops you
-  - rala returned: ಆಶ್ಚರ್ಯ, ವಿಸ್ಮಯ, ಅನಿರೀಕ್ಷಿತ, ಹಠಾತ್ ತನಿಖೆ ⟨surprise inspection⟩
   - ಅಚ್ಚರಿ is the native word and ಆಶ್ಚರ್ಯ the Sanskrit one; both are in daily use, and this wheel uses the shorter.
-  - **ಬೆಚ್ಚು** · *beccu* · Startled · `direct`
-    - rala returned: ಚಕಿತಗೊಳಿಸು, ಗಾಬರಿಪಡಿಸು, ಬೆದರಿಸು
+  - **ಬೆಚ್ಚು** · *beccu* · Startled
     - ಬೆಚ್ಚಿಬೀಳು — to be startled and drop. Kannada builds the flinch out of a fall.
-    - **ಆಘಾತ** · *āghāta* · Shocked · `direct`
-      - rala returned: ಆಘಾತ, ದಿಗಿಲುಂಟುಮಾಡು, ವಿದ್ಯುದಾಘಾತ ⟨electric shock⟩
-    - **ಎದೆಗುಂದು** · *edegundu* · Dismayed · `direct`
-      - rala returned: ಎದೆಗುಂದಿಸು, ಅಧೈರ್ಯ, ದಿಗಿಲು, ಹತಾಶೆ
+    - **ಆಘಾತ** · *āghāta* · Shocked
+    - **ಎದೆಗುಂದು** · *edegundu* · Dismayed
       - Literally 'the chest sinks'. Kannada names the physical event and leaves you to infer the feeling — it does this constantly.
-  - **ಗೊಂದಲ** · *gondala* · Confused · `shaped`
+  - **ಗೊಂದಲ** · *gondala* · Confused
     - also said: **ಕಕ್ಕಾಬಿಕ್ಕಿ** *kakkābikki* flustered, **ತಬ್ಬಿಬ್ಬು** *tabbibbu* thrown, at a loss, **ಗಲಿಬಿಲಿ** *galibili* muddle
-    - rala returned: ತುಕ್ಕುಗೆಂಪು ⟨confused flour beetle⟩
     - The dictionary's one match for *confused* is a species of beetle. ಗೊಂದಲ is the real word, and it also means a noisy crowd — confusion as too many voices at once.
-    - **ಭ್ರಮೆ ಕಳಚು** · *bhrame kaḷacu* · Disillusioned · `direct`
-      - rala returned: ಭ್ರಮನಿರಸನಗೊಂಡ
+    - **ಭ್ರಮೆ ಕಳಚು** · *bhrame kaḷacu* · Disillusioned
       - The illusion comes unfastened. ಕಳಚು is what a bangle does, or a bolt.
-    - **ಕಂಗೆಡು** · *kaṅgeḍu* · Perplexed · `direct`
-      - rala returned: ಕಂಗೆಡಿಸು, ವಿಭ್ರಾಂತಿ ತರು
+    - **ಕಂಗೆಡು** · *kaṅgeḍu* · Perplexed
       - ಕಣ್ + ಕೆಡು: the eyes go bad. To be at a loss is, literally, to lose your sight of it.
-  - **ಬೆರಗು** · *beragu* · Amazed · `direct`
+  - **ಬೆರಗು** · *beragu* · Amazed
     - also said: **ವಿಸ್ಮಯ** *vismaya* astonishment, **ಅಚ್ಚರಿ** *accari* surprise, **ಸೋಜಿಗ** *sōjiga* marvel
-    - rala returned: ಬೆರಗುಗೊಳಿಸು, ಆಶ್ಚರ್ಯಗೊಳ್ಳು, ಚಕಿತನಾಗು
-    - **ದಂಗು** · *daṅgu* · Astonished · `direct`
+    - **ದಂಗು** · *daṅgu* · Astonished
       - also said: **ವಿಸ್ಮಯ** *vismaya* astonishment, **ಆಶ್ಚರ್ಯ** *āścarya* surprise, **ಬೆರಗು** *beragu* wonder, **ದಿಗ್ಭ್ರಮೆ** *digbhrame* stupefaction
-      - rala returned: ವಿಸ್ಮಯವನ್ನುಂಟುಮಾಡು, ಅಚ್ಚರಿಗೊಳಿಸು
       - ದಂಗಾದೆ — I was floored. The version of astonishment with your mouth open.
-    - **ಭಯಭಕ್ತಿ** · *bhaya-bhakti* · Awe · `direct`
-      - rala returned: ಭಯಮಿಶ್ರಿತ ಗೌರವ, ಭಯ ತುಂಬಿದ ಗೌರವ
+    - **ಭಯಭಕ್ತಿ** · *bhaya-bhakti* · Awe
       - rala could only define it as a phrase: 'respect mixed with fear'. But Kannada does have the compound — ಭಯಭಕ್ತಿ, fear-and-devotion, the standard word for how one stands before a deity or a formidable elder. Awe as a social posture, not a private thrill.
-  - **ಉತ್ಸಾಹ** · *utsāha* · Excited · `direct`
+  - **ಉತ್ಸಾಹ** · *utsāha* · Excited
     - also said: **ಹುರುಪು** *hurupu* vigour, **ಉಮೇದು** *umēdu* zest, **ಹುಮ್ಮಸ್ಸು** *hummassu* drive, **ಸಡಗರ** *saḍagara* bustle and delight
-    - rala returned: ಉತ್ತೇಜಿತ, ಉದ್ರಿಕ್ತ, ಉತ್ಸಾಹ
-    - **ತವಕ** · *tavaka* · Eager · `direct`
-      - rala returned: ತವಕ, ಕಾತರದ, ಉತ್ಸುಕ, ಉತ್ಕಟ
+    - **ತವಕ** · *tavaka* · Eager
       - ತವಕ and ಕಾತರ are both eagerness with an edge of ache — waiting that has begun to hurt slightly.
-    - **ಹುರುಪು** · *hurupu* · Energetic · `direct`
-      - rala returned: ಹುರುಪು, ಉತ್ಸಾಹ, ಶಕ್ತಿಯುತವಾದ
+    - **ಹುರುಪು** · *hurupu* · Energetic
 
 ### ಬೇಸರ · Bad — *bēsara*
 
-- **ಬೇಸರ** · *bēsara* · Bad · `gap`
+- **ಬೇಸರ** · *bēsara* · Bad
   - also said: **ಬೇಜಾರು** *bējāru* fed up, the same word one register down, **ಸಪ್ಪೆ** *sappe* flat, unsalted, **ಜಡ** *jaḍa* inert
-  - rala returned: ಕೆಟ್ಟ, ದುರ್ವರ್ತನೆ ⟨bad behaviour⟩, ವಸೂಲಾಗದ ಸಾಲ ⟨bad debt⟩, ವೈಮನಸ್ಯ ⟨bad blood⟩
   - The hardest sector. Kannada's ಕೆಟ್ಟ is moral or qualitative — a bad man, spoiled milk — and cannot be a feeling. But look at what the English wheel actually files under 'Bad': bored, busy, stressed, tired. That whole zone has one Kannada name, ಬೇಸರ — a fused weariness-with-things that English needs four words to circle.
-  - **ಬೇಜಾರು** · *bējāru* · Bored · `gap`
+  - **ಬೇಜಾರು** · *bējāru* · Bored
     - also said: **ಬೇಸರ** *bēsara* weary discontent, **ಜಿಗುಪ್ಸೆ** *jigupse* revulsion, world-weariness, **ಸಪ್ಪೆ** *sappe* flat
     - No entry for *boredom*. ಬೇಜಾರು covers bored, mildly sad, and fed-up in one breath. 'ಬೇಜಾರಾಗಿದೆ' could be any of the three and the listener works it out from your face.
-    - **ಉದಾಸೀನ** · *udāsīna* · Indifferent · `direct`
-      - rala returned: ಉದಾಸೀನ, ಅಸಡ್ಡೆಯ, ತಟಸ್ಥ
+    - **ಉದಾಸೀನ** · *udāsīna* · Indifferent
       - In philosophy ಉದಾಸೀನ is the sage's equanimity. In an argument it is the coldest insult available.
-    - **ಅಸಡ್ಡೆ** · *asaḍḍe* · Apathetic · `direct`
+    - **ಅಸಡ್ಡೆ** · *asaḍḍe* · Apathetic
       - also said: **ನಿರಾಸಕ್ತಿ** *nirāsakti* disinterest, **ಉದಾಸೀನ** *udāsīna* indifference, or the cold shoulder, **ತಾತ್ಸಾರ** *tātsāra* disdain
-      - rala returned: ನಿರಾಸಕ್ತ, ಆಸಕ್ತಿಯಿಲ್ಲದ, ಭಾವಶೂನ್ಯ
       - Not caring, and not quite bothering to hide that you are not caring.
-  - **ಧಾವಂತ** · *dhāvanta* · Busy · `shaped`
-    - rala returned: ಕಾರ್ಯಮಗ್ನ, ಬಿಡುವಿಲ್ಲದ, ನಿರತ
+  - **ಧಾವಂತ** · *dhāvanta* · Busy
     - rala's words describe a schedule. ಧಾವಂತ describes what the schedule does to you — the harried forward-lean of someone always mid-errand.
-    - **ಒತ್ತಡ** · *ottaḍa* · Pressured · `direct`
-      - rala returned: ಒತ್ತಡ, ರಕ್ತ ಒತ್ತಡ ⟨blood pressure⟩, ವಾತಾವರಣದ ಒತ್ತಡ
+    - **ಒತ್ತಡ** · *ottaḍa* · Pressured
       - Same word for atmospheric pressure, blood pressure, and social pressure. Kannada did not borrow 'stress' — it extended 'push'.
-    - **ಆತುರ** · *ātura* · Rushed · `shaped`
-      - rala returned: ಧಾವಿಸು, ಮುನ್ನುಗ್ಗು, ತೀವ್ರಗತಿ
+    - **ಆತುರ** · *ātura* · Rushed
       - ಆತುರ is haste as a character flaw as much as a state — 'ಆತುರಗಾರನಿಗೆ ಬುದ್ಧಿ ಮಟ್ಟ', the hasty man is short on sense.
-  - **ತಳಮಳ** · *taḷamaḷa* · Stressed · `shaped`
-    - rala returned: ಒತ್ತಡ, ಪ್ರತಿಬಲ ⟨tensile stress⟩, ಕರ್ತನ ಪ್ರತಿಬಲ ⟨shear stress⟩
+  - **ತಳಮಳ** · *taḷamaḷa* · Stressed
     - Every single hit was materials engineering. ತಳಮಳ is the churn — the word for boiling liquid and for a mind that will not settle.
-    - **ಹೈರಾಣ** · *hairāṇa* · Overwhelmed · `shaped`
-      - rala returned: ಮುಳುಗಿಹೋಗು, ಭಾವಪರವಶಗೊಳ್ಳು
+    - **ಹೈರಾಣ** · *hairāṇa* · Overwhelmed
       - English uses one *overwhelmed* in two places on this wheel. Kannada splits them by how you are swamped: ಹೈರಾಣ is worn down to nothing by too much work; ಕಳವಳ, over in ಭಯ, is being swamped by dread.
-    - **ಚಡಪಡಿಕೆ** · *caḍapaḍike* · Restless · `direct`
-      - rala returned: ಚಡಪಡಿಸುವ, ತಳಮಳ, ವ್ಯಾಕುಲ, ಅಶಾಂತ
+    - **ಚಡಪಡಿಕೆ** · *caḍapaḍike* · Restless
       - Onomatopoeic — the sound of a fish on dry ground, or a body that cannot stay in the chair.
-  - **ದಣಿವು** · *daṇivu* · Tired · `shaped`
+  - **ದಣಿವು** · *daṇivu* · Tired
     - also said: **ಆಯಾಸ** *āyāsa* fatigue, **ಬಳಲಿಕೆ** *baḷalike* exhaustion, **ಸುಸ್ತು** *sustu* done in
-    - rala returned: ದಣಿದ ಮಣ್ಣು ⟨tired soil⟩
     - The only match rala had for *tired* was agronomy — ದಣಿದ ಮಣ್ಣು, exhausted soil. ದಣಿವು is used of a body and of a day alike.
-    - **ತೂಕಡಿಕೆ** · *tūkaḍike* · Sleepy · `shaped`
+    - **ತೂಕಡಿಕೆ** · *tūkaḍike* · Sleepy
       - also said: **ಜೋಂಪು** *jōmpu* the afternoon drowse, **ಮಂಪರು** *mamparu* half-sleep, **ನಿದ್ದೆ** *nidde* sleep
-      - rala returned: ತೂಕಡಿಸುವ, ನಿದ್ದೆ, ಜಡನಾದ
       - The nod of the head as you lose the fight.
-    - **ಅನ್ಯಮನಸ್ಕ** · *anya-manaska* · Unfocused · `direct`
-      - rala returned: ಅನ್ಯಮನಸ್ಕ, ಏಕಾಗ್ರತೆಯಿಲ್ಲದ, ಮರೆಗುಳಿ
+    - **ಅನ್ಯಮನಸ್ಕ** · *anya-manaska* · Unfocused
       - 'Other-minded' — your mind is somewhere, just not here. Kinder than 'distracted', which implies something pulled you.
 
 ### ಭಯ · Fearful — *bhaya*
 
-- **ಭಯ** · *bhaya* · Fearful · `direct`
+- **ಭಯ** · *bhaya* · Fearful
   - also said: **ಹೆದರಿಕೆ** *hedarike* being scared, **ಅಂಜಿಕೆ** *añjike* timidity, **ಭೀತಿ** *bhīti* terror, **ದಿಗಿಲು** *digilu* dread, **ಗಾಬರಿ** *gābari* panic, **ಆತಂಕ** *ātaṅka* anxiety
-  - rala returned: ಭಯ, ಹೆದರಿಕೆ, ಅಂಜಿಕೆ, ಭೀತಿ, ದಿಗಿಲು, ಆತಂಕ, ಗಾಬರಿ
   - rala's richest sector — seven distinct words on the first page. Kannada grades fear finely: ಅಂಜಿಕೆ (timid), ಹೆದರಿಕೆ (scared), ದಿಗಿಲು (dread), ಗಾಬರಿ (panic), ಆತಂಕ (anxiety), ಭೀತಿ (terror).
-  - **ಹೆದರಿಕೆ** · *hedarike* · Scared · `direct`
-    - rala returned: ಹೆದರಿಕೆ, ಗಾಬರಿ, ಭೀತಿ, ಬೆದರುಗೊಂಬೆ ⟨scarecrow⟩
-    - **ಅಸಹಾಯಕತೆ** · *asahāyakate* · Helpless · `direct`
-      - rala returned: ಅಸಹಾಯಕ, ದಿಕ್ಕಿಲ್ಲದ, ತಬ್ಬಲಿ
+  - **ಹೆದರಿಕೆ** · *hedarike* · Scared
+    - **ಅಸಹಾಯಕತೆ** · *asahāyakate* · Helpless
       - rala's ದಿಕ್ಕಿಲ್ಲದ is better than the headword: 'without a direction'. Helplessness as having nowhere to turn — literally no compass point.
-    - **ಅಂಜಿಕೆ** · *añjike* · Frightened · `direct`
-      - rala returned: ಹೆದರಿಸು, ಭಯಪಡಿಸು, ದಿಗಿಲುಗೊಳಿಸು
-  - **ಆತಂಕ** · *ātaṅka* · Anxious · `direct`
+    - **ಅಂಜಿಕೆ** · *añjike* · Frightened
+  - **ಆತಂಕ** · *ātaṅka* · Anxious
     - also said: **ಕಳವಳ** *kaḷavaḷa* agitation, **ಚಿಂತೆ** *cinte* worry, thought, **ತಳಮಳ** *taḷamaḷa* churn, **ವ್ಯಾಕುಲ** *vyākula* distress
-    - rala returned: ಆತಂಕಗೊಂಡ, ವ್ಯಾಕುಲತೆ, ಚಿಂತಾಕ್ರಾಂತ, ತಲ್ಲಣಗೊಂಡ
     - ಆತಂಕ is now the standard clinical word too. Its older sense is closer to 'impediment' — anxiety as the thing in your way.
-    - **ಚಿಂತೆ** · *cinte* · Worried · `direct`
+    - **ಚಿಂತೆ** · *cinte* · Worried
       - also said: **ಯೋಚನೆ** *yōcane* thinking it over, **ಕಾಳಜಿ** *kāḷaji* care, concern, **ತಲೆಬಿಸಿ** *talebisi* head-heat
-      - rala returned: ಚಿಂತೆ, ಕಳವಳ, ಆತಂಕ, ಪೇಚಾಟ
       - ಚಿಂತೆ is also simply 'thought'. To worry and to think are the same verb, which tells you something.
-    - **ಕಳವಳ** · *kaḷavaḷa* · Overwhelmed · `shaped`
-      - rala returned: ಕಳವಳಗೊಂಡ, ವ್ಯಾಕುಲ
+    - **ಕಳವಳ** · *kaḷavaḷa* · Overwhelmed
       - The second of the split — see ಹೈರಾಣ under ಬೇಸರ. ಕಳವಳ is being flooded by apprehension rather than by workload.
-  - **ಅಳುಕು** · *aḷuku* · Insecure · `direct`
+  - **ಅಳುಕು** · *aḷuku* · Insecure
     - also said: **ಅಭದ್ರತೆ** *abhadrate* insecurity, of a thing unguarded, **ಹಿಂಜರಿಕೆ** *hiñjarike* hesitation, **ಶಂಕೆ** *śaṅke* misgiving with fear in it
-    - rala returned: ಅಭದ್ರ, ಅಸುರಕ್ಷಿತ, ರಕ್ಷಣೆ ರಹಿತ
     - The small inward flinch before you do the thing anyway. ಅಭದ್ರತೆ carries the other sense of *insecure* — physically unguarded, a word for buildings and borders.
-    - **ಕೊರತೆ** · *korate* · Inadequate · `shaped`
-      - rala returned: ಸಾಕಾಗದ, ಅಸಮರ್ಥ, ಕೊರತೆಯುಳ್ಳ
+    - **ಕೊರತೆ** · *korate* · Inadequate
       - ಕೊರತೆ is a shortfall — of rain, of funds, of oneself. The same word, which quietly makes it feel less like a personal verdict.
-    - **ಕೀಳರಿಮೆ** · *kīḷarime* · Inferior · `shaped`
-      - rala returned: ಕೀಳು, ಕಳಪೆ, ಕೆಳದರ್ಜೆಯ
+    - **ಕೀಳರಿಮೆ** · *kīḷarime* · Inferior
       - rala gives only the judgement (ಕೀಳು, low-grade). ಕೀಳರಿಮೆ is the feeling — 'low-self-knowing', the exact and rather beautiful Kannada for an inferiority complex.
-  - **ದುರ್ಬಲ** · *durbala* · Weak · `direct`
-    - rala returned: ದುರ್ಬಲ, ಬಲಹೀನ, ನಿರ್ಬಲ
-    - **ದಂಡ** · *daṇḍa* · Worthless · `shaped`
+  - **ದುರ್ಬಲ** · *durbala* · Weak
+    - **ದಂಡ** · *daṇḍa* · Worthless
       - also said: **ನಿಷ್ಪ್ರಯೋಜಕ** *niṣprayōjaka* of no use, **ಅಯೋಗ್ಯ** *ayōgya* unworthy, **ವ್ಯರ್ಥ** *vyartha* in vain
-      - rala returned: ಅಯೋಗ್ಯ
       - Literally waste. 'ನಾನು ದಂಡ' is how the feeling gets said about oneself.
-    - **ಲೆಕ್ಕಕ್ಕಿಲ್ಲ** · *lekkakkilla* · Insignificant · `direct`
+    - **ಲೆಕ್ಕಕ್ಕಿಲ್ಲ** · *lekkakkilla* · Insignificant
       - also said: **ಕ್ಷುಲ್ಲಕ** *kṣullaka* trivial, **ಅಲ್ಪ** *alpa* slight, **ನಿಕೃಷ್ಟ** *nikṛṣṭa* abject
-      - rala returned: ಕ್ಷುಲ್ಲಕ, ಅತ್ಯಲ್ಪ, ನಿಕೃಷ್ಟ
       - 'Not in the count.' Insignificance as an accounting error.
-  - **ತಿರಸ್ಕಾರ** · *tiraskāra* · Rejected · `shaped`
-    - rala returned: ಸೋತ ಅಭ್ಯರ್ಥಿ ⟨rejected candidate⟩, ತಿರಸ್ಕರಿಸತಕ್ಕದ್ದು, ಹಕ್ಕು ಸಾಧನೆಗಳು ⟨rejected claims⟩
+  - **ತಿರಸ್ಕಾರ** · *tiraskāra* · Rejected
     - ತಿರಸ್ಕಾರ is what the other person did. As with ಒಪ್ಪಿಗೆ, Kannada gives you no noun for the receiving end — rejection is only ever described from outside.
-    - **ಹೊರಗಿಡು** · *horagiḍu* · Excluded · `gap`
+    - **ಹೊರಗಿಡು** · *horagiḍu* · Excluded
       - also said: **ಬಹಿಷ್ಕಾರ** *bahiṣkāra* boycott, outcasting, **ದೂರವಿಡು** *dūraviḍu* to keep at a distance, **ಪ್ರತ್ಯೇಕಿಸು** *pratyēkisu* to separate off
       - Kannada says it as something done to you — ಹೊರಗಿಟ್ಟರು, they kept me out. ಬಹಿಷ್ಕಾರ is the same act with a history attached to it.
-    - **ಕಿರುಕುಳ** · *kirukuḷa* · Persecuted · `direct`
-      - rala returned: ಕಿರುಕುಳ ಕೊಡು, ಪೀಡಿಸು, ಹಿಂಸಿಸು
-  - **ಬೆದರಿಕೆ** · *bedarike* · Threatened · `gap`
+    - **ಕಿರುಕುಳ** · *kirukuḷa* · Persecuted
+  - **ಬೆದರಿಕೆ** · *bedarike* · Threatened
     - also said: **ಹೆದರಿಕೆ** *hedarike* being scared, **ಬೆಚ್ಚು** *beccu* a startle, **ಅಪಾಯ** *apāya* danger
     - No entry for the adjective. ಬೆದರಿಕೆ is the threat itself; feeling threatened is said as ಬೆದರಿಕೆ ಇದೆ — 'there is a threat' — placing it outside you rather than inside.
-    - **ನಡುಕ** · *naḍuka* · Nervous · `shaped`
-      - rala returned: ನಡುಗುವ, ಅಂಜುಬುರುಕ, ನರವ್ಯೂಹ ⟨nervous system⟩
+    - **ನಡುಕ** · *naḍuka* · Nervous
       - Most hits were neuroanatomy. ನಡುಕ is the tremble itself — Kannada again naming the body and letting the feeling follow.
-    - **ಬಟಾಬಯಲು** · *baṭā-bayalu* · Exposed · `shaped`
-      - rala returned: ಗುಟ್ಟುರಟ್ಟಾದ, ಸುರಕ್ಷಣೆ ಇಲ್ಲದ, ಬಹಿರಂಗಗೊಳಿಸಿದ
+    - **ಬಟಾಬಯಲು** · *baṭā-bayalu* · Exposed
       - ಬಟಾಬಯಲು is open ground with not one thing to hide behind — used for landscape and for people, with no change of tone.
 
 ### ಕೋಪ · Angry — *kōpa*
 
-- **ಕೋಪ** · *kōpa* · Angry · `direct`
+- **ಕೋಪ** · *kōpa* · Angry
   - also said: **ಸಿಟ್ಟು** *siṭṭu* hot, quick anger, **ಕ್ರೋಧ** *krōdha* wrath, **ರೋಷ** *rōṣa* fury, **ಸಿಡುಕು** *siḍuku* worn-in irritability, **ಮುನಿಸು** *munisu* the loving sulk, **ತಾಪ** *tāpa* heat
-  - rala returned: ಕೋಪ, ಸಿಟ್ಟು, ಸಿಡುಕು, ರೋಷ, ಮುನಿಸು, ಕ್ರೋಧ, ತಾಪ
   - Kannada separates anger by heat and by intimacy: ಸಿಟ್ಟು is hot and quick, ಕೋಪ is the general word, ಕ್ರೋಧ is grand and destructive, ಸಿಡುಕು is chronic and worn on the face — and ಮುನಿಸು is the anger you only get to have with someone who loves you.
-  - **ಕೈಕೊಟ್ಟರು** · *kai-koṭṭaru* · Let down · `gap`
-    - rala returned: ಹಾಲೊಸರಿಕೆ ⟨milk let-down⟩
+  - **ಕೈಕೊಟ್ಟರು** · *kai-koṭṭaru* · Let down
     - rala's single match for *let down* is the dairy term for milk ejection. Kannada has no noun here either — you say ಕೈಕೊಟ್ಟರು, 'they gave me the hand', meaning they withdrew it at the moment you leaned on it.
-    - **ದ್ರೋಹ** · *drōha* · Betrayed · `direct`
-      - rala returned: ದ್ರೋಹ ಮಾಡು, ವಿಶ್ವಾಸಘಾತ, ವಂಚಿಸು
+    - **ದ್ರೋಹ** · *drōha* · Betrayed
       - ದ್ರೋಹ is grave — the word used for treason and for betraying a guru. Kannada does not have a casual register for this.
-    - **ಅಸಮಾಧಾನ** · *asamādhāna* · Resentful · `direct`
-      - rala returned: ಅಸಮಾಧಾನ, ಜಿದ್ದು, ಕರುಬು, ಹಗೆತನ
+    - **ಅಸಮಾಧಾನ** · *asamādhāna* · Resentful
       - Literally 'un-settledness' — the negation of ಸಮಾಧಾನ, consolation. Resentment as a grievance that was never talked down.
-  - **ಅವಮಾನ** · *avamāna* · Humiliated · `direct`
-    - rala returned: ಅವಮಾನಿಸು, ತೇಜೋವಧೆ, ಮರ್ಯಾದೆ ಕಳೆ
+  - **ಅವಮಾನ** · *avamāna* · Humiliated
     - rala's ತೇಜೋವಧೆ is worth keeping: 'the murder of someone's lustre'. Humiliation as an assassination of light.
-    - **ಅವಮರ್ಯಾದೆ** · *avamaryāde* · Disrespected · `direct`
+    - **ಅವಮರ್ಯಾದೆ** · *avamaryāde* · Disrespected
       - also said: **ಅಗೌರವ** *agaurava* disrespect, **ಉಪೇಕ್ಷೆ** *upēkṣe* being overlooked, **ತಿರಸ್ಕಾರ** *tiraskāra* rejection, contempt
-      - rala returned: ಅಗೌರವ, ಅವಮಾನ, ಉಪೇಕ್ಷೆ, ಅವಮರ್ಯಾದೆ
       - ಮರ್ಯಾದೆ — the respect owed to you in public — is one of the most-used words in Kannada. This is its negation.
-    - **ಗೇಲಿ** · *gēli* · Ridiculed · `direct`
+    - **ಗೇಲಿ** · *gēli* · Ridiculed
       - also said: **ಅಪಹಾಸ್ಯ** *apahāsya* ridicule, **ಅಣಕ** *aṇaka* mimicry, **ಅವಹೇಳನ** *avahēḷana* belittling, **ಕುಚೋದ್ಯ** *kucōdya* malicious teasing
-      - rala returned: ಅಪಹಾಸ್ಯ, ಗೇಲಿ, ಅವಹೇಳನ, ಅಣಕಿಸು
       - Laughter turned and pointed. The wound is that a good thing was aimed at you.
-  - **ಕಹಿ** · *kahi* · Bitter · `shaped`
-    - rala returned: ಹಾಗಲಕಾಯಿ ⟨bitter gourd⟩, ಕಹಿಗುಳಿಗೆ ⟨bitter pill⟩, ಕ್ರೂರ, ಕಠಿಣ
+  - **ಕಹಿ** · *kahi* · Bitter
     - rala gives mostly vegetables. But the metaphor is alive in Kannada too — ಮನಸ್ಸಿನಲ್ಲಿ ಕಹಿ, bitterness in the mind — so the taste-word earns its place here on its own terms, not as a calque.
-    - **ಆಕ್ರೋಶ** · *ākrōśa* · Indignant · `shaped`
-      - rala returned: ಕುಪಿತ, ಕೆರಳಿದ, ರೇಗಿದ
+    - **ಆಕ್ರೋಶ** · *ākrōśa* · Indignant
       - rala's words are plain anger. ಆಕ್ರೋಶ is anger with a case to argue — literally an outcry, the anger of protest.
-    - **ಭಂಗ** · *bhaṅga* · Violated · `gap`
-      - rala returned: ಉಲ್ಲಂಘಿಸು ⟨violate a rule⟩, ಮಾನಭಂಗ ⟨sexual assault⟩
+    - **ಭಂಗ** · *bhaṅga* · Violated
       - A real hole. rala's options are either legal (breaking a rule) or the specific term for sexual assault. There is no neutral Kannada for 'I feel violated' — the therapeutic middle register simply hasn't been built yet.
-  - **ಸಿಟ್ಟು** · *siṭṭu* · Mad · `direct`
+  - **ಸಿಟ್ಟು** · *siṭṭu* · Mad
     - also said: **ಕೋಪ** *kōpa* anger, composed, **ಕ್ರೋಧ** *krōdha* wrath, **ಮುನಿಸು** *munisu* the loving sulk, **ಸೆಡವು** *seḍavu* a huff
-    - rala returned: ಸಿಟ್ಟು, ಹುಚ್ಚು ⟨insane⟩, ಮತಿಗೆಟ್ಟ
     - Hot and quick, and the most-used of the anger words.
-    - **ರೊಚ್ಚು** · *roccu* · Furious · `direct`
+    - **ರೊಚ್ಚು** · *roccu* · Furious
       - also said: **ರೋಷ** *rōṣa* fury, **ಕ್ರೋಧ** *krōdha* wrath, **ಆವೇಶ** *āvēśa* frenzy, possession, **ಉಗ್ರ** *ugra* ferocious
-      - rala returned: ರೋಷಾವೇಶದ, ಕ್ರೋಧಾವಿಷ್ಟ, ಉಗ್ರ, ಪ್ರಚಂಡ
-      - ರೊಚ್ಚಿಗೇಳು — to rise into ರೊಚ್ಚು. Native and physical, where ರೋಷ and ಕ್ರೋಧ are the grander registers of the same heat.
-    - **ಹೊಟ್ಟೆಕಿಚ್ಚು** · *hoṭṭe-kiccu* · Jealous · `shaped`
+      - ರೊಚ್ಚಿಗೇಳು — to rise into ರೊಚ್ಚು. Anger that has got into the body and lifted you out of your seat.
+    - **ಹೊಟ್ಟೆಕಿಚ್ಚು** · *hoṭṭe-kiccu* · Jealous
       - also said: **ಅಸೂಯೆ** *asūye* envy, **ಮಾತ್ಸರ್ಯ** *mātsarya* envious rivalry, **ಕರುಬು** *karubu* to begrudge, to smoulder, **ಹೊಟ್ಟೆಯುರಿ** *hoṭṭeyuri* the burn of being wronged
-      - rala returned: ಅಸೂಯೆಯ, ಮಾತ್ಸರ್ಯದ
-      - Belly-fire, and everyone knows exactly which organ is burning. ಅಸೂಯೆ and ಮಾತ್ಸರ್ಯ cover the same ground in a cooler register.
-  - **ಜಗಳಗಂಟ** · *jagaḷagaṇṭa* · Aggressive · `direct`
+      - Belly-fire. Envy located precisely in the stomach, and said out loud — everyone knows which organ is burning.
+  - **ಜಗಳಗಂಟ** · *jagaḷagaṇṭa* · Aggressive
     - also said: **ಆಕ್ರಮಣಶೀಲ** *ākramaṇaśīla* aggressive, **ಕಾದಾಟ** *kādāṭa* fighting, **ಹಟಮಾರಿ** *haṭamāri* obstinate and combative
-    - rala returned: ಆಕ್ರಮಣಶೀಲ, ಜಗಳಗಂಟ, ಮೇಲೆ ಬೀಳುವ
     - 'Quarrel-knot' — a person who ties fights. rala offered this one itself.
-    - **ಕೆರಳಿಕೆ** · *keraḷike* · Provoked · `direct`
-      - rala returned: ಕೆರಳಿಸು, ಕೆಣಕು, ಪ್ರಚೋದಿಸು, ರೇಗಿಸು
+    - **ಕೆರಳಿಕೆ** · *keraḷike* · Provoked
       - ಕೆಣಕು is the good one: to poke a thing that was sitting quietly.
-    - **ಹಗೆತನ** · *hagetana* · Hostile · `direct`
-      - rala returned: ಹಗೆಯ, ವೈರದ, ಶತ್ರುತ್ವದ, ಪ್ರತಿಕೂಲ
+    - **ಹಗೆತನ** · *hagetana* · Hostile
       - ಹಗೆ is the old native word for enemy, and it is heavy — the enmity of feuds and epics, not of office politics.
-  - **ರೇಜಿಗೆ** · *rējige* · Frustrated · `shaped`
-    - rala returned: ಆಶಾಭಂಗ ಹೊಂದಿದ, ವಿಫಲವಾದ, ಭಗ್ನ, ನಿಷ್ಫಲಗೊಳಿಸು
+  - **ರೇಜಿಗೆ** · *rējige* · Frustrated
     - rala reads *frustrate* as 'to thwart' — an outcome. Frustration as an ongoing state is ರೇಜಿಗೆ: exasperation at something that keeps not working.
-    - **ಕೆಂಡಾಮಂಡಲ** · *keṇḍā-maṇḍala* · Infuriated · `shaped`
-      - rala returned: ರೇಗಿಸು, ಕೆರಳಿಸು
+    - **ಕೆಂಡಾಮಂಡಲ** · *keṇḍā-maṇḍala* · Infuriated
       - 'A whole mandala of live coals.' One of the finest anger words in the language, and unfindable from English.
-    - **ಕಿರಿಕಿರಿ** · *kirikiri* · Annoyed · `direct`
-      - rala returned: ಕಿರಿಕಿರಿಮಾಡು, ರೇಗಿಸು, ಕಾಡಿಸು
+    - **ಕಿರಿಕಿರಿ** · *kirikiri* · Annoyed
       - Onomatopoeia again — the sound of a small grating thing. Kannada builds its minor irritations out of noise.
-  - **ಬಿಗುಮಾನ** · *bigumāna* · Distant · `direct`
-    - rala returned: ಬಿಗುಮಾನದ, ಸಲಿಗೆ ಇಲ್ಲದ, ದೂರದ
+  - **ಬಿಗುಮಾನ** · *bigumāna* · Distant
     - rala found it exactly. ಬಿಗುಮಾನ is stiffness held on purpose — reserve that is also a kind of self-regard. And note its opposite in rala's own list: ಸಲಿಗೆ ಇಲ್ಲದ, 'without ಸಲಿಗೆ'.
-    - **ಮುದುಡು** · *muduḍu* · Withdrawn · `shaped`
-      - rala returned: ವಾಪಸ್ಸು ಪಡೆದ ⟨withdrawn application⟩, ಹಿಂದಕ್ಕೆ ಪಡೆದ
+    - **ಮುದುಡು** · *muduḍu* · Withdrawn
       - rala only knows withdrawn tenders. ಮುದುಡು is what a leaf or a touched mimosa does — to fold inward. Exactly right for a person.
-    - **ಮರಗಟ್ಟು** · *maragaṭṭu* · Numb · `direct`
-      - rala returned: ಮರಗಟ್ಟಿದ, ಜೋಮುಹಿಡಿದ, ಜಡವಾದ
+    - **ಮರಗಟ್ಟು** · *maragaṭṭu* · Numb
       - ಮರ + ಕಟ್ಟು: to turn to wood. Used for a foot that has gone to sleep and for a grief that has stopped registering.
-  - **ಟೀಕೆ** · *ṭīke* · Critical · `shaped`
-    - rala returned: ಕ್ರಾಂತಿಕೋನ ⟨critical angle⟩, ವಿಷಮ ಮೌಲ್ಯ ⟨critical value⟩, ವಿಮರ್ಶಾತ್ಮಕ
+  - **ಟೀಕೆ** · *ṭīke* · Critical
     - Physics and statistics, mostly. ಟೀಕೆ is fault-finding; ವಿಮರ್ಶೆ, also in the list, is the honourable kind — literary criticism. Kannada distinguishes the two, English does not.
-    - **ಅನುಮಾನ** · *anumāna* · Skeptical · `direct`
-      - rala returned: ಅನುಮಾನ, ಸಂಶಯ, ಸಂದೇಹ, ಶಂಕೆ
+    - **ಅನುಮಾನ** · *anumāna* · Skeptical
       - Four graded words for doubt. ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward uncertainty about a fact.
-    - **ಉಡಾಫೆ** · *uḍāphe* · Dismissive · `shaped`
-      - rala returned: ತಳ್ಳಿಹಾಕು, ನಿರ್ಲಕ್ಷಿಸು, ವಜಾ ಮಾಡು ⟨dismiss from service⟩
+    - **ಉಡಾಫೆ** · *uḍāphe* · Dismissive
       - ಉಡಾಫೆ is dismissiveness worn as a style — breezy, unbothered, faintly insulting. ಅಸಡ್ಡೆ and ತಾತ್ಸಾರ are the colder cousins.
 
 ### ಅಸಹ್ಯ · Disgusted — *asahya*
 
-- **ಅಸಹ್ಯ** · *asahya* · Disgusted · `direct`
+- **ಅಸಹ್ಯ** · *asahya* · Disgusted
   - also said: **ಜಿಗುಪ್ಸೆ** *jigupse* world-weary revulsion, **ಜುಗುಪ್ಸೆ** *jugupse* the same, other spelling, **ಹೇಸಿಗೆ** *hēsige* filth, loathing, **ರೋಸು** *rōsu* fed up to nausea, **ವಾಕರಿಕೆ** *vākarike* nausea
-  - rala returned: ಅಸಹ್ಯ, ಜಿಗುಪ್ಸೆ, ಹೇಸಿಕೆ, ರೋಸು, ವಾಕರಿಕೆ
   - ಅಸಹ್ಯ literally means 'unbearable' — what cannot be borne. Kannada files disgust under endurance rather than under taste.
-  - **ಒಪ್ಪದಿರು** · *oppadiru* · Disapproving · `direct`
+  - **ಒಪ್ಪದಿರು** · *oppadiru* · Disapproving
     - also said: **ಅಸಮ್ಮತಿ** *asammati* dissent, **ಮೆಚ್ಚದಿರು** *meccadiru* to not approve, **ಆಕ್ಷೇಪ** *ākṣēpa* objection
-    - rala returned: ಅಸಮ್ಮತಿ, ಮೆಚ್ಚದಿರು, ಒಪ್ಪದಿರು
     - Kannada's ordinary form here is the plain negative verb: they did not agree.
-    - **ಕೊಂಕು** · *koṅku* · Judgmental · `shaped`
-      - rala returned: ನ್ಯಾಯಾಧೀಶ ⟨judge⟩, ಜಿಲ್ಲಾ ನ್ಯಾಯಾಧೀಶ ⟨district judge⟩, ಖಂಡನೆ
+    - **ಕೊಂಕು** · *koṅku* · Judgmental
       - rala went straight to the judiciary. ಕೊಂಕು is the crooked remark — fault-finding delivered sideways, which is how it usually arrives.
-    - **ಮುಜುಗರ** · *mujugara* · Embarrassed · `direct`
+    - **ಮುಜುಗರ** · *mujugara* · Embarrassed
       - also said: **ಸಂಕೋಚ** *saṅkōca* shrinking, **ಇರುಸುಮುರುಸು** *irusumurusu* squirming discomfort, **ಕಸಿವಿಸಿ** *kasivisi* small unease
-      - rala returned: ಮುಜುಗರ ಉಂಟಾದ
       - ಮುಜುಗರ is social awkwardness — the wince at a scene, often on someone else's behalf.
-  - **ನಿರಾಸೆ** · *nirāse* · Disappointed · `direct`
-    - rala returned: ನಿರಾಶೆಗೊಂಡ, ಆಶಾಭಂಗ, ಹತಾಶೆ
+  - **ನಿರಾಸೆ** · *nirāse* · Disappointed
     - ನಿರಾಸೆ = ನಿರ್ + ಆಸೆ, de-hoped. ಆಶಾಭಂಗ, also offered, is stronger: hope actually broken.
-    - **ಹೌಹಾರು** · *hauhāru* · Appalled · `direct`
+    - **ಹೌಹಾರು** · *hauhāru* · Appalled
       - also said: **ದಿಗ್ಭ್ರಮೆ** *digbhrame* stupefaction, **ಬೆಚ್ಚಿಬೀಳು** *beccibīḷu* to be startled and drop, **ಗಾಬರಿ** *gābari* panic
-      - rala returned: ದಿಗ್ಭ್ರಮೆಗೊಂಡ, ಭೀತ, ಗಾಬರಿಗೊಂಡ
       - Onomatopoeic — to recoil bodily on hearing something.
-    - **ರೋಸು** · *rōsu* · Revolted · `shaped`
-      - rala returned: ದಂಗೆ ⟨rebellion⟩, ಬಂಡಾಯ, ವಿದ್ರೋಹ
+    - **ರೋಸು** · *rōsu* · Revolted
       - rala took *revolt* politically — every hit is an uprising. ರೋಸಿಹೋಗಿದೆ is the feeling: fed up to the point of nausea.
-  - **ಘೋರ** · *ghōra* · Awful · `shaped`
+  - **ಘೋರ** · *ghōra* · Awful
     - also said: **ಅಸಹನೀಯ** *asahanīya* unbearable, **ಭೀಕರ** *bhīkara* dire, **ಕೆಟ್ಟ** *keṭṭa* bad, of quality or morals
-    - rala returned: ಭಯಾನಕವಾದ, ಭೀಕರ
     - Used for an accident and for a cricket collapse alike.
-    - **ವಾಕರಿಕೆ** · *vākarike* · Nauseated · `direct`
-      - rala returned: ವಾಕರಿಕೆ, ಓಕರಿಕೆ, ಹೊಟ್ಟೆ ತೊಳಸು
+    - **ವಾಕರಿಕೆ** · *vākarike* · Nauseated
       - ಹೊಟ್ಟೆ ತೊಳಸು — 'the stomach stirs'. Kannada has a full vocabulary for the gut, and uses it for feelings without apology.
-    - **ಹೇಸಿಗೆ** · *hēsige* · Detestable · `direct`
+    - **ಹೇಸಿಗೆ** · *hēsige* · Detestable
       - also said: **ಅಸಹ್ಯ** *asahya* disgust, **ಕೊಳಕು** *koḷaku* dirt, **ಜುಗುಪ್ಸೆ** *jugupse* revulsion
-      - rala returned: ಹೇಸು, ಅಸಹ್ಯಪಡು, ಹೇಸಿಗೆ ಪಡು
       - ಹೇಸಿಗೆ is also literally filth. The moral and the physical are the same word — no metaphor required.
-  - **ಜಿಗುಪ್ಸೆ** · *jigupse* · Repelled · `direct`
-    - rala returned: ಜಿಗುಪ್ಸೆಗೊಳಿಸು, ಹಿಮ್ಮೆಟ್ಟಿಸು, ವಿಕರ್ಷಿಸು
+  - **ಜಿಗುಪ್ಸೆ** · *jigupse* · Repelled
     - ಜಿಗುಪ್ಸೆ is world-weary revulsion — the disgust that makes people renounce things, not just push a plate away.
-    - **ದಿಗಿಲು** · *digilu* · Horrified · `direct`
+    - **ದಿಗಿಲು** · *digilu* · Horrified
       - also said: **ಆತಂಕ** *ātaṅka* anxiety, **ತಳಮಳ** *taḷamaḷa* churn, **ಭೀತಿ** *bhīti* terror
-      - rala returned: ದಿಗಿಲುಗೊಳಿಸು, ಭಯಹುಟ್ಟಿಸು, ದಿಕ್ಕುಗೆಡಿಸು
-    - **ಹಿಂಜರಿಕೆ** · *hiñjarike* · Hesitant · `direct`
-      - rala returned: ಹಿಂಜರಿಯುವ, ಹಿಮ್ಮೆಟ್ಟುವ, ಶಂಕೆಯುಳ್ಳ
+    - **ಹಿಂಜರಿಕೆ** · *hiñjarike* · Hesitant
       - ಹಿಂಜರಿ — to slide backwards. The foot that starts to move and then doesn't.
 
 ### ದುಃಖ · Sad — *duḥkha*
 
-- **ದುಃಖ** · *duḥkha* · Sad · `direct`
+- **ದುಃಖ** · *duḥkha* · Sad
   - also said: **ಶೋಕ** *śōka* formal mourning, **ವ್ಯಥೆ** *vyathe* affliction, **ಸಂಕಟ** *saṅkaṭa* the chest closing, **ಕೊರಗು** *koragu* the grief that thins you, **ವಿಷಾದ** *viṣāda* melancholy, **ಅಳಲು** *aḷalu* the wail
-  - rala returned: ದುಃಖಕರ, ವಿಷಾದಕರ, ಶೋಚನೀಯ, ಕುಗ್ಗಿದ, ಸೊರಗಿದ, ಅಮಂಗಳ ⟨inauspicious⟩
   - Note ಅಶುಭ / ಅಮಂಗಳ in rala's list — 'inauspicious'. For a large part of Kannada usage, sadness and bad omen are adjacent ideas; a sad event is an unlucky one.
-  - **ಒಂಟಿತನ** · *oṇṭitana* · Lonely · `direct`
+  - **ಒಂಟಿತನ** · *oṇṭitana* · Lonely
     - also said: **ಏಕಾಂತ** *ēkānta* solitude, chosen and good, **ಒಬ್ಬಂಟಿ** *obbaṇṭi* all by oneself, **ನಿರ್ಜನ** *nirjana* deserted
-    - rala returned: ಒಂಟಿ, ಏಕಾಂಗಿ, ಒಬ್ಬನೇ
     - Kannada draws a line English blurs: ಒಂಟಿತನ is loneliness and it hurts; ಏಕಾಂತ is solitude, chosen, and is good for you. Same 'alone', opposite verdicts.
-    - **ಏಕಾಂಗಿ** · *ēkāṅgi* · Isolated · `shaped`
+    - **ಏಕಾಂಗಿ** · *ēkāṅgi* · Isolated
       - also said: **ಒಂಟಿ** *oṇṭi* alone, **ದಿಕ್ಕಿಲ್ಲದ** *dikkillada* without a direction to turn, **ಅನಾಥ** *anātha* without protector
-      - rala returned: ಪ್ರತ್ಯೇಕಿಸಿದ, ಬೇರ್ಪಡಿಸಿದ, ಪ್ರತ್ಯೇಕ ಸ್ಥಳ
       - 'Single-bodied' — cut off with no one on your side.
-    - **ತಬ್ಬಲಿ** · *tabbali* · Abandoned · `shaped`
-      - rala returned: ತೊರೆದ ಪ್ರದೇಶ ⟨abandoned area⟩, ತಬ್ಬಲಿ
+    - **ತಬ್ಬಲಿ** · *tabbali* · Abandoned
       - ತಬ್ಬಲಿ means orphan, and it is used far past its literal sense — for anyone left without their people. One of the saddest words in the language. Orphan — used far past its literal sense, for anyone left without their people. One of the saddest words in the language.
-  - **ದುರ್ಬಲತೆ** · *durbalate* · Vulnerable · `gap`
-    - rala returned: ಸುಭೇದ್ಯ, ಭೇದ್ಯ, ದುರ್ಬಲ ಸ್ಥಿತಿ ⟨vulnerable stage⟩
+  - **ದುರ್ಬಲತೆ** · *durbalate* · Vulnerable
     - The clearest gap on the wheel. Every Kannada option means weak, breachable, at risk — all pejorative. The warm English sense of 'vulnerable', where opening up is a strength, has no Kannada word yet; people say ಮನಸ್ಸು ತೆರೆದಿಡುವುದು, 'to keep the mind open', as a description rather than a name.
-    - **ಬಲಿಪಶು** · *balipaśu* · Victimised · `direct`
-      - rala returned: ಬಲಿಪಶುಮಾಡು, ಪೀಡಿಸು, ಸತಾಯಿಸು
+    - **ಬಲಿಪಶು** · *balipaśu* · Victimised
       - 'Sacrificial animal'. Kannada's word for victim comes straight off the altar.
-    - **ನಾಜೂಕು** · *nājūku* · Fragile · `direct`
-      - rala returned: ನಾಜೂಕಾದ, ಭಂಗುರ, ಶಿಥಿಲ
+    - **ನಾಜೂಕು** · *nājūku* · Fragile
       - ನಾಜೂಕು is fragile-and-fine, a compliment about a person's delicacy. ಭಂಗುರ is the philosophical one: that which is destined to break.
-  - **ಹತಾಶೆ** · *hatāśe* · Despair · `direct`
-    - rala returned: ಹತಾಶೆ, ನಿರಾಶೆ, ಎದೆಗುಂದು, ಆಸೆಗೆಡು
+  - **ಹತಾಶೆ** · *hatāśe* · Despair
     - ಹತ + ಆಶೆ: hope, killed. The word contains the murder.
-    - **ಅಳಲು** · *aḷalu* · Grief · `direct`
+    - **ಅಳಲು** · *aḷalu* · Grief
       - also said: **ಶೋಕ** *śōka* mourning, **ಗೋಳು** *gōḷu* wretched crying, **ರೋದನ** *rōdana* lamentation
-      - rala returned: ಅಳಲು, ಶೋಕ, ಸಂಕಟ, ಕೊರಗು, ವ್ಯಥೆ
       - rala's whole list is worth reading: ಶೋಕ is formal mourning, ಸಂಕಟ is the chest-squeeze, ಕೊರಗು is the grief that thins you over years, ಅಳಲು is the wail itself.
-    - **ಕೈಲಾಗದು** · *kailāgadu* · Powerless · `shaped`
-      - rala returned: ಶಕ್ತಿಹೀನ, ಬಲಹೀನ, ದುರ್ಬಲ
+    - **ಕೈಲಾಗದು** · *kailāgadu* · Powerless
       - rala offers strength-less. ಕೈಲಾಗದತನ is the spoken form: 'the state of the hands not managing it'.
-  - **ಪಾಪಪ್ರಜ್ಞೆ** · *pāpa-prajñe* · Guilty · `shaped`
-    - rala returned: ಅಪರಾಧಿ, ತಪ್ಪಿತಸ್ಥ, ದೋಷಿ, ಅಪರಾಧಿ ಮನೋಭಾವ ⟨guilty mind⟩
+  - **ಪಾಪಪ್ರಜ್ಞೆ** · *pāpa-prajñe* · Guilty
     - rala's hits for *guilty* are all courtroom Kannada — the accused, the convicted. ಪಾಪಪ್ರಜ್ಞೆ, sin-consciousness, comes from the other direction: Kannada's guilt is borrowed either from law or from the temple.
-    - **ನಾಚಿಕೆ** · *nāchike* · Ashamed · `shaped`
+    - **ನಾಚಿಕೆ** · *nāchike* · Ashamed
       - also said: **ಸಂಕೋಚ** *saṅkōca* shrinking, reticence, **ಮುಜುಗರ** *mujugara* awkwardness, **ಲಜ್ಜೆ** *lajje* modesty, shame
-      - rala returned: ಅವಮಾನಗೊಂಡ, ಮಾನಗೆಟ್ಟ
       - ನಾಚಿಕೆ is one word for shyness, modesty and shame — a bride's ನಾಚಿಕೆ and a thief's are the same noun. English needs three words and grades them differently; Kannada trusts context completely.
-    - **ಪಶ್ಚಾತ್ತಾಪ** · *paścāttāpa* · Remorseful · `direct`
-      - rala returned: ಪಶ್ಚಾತ್ತಾಪ, ಅನುತಾಪ, ಮರುಕ
+    - **ಪಶ್ಚಾತ್ತಾಪ** · *paścāttāpa* · Remorseful
       - 'After-heat' — the burn that arrives once the act is over.
-  - **ಖಿನ್ನತೆ** · *khinnate* · Depressed · `shaped`
-    - rala returned: ದಲಿತ ವರ್ಗ ⟨depressed classes⟩, ಶೋಷಿತ, ಕುಗ್ಗಿದ, ನಿರುತ್ಸಾಹದ
+  - **ಖಿನ್ನತೆ** · *khinnate* · Depressed
     - rala's first hits for *depressed* are ದಲಿತ and ಶೋಷಿತ — from the colonial administrative phrase 'depressed classes'. ಖಿನ್ನತೆ is the clinical word; ಮನಸ್ಸು ಕುಗ್ಗಿದೆ, the mind has shrunk, is the older way of saying it.
-    - **ಕುಗ್ಗು** · *kuggu* · Inferior · `shaped`
-      - rala returned: ಕುಗ್ಗಿದ, ಇಳಿದ, ತಗ್ಗಿದ
+    - **ಕುಗ್ಗು** · *kuggu* · Inferior
       - The English wheel repeats *inferior* in two branches. Kannada usefully does not: under fear it is ಕೀಳರಿಮೆ, a belief about your rank; here under sadness it is simply shrinking.
-    - **ಬರಿದು** · *baridu* · Empty · `shaped`
-      - rala returned: ಬರಿದು, ಖಾಲಿ, ಪೊಳ್ಳು, ಶೂನ್ಯ
+    - **ಬರಿದು** · *baridu* · Empty
       - rala's ಪೊಳ್ಳು is the good one — hollow, like a grain with nothing inside it. Used of people who look intact.
-  - **ನೋವು** · *nōvu* · Hurt · `direct`
+  - **ನೋವು** · *nōvu* · Hurt
     - also said: **ಬೇನೆ** *bēne* ache, ailment, **ಯಾತನೆ** *yātane* torment, **ಬಾಧೆ** *bādhe* affliction
-    - rala returned: ನೋವು, ನೋಯಿಸು, ಗಾಯ, ಸಾಧಾರಣ ಗಾಯ ⟨simple hurt, IPC⟩
     - ನೋವು is bodily pain and emotional pain with no distinction at all. 'ಮನಸ್ಸಿಗೆ ನೋವಾಯಿತು' — it hurt my mind — is the ordinary way to say you were wounded.
-    - **ಆಶಾಭಂಗ** · *āśābhaṅga* · Disappointed · `direct`
-      - rala returned: ಆಶಾಭಂಗ, ನಿರಾಶೆಗೊಂಡ
+    - **ಆಶಾಭಂಗ** · *āśābhaṅga* · Disappointed
       - The second 'disappointed' on the wheel. ನಿರಾಸೆ over in ಅಸಹ್ಯ is hope that faded; ಆಶಾಭಂಗ is hope that snapped.
-    - **ಸಂಕೋಚ** · *saṅkōca* · Embarrassed · `shaped`
-      - rala returned: ಮುಜುಗರ ಉಂಟಾದ
+    - **ಸಂಕೋಚ** · *saṅkōca* · Embarrassed
       - The other 'embarrassed'. ಮುಜುಗರ is the wince at a social scene; ಸಂಕೋಚ is the shrinking-in-on-yourself, the hesitation to ask, to take, to take up room.
 
 ## ಒಡಲ ಚಕ್ರ — the part of the body Kannada sites each feeling in
+
+*Seven seats of the body — not a translation of anything.*
 
 ### ಎದೆ · chest — *ede*
 
@@ -552,9 +392,9 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
   - Appetite and envy. Kannada is unembarrassed about siting the ugly feelings in the stomach, and says them out loud.
   - **ಹೊಟ್ಟೆಕಿಚ್ಚು** · *hoṭṭe-kiccu* · envy
     - also said: **ಅಸೂಯೆ** *asūye* envy, **ಮಾತ್ಸರ್ಯ** *mātsarya* envious rivalry, **ಕರುಬು** *karubu* to begrudge, to smoulder, **ಹೊಟ್ಟೆಯುರಿ** *hoṭṭeyuri* the burn of being wronged
-    - Belly-fire, and everyone knows exactly which organ is burning. ಅಸೂಯೆ and ಮಾತ್ಸರ್ಯ cover the same ground in a cooler register.
+    - Belly-fire. Envy located precisely in the stomach, and said out loud — everyone knows which organ is burning.
     - **ಅಸೂಯೆ** · *asūye* · envy, formally
-      - Correct, literary, and not what anyone says at home.
+      - Envy named directly, without the belly. Used in writing and in speech alike.
     - **ಕರುಬು** · *karubu* · to begrudge · literally to smoulder
       - Native verb. The low-grade continuous version of the same fire.
   - **ಹೊಟ್ಟೆಯುರಿ** · *hoṭṭeyuri* · burning resentment
@@ -594,7 +434,7 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
     - **ಕರುಳು ಚುರುಕ್** · *karuḷu curuk* · the pang of pity · literally the gut stings
       - Involuntary, on seeing a child or an animal in distress. Pity is a judgement; this is a reflex.
     - **ಮರುಕ** · *maruka* · pity, ruth · literally turning back toward
-      - Older and softer than ಕನಿಕರ, and slightly literary now.
+      - 'Turning back toward' — pity as the movement of turning to look again at someone.
   - **ಮರುಗು** · *maragu* · grieving for another
     - ಮರುಗು is a native verb with no exact English partner: to ache on someone else's account. The gut under strain.
     - **ಕರುಳು ಹಿಂಡು** · *karuḷu hiṇḍu* · wrung with pity · literally the gut is wrung
@@ -690,7 +530,7 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
   - **ಮರ್ಯಾದೆ** · *maryāde* · standing, face
     - One of the most-used words in Kannada. Self-respect described entirely as a posture held in public.
     - **ತಲೆ ಎತ್ತು** · *tale ettu* · dignity · literally to raise the head
-      - ಘನತೆ is the abstract noun; this is what people actually say.
+      - Dignity described as a posture: the head carried level in front of other people.
     - **ತಲೆತಗ್ಗಿಸು** · *taletaggisu* · shame · literally to lower the head
       - The same axis in the other direction. Kannada's shame is visible before it is internal.
 
@@ -764,6 +604,8 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
 
 ## ರಸಚಕ್ರ — the nine rasas of the Nāṭyaśāstra, opened out into daily Kannada
 
+*The nine rasas, each with its ಸ್ಥಾಯಿಭಾವ, opened out into daily Kannada.*
+
 ### ಶೃಂಗಾರ · love, the erotic — *śṛṅgāra*  
 ಸ್ಥಾಯಿಭಾವ · ರತಿ · rati, desire
 
@@ -825,7 +667,7 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
   - **ಮುಗುಳ್ನಗೆ** · *muguḷnage* · a smile
     - 'Bud-laugh' — the laugh that has not opened. A compound of exactly the kind Kannada makes best.
     - **ಸಂತಸ** · *santasa* · gladness
-      - Softer and more native-feeling than ಸಂತೋಷ, and slightly more literary now.
+      - Gladness, with a quieter and more inward feel than ಸಂತೋಷ.
     - **ಹಗುರ** · *hagura* · lightness
       - The change in weight after something is resolved.
 
@@ -846,7 +688,7 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
     - also said: **ಅನುಕಂಪ** *anukampa* fellow-feeling, **ಮರುಕ** *maruka* pity, ruth, **ಕರುಣೆ** *karuṇe* mercy, **ದಯೆ** *daye* kindness
     - What you feel toward someone whose situation you can see clearly. Not quite pity — there is less height in it.
     - **ಮರುಕ** · *maruka* · pity, ruth
-      - 'Turning back toward.' Older and softer, and now slightly literary.
+      - 'Turning back toward' — pity as the movement of turning to look again at someone.
     - **ಕರುಳು ಚುರುಕ್** · *karuḷu curuk* · the gut-pang
       - The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex.
   - **ಸಂಕಟ** · *saṅkaṭa* · anguish
@@ -878,7 +720,7 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
       - Not an episode but a temperament, and one you wear on your face.
   - **ರೊಚ್ಚು** · *roccu* · rage
     - also said: **ರೋಷ** *rōṣa* fury, **ಕ್ರೋಧ** *krōdha* wrath, **ಆವೇಶ** *āvēśa* frenzy, possession, **ಉಗ್ರ** *ugra* ferocious
-    - ರೊಚ್ಚಿಗೇಳು — to rise into ರೊಚ್ಚು. Native and physical, where ರೋಷ and ಕ್ರೋಧ are the grander registers of the same heat.
+    - ರೊಚ್ಚಿಗೇಳು — to rise into ರೊಚ್ಚು. Anger that has got into the body and lifted you out of your seat.
     - **ಕೆಂಡಾಮಂಡಲ** · *keṇḍā-maṇḍala* · incandescent
       - 'A whole mandala of live coals.' One of the finest anger words in the language.
     - **ಆವೇಶ** · *āvēśa* · frenzy
@@ -1064,7 +906,7 @@ Where it falls down it falls down structurally, because rala's bulk is Padakanaj
 
 ## Appendix — words with nowhere to sit
 
-Feelings Kannada names precisely and English can only paraphrase. Most of these now live inside ಒಡಲ ಚಕ್ರ or ರಸಚಕ್ರ; they are listed together here because the list is the argument for redrawing a wheel rather than translating one.
+Feelings Kannada names precisely and English can only paraphrase. Most now live inside one of the wheels; the list is the argument for redrawing a wheel rather than translating one.
 
 | ಕನ್ನಡ | roman | what it means |
 |---|---|---|
@@ -1085,34 +927,9 @@ Feelings Kannada names precisely and English can only paraphrase. Most of these 
 | **ನೆಮ್ಮದಿ** | *nemmadi* | Peace of mind, sharply distinct from ಶಾಂತಿ, peace as the absence of conflict. You can have ಶಾಂತಿ in a house with no ನೆಮ್ಮದಿ in it. |
 | **ಅಳುಕು** | *aḷuku* | The small inward flinch of misgiving just before you do the thing anyway. Not fear — a hesitation with a conscience in it. |
 
-## Files
-
-| path | what's in it |
-|---|---|
-| [`index.html`](index.html) | the whole site — one file, three wheels, no runtime dependencies |
-| [`data/wheels/bhava.json`](data/wheels/bhava.json) | wheel one. Every node has `kn`, `tr`, `en`, `status`, `rala[]` and usually `note` |
-| [`data/wheels/odalu.json`](data/wheels/odalu.json) | wheel two, the body. Adds `lit`, the literal reading of each phrase |
-| [`data/wheels/rasa.json`](data/wheels/rasa.json) | wheel three. Cores carry `sthayi`, the durable feeling under each rasa |
-| | Any node may carry `also[]` — synonyms in the same sense that did not fit on the wheel, each with `kn`, `tr`, `en` |
-| [`data/words.csv`](data/words.csv) | all three wheels flattened into one table |
-| [`data/native.json`](data/native.json) | the untranslatables appendix — `kn`, `tr`, `gloss` |
-| [`data/rala-responses.json`](data/rala-responses.json) | raw API responses keyed by query — provenance for every claim above |
-| [`scripts/rala.py`](scripts/rala.py) | rala client and the morphological expander |
-| [`scripts/build.py`](scripts/build.py) | regenerates `index.html`, this README and `words.csv` |
-| [`src/wheel.js`](src/wheel.js) | the sunburst renderer, shared by all three wheels |
-
-```bash
-python3 scripts/build.py                    # rebuild site + README
-python3 scripts/rala.py loneliness annoyed  # try the expander
-```
-
-### One rendering note
-
-Do not use SVG `<textPath>` for Kannada. It positions each glyph separately along the path, which shatters an akshara into base, vowel sign and ottakshara, each rotated on its own — ಅಸಹ್ಯ came out as three unrelated pieces. Core labels here are horizontal and never rotated; the outer rings rotate the whole string as one unit, which is safe.
-
 ## Attribution
 
-- Word data checked against [**rala**](https://github.com/pvnkmrksk/rala), a reversal of [**Alar**](https://alar.ink) by V. Krishna, licensed [ODC-ODbL](https://opendatacommons.org/licenses/odbl/), combined with [Padakanaja](https://padakanaja.karnataka.gov.in/dictionary), Government of Karnataka.
-- ಭಾವಚಕ್ರ's structure follows Gloria Willcox's Feeling Wheel (1982) and its widely circulated three-ring descendant. ಒಡಲ ಚಕ್ರ and ರಸಚಕ್ರ are not translations of anything.
-- Derived data in `data/` is offered under ODbL, matching Alar. Code and page are MIT.
+- Words checked against [**rala**](https://github.com/pvnkmrksk/rala), a reversal of [**Alar**](https://alar.ink) by V. Krishna, licensed [ODC-ODbL](https://opendatacommons.org/licenses/odbl/), combined with [Padakanaja](https://padakanaja.karnataka.gov.in/dictionary), Government of Karnataka. alar.ink itself was never queried.
+- ಭಾವಚಕ್ರ follows Gloria Willcox's Feeling Wheel (1982) and its widely circulated three-ring descendant. ಒಡಲ ಚಕ್ರ and ರಸಚಕ್ರ are not translations of anything.
+- Derived data under ODbL, matching Alar. Code and page are MIT.
 

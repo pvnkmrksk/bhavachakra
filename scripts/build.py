@@ -18,6 +18,7 @@ import csv
 import json
 import pathlib
 import re
+import sys
 
 # Flip this to "https://bhava.kutuhula.in" once the DNS CNAME exists, and add a
 # CNAME file at the repo root with the bare host. Doing it before DNS resolves
@@ -28,12 +29,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SRC = ROOT / "data", ROOT / "src"
 RINGS = ["core", "branch", "leaf"]
 
-load = lambda n: json.loads((DATA / "wheels" / f"{n}.json").read_text(encoding="utf-8"))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from wheels import parse, walk          # noqa: E402
 
 WHEELS = [
- {"id": "bhava", "file": "bhava",
-  "tag": "Seven core feelings, three rings, 130 words — the English feeling wheel put into Kannada, seams and all.",
-  "name": "ಭಾವಚಕ್ರ", "hubKn": "ಭಾವಚಕ್ರ", "hubRom": "bhāva-cakra",
+ {"id": "bhava",
   "hint": "Tap or hover any segment: the panel names it in both scripts and lists the "
           "words that did not fit. Tap a sector to zoom in, and the middle of the wheel "
           "to come back out.",
@@ -70,9 +70,7 @@ WHEELS = [
           "<a href='https://github.com/pvnkmrksk/bhavachakra#readme'>README</a>. It is "
           "diagnostics, and it belongs there rather than here."}]},
 
- {"id": "odalu", "file": "odalu",
-  "tag": "Seven seats of the body, 106 words — not a translation of anything.",
-  "name": "ಒಡಲ ಚಕ್ರ", "hubKn": "ಒಡಲು", "hubRom": "oḍalu · the body as vessel",
+ {"id": "odalu",
   "hint": "The centre is where in the body it happens, the middle ring is the feeling, and "
           "the outer ring is what gets said. Tap to zoom in; tap the middle to come back out.",
   "blurb": "Not a translation of anything. Kannada mostly names a feeling by saying "
@@ -105,9 +103,7 @@ WHEELS = [
           "those needs a second axis — probably direction, since ವಾತ್ಸಲ್ಯ only ever flows "
           "downward, ಗೌರವ upward and ಸಲಿಗೆ sideways."}]},
 
- {"id": "rasa", "file": "rasa",
-  "tag": "The nine rasas, each with its ಸ್ಥಾಯಿಭಾವ, opened out into 117 daily Kannada words.",
-  "name": "ರಸಚಕ್ರ", "hubKn": "ನವರಸ", "hubRom": "nava-rasa · the nine flavours",
+ {"id": "rasa",
   "hint": "The nine rasas are the centre; underneath each one are the words Kannada uses "
           "for that flavour. Tap to zoom in; tap the middle to come back out.",
   "blurb": "The oldest map of feeling this language has, opened out. The nine rasas are an "
@@ -144,7 +140,12 @@ WHEELS = [
 ]
 
 for w in WHEELS:
-    w["data"] = load(w["file"])
+    src = parse(DATA / f"{w['id']}.md")
+    hub_kn, _, hub_rom = src["hub"].partition("|")
+    w.update(name=src["name"], tag=src["tag"], data=src["data"],
+             hubKn=hub_kn.strip(), hubRom=hub_rom.strip())
+
+SOURCES = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
 
 
 def walk(data):
@@ -196,38 +197,118 @@ def build_html():
     return len(doc)
 
 
+# ---------------------------------------------------------------- wheels.json
+def build_json():
+    out = [{"id": w["id"], "name": w["name"], "tag": w["tag"], "wheel": w["data"]}
+           for w in WHEELS]
+    (DATA / "wheels.json").write_text(
+        json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 # ----------------------------------------------------------------- words.csv
 def build_csv():
     with (DATA / "words.csv").open("w", newline="", encoding="utf-8") as f:
         c = csv.writer(f)
         c.writerow(["wheel", "ring", "sector", "kannada", "transliteration", "english",
-                    "literal", "status", "rala_hits", "also_said", "note"])
+                    "literal", "also_said", "note"])
         for w in WHEELS:
             for ring, sector, n in walk(w["data"]):
                 c.writerow([w["id"], RINGS[ring], sector, n["kn"], n["tr"], n["en"],
-                            n.get("lit", ""), n.get("status", ""),
-                            " ; ".join(n.get("rala") or []),
+                            n.get("lit", ""),
                             " ; ".join(f"{a['kn']} ({a['en']})" for a in n.get("also") or []),
                             re.sub(r"</?(?:i|em)>", "", n.get("note", ""))])
 
 
-# ----------------------------------------------------------------- README.md
-def build_readme():
-    L = []
-    add = L.append
-    total = sum(len(list(walk(w["data"]))) for w in WHEELS)
-    add("# ಭಾವಚಕ್ರ · three feeling wheels in Kannada\n")
-    add(f"**[Open the wheels →]({SITE}/)**\n")
-    add(f"{total} words across three maps of the same territory:\n")
-    add("| wheel | built from | words |\n|---|---|---:|")
-    src = {"bhava": "the English feeling wheel, translated and then argued with",
-           "odalu": "the part of the body Kannada sites each feeling in",
-           "rasa": "the nine rasas of the Nāṭyaśāstra, opened out into daily Kannada"}
-    for w in WHEELS:
-        add(f"| **{w['name']}** *{w['id']}* | {src[w['id']]} | {len(list(walk(w['data'])))} |")
-    add("\nThe site is for reading the words. This README is the extended cut: it carries the "
-        "dictionary evidence, the misfires and the counts, which are diagnostics.\n")
+# ------------------------------------------------------- README + METHOD
+BUILT_FROM = {"bhava": "the English feeling wheel, translated and then argued with",
+       "odalu": "the part of the body Kannada sites each feeling in",
+       "rasa":  "the nine rasas of the Nāṭyaśāstra, opened out into daily Kannada"}
 
+
+def nested(w, out):
+    """Every ring of one wheel as an indented list — readable, and easy to scrape."""
+    for core in w["data"]:
+        head = [f"### {core['kn']} · {core['en']} — *{core['tr']}*"]
+        if core.get("sthayi"):
+            head.append(f"ಸ್ಥಾಯಿಭಾವ · {core['sthayi']}")
+        out.append("  \n".join(head) + "\n")
+
+        def line(n, depth):
+            pad = "  " * depth
+            bits = [f"{pad}- **{n['kn']}** · *{n['tr']}* · {md(n['en'])}"]
+            if n.get("lit"):
+                bits.append(f"literally {md(n['lit'])}")
+            out.append(" · ".join(bits))
+            if n.get("also"):
+                out.append(f"{pad}  - also said: " + ", ".join(
+                    f"**{a['kn']}** *{a['tr']}* {md(a['en'])}" for a in n["also"]))
+            if n.get("note"):
+                out.append(f"{pad}  - {md(n['note'])}")
+            for k in n.get("kids", []):
+                line(k, depth + 1)
+
+        line(core, 0)
+        out.append("")
+
+
+def build_readme():
+    L, add = [], None
+    add = L.append
+    total = sum(sum(1 for _ in walk(w["data"])) for w in WHEELS)
+    add("# ಭಾವಚಕ್ರ · three feeling wheels in Kannada\n")
+    add(f"**[{SITE.replace('https://','')}]({SITE}/)**\n")
+    add(f"{total} words, three maps of the same territory. Every ring of every wheel is "
+        "listed below.\n")
+    add("| wheel | built from | words |\n|---|---|---:|")
+    for w in WHEELS:
+        add(f"| **{w['name']}** `{w['id']}` | {BUILT_FROM[w['id']]} | {sum(1 for _ in walk(w['data']))} |")
+    add("")
+    add("**The words live in [`data/bhava.md`](data/bhava.md), "
+        "[`data/odalu.md`](data/odalu.md) and [`data/rasa.md`](data/rasa.md)** — plain "
+        "indented lists, meant to be edited by hand. Everything else in this repository is "
+        "generated from them by `python3 scripts/build.py`: the site, this README, "
+        "[`data/wheels.json`](data/wheels.json) and [`data/words.csv`](data/words.csv). "
+        "How the words were found, and what the dictionary returned for each one, is in "
+        "[METHOD.md](METHOD.md).\n")
+    add("```\n- ಶೃಂಗಾರ | śṛṅgāra | love, the erotic\n"
+        "  sthayi: ರತಿ · rati, desire\n"
+        "  note: prose about the word\n"
+        "  - ಒಲವು | olavu | fondness\n"
+        "    - ಪ್ರೀತಿ | prīti | love\n"
+        "      also: ಮಮತೆ | mamate | attachment-love ;; ಅಕ್ಕರೆ | akkare | fondness\n```\n")
+
+    for w in WHEELS:
+        add(f"## {w['name']} — {BUILT_FROM[w['id']]}\n")
+        add(f"*{w['tag']}*\n")
+        nested(w, L)
+
+    native = json.loads((DATA / "native.json").read_text(encoding="utf-8"))
+    add("## Appendix — words with nowhere to sit\n")
+    add("Feelings Kannada names precisely and English can only paraphrase. Most now live "
+        "inside one of the wheels; the list is the argument for redrawing a wheel rather "
+        "than translating one.\n")
+    add("| ಕನ್ನಡ | roman | what it means |\n|---|---|---|")
+    for x in native:
+        add(f"| **{x['kn']}** | *{x['tr']}* | {md(x['gloss'])} |")
+    add("")
+    add("## Attribution\n")
+    add("- Words checked against [**rala**](https://github.com/pvnkmrksk/rala), a reversal "
+        "of [**Alar**](https://alar.ink) by V. Krishna, licensed "
+        "[ODC-ODbL](https://opendatacommons.org/licenses/odbl/), combined with "
+        "[Padakanaja](https://padakanaja.karnataka.gov.in/dictionary), Government of "
+        "Karnataka. alar.ink itself was never queried.\n"
+        "- ಭಾವಚಕ್ರ follows Gloria Willcox's Feeling Wheel (1982) and its widely circulated "
+        "three-ring descendant. ಒಡಲ ಚಕ್ರ and ರಸಚಕ್ರ are not translations of anything.\n"
+        "- Derived data under ODbL, matching Alar. Code and page are MIT.\n")
+    (ROOT / "README.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    return len("\n".join(L))
+
+
+def build_method():
+    L, add = [], None
+    add = L.append
+    add("# How the words were found\n")
+    add("Back to the [wheels](README.md).\n")
     add("## The lookup\n")
     add("```\nGET https://rala-search.rala-search.workers.dev/?q=<english word>\n\n"
         "{ \"query\": str,\n  \"count\": int,\n"
@@ -238,26 +319,25 @@ def build_readme():
         "through rala's reversal of it.\n")
     add("rala matches whole words against definition text, so a query only finds the exact "
         "form the dictionary happens to use: `annoyed` returns nothing, `annoy` returns "
-        "thirteen entries. [`scripts/rala.py`](scripts/rala.py) fixes this client-side with a "
-        "morphological expander — 26 suffix rules, longest first, doubled-consonant undo, and "
-        "one level of recursion so `playfully → playful → play`.\n")
+        "thirteen entries. [`scripts/rala.py`](scripts/rala.py) fixes this client-side with "
+        "a morphological expander — 26 suffix rules, longest first, doubled-consonant undo, "
+        "and one level of recursion so `playfully → playful → play`.\n")
     add("```\nloneliness  → loneliness, lonely, lone\n"
         "frustrated  → frustrated, frustrat, frustrate\n"
         "victimised  → victimised, victimise, victimize\n"
         "stopped     → stopped, stopp, stoppe, stop\n```\n")
     add("Of the 52 words that first came back empty, morphology alone recovered 38. The last "
         "14 needed hand-picked synonyms — `repelled → repulse`, `boredom → tedium`, "
-        "`skeptical → sceptic` — which is the part stemming cannot reach, and the argument "
-        "for a thesaurus layer inside the worker rather than in every client.\n")
+        "`skeptical → sceptic` — which stemming cannot reach, and which is the argument for "
+        "a thesaurus layer inside the worker rather than in every client.\n")
 
     counts = {}
-    for _, _, n in walk(WHEELS[0]["data"]):
-        if n.get("status"):
-            counts[n["status"]] = counts.get(n["status"], 0) + 1
-    add("## What rala returned, for ಭಾವಚಕ್ರ\n")
+    for k, v in SOURCES.get("bhava", {}).items():
+        counts[v["status"]] = counts.get(v["status"], 0) + 1
+    add("## What came back, for ಭಾವಚಕ್ರ\n")
     add("| | count | meaning |\n|---|---:|---|")
     for k, label in [("direct", "the dictionary's top hit is the word on the wheel"),
-                     ("shaped", "rala had it, but buried in technical noise or in the wrong register"),
+                     ("shaped", "rala had it, but buried in technical noise or in another register"),
                      ("gap", "no usable entry; the word comes from Kannada usage")]:
         add(f"| `{k}` | {counts.get(k,0)} | {label} |")
     add(f"| | **{sum(counts.values())}** | |\n")
@@ -277,85 +357,29 @@ def build_readme():
                  ("proud / inspired / boredom / threatened", "nothing at all")]:
         add(f"| `{q}` | {r} |")
     add("")
-
-    for w in WHEELS:
-        add(f"## {w['name']} — {src[w['id']]}\n")
-        for core in w["data"]:
-            head_bits = [f"### {core['kn']} · {core['en']} — *{core['tr']}*"]
-            if core.get("sthayi"):
-                head_bits.append(f"ಸ್ಥಾಯಿಭಾವ · {core['sthayi']}")
-            add("  \n".join(head_bits) + "\n")
-
-            def line(n, depth):
-                pad = "  " * depth
-                bits = [f"{pad}- **{n['kn']}** · *{n['tr']}* · {md(n['en'])}"]
-                if n.get("lit"):
-                    bits.append(f"literally {md(n['lit'])}")
-                if w["id"] == "bhava" and n.get("status"):
-                    bits.append(f"`{n['status']}`")
-                add(" · ".join(bits))
-                if n.get("also"):
-                    add(f"{pad}  - also said: " + ", ".join(
-                        f"**{a['kn']}** *{a['tr']}* {md(a['en'])}" for a in n["also"]))
-                if n.get("rala"):
-                    add(f"{pad}  - rala returned: " + ", ".join(md(h) for h in n["rala"]))
-                if n.get("note"):
-                    add(f"{pad}  - {md(n['note'])}")
-
-            line(core, 0)
-            for m in core["kids"]:
-                line(m, 1)
-                for l in m["kids"]:
-                    line(l, 2)
-            add("")
-
-    native = json.loads((DATA / "native.json").read_text(encoding="utf-8"))
-    add("## Appendix — words with nowhere to sit\n")
-    add("Feelings Kannada names precisely and English can only paraphrase. Most of these now "
-        "live inside ಒಡಲ ಚಕ್ರ or ರಸಚಕ್ರ; they are listed together here because the list is the "
-        "argument for redrawing a wheel rather than translating one.\n")
-    add("| ಕನ್ನಡ | roman | what it means |\n|---|---|---|")
-    for x in native:
-        add(f"| **{x['kn']}** | *{x['tr']}* | {md(x['gloss'])} |")
+    add("## Every lookup\n")
+    add("Raw responses are in [`data/rala-responses.json`](data/rala-responses.json), keyed "
+        "by query. The trail behind each word on ಭಾವಚಕ್ರ is in "
+        "[`data/sources.json`](data/sources.json) and reproduced here.\n")
+    add("| ಕನ್ನಡ | English slot | status | what rala returned |\n|---|---|---|---|")
+    for kn, v in SOURCES.get("bhava", {}).items():
+        add(f"| **{kn}** | {v['english']} | `{v['status']}` | "
+            f"{', '.join(md(h) for h in v['rala']) or '— nothing'} |")
     add("")
-
-    add("## Files\n")
-    add("| path | what's in it |\n|---|---|")
-    add("| [`index.html`](index.html) | the whole site — one file, three wheels, no runtime dependencies |")
-    add("| [`data/wheels/bhava.json`](data/wheels/bhava.json) | wheel one. Every node has `kn`, `tr`, `en`, `status`, `rala[]` and usually `note` |")
-    add("| [`data/wheels/odalu.json`](data/wheels/odalu.json) | wheel two, the body. Adds `lit`, the literal reading of each phrase |")
-    add("| [`data/wheels/rasa.json`](data/wheels/rasa.json) | wheel three. Cores carry `sthayi`, the durable feeling under each rasa |")
-    add("| | Any node may carry `also[]` — synonyms in the same sense that did not fit on the wheel, each with `kn`, `tr`, `en` |")
-    add("| [`data/words.csv`](data/words.csv) | all three wheels flattened into one table |")
-    add("| [`data/native.json`](data/native.json) | the untranslatables appendix — `kn`, `tr`, `gloss` |")
-    add("| [`data/rala-responses.json`](data/rala-responses.json) | raw API responses keyed by query — provenance for every claim above |")
-    add("| [`scripts/rala.py`](scripts/rala.py) | rala client and the morphological expander |")
-    add("| [`scripts/build.py`](scripts/build.py) | regenerates `index.html`, this README and `words.csv` |")
-    add("| [`src/wheel.js`](src/wheel.js) | the sunburst renderer, shared by all three wheels |")
-    add("")
-    add("```bash\npython3 scripts/build.py                    # rebuild site + README\n"
-        "python3 scripts/rala.py loneliness annoyed  # try the expander\n```\n")
-    add("### One rendering note\n")
+    add("## One rendering note\n")
     add("Do not use SVG `<textPath>` for Kannada. It positions each glyph separately along "
         "the path, which shatters an akshara into base, vowel sign and ottakshara, each "
-        "rotated on its own — ಅಸಹ್ಯ came out as three unrelated pieces. Core labels here are "
-        "horizontal and never rotated; the outer rings rotate the whole string as one unit, "
-        "which is safe.\n")
-
-    add("## Attribution\n")
-    add("- Word data checked against [**rala**](https://github.com/pvnkmrksk/rala), a "
-        "reversal of [**Alar**](https://alar.ink) by V. Krishna, licensed "
-        "[ODC-ODbL](https://opendatacommons.org/licenses/odbl/), combined with "
-        "[Padakanaja](https://padakanaja.karnataka.gov.in/dictionary), Government of Karnataka.\n"
-        "- ಭಾವಚಕ್ರ's structure follows Gloria Willcox's Feeling Wheel (1982) and its widely "
-        "circulated three-ring descendant. ಒಡಲ ಚಕ್ರ and ರಸಚಕ್ರ are not translations of anything.\n"
-        "- Derived data in `data/` is offered under ODbL, matching Alar. Code and page are MIT.\n")
-    (ROOT / "README.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+        "rotated on its own — ಅಸಹ್ಯ came out as three unrelated pieces. Labels on the "
+        "innermost visible ring are upright and never rotated; the outer rings rotate the "
+        "whole string as one unit, which is safe.\n")
+    (ROOT / "METHOD.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     return len("\n".join(L))
 
 
 if __name__ == "__main__":
     h = build_html()
     build_csv()
+    build_json()
     r = build_readme()
-    print(f"index.html {h:,} · README.md {r:,} · data/words.csv")
+    m = build_method()
+    print(f"index.html {h:,} · README.md {r:,} · METHOD.md {m:,} · wheels.json · words.csv")

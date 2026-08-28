@@ -1,28 +1,32 @@
 /* Sunburst renderer shared by all three wheels.
+
    Two rules learned the hard way:
+
    1. Never use <textPath> for Kannada. It positions each glyph separately along
       the arc, which shatters an akshara into base + vowel sign + ottakshara,
-      each rotated on its own. Core labels are therefore horizontal, and the two
-      outer rings rotate the whole string as a single unit.
-   2. Zooming is a transform on the root <g>, not a viewBox tween, so it can be
-      handed to CSS and stays smooth on a phone.                               */
+      each rotated on its own. The innermost visible ring is therefore upright
+      and never rotated; the outer rings rotate the whole string as one unit.
+
+   2. Do not zoom by scaling the group. A CSS transform needs overflow:visible
+      to look right, and then the dimmed rest of the wheel paints over the page.
+      Drilling in re-lays-out instead: the chosen sector's children are given
+      the full 360 degrees and the radii are recomputed, so the drawing always
+      fills exactly the same box and the middle is always the way back out.   */
 (function () {
   const SVG = "http://www.w3.org/2000/svg";
   const CX = 400, CY = 400;
-  const R = [96, 186, 262, 352];
-  const FS = [20, 14.5, 11.8];
-  const MIX = ["100%", "var(--mix-mid)", "var(--mix-leaf)"];
+  const R_FULL = [96, 186, 262, 352];   // whole wheel: core, branch, leaf
+  const R_ZOOM = [136, 244, 352];       // one sector: branch, leaf
+  const FS_FULL = [20, 14.5, 11.8];
+  const FS_ZOOM = [19, 14];
+  const EASE = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
   const svg = document.getElementById("wheel");
-  const gRoot = document.createElementNS(SVG, "g");
   const detail = document.getElementById("detail");
-  const hub = document.getElementById("hub");
-  const hubWord = document.getElementById("hubWord");
-  const hubRom = document.getElementById("hubRom");
   const backBtn = document.getElementById("zoomOut");
 
-  let nodes = [], wheel = null, english = false, focus = null, hoverLock = null;
-  let nodeOf = new Map();   // data object -> its rendered node
+  let gRoot, hubDisc, hubText, nodes = [], wheel = null;
+  let english = false, focus = null, held = null, anim = null;
 
   const el = (n, a) => {
     const e = document.createElementNS(SVG, n);
@@ -33,223 +37,242 @@
     const t = (a - 90) * Math.PI / 180;
     return [CX + r * Math.cos(t), CY + r * Math.sin(t)];
   };
-  function arcPath(a0, a1, r0, r1) {
+  function arc(a0, a1, r0, r1) {
+    if (a1 - a0 < 0.01 || r1 - r0 < 0.01) return "M0 0";
     const big = (a1 - a0) > 180 ? 1 : 0;
     const [x0, y0] = pol(a0, r1), [x1, y1] = pol(a1, r1);
     const [x2, y2] = pol(a1, r0), [x3, y3] = pol(a0, r0);
-    return `M${x0} ${y0}A${r1} ${r1} 0 ${big} 1 ${x1} ${y1}L${x2} ${y2}A${r0} ${r0} 0 ${big} 0 ${x3} ${y3}Z`;
+    return `M${x0} ${y0}A${r1} ${r1} 0 ${big} 1 ${x1} ${y1}` +
+           `L${x2} ${y2}A${r0} ${r0} 0 ${big} 0 ${x3} ${y3}Z`;
   }
   const esc = s => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-  /* ---------------------------------------------------------------- build */
+  /* ------------------------------------------------------------- build */
   function build(w) {
     wheel = w;
     svg.textContent = "";
-    gRoot.textContent = "";
     nodes = [];
-    nodeOf = new Map();
-    focus = null;
-    hoverLock = null;
+    focus = null; held = null;
 
-    const totalLeaves = w.data.reduce(
-      (s, c) => s + c.kids.reduce((t, m) => t + m.kids.length, 0), 0);
-    const unit = 360 / totalLeaves;
-
-    let cursor = 0;
-    w.data.forEach((core, ci) => {
-      const span = core.kids.reduce((t, m) => t + m.kids.length, 0);
-      nodes.push({ d: core, ring: 0, a0: cursor * unit, a1: (cursor + span) * unit,
-                   hue: ci, core, path: [core] });
-      core.kids.forEach(mid => {
-        nodes.push({ d: mid, ring: 1, a0: cursor * unit, a1: (cursor + mid.kids.length) * unit,
-                     hue: ci, core, path: [core, mid] });
-        mid.kids.forEach(leaf => {
-          nodes.push({ d: leaf, ring: 2, a0: cursor * unit, a1: (cursor + 1) * unit,
-                       hue: ci, core, path: [core, mid, leaf] });
-          cursor++;
-        });
+    gRoot = el("g", {});
+    (function add(list, depth, parent, sector) {
+      list.forEach((d, i) => {
+        const n = { d, depth, parent, sector: depth === 0 ? i : sector, kids: [] };
+        n.cur = { a0: 0, a1: 0, r0: R_FULL[0], r1: R_FULL[0], o: 0 };
+        nodes.push(n);
+        if (parent) parent.kids.push(n);
+        if (d.kids && d.kids.length) add(d.kids, depth + 1, n, n.sector);
       });
-    });
-
-    nodes.forEach(n => nodeOf.set(n.d, n));   // parents are stored as data, not nodes
-
-    const core = el("circle", { cx: CX, cy: CY, r: R[0], class: "hubdisc",
-      fill: "var(--plate)", stroke: "none" });
-    core.addEventListener("click", e => {   // tap the middle to come back out
-      e.stopPropagation();
-      if (focus) zoom(focus.ring === 1 ? nodeOf.get(focus.path[0]) : null); else reset();
-    });
-    svg.appendChild(core);
-    svg.appendChild(gRoot);
+    })(w.data, 0, null, 0);
 
     nodes.forEach(n => {
       const g = el("g", { class: "seg", tabindex: "0", role: "button" });
-      g.style.animationDelay = (0.12 + (n.a0 / 360) * 0.4 + n.ring * 0.04).toFixed(3) + "s";
-      g.appendChild(el("path", {
-        d: arcPath(n.a0, n.a1, R[n.ring], R[n.ring + 1]),
-        fill: `color-mix(in oklab, var(--${w.id}-${n.hue}) ${MIX[n.ring]}, var(--mixer))`,
-        stroke: "var(--ground)", "stroke-width": n.ring === 2 ? 1 : 1.6,
-        "vector-effect": "non-scaling-stroke"
-      }));
-
-      const mid = (n.a0 + n.a1) / 2;
-      const rMid = (R[n.ring] + R[n.ring + 1]) / 2;
-      const t = el("text", {
-        "text-anchor": "middle", "dominant-baseline": "central",
-        "font-size": FS[n.ring],
-        "font-weight": n.ring === 0 ? 600 : n.ring === 1 ? 550 : 480,
-        fill: n.ring === 0 ? "var(--core-ink)"
-            : n.ring === 1 ? "var(--mid-ink)" : "var(--leaf-ink)"
-      });
-      const [px, py] = pol(mid, rMid);
-      if (n.ring === 0) {
-        // upright, never rotated: the safest possible setting for Kannada
-        t.setAttribute("x", px); t.setAttribute("y", py);
-        const chord = 2 * rMid * Math.sin(((n.a1 - n.a0) / 2) * Math.PI / 180);
-        n.room = Math.min(R[1] - R[0], chord) * 0.88;
-      } else {
-        let rot = mid - 90; if (mid > 180) rot += 180;
-        t.setAttribute("transform", `translate(${px} ${py}) rotate(${rot})`);
-        n.room = (R[n.ring + 1] - R[n.ring]) * (n.ring === 1 ? 0.82 : 0.86);
-      }
-      t.textContent = n.d.kn;
-      g.appendChild(t);
+      n.path = el("path", { fill: `var(--${w.id}-${n.sector})`,
+        stroke: "var(--ground)", "stroke-width": 1.4, "vector-effect": "non-scaling-stroke" });
+      n.text = el("text", { "text-anchor": "middle", "dominant-baseline": "central" });
+      n.text.textContent = n.d.kn;
+      g.appendChild(n.path); g.appendChild(n.text);
       g.setAttribute("aria-label", `${n.d.kn} — ${n.d.tr} — ${n.d.en}`);
-      n.g = g; n.text = t;
+      n.g = g;
 
-      g.addEventListener("pointerenter", () => { if (!hoverLock) show(n); });
+      g.addEventListener("pointerenter", () => { if (!held) show(n); });
       g.addEventListener("focus", () => show(n));
       g.addEventListener("click", e => {
         e.stopPropagation();
-        const wasFocus = focus === n;
-        show(n); hoverLock = n;
-        if (n.ring === 0) zoom(wasFocus ? null : n);
-        else if (n.ring === 1) zoom(wasFocus ? nodeOf.get(n.path[0]) : n);
-        else if (!focus) zoom(nodeOf.get(n.path[1]));  // a leaf tapped cold zooms to its branch
+        show(n); held = n;
+        if (!focus) drill(n);                          // open its sector
       });
       gRoot.appendChild(g);
     });
+    svg.appendChild(gRoot);
 
-    fit();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-    setTimeout(fit, 700);
-    zoom(null);   // a wheel switch must drop the previous wheel's zoom
+    // painted last so it stays above the ring it sits inside: always the way back
+    hubDisc = el("circle", { cx: CX, cy: CY, r: R_FULL[0], class: "hubdisc",
+      fill: "var(--plate)", stroke: "none" });
+    hubDisc.addEventListener("click", e => { e.stopPropagation(); drill(null); });
+    svg.appendChild(hubDisc);
+
+    // the hub label lives in the SVG so it scales with the wheel instead of
+    // being an HTML overlay sized against the viewport
+    hubText = el("g", { class: "hublabel" });
+    svg.appendChild(hubText);
+
+    layout(true);
     reset();
   }
 
-  function fit() {
+  /* ------------------------------------------------- geometry per level */
+  function targets() {
+    const shown = focus ? focus.kids : nodes.filter(n => n.depth === 0);
+    const rings = focus ? R_ZOOM : R_FULL;
+    const maxLv = rings.length - 2;            // deepest visible level, 0-based
+    const base = focus ? focus.depth + 1 : 0;
+
+    const leaves = n => (n.depth - base >= maxLv || !n.kids.length)
+      ? 1 : n.kids.reduce((s, k) => s + leaves(k), 0);
+    const unit = 360 / (shown.reduce((s, n) => s + leaves(n), 0) || 1);
+
+    // everything starts collapsed into the hub; only the visible subtree opens
+    nodes.forEach(n => { n.t = { a0: 0, a1: 0, r0: rings[0], r1: rings[0], o: 0 }; });
+
+    let cursor = 0;
+    (function walk(list) {
+      list.forEach(n => {
+        const lv = n.depth - base, start = cursor;
+        if (lv < maxLv && n.kids.length) walk(n.kids);
+        else cursor += leaves(n) * unit;
+        n.t = { a0: start, a1: cursor, r0: rings[lv], r1: rings[lv + 1], o: 1 };
+      });
+    })(shown);
+
+    hubDisc.setAttribute("r", rings[0]);
+    return rings;
+  }
+
+  function draw(n, f) {
+    const c = n.cur, t = n.t;
+    const g = {
+      a0: c.a0 + (t.a0 - c.a0) * f, a1: c.a1 + (t.a1 - c.a1) * f,
+      r0: c.r0 + (t.r0 - c.r0) * f, r1: c.r1 + (t.r1 - c.r1) * f,
+      o: c.o + (t.o - c.o) * f
+    };
+    n.path.setAttribute("d", arc(g.a0, g.a1, g.r0, g.r1));
+    n.g.style.opacity = g.o;
+    n.g.style.pointerEvents = g.o > .5 ? "auto" : "none";
+    return g;
+  }
+
+  function place(rings) {
+    const fs = focus ? FS_ZOOM : FS_FULL;
+    const base = focus ? focus.depth + 1 : 0;
     nodes.forEach(n => {
-      n.text.setAttribute("font-size", FS[n.ring]);
+      const t = n.t, lv = n.depth - base;
+      if (!t.o) { n.text.textContent = ""; return; }
+      n.text.textContent = english ? shortEn(n.d.en) : n.d.kn;
+      const mid = (t.a0 + t.a1) / 2, rMid = (t.r0 + t.r1) / 2;
+      const [px, py] = pol(mid, rMid);
+      const band = t.r1 - t.r0;
+      const chord = 2 * rMid * Math.sin(((t.a1 - t.a0) / 2) * Math.PI / 180);
+      if (lv === 0) {                    // innermost visible ring: never rotated
+        n.text.setAttribute("x", px); n.text.setAttribute("y", py);
+        n.text.removeAttribute("transform");
+        n.room = Math.min(band, chord) * .88;
+      } else {
+        let rot = mid - 90; if (mid > 180) rot += 180;
+        n.text.removeAttribute("x"); n.text.removeAttribute("y");
+        n.text.setAttribute("transform", `translate(${px} ${py}) rotate(${rot})`);
+        n.room = band * .84;
+      }
+      n.text.setAttribute("font-size", fs[lv]);
+      n.text.setAttribute("font-weight", lv === 0 ? 600 : 500);
+      n.text.setAttribute("fill", lv === 0 ? "var(--core-ink)"
+        : lv === 1 && !focus ? "var(--mid-ink)" : "var(--leaf-ink)");
       let len = 0;
       try { len = n.text.getComputedTextLength(); } catch (e) { return; }
       if (len > n.room)
-        n.text.setAttribute("font-size", Math.max(7.4, FS[n.ring] * n.room / len).toFixed(2));
+        n.text.setAttribute("font-size", Math.max(7.4, fs[lv] * n.room / len).toFixed(2));
     });
   }
 
-  /* ----------------------------------------------------------- zoom level */
-  function wedgeBox(n) {
-    let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
-    for (let a = n.a0; a <= n.a1 + 0.001; a += Math.min(3, (n.a1 - n.a0) / 8)) {
-      for (const r of [R[n.ring], R[3]]) {
-        const [x, y] = pol(a, r);
-        x0 = Math.min(x0, x); y0 = Math.min(y0, y);
-        x1 = Math.max(x1, x); y1 = Math.max(y1, y);
-      }
-    }
-    return { x: (x0 + x1) / 2, y: (y0 + y1) / 2, w: x1 - x0, h: y1 - y0 };
+  function layout(animate = true) {
+    const rings = targets();
+    if (anim) cancelAnimationFrame(anim);
+    nodes.forEach(n => { n.text.textContent = ""; });
+    const t0 = performance.now(), dur = animate ? 420 : 0;
+    (function frame(now) {
+      const f = dur ? Math.min(1, (now - t0) / dur) : 1;
+      const e = EASE(f);
+      nodes.forEach(n => { n.cur = draw(n, e); });
+      if (f < 1) anim = requestAnimationFrame(frame);
+      else { anim = null; nodes.forEach(n => { n.cur = { ...n.t }; }); place(rings); }
+    })(t0);
   }
 
-  function zoom(n) {
+  const sectorOf = n => { while (n && n.depth > 0) n = n.parent; return n; };
+
+  // there are exactly two states: the whole wheel, or one sector opened out.
+  // drilling to a branch would give it 360 degrees to share between two leaves.
+  function drill(n) {
+    n = sectorOf(n);
+    if (focus === n) return;
     focus = n;
-    if (!n) {
-      gRoot.style.transform = "";
-      svg.classList.remove("zoomed");
-      backBtn.hidden = true;
-      hub.hidden = false;
-      return;
-    }
-    const b = wedgeBox(n);
-    const k = Math.min(3.4, Math.max(1.15, Math.min(720 / b.w, 720 / b.h)));
-    gRoot.style.transform =
-      `translate(${CX}px, ${CY}px) scale(${k}) translate(${-b.x}px, ${-b.y}px)`;
-    svg.classList.add("zoomed");
-    backBtn.hidden = false;
-    backBtn.textContent = n.ring === 1
-      ? `← ${english ? n.path[0].en : n.path[0].kn}`
-      : "← ಪೂರ್ಣ ಚಕ್ರ · whole wheel";
-    hub.hidden = true;
+    backBtn.hidden = !n;
+    if (n) backBtn.textContent = `← ${wheel.name}`;
+    layout();
+    reset();
   }
 
-  /* -------------------------------------------------------- detail panel */
+  /* ------------------------------------------------------ detail panel */
+  const shortEn = s => s.split(/[,;(]|\s—\s/)[0].trim();
+
+  function chain(n) { const c = []; for (let x = n; x; x = x.parent) c.unshift(x); return c; }
+
   function show(n) {
     svg.classList.add("dimmed");
+    const line = chain(n);
     nodes.forEach(o => {
-      o.g.classList.toggle("on",
-        o.core === n.core && (o.ring === 0 || n.ring === 0 || o.path.includes(n.path[1])));
-      o.g.classList.toggle("sel", o === n);   // outline follows the arc, not a bbox
+      o.g.classList.toggle("on", chain(o).includes(line[0]) &&
+        (line.length === 1 || chain(o).includes(line[1]) || o.depth < line.length - 1));
+      o.g.classList.toggle("sel", o === n);
     });
-    hubWord.textContent = n.d.kn;
-    hubRom.innerHTML = `${esc(n.d.tr)}<b>${esc(n.d.en)}</b>`;
-
-    const crumb = n.path.map((x, i) =>
-      i === n.path.length - 1
-        ? `<b>${esc(x.kn)}</b>`
-        : `<span>${esc(x.kn)} <i>${esc(x.en)}</i></span>`).join("<em>›</em>");
-
+    setHub(n.d.kn, n.d.tr, n.d.en, focus ? "← ಹಿಂದೆ · back" : "");
     detail.innerHTML =
-      `<div class="crumb">${crumb}</div>` +
+      `<div class="crumb">${line.map((x, i) => i === line.length - 1
+        ? `<b>${esc(x.d.kn)}</b>`
+        : `<span>${esc(x.d.kn)} <i>${esc(x.d.en)}</i></span>`).join("<em>›</em>")}</div>` +
       `<div class="word">${esc(n.d.kn)}</div>` +
       `<div class="rom">${esc(n.d.tr)}</div>` +
       `<div class="means">${esc(n.d.en)}</div>` +
       (n.d.lit ? `<div class="lit">literally, ${esc(n.d.lit)}</div>` : "") +
       (n.d.sthayi ? `<div class="lit">ಸ್ಥಾಯಿಭಾವ · ${esc(n.d.sthayi)}</div>` : "") +
-      (n.d.also && n.d.also.length
-        ? `<div class="also"><h4>ಹೀಗೂ ಹೇಳುತ್ತಾರೆ · also said</h4><ul>` +
-          n.d.also.map(a =>
-            `<li><b>${esc(a.kn)}</b> <i>${esc(a.tr)}</i> <span>${esc(a.en)}</span></li>`
-          ).join("") + `</ul></div>`
-        : "") +
+      (n.d.also ? `<div class="also"><h4>ಹೀಗೂ ಹೇಳುತ್ತಾರೆ · also said</h4><ul>` +
+        n.d.also.map(a => `<li><b>${esc(a.kn)}</b> <i>${esc(a.tr)}</i> <span>${esc(a.en)}</span></li>`)
+          .join("") + `</ul></div>` : "") +
       (n.d.note ? `<p class="note">${n.d.note}</p>` : "");
   }
 
+  function setHub(word, rom, en, back) {
+    const r = focus ? R_ZOOM[0] : R_FULL[0];
+    const room = r * 1.62;                      // chord across the disc, with margin
+    hubText.textContent = "";
+    const rows = [
+      { t: word, size: 34, y: en ? -20 : -6, cls: "hw" },
+      { t: rom,  size: 15, y: en ? 6 : 18,   cls: "hr" },
+      { t: en,   size: 16, y: 28,            cls: "he" },
+      { t: back, size: 13, y: 52,            cls: "hb" }
+    ];
+    rows.forEach(row => {
+      if (!row.t) return;
+      const t = el("text", { x: CX, y: CY + row.y, class: row.cls,
+        "text-anchor": "middle", "dominant-baseline": "central", "font-size": row.size });
+      t.textContent = row.t;
+      hubText.appendChild(t);
+      let len = 0;
+      try { len = t.getComputedTextLength(); } catch (e) { return; }
+      if (len > room) t.setAttribute("font-size", Math.max(8, row.size * room / len).toFixed(2));
+    });
+  }
+
   function reset() {
-    hoverLock = null;
+    held = null;
     svg.classList.remove("dimmed");
     nodes.forEach(o => { o.g.classList.remove("on"); o.g.classList.remove("sel"); });
-    hubWord.textContent = wheel.hubKn;
-    hubRom.textContent = wheel.hubRom;
+    if (focus) setHub(focus.d.kn, focus.d.tr, focus.d.en, "← ಹಿಂದೆ · back");
+    else setHub(wheel.hubKn, wheel.hubRom, "", "");
     detail.innerHTML = `<p class="hint">${wheel.hint}</p>`;
   }
 
-  svg.addEventListener("pointerleave", () => { if (!hoverLock) reset(); });
-  svg.addEventListener("click", e => {
-    if (e.target !== svg) return;               // the ground, not a wedge
-    e.stopPropagation();
-    if (focus) zoom(focus.ring === 1 ? nodeOf.get(focus.path[0]) : null); else reset();
-  });
-  document.addEventListener("click", () => { if (hoverLock) reset(); });
+  svg.addEventListener("pointerleave", () => { if (!held) reset(); });
+  svg.addEventListener("click", e => { if (e.target === svg) { e.stopPropagation(); drill(null); } });
+  document.addEventListener("click", () => { if (held) reset(); });
   document.addEventListener("keydown", e => {
     if (e.key !== "Escape") return;
-    if (focus) zoom(focus.ring === 1 ? nodeOf.get(focus.path[0]) : null); else reset();
+    if (focus) drill(null); else reset();
   });
-  backBtn.addEventListener("click", e => {
-    e.stopPropagation();
-    zoom(focus && focus.ring === 1 ? nodeOf.get(focus.path[0]) : null);
-  });
+  backBtn.addEventListener("click", e => { e.stopPropagation(); drill(null); });
 
-  // Wedge labels take only the first clause of an English gloss — the panel
-  // carries the full sense, and "equanimity, or the cold shoulder" shrinks to
-  // an illegible 7px if you try to fit all of it into one segment.
-  const shortEn = s => s.split(/[,;(]|\s—\s/)[0].trim();
+  function setLang(v) { english = v; place(focus ? R_ZOOM : R_FULL); reset(); }
 
-  function setLang(v) {
-    english = v;
-    nodes.forEach(n => { n.text.textContent = english ? shortEn(n.d.en) : n.d.kn; });
-    fit();
-    if (focus) zoom(focus);
-  }
-
-  window.Wheel = { build, setLang, reset, isEnglish: () => english };
+  window.Wheel = { build, setLang, isEnglish: () => english };
 })();
