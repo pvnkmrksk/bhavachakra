@@ -1,6 +1,6 @@
 # ಭಾವಚಕ್ರ · three feeling wheels in Kannada
 
-**[Open the wheels →](https://pvnkmrksk.github.io/bhavachakra/)**
+**[Open the wheels →](https://bhava.kutuhula.in/)**
 
 353 words across three maps of the same territory:
 

@@ -22,7 +22,7 @@ import re
 # Flip this to "https://bhava.kutuhula.in" once the DNS CNAME exists, and add a
 # CNAME file at the repo root with the bare host. Doing it before DNS resolves
 # takes the github.io URL down too, because Pages starts redirecting to it.
-SITE = "https://pvnkmrksk.github.io/bhavachakra"
+SITE = "https://bhava.kutuhula.in"
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SRC = ROOT / "data", ROOT / "src"
