@@ -25,13 +25,35 @@
       "lit": "chest-having",
       "note": "The willingness to stand up and say it — closer to 'having the guts', one organ higher."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಕೆಚ್ಚು",
+      "tr": "keccu",
+      "en": "embers-courage"
+     },
+     {
+      "kn": "ಎದೆಗಾರಿಕೆ",
+      "tr": "edegārike",
+      "en": "nerve"
+     },
+     {
+      "kn": "ದಿಟ್ಟತನ",
+      "tr": "diṭṭatana",
+      "en": "boldness"
+     },
+     {
+      "kn": "ಛಲ",
+      "tr": "chala",
+      "en": "resolve"
+     }
     ]
    },
    {
-    "kn": "ಕುಗ್ಗುವಿಕೆ",
-    "tr": "kugguvike",
+    "kn": "ಕುಗ್ಗು",
+    "tr": "kuggu",
     "en": "losing heart",
-    "note": "The chest failing.",
+    "note": "The English wheel repeats <i>inferior</i> in two branches. Kannada usefully does not: under fear it is ಕೀಳರಿಮೆ, a belief about your rank; here under sadness it is simply shrinking.",
     "kids": [
      {
       "kn": "ಎದೆಗುಂದು",
@@ -69,6 +91,23 @@
       "lit": "the chest goes cold, once",
       "note": "A single event, not a state. There is no English noun for the one jolt."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಆತಂಕ",
+      "tr": "ātaṅka",
+      "en": "anxiety"
+     },
+     {
+      "kn": "ತಳಮಳ",
+      "tr": "taḷamaḷa",
+      "en": "churn"
+     },
+     {
+      "kn": "ಭೀತಿ",
+      "tr": "bhīti",
+      "en": "terror"
+     }
     ]
    },
    {
@@ -90,6 +129,28 @@
       "en": "swelling pride",
       "lit": "the chest swells",
       "note": "One degree louder, and faintly comic if you use it about yourself."
+     }
+    ],
+    "also": [
+     {
+      "kn": "ಅಭಿಮಾನ",
+      "tr": "abhimāna",
+      "en": "pride as loyalty"
+     },
+     {
+      "kn": "ಗರ್ವ",
+      "tr": "garva",
+      "en": "pride, tipping toward vanity"
+     },
+     {
+      "kn": "ಅಹಂಕಾರ",
+      "tr": "ahaṅkāra",
+      "en": "the pride that has gone bad"
+     },
+     {
+      "kn": "ಗತ್ತು",
+      "tr": "gattu",
+      "en": "swagger"
      }
     ]
    },
@@ -113,6 +174,23 @@
       "lit": "the breath is blocked",
       "note": "Used for a room, a marriage and a job. Nobody hears it as metaphor."
      }
+    ],
+    "also": [
+     {
+      "kn": "ತಳಮಳ",
+      "tr": "taḷamaḷa",
+      "en": "churn"
+     },
+     {
+      "kn": "ಒದ್ದಾಟ",
+      "tr": "oddāṭa",
+      "en": "thrashing about"
+     },
+     {
+      "kn": "ಪರದಾಟ",
+      "tr": "paradāṭa",
+      "en": "floundering"
+     }
     ]
    }
   ]
@@ -127,7 +205,7 @@
     "kn": "ಹೊಟ್ಟೆಕಿಚ್ಚು",
     "tr": "hoṭṭe-kiccu",
     "en": "envy",
-    "note": "Belly-fire. The everyday word.",
+    "note": "Belly-fire, and everyone knows exactly which organ is burning. ಅಸೂಯೆ and ಮಾತ್ಸರ್ಯ cover the same ground in a cooler register.",
     "kids": [
      {
       "kn": "ಅಸೂಯೆ",
@@ -141,6 +219,28 @@
       "en": "to begrudge",
       "lit": "to smoulder",
       "note": "Native verb. The low-grade continuous version of the same fire."
+     }
+    ],
+    "also": [
+     {
+      "kn": "ಅಸೂಯೆ",
+      "tr": "asūye",
+      "en": "envy"
+     },
+     {
+      "kn": "ಮಾತ್ಸರ್ಯ",
+      "tr": "mātsarya",
+      "en": "envious rivalry"
+     },
+     {
+      "kn": "ಕರುಬು",
+      "tr": "karubu",
+      "en": "to begrudge, to smoulder"
+     },
+     {
+      "kn": "ಹೊಟ್ಟೆಯುರಿ",
+      "tr": "hoṭṭeyuri",
+      "en": "the burn of being wronged"
      }
     ]
    },
@@ -184,6 +284,23 @@
       "lit": "cooling",
       "note": "Satisfaction as cooling rather than filling — the other half of how Kannada thinks about want."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಸಂತೃಪ್ತಿ",
+      "tr": "santṛpti",
+      "en": "full satisfaction"
+     },
+     {
+      "kn": "ತಣಿವು",
+      "tr": "taṇivu",
+      "en": "slaked"
+     },
+     {
+      "kn": "ಸಮಾಧಾನ",
+      "tr": "samādhāna",
+      "en": "settledness"
+     }
     ]
    },
    {
@@ -226,7 +343,24 @@
       "tr": "hēsige",
       "en": "loathing",
       "lit": "filth",
-      "note": "The moral and the physical are the same word."
+      "note": "The moral and the physical are the same word.",
+      "also": [
+       {
+        "kn": "ಅಸಹ್ಯ",
+        "tr": "asahya",
+        "en": "disgust"
+       },
+       {
+        "kn": "ಕೊಳಕು",
+        "tr": "koḷaku",
+        "en": "dirt"
+       },
+       {
+        "kn": "ಜುಗುಪ್ಸೆ",
+        "tr": "jugupse",
+        "en": "revulsion"
+       }
+      ]
      }
     ]
    }
@@ -258,11 +392,33 @@
       "lit": "turning back toward",
       "note": "Older and softer than ಕನಿಕರ, and slightly literary now."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಅನುಕಂಪ",
+      "tr": "anukampa",
+      "en": "fellow-feeling"
+     },
+     {
+      "kn": "ಮರುಕ",
+      "tr": "maruka",
+      "en": "pity, ruth"
+     },
+     {
+      "kn": "ಕರುಣೆ",
+      "tr": "karuṇe",
+      "en": "mercy"
+     },
+     {
+      "kn": "ದಯೆ",
+      "tr": "daye",
+      "en": "kindness"
+     }
     ]
    },
    {
-    "kn": "ಮರುಗುವಿಕೆ",
-    "tr": "maraguvike",
+    "kn": "ಮರುಗು",
+    "tr": "maragu",
     "en": "grieving for another",
     "note": "ಮರುಗು is a native verb with no exact English partner: to ache on someone else's account. The gut under strain.",
     "kids": [
@@ -321,7 +477,24 @@
       "tr": "vātsalya",
       "en": "downward tenderness",
       "lit": "the feeling toward a calf",
-      "note": "Flows one way only: elder to younger. English 'love' has no direction; this word is nothing but direction."
+      "note": "Flows one way only: elder to younger. English 'love' has no direction; this word is nothing but direction.",
+      "also": [
+       {
+        "kn": "ಮಮತೆ",
+        "tr": "mamate",
+        "en": "attachment-love"
+       },
+       {
+        "kn": "ಅಕ್ಕರೆ",
+        "tr": "akkare",
+        "en": "fondness"
+       },
+       {
+        "kn": "ಕಕ್ಕುಲತೆ",
+        "tr": "kakkulate",
+        "en": "anxious tenderness"
+       }
+      ]
      }
     ]
    }
@@ -353,13 +526,30 @@
       "lit": "mind-heat",
       "note": "Between two people who were close. Not anger, not grief — the cooled residue that keeps them apart."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಬೇನೆ",
+      "tr": "bēne",
+      "en": "ache, ailment"
+     },
+     {
+      "kn": "ಯಾತನೆ",
+      "tr": "yātane",
+      "en": "torment"
+     },
+     {
+      "kn": "ಬಾಧೆ",
+      "tr": "bādhe",
+      "en": "affliction"
+     }
     ]
    },
    {
     "kn": "ಖಿನ್ನತೆ",
     "tr": "khinnate",
     "en": "lowness",
-    "note": "Now the clinical word; the phrase beneath it is older.",
+    "note": "rala's first hits for <i>depressed</i> are ದಲಿತ and ಶೋಷಿತ — from the colonial administrative phrase 'depressed classes'. ಖಿನ್ನತೆ is the clinical word; ಮನಸ್ಸು ಕುಗ್ಗಿದೆ, the mind has shrunk, is the older way of saying it.",
     "kids": [
      {
       "kn": "ಮನಸ್ಸು ಕುಗ್ಗು",
@@ -372,13 +562,30 @@
       "kn": "ಬೇಸರ",
       "tr": "bēsara",
       "en": "weary discontent",
-      "note": "One word for bored, mildly sad and fed up. 'ಬೇಸರಾಗಿದೆ' could be any of the three."
+      "note": "One word for bored, mildly sad and fed up. 'ಬೇಸರಾಗಿದೆ' could be any of the three.",
+      "also": [
+       {
+        "kn": "ಬೇಜಾರು",
+        "tr": "bējāru",
+        "en": "fed up, the same word one register down"
+       },
+       {
+        "kn": "ಸಪ್ಪೆ",
+        "tr": "sappe",
+        "en": "flat, unsalted"
+       },
+       {
+        "kn": "ಜಡ",
+        "tr": "jaḍa",
+        "en": "inert"
+       }
+      ]
      }
     ]
    },
    {
-    "kn": "ತೆರೆದುಕೊಳ್ಳುವಿಕೆ",
-    "tr": "teredukoḷḷuvike",
+    "kn": "ತೆರೆದುಕೊಳ್ಳು",
+    "tr": "teredukoḷḷu",
     "en": "opening up",
     "note": "The nearest Kannada gets to the therapeutic sense of vulnerable — and it is an act, not a state.",
     "kids": [
@@ -393,13 +600,30 @@
       "kn": "ಸಲಿಗೆ",
       "tr": "salige",
       "en": "earned informality",
-      "note": "The licence to tease someone, eat off their plate, drop the honorific. Intimacy defined as permission."
+      "note": "The licence to tease someone, eat off their plate, drop the honorific. Intimacy defined as permission.",
+      "also": [
+       {
+        "kn": "ಆತ್ಮೀಯತೆ",
+        "tr": "ātmīyate",
+        "en": "closeness"
+       },
+       {
+        "kn": "ಅನ್ಯೋನ್ಯ",
+        "tr": "anyōnya",
+        "en": "mutual, easy with each other"
+       },
+       {
+        "kn": "ನಿಕಟ",
+        "tr": "nikaṭa",
+        "en": "near"
+       }
+      ]
      }
     ]
    },
    {
-    "kn": "ಕರಗುವಿಕೆ",
-    "tr": "karaguvike",
+    "kn": "ಕರಗು",
+    "tr": "karagu",
     "en": "being moved",
     "note": "The mind melting — Kannada's standard image for being touched.",
     "kids": [
@@ -414,7 +638,24 @@
       "kn": "ಮೆಚ್ಚುಗೆ",
       "tr": "meccuge",
       "en": "admiration",
-      "note": "Both the feeling and its expression — to ಮೆಚ್ಚು silently is incomplete."
+      "note": "Both the feeling and its expression — to ಮೆಚ್ಚು silently is incomplete.",
+      "also": [
+       {
+        "kn": "ಪ್ರಶಂಸೆ",
+        "tr": "praśaṁse",
+        "en": "praise"
+       },
+       {
+        "kn": "ಒಲವು",
+        "tr": "olavu",
+        "en": "leaning toward"
+       },
+       {
+        "kn": "ಇಷ್ಟ",
+        "tr": "iṣṭa",
+        "en": "liking"
+       }
+      ]
      }
     ]
    },
@@ -436,7 +677,41 @@
       "tr": "samādhāna",
       "en": "being consoled",
       "lit": "a settling",
-      "note": "Both the comfort someone gives you and the state it produces."
+      "note": "Both the comfort someone gives you and the state it produces.",
+      "also": [
+       {
+        "kn": "ಸಂತೈಕೆ",
+        "tr": "santaike",
+        "en": "consoling"
+       },
+       {
+        "kn": "ನೆಮ್ಮದಿ",
+        "tr": "nemmadi",
+        "en": "peace of mind"
+       },
+       {
+        "kn": "ತಣ್ಣಗಾಗು",
+        "tr": "taṇṇagāgu",
+        "en": "to cool down"
+       }
+      ]
+     }
+    ],
+    "also": [
+     {
+      "kn": "ಶಾಂತಿ",
+      "tr": "śānti",
+      "en": "peace, as the absence of conflict"
+     },
+     {
+      "kn": "ಸಮಾಧಾನ",
+      "tr": "samādhāna",
+      "en": "being consoled"
+     },
+     {
+      "kn": "ನಿರಾಳ",
+      "tr": "nirāḷa",
+      "en": "unclenched"
      }
     ]
    },
@@ -489,6 +764,23 @@
       "en": "thinking it over",
       "note": "Neutral by itself; 'ಯೋಚನೆ ಮಾಡಬೇಡ' means stop worrying."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಯೋಚನೆ",
+      "tr": "yōcane",
+      "en": "thinking it over"
+     },
+     {
+      "kn": "ಕಾಳಜಿ",
+      "tr": "kāḷaji",
+      "en": "care, concern"
+     },
+     {
+      "kn": "ತಲೆಬಿಸಿ",
+      "tr": "talebisi",
+      "en": "head-heat"
+     }
     ]
    },
    {
@@ -510,6 +802,23 @@
       "en": "flustered",
       "note": "A sound-word with no parts that mean anything alone — the flap of not knowing what to do with your hands."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಕಕ್ಕಾಬಿಕ್ಕಿ",
+      "tr": "kakkābikki",
+      "en": "flustered"
+     },
+     {
+      "kn": "ತಬ್ಬಿಬ್ಬು",
+      "tr": "tabbibbu",
+      "en": "thrown, at a loss"
+     },
+     {
+      "kn": "ಗಲಿಬಿಲಿ",
+      "tr": "galibili",
+      "en": "muddle"
+     }
     ]
    },
    {
@@ -529,7 +838,24 @@
       "kn": "ದಣಿವು",
       "tr": "daṇivu",
       "en": "tiredness",
-      "note": "The native word, used of a body and of a day alike."
+      "note": "The only match rala had for <i>tired</i> was agronomy — ದಣಿದ ಮಣ್ಣು, exhausted soil. ದಣಿವು is used of a body and of a day alike.",
+      "also": [
+       {
+        "kn": "ಆಯಾಸ",
+        "tr": "āyāsa",
+        "en": "fatigue"
+       },
+       {
+        "kn": "ಬಳಲಿಕೆ",
+        "tr": "baḷalike",
+        "en": "exhaustion"
+       },
+       {
+        "kn": "ಸುಸ್ತು",
+        "tr": "sustu",
+        "en": "done in"
+       }
+      ]
      }
     ]
    },
@@ -676,6 +1002,23 @@
       "en": "a huff",
       "note": "Native, and shorter-lived than ಮುನಿಸು — an afternoon rather than a week."
      }
+    ],
+    "also": [
+     {
+      "kn": "ಸೆಡವು",
+      "tr": "seḍavu",
+      "en": "a huff"
+     },
+     {
+      "kn": "ಕೋಪ",
+      "tr": "kōpa",
+      "en": "anger"
+     },
+     {
+      "kn": "ಬಿಗುಮಾನ",
+      "tr": "bigumāna",
+      "en": "held stiffness"
+     }
     ]
    },
    {
@@ -726,7 +1069,7 @@
     "kn": "ಸಿಟ್ಟು",
     "tr": "siṭṭu",
     "en": "visible anger",
-    "note": "Anger as something the room can read.",
+    "note": "Hot and quick, and the most-used of the anger words.",
     "kids": [
      {
       "kn": "ಕಣ್ಣು ಕೆಂಪು",
@@ -741,6 +1084,28 @@
       "en": "a knitted brow",
       "lit": "the eyebrows knot",
       "note": "The smallest visible unit of displeasure, and often the only one you get."
+     }
+    ],
+    "also": [
+     {
+      "kn": "ಕೋಪ",
+      "tr": "kōpa",
+      "en": "anger, composed"
+     },
+     {
+      "kn": "ಕ್ರೋಧ",
+      "tr": "krōdha",
+      "en": "wrath"
+     },
+     {
+      "kn": "ಮುನಿಸು",
+      "tr": "munisu",
+      "en": "the loving sulk"
+     },
+     {
+      "kn": "ಸೆಡವು",
+      "tr": "seḍavu",
+      "en": "a huff"
      }
     ]
    },
@@ -761,7 +1126,41 @@
       "kn": "ಮುಜುಗರ",
       "tr": "mujugara",
       "en": "awkwardness",
-      "note": "The wince at a social scene, often on someone else's behalf."
+      "note": "The wince at a social scene, often on someone else's behalf.",
+      "also": [
+       {
+        "kn": "ಸಂಕೋಚ",
+        "tr": "saṅkōca",
+        "en": "shrinking"
+       },
+       {
+        "kn": "ಇರುಸುಮುರುಸು",
+        "tr": "irusumurusu",
+        "en": "squirming discomfort"
+       },
+       {
+        "kn": "ಕಸಿವಿಸಿ",
+        "tr": "kasivisi",
+        "en": "small unease"
+       }
+      ]
+     }
+    ],
+    "also": [
+     {
+      "kn": "ಸಂಕೋಚ",
+      "tr": "saṅkōca",
+      "en": "shrinking, reticence"
+     },
+     {
+      "kn": "ಮುಜುಗರ",
+      "tr": "mujugara",
+      "en": "awkwardness"
+     },
+     {
+      "kn": "ಲಜ್ಜೆ",
+      "tr": "lajje",
+      "en": "modesty, shame"
      }
     ]
    }

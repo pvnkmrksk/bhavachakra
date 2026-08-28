@@ -28,8 +28,9 @@ load = lambda n: json.loads((DATA / "wheels" / f"{n}.json").read_text(encoding="
 WHEELS = [
  {"id": "bhava", "file": "bhava",
   "name": "ಭಾವಚಕ್ರ", "hubKn": "ಭಾವಚಕ್ರ", "hubRom": "bhāva-cakra",
-  "hint": "Hover or tap any segment — the panel names it in both scripts. Tap a "
-          "sector to zoom into it, and again to go back out.",
+  "hint": "Tap or hover any segment: the panel names it in both scripts and lists the "
+          "words that did not fit. Tap a sector to zoom in, and the middle of the wheel "
+          "to come back out.",
   "blurb": "The English feeling wheel, taken through a Kannada dictionary and then argued "
            "with. Seven core feelings, three rings, 130 words. Where the dictionary was "
            "right it was kept; where it answered in the register of a government circular "
@@ -52,9 +53,11 @@ WHEELS = [
           "and it is an insult. Neither gap is a failure of the language — they are places "
           "the English wheel assumed something Kannada does not."},
     {"h": "Register, not correctness",
-     "p": "Almost every change made here was a register change rather than a correction. "
-          "ಅಸೂಯೆ, ರೋಷ, ವಿಸ್ಮಯ and ಆಶಾವಾದ are all correct. They are also words nobody says at "
-          "home, so the wheel uses ಹೊಟ್ಟೆಕಿಚ್ಚು, ರೊಚ್ಚು, ದಂಗು and ಭರವಸೆ instead."},
+     "p": "Almost every change here was a register change, not a correction. ಅಸೂಯೆ, ರೋಷ, "
+          "ವಿಸ್ಮಯ and ಆಶಾವಾದ are all in use; the wheel simply shows the shorter, warmer "
+          "member of each set — ಹೊಟ್ಟೆಕಿಚ್ಚು, ರೊಚ್ಚು, ದಂಗು, ಭರವಸೆ — and keeps the rest under "
+          "<em>ಹೀಗೂ ಹೇಳುತ್ತಾರೆ</em> in the panel. A wheel has room for one word; a language "
+          "does not work that way."},
     {"h": "The evidence",
      "p": "Every word here was looked up in rala first, and the full record — what the "
           "dictionary returned, what was kept, what was overruled and why — is in the "
@@ -63,8 +66,8 @@ WHEELS = [
 
  {"id": "odalu", "file": "odalu",
   "name": "ಒಡಲ ಚಕ್ರ", "hubKn": "ಒಡಲು", "hubRom": "oḍalu · the body as vessel",
-  "hint": "Hover or tap any segment. The centre is where in the body it happens, the middle "
-          "ring is the feeling, and the outer ring is what Kannada actually says.",
+  "hint": "The centre is where in the body it happens, the middle ring is the feeling, and "
+          "the outer ring is what gets said. Tap to zoom in; tap the middle to come back out.",
   "blurb": "Not a translation of anything. Kannada mostly names a feeling by saying "
            "<em>where in the body it is happening</em> — ಹೊಟ್ಟೆಕಿಚ್ಚು, belly-fire; ಎದೆಗುಂದು, "
            "the chest sinks; ಕರುಳು ಚುರುಕ್, the gut stings. So the seven seats are the centre, "
@@ -97,8 +100,8 @@ WHEELS = [
 
  {"id": "rasa", "file": "rasa",
   "name": "ರಸಚಕ್ರ", "hubKn": "ನವರಸ", "hubRom": "nava-rasa · the nine flavours",
-  "hint": "Hover or tap any segment. The nine rasas are the centre; underneath each one are "
-          "the words Kannada actually uses for that flavour.",
+  "hint": "The nine rasas are the centre; underneath each one are the words Kannada uses "
+          "for that flavour. Tap to zoom in; tap the middle to come back out.",
   "blurb": "The oldest map of feeling this language has, opened out. The nine rasas are an "
            "aesthetic theory — what an audience can be made to feel — and a thousand years "
            "of Kannada poetry is organised by them. Here each rasa keeps its Sanskrit name, "
@@ -188,13 +191,13 @@ def build_csv():
     with (DATA / "words.csv").open("w", newline="", encoding="utf-8") as f:
         c = csv.writer(f)
         c.writerow(["wheel", "ring", "sector", "kannada", "transliteration", "english",
-                    "literal", "english_source", "status", "rala_hits", "note"])
+                    "literal", "status", "rala_hits", "also_said", "note"])
         for w in WHEELS:
             for ring, sector, n in walk(w["data"]):
                 c.writerow([w["id"], RINGS[ring], sector, n["kn"], n["tr"], n["en"],
-                            n.get("lit", ""),
-                            n.get("en", "") if w["id"] == "bhava" else "",
-                            n.get("status", ""), " ; ".join(n.get("rala") or []),
+                            n.get("lit", ""), n.get("status", ""),
+                            " ; ".join(n.get("rala") or []),
+                            " ; ".join(f"{a['kn']} ({a['en']})" for a in n.get("also") or []),
                             re.sub(r"</?(?:i|em)>", "", n.get("note", ""))])
 
 
@@ -295,7 +298,12 @@ def build_readme():
             if notes:
                 add("<details><summary>Reading</summary>\n")
                 for n in notes:
-                    add(f"- **{n['kn']}** *({n['en']})* — {md(n['note'])}")
+                    line = f"- **{n['kn']}** *({n['en']})* — {md(n['note'])}"
+                    if n.get("also"):
+                        line += ("  \n  also said: "
+                                 + ", ".join(f"**{a['kn']}** *{a['tr']}*, {md(a['en'])}"
+                                             for a in n["also"]))
+                    add(line)
                 add("\n</details>\n")
 
     native = json.loads((DATA / "native.json").read_text(encoding="utf-8"))
@@ -314,6 +322,7 @@ def build_readme():
     add("| [`data/wheels/bhava.json`](data/wheels/bhava.json) | wheel one. Every node has `kn`, `tr`, `en`, `status`, `rala[]` and usually `note` |")
     add("| [`data/wheels/odalu.json`](data/wheels/odalu.json) | wheel two, the body. Adds `lit`, the literal reading of each phrase |")
     add("| [`data/wheels/rasa.json`](data/wheels/rasa.json) | wheel three. Cores carry `sthayi`, the durable feeling under each rasa |")
+    add("| | Any node may carry `also[]` — synonyms in the same sense that did not fit on the wheel, each with `kn`, `tr`, `en` |")
     add("| [`data/words.csv`](data/words.csv) | all three wheels flattened into one table |")
     add("| [`data/native.json`](data/native.json) | the untranslatables appendix — `kn`, `tr`, `gloss` |")
     add("| [`data/rala-responses.json`](data/rala-responses.json) | raw API responses keyed by query — provenance for every claim above |")

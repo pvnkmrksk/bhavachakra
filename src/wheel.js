@@ -70,8 +70,13 @@
       });
     });
 
-    svg.appendChild(el("circle", { cx: CX, cy: CY, r: R[0] - 1,
-      fill: "var(--plate)", stroke: "var(--rule)", "stroke-width": 1 }));
+    const core = el("circle", { cx: CX, cy: CY, r: R[0] - 1, class: "hubdisc",
+      fill: "var(--plate)", stroke: "var(--rule)", "stroke-width": 1 });
+    core.addEventListener("click", e => {   // tap the middle to come back out
+      e.stopPropagation();
+      if (focus) zoom(focus.ring === 1 ? focus.path[0] : null); else reset();
+    });
+    svg.appendChild(core);
     svg.appendChild(gRoot);
 
     nodes.forEach(n => {
@@ -119,9 +124,6 @@
       });
       gRoot.appendChild(g);
     });
-
-    svg.appendChild(el("circle", { cx: CX, cy: CY, r: R[3], fill: "none",
-      stroke: "var(--rule)", "stroke-width": 1, "pointer-events": "none" }));
 
     fit();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
@@ -177,10 +179,13 @@
   /* -------------------------------------------------------- detail panel */
   function show(n) {
     svg.classList.add("dimmed");
-    nodes.forEach(o => o.g.classList.toggle("on",
-      o.core === n.core && (o.ring === 0 || n.ring === 0 || o.path.includes(n.path[1]))));
+    nodes.forEach(o => {
+      o.g.classList.toggle("on",
+        o.core === n.core && (o.ring === 0 || n.ring === 0 || o.path.includes(n.path[1])));
+      o.g.classList.toggle("sel", o === n);   // outline follows the arc, not a bbox
+    });
     hubWord.textContent = n.d.kn;
-    hubRom.textContent = n.d.tr;
+    hubRom.innerHTML = `${esc(n.d.tr)}<b>${esc(n.d.en)}</b>`;
 
     const crumb = n.path.map((x, i) =>
       i === n.path.length - 1
@@ -194,13 +199,19 @@
       `<div class="means">${esc(n.d.en)}</div>` +
       (n.d.lit ? `<div class="lit">literally, ${esc(n.d.lit)}</div>` : "") +
       (n.d.sthayi ? `<div class="lit">ಸ್ಥಾಯಿಭಾವ · ${esc(n.d.sthayi)}</div>` : "") +
+      (n.d.also && n.d.also.length
+        ? `<div class="also"><h4>ಹೀಗೂ ಹೇಳುತ್ತಾರೆ · also said</h4><ul>` +
+          n.d.also.map(a =>
+            `<li><b>${esc(a.kn)}</b> <i>${esc(a.tr)}</i> <span>${esc(a.en)}</span></li>`
+          ).join("") + `</ul></div>`
+        : "") +
       (n.d.note ? `<p class="note">${n.d.note}</p>` : "");
   }
 
   function reset() {
     hoverLock = null;
     svg.classList.remove("dimmed");
-    nodes.forEach(o => o.g.classList.remove("on"));
+    nodes.forEach(o => { o.g.classList.remove("on"); o.g.classList.remove("sel"); });
     hubWord.textContent = wheel.hubKn;
     hubRom.textContent = wheel.hubRom;
     detail.innerHTML = `<p class="hint">${wheel.hint}</p>`;
