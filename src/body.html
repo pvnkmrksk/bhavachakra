@@ -1,0 +1,92 @@
+<header class="wrap">
+  <div class="mast">
+    <div class="eyebrow">ಕನ್ನಡದಲ್ಲಿ ಭಾವನೆಗಳ ನಕ್ಷೆ · a feeling wheel in Kannada</div>
+    <h1>ಭಾವಚಕ್ರ</h1>
+    <p class="sub serif">The English feeling wheel, taken through a Kannada dictionary and then argued with. Each of the 130 Kannada words on it came out of <em>rala</em> — 478,680 English→Kannada entries — and was then kept, reshaped, or thrown out and replaced with what a Kannada speaker would actually say.</p>
+    <div class="tally">
+      <div><b>130</b><span>ಪದಗಳು · words placed</span></div>
+      <div><b>73</b><span>rala got it right</span></div>
+      <div><b>45</b><span>reshaped by ear</span></div>
+      <div><b>12</b><span>no usable entry</span></div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div class="legend">
+      <span class="lg"><i class="dot direct"></i>rala's own answer</span>
+      <span class="lg"><i class="dot shaped"></i>reshaped</span>
+      <span class="lg"><i class="dot gap"></i>dictionary gap</span>
+    </div>
+    <button class="toggle" id="langToggle" aria-pressed="false">Show English</button>
+  </div>
+
+  <div class="stage">
+    <div class="wheelbox">
+      <a class="skip" href="#native">Skip the wheel's 130 segments</a>
+      <svg class="wheel" id="wheel" viewBox="0 0 800 800" role="img" aria-label="Kannada emotion wheel: seven core feelings in three rings"></svg>
+      <div class="hub" id="hub" aria-hidden="true">
+        <div class="hw" id="hubWord">ಭಾವಚಕ್ರ</div>
+        <div class="ht" id="hubRom">bhāva-cakra</div>
+      </div>
+    </div>
+    <aside class="detail" id="detail" aria-live="polite">
+      <p class="hint">Hover or tap any segment. Each card shows what rala returned for the English word, and why the Kannada on the wheel is or isn't that.</p>
+    </aside>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="native">
+  <div class="shead">
+    <div class="eyebrow">ಒಂದು · beyond the wheel</div>
+    <h2>ಕನ್ನಡದ್ದೇ ಪದಗಳು <span class="lat">words with nowhere to sit</span></h2>
+    <p>The wheel is an English object. These are feelings Kannada names precisely and English can only paraphrase — which is the real argument for not translating a wheel, but redrawing one.</p>
+  </div>
+  <div class="cards" id="nativeCards"></div>
+</section>
+
+<section id="rasa">
+  <div class="shead">
+    <div class="eyebrow">ಎರಡು · the older map</div>
+    <h2>ನವರಸ <span class="lat">the nine rasas, laid over the wheel</span></h2>
+    <p>Kannada already had a taxonomy of feeling, inherited from the <i>Nāṭyaśāstra</i> and worked hard by a thousand years of Kannada poetry. It is not a psychology — it is a theory of what an audience can be made to feel. Overlaying it on the wheel shows what the wheel has no room for.</p>
+  </div>
+  <div class="scroll">
+    <table class="rasa">
+      <thead><tr><th>ರಸ</th><th></th><th>flavour</th><th>where it lands on the wheel</th></tr></thead>
+      <tbody id="rasaBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="method">
+  <div class="shead">
+    <div class="eyebrow">ಮೂರು · colophon</div>
+    <h2>ಹೇಗೆ ಮಾಡಿದ್ದು <span class="lat">how it was made</span></h2>
+  </div>
+  <div class="method">
+    <div>
+      <h3>The lookup</h3>
+      <p>Every English word on the wheel was sent to the rala search worker, one at a time, with a third of a second between calls and no <code>X-Rala-Intent</code> header, so none of it landed in the site's own search analytics.</p>
+      <pre><code>GET https://rala-search.rala-search.workers.dev/?q=munisu
+→ { query, count, results:[ {kannada, definition, type, source} ] }</code></pre>
+    </div>
+    <div>
+      <h3>Where it fell down</h3>
+      <p>rala is built over Padakanaja, which is largely administrative, legal, scientific and agricultural. So <i>stressed</i> returned shear stress and tensile stress; <i>confused</i> returned a flour beetle; <i>let down</i> returned the dairy term for milk ejection; <i>depressed</i> returned "depressed classes". Words that failed as adjectives were retried as verb stems — <code>annoyed → annoy</code> — which recovered most of them.</p>
+    </div>
+    <div>
+      <h3>Where it was right</h3>
+      <p>On fear, anger and grief it is excellent, and better than a bilingual speaker's first instinct: seven graded fear words, four for doubt, and ತೇಜೋವಧೆ — "the murder of someone's lustre" — for humiliation. 73 of 130 entries here are rala's own answer, unaltered.</p>
+    </div>
+    <div>
+      <h3>The reinterpretation</h3>
+      <p>A translated wheel would say ಶಾಂತಿ for peaceful and ಅಸೂಯೆ for jealous. Both are dictionary-correct and neither is what gets said. Where the register was wrong, the spoken word won: ನೆಮ್ಮದಿ, ಹೊಟ್ಟೆಕಿಚ್ಚು, ಕೆಂಡಾಮಂಡಲ, ಬೇಜಾರು.</p>
+    </div>
+  </div>
+  <footer>
+    Word data from <a href="https://pvnkmrksk.github.io/rala/">rala</a>, a reversal of <a href="https://alar.ink">Alar</a> by V. Krishna (ODC-ODbL) combined with Padakanaja, Government of Karnataka. Alar's own site was not queried. Wheel structure after Gloria Willcox's Feeling Wheel and its widely circulated three-ring descendant; the Kannada is a reinterpretation, not a translation of it.
+  </footer>
+</section>
+</main>

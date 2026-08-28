@@ -1,0 +1,212 @@
+<title>ಭಾವಚಕ್ರ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@300..700&family=Anek+Latin:wght@300..700&family=Noto+Serif+Kannada:wght@400..700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  /* soapstone — the green-grey of Hoysala chloritic schist */
+  --ground:#E6E9E2; --plate:#F1F3ED; --sunk:#DBDFD4;
+  --ink:#191E1A; --ink-2:#4A534B; --ink-3:#7C857C;
+  --rule:#C9CFC2; --rule-soft:#D9DED2;
+  --accent:#A8791A;            /* turmeric, dulled for light ground */
+  --accent-soft:#EFE3C6;
+  --mixer:#FFFFFF;             /* rings mix toward this */
+  --mix-mid:68%;               /* how much hue survives in each ring */
+  --mix-leaf:40%;
+  --leaf-ink:#1C221D;          /* dark label ink on the pale outer rings */
+  --mid-ink:#161A17;
+  --core-ink:#FFFFFF;
+  --shadow:0 1px 2px rgba(25,30,26,.07), 0 8px 28px -12px rgba(25,30,26,.22);
+  --h-joy:#A9790F; --h-wonder:#16696E; --h-weary:#64744A;
+  --h-fear:#43478E; --h-anger:#A53426; --h-disgust:#723A6D; --h-sorrow:#26597F;
+  --ok:#4B7A3F; --warn:#9A6B12; --gapc:#A33F5E;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#12160F; --plate:#1A1F19; --sunk:#0D110B;
+    --ink:#E4E8DD; --ink-2:#A8B1A4; --ink-3:#79826F;
+    --rule:#2B3229; --rule-soft:#232920;
+    --accent:#D9A93C; --accent-soft:#332A14;
+    --mixer:#0C0F0A;
+    --mix-mid:54%; --mix-leaf:30%;
+    --leaf-ink:#DDE2D6; --mid-ink:#EAEEE3; --core-ink:#0E120C;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 34px -14px rgba(0,0,0,.8);
+    --h-joy:#E2AC33; --h-wonder:#2AA0A5; --h-weary:#93A56E;
+    --h-fear:#6E73C8; --h-anger:#D45444; --h-disgust:#A75BA0; --h-sorrow:#3D84BC;
+    --ok:#7FB86E; --warn:#D3A03C; --gapc:#DE7C99;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12160F; --plate:#1A1F19; --sunk:#0D110B;
+  --ink:#E4E8DD; --ink-2:#A8B1A4; --ink-3:#79826F;
+  --rule:#2B3229; --rule-soft:#232920;
+  --accent:#D9A93C; --accent-soft:#332A14;
+  --mixer:#0C0F0A;
+  --mix-mid:54%; --mix-leaf:30%;
+  --leaf-ink:#DDE2D6; --mid-ink:#EAEEE3; --core-ink:#0E120C;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 34px -14px rgba(0,0,0,.8);
+  --h-joy:#E2AC33; --h-wonder:#2AA0A5; --h-weary:#93A56E;
+  --h-fear:#6E73C8; --h-anger:#D45444; --h-disgust:#A75BA0; --h-sorrow:#3D84BC;
+  --ok:#7FB86E; --warn:#D3A03C; --gapc:#DE7C99;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:'Anek Latin','Anek Kannada',system-ui,sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:'Spectral','Noto Serif Kannada',Georgia,serif}
+.kn{font-family:'Noto Serif Kannada','Spectral',serif}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+.col{max-width:660px}
+h1,h2,h3{margin:0; font-weight:600; text-wrap:balance; line-height:1.18}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:3px}
+.eyebrow{
+  font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600;
+}
+
+/* ---------- masthead ---------- */
+header{padding:clamp(48px,7vw,88px) 0 0}
+.mast{display:flex; flex-direction:column; gap:18px}
+.mast h1{
+  font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:clamp(52px,10vw,104px); line-height:.98; letter-spacing:-.01em;
+}
+.mast .sub{
+  font-family:'Spectral',Georgia,serif; font-size:clamp(17px,2.1vw,21px);
+  line-height:1.55; color:var(--ink-2); max-width:60ch;
+}
+.mast .sub em{color:var(--ink); font-style:italic}
+.tally{display:flex; flex-wrap:wrap; gap:0; margin-top:10px; border-top:1px solid var(--rule)}
+.tally div{
+  padding:14px 26px 14px 0; margin-right:26px; border-right:1px solid var(--rule-soft);
+}
+.tally div:last-child{border-right:0}
+.tally b{
+  display:block; font-size:26px; font-weight:600; line-height:1.1;
+  font-variant-numeric:tabular-nums; color:var(--ink);
+}
+.tally span{font-size:12.5px; color:var(--ink-3); letter-spacing:.02em}
+
+/* ---------- controls ---------- */
+.bar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 20px;
+  margin:44px 0 6px; padding-bottom:14px; border-bottom:1px solid var(--rule);
+}
+.legend{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center}
+.lg{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-2)}
+.dot{width:9px; height:9px; border-radius:50%; flex:none}
+.dot.direct{background:var(--ok)} .dot.shaped{background:var(--warn)} .dot.gap{background:var(--gapc)}
+button.toggle{
+  font:inherit; font-size:13px; font-weight:500; color:var(--ink-2);
+  background:var(--plate); border:1px solid var(--rule); border-radius:999px;
+  padding:6px 15px; cursor:pointer; margin-left:auto; transition:.18s;
+}
+button.toggle[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent)}
+button.toggle:hover{border-color:var(--accent)}
+
+/* ---------- wheel ---------- */
+.stage{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:32px; align-items:start; margin-top:22px}
+@media (max-width:900px){.stage{grid-template-columns:1fr}}
+.wheelbox{position:relative}
+.skip{
+  position:absolute; left:0; top:0; z-index:3; font-size:13px; padding:6px 12px;
+  background:var(--plate); color:var(--ink); border:1px solid var(--accent); border-radius:2px;
+  transform:translateY(-140%); opacity:0;
+}
+.skip:focus{transform:none; opacity:1}
+svg.wheel{width:100%; height:auto; display:block; touch-action:manipulation}
+svg.wheel g.seg{cursor:pointer}
+svg.wheel g.seg path{transition:opacity .22s ease, filter .22s ease}
+svg.wheel text{pointer-events:none; user-select:none; font-family:'Anek Kannada','Anek Latin',sans-serif}
+svg.wheel.dimmed g.seg:not(.on) path{opacity:.17}
+svg.wheel.dimmed g.seg:not(.on) text{opacity:.22}
+g.seg.on path{filter:saturate(1.12)}
+.hub{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:22%; text-align:center; pointer-events:none;
+}
+.hub .hw{
+  font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:clamp(15px,2.5vw,27px); line-height:1.15; color:var(--ink);
+  overflow-wrap:anywhere;
+}
+.hub .ht{font-size:clamp(9px,1.15vw,12px); color:var(--ink-3); letter-spacing:.04em; margin-top:3px}
+
+/* ---------- detail ---------- */
+.detail{
+  background:var(--plate); border:1px solid var(--rule); border-radius:2px;
+  padding:22px; box-shadow:var(--shadow); position:sticky; top:22px;
+}
+.detail .crumb{font-size:11.5px; letter-spacing:.05em; color:var(--ink-3); margin-bottom:12px}
+.detail .crumb b{color:var(--ink-2); font-weight:600}
+.detail .word{
+  font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:34px; line-height:1.2; margin-bottom:2px;
+}
+.detail .rom{font-size:14px; color:var(--ink-2); font-style:italic; font-family:'Spectral',serif}
+.detail .src{font-size:13px; color:var(--ink-3); margin-top:2px}
+.chip{
+  display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600;
+  letter-spacing:.03em; padding:3px 10px; border-radius:999px; margin-top:14px;
+  border:1px solid currentColor;
+}
+.chip.direct{color:var(--ok)} .chip.shaped{color:var(--warn)} .chip.gap{color:var(--gapc)}
+.detail h4{
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+  font-weight:600; margin:20px 0 8px; padding-top:16px; border-top:1px solid var(--rule-soft);
+}
+.rlist{display:flex; flex-wrap:wrap; gap:6px}
+.rlist span{
+  font-size:12.5px; background:var(--sunk); color:var(--ink-2);
+  padding:3px 9px; border-radius:2px; border:1px solid var(--rule-soft);
+}
+.rlist .none{background:none; border:1px dashed var(--rule); color:var(--ink-3); font-style:italic}
+.detail .note{font-family:'Spectral',Georgia,serif; font-size:14.5px; line-height:1.6; color:var(--ink-2)}
+.detail .note i, .detail .note em{color:var(--ink)}
+.hint{color:var(--ink-3); font-size:14px; font-family:'Spectral',serif; font-style:italic}
+
+/* ---------- sections ---------- */
+section{padding:clamp(56px,8vw,104px) 0 0}
+.shead{display:flex; flex-direction:column; gap:12px; margin-bottom:34px}
+.shead h2{font-family:'Noto Serif Kannada',serif; font-size:clamp(28px,4.4vw,42px)}
+.shead h2 .lat{font-family:'Spectral',serif; font-style:italic; font-weight:400; color:var(--ink-3); font-size:.55em}
+.shead p{font-family:'Spectral',Georgia,serif; font-size:16.5px; color:var(--ink-2); max-width:62ch}
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:1px; background:var(--rule-soft); border:1px solid var(--rule-soft)}
+.card{background:var(--plate); padding:22px 20px 24px}
+.card .w{font-family:'Noto Serif Kannada',serif; font-weight:600; font-size:25px; line-height:1.25}
+.card .r{font-family:'Spectral',serif; font-style:italic; font-size:13px; color:var(--ink-3); margin-bottom:10px}
+.card .g{font-family:'Spectral',Georgia,serif; font-size:14.5px; line-height:1.62; color:var(--ink-2)}
+.card .g i{color:var(--ink)}
+
+table.rasa{width:100%; border-collapse:collapse; font-size:15px}
+table.rasa th{
+  text-align:left; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600; padding:0 14px 10px 0; border-bottom:1px solid var(--rule);
+}
+table.rasa td{padding:14px 14px 14px 0; border-bottom:1px solid var(--rule-soft); vertical-align:baseline}
+table.rasa td.k{font-family:'Noto Serif Kannada',serif; font-size:20px; font-weight:600; white-space:nowrap}
+table.rasa td.t{font-family:'Spectral',serif; font-style:italic; color:var(--ink-3); font-size:13.5px; white-space:nowrap}
+table.rasa td.e{color:var(--ink-2); white-space:nowrap}
+table.rasa td.m{font-family:'Spectral',Georgia,serif; color:var(--ink-2); font-size:14.5px}
+.scroll{overflow-x:auto}
+
+.method{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:28px 34px}
+.method h3{font-size:14px; letter-spacing:.02em; margin-bottom:8px}
+.method p{font-family:'Spectral',Georgia,serif; font-size:14.5px; color:var(--ink-2); line-height:1.62}
+code{
+  font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12.5px;
+  background:var(--sunk); border:1px solid var(--rule-soft); padding:2px 6px; border-radius:2px;
+  color:var(--ink-2); overflow-wrap:anywhere;
+}
+pre{margin:10px 0 0; overflow-x:auto; background:var(--sunk); border:1px solid var(--rule-soft); padding:12px 14px; border-radius:2px}
+pre code{background:none; border:0; padding:0; white-space:pre}
+footer{margin-top:clamp(56px,8vw,96px); padding:26px 0 60px; border-top:1px solid var(--rule); color:var(--ink-3); font-size:13px}
+footer a{color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+@keyframes seg-in{from{opacity:0; transform:scale(.965)} to{opacity:1; transform:scale(1)}}
+svg.wheel g.seg{animation:seg-in .5s cubic-bezier(.2,.7,.3,1) backwards; transform-origin:400px 400px}
+</style>
