@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="kn">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A feeling wheel in Kannada. 130 words taken through the rala English-Kannada dictionary and then argued with.">
+<meta name="description" content="Three emotion wheels in Kannada: one translated from the English feeling wheel, one built from the body, one from the nine rasas.">
 <meta property="og:title" content="ಭಾವಚಕ್ರ">
-<meta property="og:description" content="A feeling wheel in Kannada, built from the rala dictionary API.">
+<meta property="og:description" content="Three emotion wheels in Kannada — from English, from the body, from the nine rasas.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23A9790F'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E6E9E2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%239C6E0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E6E9E2'/%3E%3C/svg%3E">
 <title>ಭಾವಚಕ್ರ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,18 +18,20 @@
   --ground:#E6E9E2; --plate:#F1F3ED; --sunk:#DBDFD4;
   --ink:#191E1A; --ink-2:#4A534B; --ink-3:#7C857C;
   --rule:#C9CFC2; --rule-soft:#D9DED2;
-  --accent:#A8791A;            /* turmeric, dulled for light ground */
-  --accent-soft:#EFE3C6;
-  --mixer:#FFFFFF;             /* rings mix toward this */
-  --mix-mid:68%;               /* how much hue survives in each ring */
-  --mix-leaf:40%;
-  --leaf-ink:#1C221D;          /* dark label ink on the pale outer rings */
-  --mid-ink:#161A17;
-  --core-ink:#FFFFFF;
+  --accent:#A8791A; --accent-soft:#EFE3C6;
+  --mixer:#FFFFFF; --mix-mid:62%; --mix-leaf:40%;
+  --leaf-ink:#1C221D; --mid-ink:#161A17; --core-ink:#FFFFFF;
   --shadow:0 1px 2px rgba(25,30,26,.07), 0 8px 28px -12px rgba(25,30,26,.22);
-  --h-joy:#A9790F; --h-wonder:#16696E; --h-weary:#64744A;
-  --h-fear:#43478E; --h-anger:#A53426; --h-disgust:#723A6D; --h-sorrow:#26597F;
-  --ok:#4B7A3F; --warn:#9A6B12; --gapc:#A33F5E;
+  /* ಭಾವಚಕ್ರ — turmeric, peacock, neem, indigo, kumkum, lac, deep blue */
+  --bhava-0:#9C6E0C; --bhava-1:#16696E; --bhava-2:#64744A; --bhava-3:#43478E;
+  --bhava-4:#A53426; --bhava-5:#723A6D; --bhava-6:#26597F;
+  /* ಒಡಲ ಚಕ್ರ — the seats of the body */
+  --odalu-0:#A6384A; --odalu-1:#946E10; --odalu-2:#7A2B45; --odalu-3:#3C4890;
+  --odalu-4:#146A75; --odalu-5:#6A3F8E; --odalu-6:#586B3E;
+  /* ರಸಚಕ್ರ — after the colours the Nāṭyaśāstra assigns each rasa */
+  --rasa-0:#3E7A4E; --rasa-1:#8E7413; --rasa-2:#5A6B7A; --rasa-3:#A52D26;
+  --rasa-4:#9A6E12; --rasa-5:#3A3B63; --rasa-6:#1F5F86; --rasa-7:#A65A14;
+  --rasa-8:#7C7F74;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -37,13 +39,16 @@
     --ink:#E4E8DD; --ink-2:#A8B1A4; --ink-3:#79826F;
     --rule:#2B3229; --rule-soft:#232920;
     --accent:#D9A93C; --accent-soft:#332A14;
-    --mixer:#0C0F0A;
-    --mix-mid:54%; --mix-leaf:30%;
+    --mixer:#0C0F0A; --mix-mid:54%; --mix-leaf:30%;
     --leaf-ink:#DDE2D6; --mid-ink:#EAEEE3; --core-ink:#0E120C;
     --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 34px -14px rgba(0,0,0,.8);
-    --h-joy:#E2AC33; --h-wonder:#2AA0A5; --h-weary:#93A56E;
-    --h-fear:#6E73C8; --h-anger:#D45444; --h-disgust:#A75BA0; --h-sorrow:#3D84BC;
-    --ok:#7FB86E; --warn:#D3A03C; --gapc:#DE7C99;
+    --bhava-0:#E2AC33; --bhava-1:#2AA0A5; --bhava-2:#93A56E; --bhava-3:#6E73C8;
+    --bhava-4:#D45444; --bhava-5:#A75BA0; --bhava-6:#3D84BC;
+    --odalu-0:#DE6B7C; --odalu-1:#D2A032; --odalu-2:#C0637F; --odalu-3:#6C77CE;
+    --odalu-4:#2E9BA6; --odalu-5:#A177CE; --odalu-6:#94AB6C;
+    --rasa-0:#62B27C; --rasa-1:#E0C24A; --rasa-2:#93A6B6; --rasa-3:#DE5A4C;
+    --rasa-4:#DDA83A; --rasa-5:#7A7CC4; --rasa-6:#3F92C4; --rasa-7:#E2913C;
+    --rasa-8:#B4B8A9;
   }
 }
 :root[data-theme="dark"]{
@@ -51,13 +56,16 @@
   --ink:#E4E8DD; --ink-2:#A8B1A4; --ink-3:#79826F;
   --rule:#2B3229; --rule-soft:#232920;
   --accent:#D9A93C; --accent-soft:#332A14;
-  --mixer:#0C0F0A;
-  --mix-mid:54%; --mix-leaf:30%;
+  --mixer:#0C0F0A; --mix-mid:54%; --mix-leaf:30%;
   --leaf-ink:#DDE2D6; --mid-ink:#EAEEE3; --core-ink:#0E120C;
   --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 34px -14px rgba(0,0,0,.8);
-  --h-joy:#E2AC33; --h-wonder:#2AA0A5; --h-weary:#93A56E;
-  --h-fear:#6E73C8; --h-anger:#D45444; --h-disgust:#A75BA0; --h-sorrow:#3D84BC;
-  --ok:#7FB86E; --warn:#D3A03C; --gapc:#DE7C99;
+  --bhava-0:#E2AC33; --bhava-1:#2AA0A5; --bhava-2:#93A56E; --bhava-3:#6E73C8;
+  --bhava-4:#D45444; --bhava-5:#A75BA0; --bhava-6:#3D84BC;
+  --odalu-0:#DE6B7C; --odalu-1:#D2A032; --odalu-2:#C0637F; --odalu-3:#6C77CE;
+  --odalu-4:#2E9BA6; --odalu-5:#A177CE; --odalu-6:#94AB6C;
+  --rasa-0:#62B27C; --rasa-1:#E0C24A; --rasa-2:#93A6B6; --rasa-3:#DE5A4C;
+  --rasa-4:#DDA83A; --rasa-5:#7A7CC4; --rasa-6:#3F92C4; --rasa-7:#E2913C;
+  --rasa-8:#B4B8A9;
 }
 *{box-sizing:border-box}
 body{
@@ -66,405 +74,458 @@ body{
   font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
 }
 .serif{font-family:'Spectral','Noto Serif Kannada',Georgia,serif}
-.kn{font-family:'Noto Serif Kannada','Spectral',serif}
 .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
-.col{max-width:660px}
 h1,h2,h3{margin:0; font-weight:600; text-wrap:balance; line-height:1.18}
 p{margin:0}
 a{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:3px}
-.eyebrow{
-  font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
-  color:var(--ink-3); font-weight:600;
-}
+.eyebrow{font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); font-weight:600}
 
-/* ---------- masthead ---------- */
-header{padding:clamp(48px,7vw,88px) 0 0}
-.mast{display:flex; flex-direction:column; gap:18px}
-.mast h1{
-  font-family:'Noto Serif Kannada',serif; font-weight:600;
-  font-size:clamp(52px,10vw,104px); line-height:.98; letter-spacing:-.01em;
-}
-.mast .sub{
-  font-family:'Spectral',Georgia,serif; font-size:clamp(17px,2.1vw,21px);
-  line-height:1.55; color:var(--ink-2); max-width:60ch;
-}
+header{padding:clamp(40px,6vw,72px) 0 0}
+.mast{display:flex; flex-direction:column; gap:16px}
+.mast h1{font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:clamp(48px,9vw,92px); line-height:1.04; letter-spacing:-.01em}
+.mast .sub{font-family:'Spectral',Georgia,serif; font-size:clamp(16.5px,2vw,20px);
+  line-height:1.55; color:var(--ink-2); max-width:62ch}
 .mast .sub em{color:var(--ink); font-style:italic}
-.tally{display:flex; flex-wrap:wrap; gap:0; margin-top:10px; border-top:1px solid var(--rule)}
-.tally div{
-  padding:14px 26px 14px 0; margin-right:26px; border-right:1px solid var(--rule-soft);
-}
-.tally div:last-child{border-right:0}
-.tally b{
-  display:block; font-size:26px; font-weight:600; line-height:1.1;
-  font-variant-numeric:tabular-nums; color:var(--ink);
-}
-.tally span{font-size:12.5px; color:var(--ink-3); letter-spacing:.02em}
 
-/* ---------- controls ---------- */
-.bar{
-  display:flex; flex-wrap:wrap; align-items:center; gap:10px 20px;
-  margin:44px 0 6px; padding-bottom:14px; border-bottom:1px solid var(--rule);
-}
-.legend{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center}
-.lg{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-2)}
-.dot{width:9px; height:9px; border-radius:50%; flex:none}
-.dot.direct{background:var(--ok)} .dot.shaped{background:var(--warn)} .dot.gap{background:var(--gapc)}
-button.toggle{
-  font:inherit; font-size:13px; font-weight:500; color:var(--ink-2);
+/* ---------- wheel switcher ---------- */
+.switcher{margin:38px 0 0}
+.track{position:relative; display:grid; grid-template-columns:repeat(3,1fr);
+  background:var(--sunk); border:1px solid var(--rule); border-radius:3px; padding:4px; gap:0}
+.thumb{position:absolute; z-index:0; left:4px; top:4px; bottom:4px; width:calc((100% - 8px)/3);
+  background:var(--plate); border:1px solid var(--rule); border-radius:2px;
+  box-shadow:var(--shadow); transition:transform .38s cubic-bezier(.3,.8,.3,1)}
+.opt{position:relative; z-index:1; appearance:none; background:none; border:0; cursor:pointer;
+  font:inherit; color:var(--ink-3); padding:11px 10px; text-align:center; line-height:1.25;
+  transition:color .25s}
+.opt b{display:block; font-family:'Noto Serif Kannada',serif; font-size:19px; font-weight:600}
+.opt span{display:block; font-size:11.5px; letter-spacing:.03em; margin-top:2px}
+.opt[aria-selected="true"]{color:var(--ink)}
+@media (max-width:560px){ .opt b{font-size:16px} .opt span{font-size:10px} }
+
+/* ---------- bar: zoom-out + language slider ---------- */
+.bar{display:flex; align-items:center; gap:14px; margin:18px 0 4px; min-height:38px}
+.zoomout{appearance:none; font:inherit; font-size:13px; font-weight:500; cursor:pointer;
+  background:var(--plate); color:var(--ink-2); border:1px solid var(--rule);
+  border-radius:999px; padding:6px 14px}
+.zoomout:hover{border-color:var(--accent); color:var(--accent)}
+.langslide{margin-left:auto}
+.lang{position:relative; appearance:none; border:1px solid var(--rule); cursor:pointer;
+  background:var(--sunk); border-radius:999px; padding:3px; display:grid;
+  grid-template-columns:1fr 1fr; font:inherit; width:186px}
+.lthumb{position:absolute; z-index:0; top:3px; bottom:3px; left:3px; width:calc(50% - 3px);
   background:var(--plate); border:1px solid var(--rule); border-radius:999px;
-  padding:6px 15px; cursor:pointer; margin-left:auto; transition:.18s;
-}
-button.toggle[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent)}
-button.toggle:hover{border-color:var(--accent)}
+  transition:transform .3s cubic-bezier(.3,.8,.3,1)}
+.lang[aria-checked="true"] .lthumb{transform:translateX(100%)}
+.lopt{position:relative; z-index:1; padding:5px 4px; font-size:13px; font-weight:500;
+  color:var(--ink-3); text-align:center; transition:color .25s}
+.lopt:first-of-type{font-family:'Noto Serif Kannada',serif}
+.lopt.on{color:var(--ink)}
 
 /* ---------- wheel ---------- */
-.stage{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:32px; align-items:start; margin-top:22px}
+.stage{display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:30px; align-items:start; margin-top:12px}
 @media (max-width:900px){.stage{grid-template-columns:1fr}}
 .wheelbox{position:relative}
-.skip{
-  position:absolute; left:0; top:0; z-index:3; font-size:13px; padding:6px 12px;
+.skip{position:absolute; left:0; top:0; z-index:3; font-size:13px; padding:6px 12px;
   background:var(--plate); color:var(--ink); border:1px solid var(--accent); border-radius:2px;
-  transform:translateY(-140%); opacity:0;
-}
+  transform:translateY(-140%); opacity:0}
 .skip:focus{transform:none; opacity:1}
-svg.wheel{width:100%; height:auto; display:block; touch-action:manipulation}
+svg.wheel{width:100%; height:auto; display:block; touch-action:manipulation; overflow:visible}
+svg.wheel > g{transition:transform .55s cubic-bezier(.32,.72,.24,1)}
 svg.wheel g.seg{cursor:pointer}
-svg.wheel g.seg path{transition:opacity .22s ease, filter .22s ease}
+svg.wheel g.seg path{transition:opacity .22s ease}
 svg.wheel text{pointer-events:none; user-select:none; font-family:'Anek Kannada','Anek Latin',sans-serif}
 svg.wheel.dimmed g.seg:not(.on) path{opacity:.17}
 svg.wheel.dimmed g.seg:not(.on) text{opacity:.22}
-g.seg.on path{filter:saturate(1.12)}
-.hub{
-  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-  width:22%; text-align:center; pointer-events:none;
-}
-.hub .hw{
-  font-family:'Noto Serif Kannada',serif; font-weight:600;
-  font-size:clamp(15px,2.5vw,27px); line-height:1.15; color:var(--ink);
-  overflow-wrap:anywhere;
-}
-.hub .ht{font-size:clamp(9px,1.15vw,12px); color:var(--ink-3); letter-spacing:.04em; margin-top:3px}
+.hub{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:22%; text-align:center; pointer-events:none}
+.hub[hidden]{display:none}
+.hub .hw{font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:clamp(15px,2.4vw,26px); line-height:1.15; color:var(--ink); overflow-wrap:anywhere}
+.hub .ht{font-size:clamp(9px,1.1vw,11.5px); color:var(--ink-3); letter-spacing:.03em; margin-top:3px}
+@keyframes seg-in{from{opacity:0} to{opacity:1}}
+svg.wheel g.seg{animation:seg-in .45s ease backwards}
 
 /* ---------- detail ---------- */
-.detail{
-  background:var(--plate); border:1px solid var(--rule); border-radius:2px;
-  padding:22px; box-shadow:var(--shadow); position:sticky; top:22px;
-}
-.detail .crumb{font-size:11.5px; letter-spacing:.05em; color:var(--ink-3); margin-bottom:12px}
-.detail .crumb b{color:var(--ink-2); font-weight:600}
-.detail .word{
-  font-family:'Noto Serif Kannada',serif; font-weight:600;
-  font-size:34px; line-height:1.2; margin-bottom:2px;
-}
+.detail{background:var(--plate); border:1px solid var(--rule); border-radius:2px;
+  padding:22px; box-shadow:var(--shadow); position:sticky; top:22px; min-height:180px}
+.detail .crumb{font-size:12px; color:var(--ink-3); margin-bottom:13px; line-height:1.5}
+.detail .crumb b{color:var(--ink-2); font-weight:600; font-size:13px}
+.detail .crumb i{font-style:normal; opacity:.75}
+.detail .crumb em{font-style:normal; margin:0 6px; opacity:.5}
+.detail .word{font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:33px; line-height:1.25; margin-bottom:3px; overflow-wrap:anywhere}
 .detail .rom{font-size:14px; color:var(--ink-2); font-style:italic; font-family:'Spectral',serif}
-.detail .src{font-size:13px; color:var(--ink-3); margin-top:2px}
-.chip{
-  display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600;
-  letter-spacing:.03em; padding:3px 10px; border-radius:999px; margin-top:14px;
-  border:1px solid currentColor;
-}
-.chip.direct{color:var(--ok)} .chip.shaped{color:var(--warn)} .chip.gap{color:var(--gapc)}
-.detail h4{
-  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
-  font-weight:600; margin:20px 0 8px; padding-top:16px; border-top:1px solid var(--rule-soft);
-}
-.rlist{display:flex; flex-wrap:wrap; gap:6px}
-.rlist span{
-  font-size:12.5px; background:var(--sunk); color:var(--ink-2);
-  padding:3px 9px; border-radius:2px; border:1px solid var(--rule-soft);
-}
-.rlist .none{background:none; border:1px dashed var(--rule); color:var(--ink-3); font-style:italic}
-.detail .note{font-family:'Spectral',Georgia,serif; font-size:14.5px; line-height:1.6; color:var(--ink-2)}
+.detail .means{font-size:17px; color:var(--ink); margin-top:9px; font-weight:500}
+.detail .lit{font-size:13.5px; color:var(--ink-3); margin-top:3px; font-family:'Spectral',serif; font-style:italic}
+.detail .note{font-family:'Spectral',Georgia,serif; font-size:14.5px; line-height:1.62;
+  color:var(--ink-2); margin-top:15px; padding-top:15px; border-top:1px solid var(--rule-soft)}
 .detail .note i, .detail .note em{color:var(--ink)}
-.hint{color:var(--ink-3); font-size:14px; font-family:'Spectral',serif; font-style:italic}
+.hint{color:var(--ink-3); font-size:14.5px; font-family:'Spectral',serif; font-style:italic; line-height:1.6}
 
-/* ---------- sections ---------- */
-section{padding:clamp(56px,8vw,104px) 0 0}
-.shead{display:flex; flex-direction:column; gap:12px; margin-bottom:34px}
-.shead h2{font-family:'Noto Serif Kannada',serif; font-size:clamp(28px,4.4vw,42px)}
-.shead h2 .lat{font-family:'Spectral',serif; font-style:italic; font-weight:400; color:var(--ink-3); font-size:.55em}
-.shead p{font-family:'Spectral',Georgia,serif; font-size:16.5px; color:var(--ink-2); max-width:62ch}
-.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:1px; background:var(--rule-soft); border:1px solid var(--rule-soft)}
-.card{background:var(--plate); padding:22px 20px 24px}
-.card .w{font-family:'Noto Serif Kannada',serif; font-weight:600; font-size:25px; line-height:1.25}
-.card .r{font-family:'Spectral',serif; font-style:italic; font-size:13px; color:var(--ink-3); margin-bottom:10px}
-.card .g{font-family:'Spectral',Georgia,serif; font-size:14.5px; line-height:1.62; color:var(--ink-2)}
-.card .g i{color:var(--ink)}
-
-table.rasa{width:100%; border-collapse:collapse; font-size:15px}
-table.rasa th{
-  text-align:left; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-3); font-weight:600; padding:0 14px 10px 0; border-bottom:1px solid var(--rule);
-}
-table.rasa td{padding:14px 14px 14px 0; border-bottom:1px solid var(--rule-soft); vertical-align:baseline}
-table.rasa td.k{font-family:'Noto Serif Kannada',serif; font-size:20px; font-weight:600; white-space:nowrap}
-table.rasa td.t{font-family:'Spectral',serif; font-style:italic; color:var(--ink-3); font-size:13.5px; white-space:nowrap}
-table.rasa td.e{color:var(--ink-2); white-space:nowrap}
-table.rasa td.m{font-family:'Spectral',Georgia,serif; color:var(--ink-2); font-size:14.5px}
-.scroll{overflow-x:auto}
-
-.method{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:28px 34px}
-.method h3{font-size:14px; letter-spacing:.02em; margin-bottom:8px}
+/* ---------- prose ---------- */
+section{padding:clamp(52px,7vw,92px) 0 0}
+.shead{display:flex; flex-direction:column; gap:12px; margin-bottom:32px; max-width:66ch}
+.shead h2{font-family:'Noto Serif Kannada',serif; font-size:clamp(26px,4vw,38px)}
+.shead h2 .lat{font-family:'Spectral',serif; font-style:italic; font-weight:400;
+  color:var(--ink-3); font-size:.55em}
+.shead p{font-family:'Spectral',Georgia,serif; font-size:16.5px; color:var(--ink-2)}
+.method{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:26px 34px}
+.method h3{font-size:13.5px; letter-spacing:.02em; margin-bottom:7px}
 .method p{font-family:'Spectral',Georgia,serif; font-size:14.5px; color:var(--ink-2); line-height:1.62}
-code{
-  font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12.5px;
-  background:var(--sunk); border:1px solid var(--rule-soft); padding:2px 6px; border-radius:2px;
-  color:var(--ink-2); overflow-wrap:anywhere;
-}
-pre{margin:10px 0 0; overflow-x:auto; background:var(--sunk); border:1px solid var(--rule-soft); padding:12px 14px; border-radius:2px}
-pre code{background:none; border:0; padding:0; white-space:pre}
-footer{margin-top:clamp(56px,8vw,96px); padding:26px 0 60px; border-top:1px solid var(--rule); color:var(--ink-3); font-size:13px}
+footer{margin-top:clamp(48px,7vw,84px); padding:24px 0 60px; border-top:1px solid var(--rule);
+  color:var(--ink-3); font-size:13px; max-width:80ch}
 footer a{color:var(--ink-2)}
 @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
-@keyframes seg-in{from{opacity:0; transform:scale(.965)} to{opacity:1; transform:scale(1)}}
-svg.wheel g.seg{animation:seg-in .5s cubic-bezier(.2,.7,.3,1) backwards; transform-origin:400px 400px}
 </style>
 
 </head>
 <body>
 <header class="wrap">
   <div class="mast">
-    <div class="eyebrow">ಕನ್ನಡದಲ್ಲಿ ಭಾವನೆಗಳ ನಕ್ಷೆ · a feeling wheel in Kannada</div>
-    <h1>ಭಾವಚಕ್ರ</h1>
-    <p class="sub serif">The English feeling wheel, taken through a Kannada dictionary and then argued with. Each of the 130 Kannada words on it came out of <em>rala</em> — 478,680 English→Kannada entries — and was then kept, reshaped, or thrown out and replaced with what a Kannada speaker would actually say.</p>
-    <div class="tally">
-      <div><b>130</b><span>ಪದಗಳು · words placed</span></div>
-      <div><b>73</b><span>rala got it right</span></div>
-      <div><b>45</b><span>reshaped by ear</span></div>
-      <div><b>12</b><span>no usable entry</span></div>
+    <div class="eyebrow">ಕನ್ನಡದಲ್ಲಿ ಭಾವನೆಗಳ ನಕ್ಷೆ · three feeling wheels in Kannada</div>
+    <h1 id="mastTitle">ಭಾವಚಕ್ರ</h1>
+    <p class="sub serif" id="mastSub"></p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="switcher" role="tablist" aria-label="Choose a wheel">
+    <div class="track"><span class="thumb" id="thumb"></span>
+      <button role="tab" class="opt" data-i="0" aria-selected="true">
+        <b>ಭಾವಚಕ್ರ</b><span>from English</span></button>
+      <button role="tab" class="opt" data-i="1" aria-selected="false">
+        <b>ಒಡಲ ಚಕ್ರ</b><span>from the body</span></button>
+      <button role="tab" class="opt" data-i="2" aria-selected="false">
+        <b>ರಸಚಕ್ರ</b><span>from the rasas</span></button>
     </div>
   </div>
 
   <div class="bar">
-    <div class="legend">
-      <span class="lg"><i class="dot direct"></i>rala's own answer</span>
-      <span class="lg"><i class="dot shaped"></i>reshaped</span>
-      <span class="lg"><i class="dot gap"></i>dictionary gap</span>
+    <button class="zoomout" id="zoomOut" hidden>← ಪೂರ್ಣ ಚಕ್ರ · whole wheel</button>
+    <div class="langslide">
+      <button class="lang" id="langBtn" role="switch" aria-checked="false"
+              aria-label="Wheel labels: Kannada or English">
+        <span class="lthumb"></span>
+        <span class="lopt on">ಕನ್ನಡ</span><span class="lopt">English</span>
+      </button>
     </div>
-    <button class="toggle" id="langToggle" aria-pressed="false">Show English</button>
   </div>
 
   <div class="stage">
     <div class="wheelbox">
-      <a class="skip" href="#native">Skip the wheel's 130 segments</a>
-      <svg class="wheel" id="wheel" viewBox="0 0 800 800" role="img" aria-label="Kannada emotion wheel: seven core feelings in three rings"></svg>
+      <a class="skip" href="#more">Skip the wheel</a>
+      <svg class="wheel" id="wheel" viewBox="0 0 800 800" role="img"
+           aria-label="An emotion wheel in Kannada"></svg>
       <div class="hub" id="hub" aria-hidden="true">
         <div class="hw" id="hubWord">ಭಾವಚಕ್ರ</div>
         <div class="ht" id="hubRom">bhāva-cakra</div>
       </div>
     </div>
-    <aside class="detail" id="detail" aria-live="polite">
-      <p class="hint">Hover or tap any segment. Each card shows what rala returned for the English word, and why the Kannada on the wheel is or isn't that.</p>
-    </aside>
+    <aside class="detail" id="detail" aria-live="polite"></aside>
   </div>
-</header>
+</div>
 
-<main class="wrap">
-
-<section id="native">
+<main class="wrap" id="more">
+<section>
   <div class="shead">
-    <div class="eyebrow">ಒಂದು · beyond the wheel</div>
-    <h2>ಕನ್ನಡದ್ದೇ ಪದಗಳು <span class="lat">words with nowhere to sit</span></h2>
-    <p>The wheel is an English object. These are feelings Kannada names precisely and English can only paraphrase — which is the real argument for not translating a wheel, but redrawing one.</p>
+    <h2 id="aboutTitle"></h2>
+    <p id="aboutBody"></p>
   </div>
-  <div class="cards" id="nativeCards"></div>
-</section>
-
-<section id="rasa">
-  <div class="shead">
-    <div class="eyebrow">ಎರಡು · the older map</div>
-    <h2>ನವರಸ <span class="lat">the nine rasas, laid over the wheel</span></h2>
-    <p>Kannada already had a taxonomy of feeling, inherited from the <i>Nāṭyaśāstra</i> and worked hard by a thousand years of Kannada poetry. It is not a psychology — it is a theory of what an audience can be made to feel. Overlaying it on the wheel shows what the wheel has no room for.</p>
-  </div>
-  <div class="scroll">
-    <table class="rasa">
-      <thead><tr><th>ರಸ</th><th></th><th>flavour</th><th>where it lands on the wheel</th></tr></thead>
-      <tbody id="rasaBody"></tbody>
-    </table>
-  </div>
-</section>
-
-<section id="method">
-  <div class="shead">
-    <div class="eyebrow">ಮೂರು · colophon</div>
-    <h2>ಹೇಗೆ ಮಾಡಿದ್ದು <span class="lat">how it was made</span></h2>
-  </div>
-  <div class="method">
-    <div>
-      <h3>The lookup</h3>
-      <p>Every English word on the wheel was sent to the rala search worker, one at a time, with a third of a second between calls and no <code>X-Rala-Intent</code> header, so none of it landed in the site's own search analytics.</p>
-      <pre><code>GET https://rala-search.rala-search.workers.dev/?q=munisu
-→ { query, count, results:[ {kannada, definition, type, source} ] }</code></pre>
-    </div>
-    <div>
-      <h3>Where it fell down</h3>
-      <p>rala is built over Padakanaja, which is largely administrative, legal, scientific and agricultural. So <i>stressed</i> returned shear stress and tensile stress; <i>confused</i> returned a flour beetle; <i>let down</i> returned the dairy term for milk ejection; <i>depressed</i> returned "depressed classes". Words that failed as adjectives were retried as verb stems — <code>annoyed → annoy</code> — which recovered most of them.</p>
-    </div>
-    <div>
-      <h3>Where it was right</h3>
-      <p>On fear, anger and grief it is excellent, and better than a bilingual speaker's first instinct: seven graded fear words, four for doubt, and ತೇಜೋವಧೆ — "the murder of someone's lustre" — for humiliation. 73 of 130 entries here are rala's own answer, unaltered.</p>
-    </div>
-    <div>
-      <h3>The reinterpretation</h3>
-      <p>A translated wheel would say ಶಾಂತಿ for peaceful and ಅಸೂಯೆ for jealous. Both are dictionary-correct and neither is what gets said. Where the register was wrong, the spoken word won: ನೆಮ್ಮದಿ, ಹೊಟ್ಟೆಕಿಚ್ಚು, ಕೆಂಡಾಮಂಡಲ, ಬೇಜಾರು.</p>
-    </div>
-  </div>
+  <div class="method" id="aboutGrid"></div>
   <footer>
-    Word data from <a href="https://pvnkmrksk.github.io/rala/">rala</a>, a reversal of <a href="https://alar.ink">Alar</a> by V. Krishna (ODC-ODbL) combined with Padakanaja, Government of Karnataka. Alar's own site was not queried. Wheel structure after Gloria Willcox's Feeling Wheel and its widely circulated three-ring descendant; the Kannada is a reinterpretation, not a translation of it.
+    Words checked against <a href="https://pvnkmrksk.github.io/rala/">rala</a>, a reversal of
+    <a href="https://alar.ink">Alar</a> by V. Krishna (ODC-ODbL) combined with Padakanaja,
+    Government of Karnataka. alar.ink itself was never queried.
+    The full word lists, the dictionary evidence behind every choice, and the lookup code are in the
+    <a href="https://github.com/pvnkmrksk/bhavachakra">repository</a>.
   </footer>
 </section>
 </main>
 
 <script>
-const WHEEL = [{"en":"Happy","kn":"ಸಂತೋಷ","tr":"santōṣa","hue":"joy","status":"direct","rala":["ಸಂತೋಷದ","ಸಂತುಷ್ಟ","ಖುಷಿಯಾದ","ನೆಮ್ಮದಿಯ","ಭಾಗ್ಯವಂತನಾದ"],"note":"rala also returns ಭಾಗ್ಯವಂತ / ಅದೃಷ್ಟಶಾಲಿ — 'lucky'. English <i>happy</i> still carries its old root <i>hap</i>, chance. Kannada keeps luck and gladness in separate words.","kids":[{"en":"Playful","kn":"ತುಂಟತನ","tr":"ṭuṇṭatana","status":"gap","rala":["ದ್ರೋಹ ಮಾಡು ⟨foul play⟩","ನಾಟಕಕಾರ ⟨playwright⟩","ಚಕ್ಕರ್ ಕೊಡು ⟨play truant⟩"],"note":"A clean miss. rala only knows <i>play</i> as the noun — foul play, playwright, child's play. The felt state is ತುಂಟತನ, the mischief of a child you are not actually angry with.","kids":[{"en":"Aroused","kn":"ಉದ್ರೇಕ","tr":"udrēka","status":"shaped","rala":["ಉದ್ರೇಕಗೊಳ್ಳು","ಪ್ರಚೋದಿಸು","ಕೆರಳಿಸು"],"note":"In Kannada ಉದ್ರೇಕ is not primarily erotic — a crowd, a temper and a nerve can all be ಉದ್ರಿಕ್ತ. It means charged, and the charge can go either way."},{"en":"Cheeky","kn":"ಕೀಟಲೆ","tr":"kīṭale","status":"shaped","rala":["ಉದ್ಧಟ","ಒರಟುತನದ","ದುರಹಂಕಾರದ"],"note":"rala's ಉದ್ಧಟ / ದುರಹಂಕಾರ are genuinely insulting. Cheeky is affectionate — that is ಕೀಟಲೆ, teasing you are allowed to do."}]},{"en":"Content","kn":"ತೃಪ್ತಿ","tr":"tṛpti","status":"shaped","rala":["ತೃಪ್ತ","ತೃಪ್ತಿ","ಪರಿವಿಡಿ ⟨table of contents⟩","ತೇವಾಂಶ ⟨moisture content⟩"],"note":"The right word was in there, sitting under moisture content and table of contents. ತೃಪ್ತಿ is satiety — the feeling after a meal, and after a life.","kids":[{"en":"Free","kn":"ನಿರಾಳ","tr":"nirāḷa","status":"shaped","rala":["ಮುಕ್ತ","ಸ್ವತಂತ್ರ","ಕರಮುಕ್ತ ⟨duty-free⟩"],"note":"ಮುಕ್ತ and ಸ್ವತಂತ್ರ are freedoms of status — liberated, independent, tax-exempt. The <i>feeling</i> of free is ನಿರಾಳ: unclenched, the breath after the weight comes off."},{"en":"Joyful","kn":"ಹಿಗ್ಗು","tr":"higgu","status":"shaped","rala":["ಸಂತೋಷ","ಉಲ್ಲಾಸ","ಹರ್ಷ"],"note":"ಹರ್ಷ and ಉಲ್ಲಾಸ are correct and Sanskritic. ಹಿಗ್ಗು is the native verb-noun: to swell. Joy as something that expands you."}]},{"en":"Interested","kn":"ಆಸಕ್ತಿ","tr":"āsakti","status":"direct","rala":["ಆಸಕ್ತಿ ಇರುವ","ಸಂಬಂಧವುಳ್ಳ","ಪಕ್ಷಪಾತದ ⟨interested party⟩"],"kids":[{"en":"Curious","kn":"ಕುತೂಹಲ","tr":"kutūhala","status":"direct","rala":["ಕುತೂಹಲಕಾರಿ","ಕುತೂಹಲವುಳ್ಳ"]},{"en":"Inquisitive","kn":"ಜಿಜ್ಞಾಸೆ","tr":"jijñāse","status":"shaped","rala":["ಕೆದಕುವ","ಶೋಧಿಸುವ","ವಿಚಾರಮಾಡುವ"],"note":"ಕೆದಕುವ is prying — poking at what isn't yours. ಜಿಜ್ಞಾಸೆ is the honourable version: the wish to know, the word used for philosophical enquiry."}]},{"en":"Proud","kn":"ಹೆಮ್ಮೆ","tr":"hemme","status":"gap","rala":[],"note":"rala returns nothing at all for <i>proud</i>. And Kannada would resist a single answer anyway: ಹೆಮ್ಮೆ is warm pride in someone, ಅಭಿಮಾನ is pride-as-loyalty, ಅಹಂಕಾರ is the pride that has gone bad. English collapses all three.","kids":[{"en":"Successful","kn":"ಸಾರ್ಥಕ","tr":"sārthaka","status":"shaped","rala":["ಯಶಸ್ವಿ","ವಿಜಯಿ","ವಿಜೇತ"],"note":"ಯಶಸ್ವಿ is the outcome — you won. ಸಾರ್ಥಕ is the feeling — it had meaning, it was worth it. Only one of those belongs on an emotion wheel."},{"en":"Confident","kn":"ಆತ್ಮವಿಶ್ವಾಸ","tr":"ātma-viśvāsa","status":"direct","rala":["ವಿಶ್ವಾಸವುಳ್ಳ","ನೆಚ್ಚಿಕೆಯ","ಧೈರ್ಯದ"],"note":"Literally 'self-trust'. Kannada builds confidence out of the same root as trusting another person."}]},{"en":"Accepted","kn":"ಒಪ್ಪಿಗೆ","tr":"oppige","status":"gap","rala":["ಅಂಗೀಕೃತ ಟೆಂಡರ್ ⟨accepted tender⟩","ಅಂಗೀಕೃತ ಠೇವಣಿ ⟨accepted deposit⟩","ಸ್ವೀಕೃತ"],"note":"Every hit is procurement paperwork. And Kannada has no noun for <i>the felt state of being accepted</i> — you say it as something others did: ನನ್ನನ್ನು ಒಪ್ಪಿಕೊಂಡರು, 'they took me in'. The feeling lives in a verb, not a noun.","kids":[{"en":"Respected","kn":"ಗೌರವ","tr":"gaurava","status":"shaped","rala":["ಆ ಸಂಬಂಧವಾದ ⟨with respect to⟩","ಸಂಬಂಧಿಸಿದಂತೆ ⟨in respect of⟩"],"note":"rala only found the clerical <i>in respect of</i>. ಗೌರವ is the real word, and in Kannada it is something you give, actively, not something you passively have."},{"en":"Valued","kn":"ಮನ್ನಣೆ","tr":"mannaṇe","status":"shaped","rala":["ಏಕಮೌಲ್ಯ ⟨single-valued⟩","ಮೌಲ್ಯ ಸಂದಾಯ ⟨value payable⟩"],"note":"ಮೌಲ್ಯ is price. ಮನ್ನಣೆ is being recognised and given your due — the thing people leave jobs for the lack of."}]},{"en":"Powerful","kn":"ಶಕ್ತಿ","tr":"śakti","status":"direct","rala":["ಶಕ್ತಿಶಾಲಿ","ಶಕ್ತಿವಂತ","ಶಕ್ತನಾದ"],"kids":[{"en":"Courageous","kn":"ಧೈರ್ಯ","tr":"dhairya","status":"direct","rala":["ಧೈರ್ಯದ","ಕೆಚ್ಚೆದೆಯ","ಎದೆಗಾರಿಕೆಯ"],"note":"ಧೈರ್ಯ is steadiness under fear. The native alternatives rala offers are more physical: ಕೆಚ್ಚು is heat in the chest, ಎದೆಗಾರಿಕೆ is literally chest-having."},{"en":"Creative","kn":"ಸೃಜನಶೀಲತೆ","tr":"sṛjanaśīlate","status":"direct","rala":["ಸೃಜನಾತ್ಮಕ","ರಚನಾತ್ಮಕ"]}]},{"en":"Peaceful","kn":"ನೆಮ್ಮದಿ","tr":"nemmadi","status":"shaped","rala":["ಶಾಂತಿಯ","ಶಾಂತಿಯುತ"],"note":"The single most important correction on this wheel. ಶಾಂತಿ is peace as the absence of war — treaties, ceasefires, ಶಾಂತಿ ಸಭೆ. ನೆಮ್ಮದಿ is peace of mind, and it is what people actually pray for.","kids":[{"en":"Loving","kn":"ಪ್ರೀತಿ","tr":"prīti","status":"gap","rala":["ನೆರಳು ಪ್ರಿಯ ⟨shade-loving⟩"],"note":"The only match in 478,680 entries was a botany term for shade-loving plants. Kannada is not short of love words — ಪ್ರೀತಿ, ಮಮತೆ, ವಾತ್ಸಲ್ಯ, ಅಕ್ಕರೆ, ಒಲವು — the dictionary just isn't built to find them from English."},{"en":"Thankful","kn":"ಕೃತಜ್ಞತೆ","tr":"kṛtajñate","status":"direct","rala":["ಕೃತಜ್ಞ","ಕೃತಜ್ಞನಾದ"],"note":"Literally 'knowing what was done'. Gratitude as accurate memory."}]},{"en":"Trusting","kn":"ನಂಬಿಕೆ","tr":"nambike","status":"shaped","rala":["ನಂಬಿಕೆ","ವಿಶ್ವಾಸ","ನ್ಯಾಸ ಖಾತೆ ⟨trust account⟩","ಟ್ರಸ್ಟ್ ಆಡಳಿತ"],"note":"Buried under thirty entries of trust deeds and trust accounts. ನಂಬಿಕೆ also means belief and superstition — in Kannada, trusting a person and believing a thing are one act.","kids":[{"en":"Sensitive","kn":"ಸೂಕ್ಷ್ಮ","tr":"sūkṣma","status":"direct","rala":["ಸೂಕ್ಷ್ಮಗ್ರಾಹಿ","ಸಂವೇದನಾಶೀಲ","ಸೂಕ್ಷ್ಮ"],"note":"ಸೂಕ್ಷ್ಮ means fine-grained, subtle-perceiving. Calling someone ಸೂಕ್ಷ್ಮ is praise — unlike English 'sensitive', which is half an accusation."},{"en":"Intimate","kn":"ಸಲಿಗೆ","tr":"salige","status":"direct","rala":["ಸಲಿಗೆ","ಅನ್ಯೋನ್ಯ","ಆತ್ಮೀಯ","ನಿಕಟ"],"note":"ಸಲಿಗೆ has no English word. It is the earned licence to be informal with someone — to tease them, take their food, drop the honorific. Intimacy defined as permission, not as feeling."}]},{"en":"Optimistic","kn":"ಆಶಾವಾದ","tr":"āśāvāda","status":"direct","rala":["ಆಶಾವಾದದ","ಆಶಾಪೂರ್ಣ"],"kids":[{"en":"Hopeful","kn":"ಭರವಸೆ","tr":"bharavase","status":"direct","rala":["ಭರವಸೆಯ","ಆಶಾದಾಯಕ"],"note":"ಭರವಸೆ is also the word for a promise or an assurance. Hope, in Kannada, is something somebody gave you."},{"en":"Inspired","kn":"ಸ್ಫೂರ್ತಿ","tr":"sphūrti","status":"gap","rala":[],"note":"No result. ಸ್ಫೂರ್ತಿ is the everyday word — a sudden welling-up, the same root as a spark."}]}]},{"en":"Surprised","kn":"ಅಚ್ಚರಿ","tr":"accari","hue":"wonder","status":"direct","rala":["ಆಶ್ಚರ್ಯ","ವಿಸ್ಮಯ","ಅನಿರೀಕ್ಷಿತ","ಹಠಾತ್ ತನಿಖೆ ⟨surprise inspection⟩"],"note":"ಅಚ್ಚರಿ is the native word, ಆಶ್ಚರ್ಯ the Sanskrit one everyone also uses. Kept ಅಚ್ಚರಿ at the centre because the wheel should sound like speech, not a textbook.","kids":[{"en":"Startled","kn":"ಬೆಚ್ಚು","tr":"beccu","status":"direct","rala":["ಚಕಿತಗೊಳಿಸು","ಗಾಬರಿಪಡಿಸು","ಬೆದರಿಸು"],"note":"ಬೆಚ್ಚಿಬೀಳು — to be startled and drop. Kannada builds the flinch out of a fall.","kids":[{"en":"Shocked","kn":"ಆಘಾತ","tr":"āghāta","status":"direct","rala":["ಆಘಾತ","ದಿಗಿಲುಂಟುಮಾಡು","ವಿದ್ಯುದಾಘಾತ ⟨electric shock⟩"]},{"en":"Dismayed","kn":"ಎದೆಗುಂದು","tr":"edegundu","status":"direct","rala":["ಎದೆಗುಂದಿಸು","ಅಧೈರ್ಯ","ದಿಗಿಲು","ಹತಾಶೆ"],"note":"Literally 'the chest sinks'. Kannada names the physical event and leaves you to infer the feeling — it does this constantly."}]},{"en":"Confused","kn":"ಗೊಂದಲ","tr":"gondala","status":"shaped","rala":["ತುಕ್ಕುಗೆಂಪು ⟨confused flour beetle⟩"],"note":"The dictionary's one match for <i>confused</i> is a species of beetle. ಗೊಂದಲ is the real word, and it also means a noisy crowd — confusion as too many voices at once.","kids":[{"en":"Disillusioned","kn":"ಭ್ರಮನಿರಸನ","tr":"bhrama-nirasana","status":"direct","rala":["ಭ್ರಮನಿರಸನಗೊಂಡ"],"note":"'The dispelling of the illusion' — a precise philosophical term doing everyday emotional work."},{"en":"Perplexed","kn":"ಕಂಗೆಡು","tr":"kaṅgeḍu","status":"direct","rala":["ಕಂಗೆಡಿಸು","ವಿಭ್ರಾಂತಿ ತರು"],"note":"ಕಣ್ + ಕೆಡು: the eyes go bad. To be at a loss is, literally, to lose your sight of it."}]},{"en":"Amazed","kn":"ಬೆರಗು","tr":"beragu","status":"direct","rala":["ಬೆರಗುಗೊಳಿಸು","ಆಶ್ಚರ್ಯಗೊಳ್ಳು","ಚಕಿತನಾಗು"],"kids":[{"en":"Astonished","kn":"ವಿಸ್ಮಯ","tr":"vismaya","status":"direct","rala":["ವಿಸ್ಮಯವನ್ನುಂಟುಮಾಡು","ಅಚ್ಚರಿಗೊಳಿಸು"]},{"en":"Awe","kn":"ಭಯಭಕ್ತಿ","tr":"bhaya-bhakti","status":"direct","rala":["ಭಯಮಿಶ್ರಿತ ಗೌರವ","ಭಯ ತುಂಬಿದ ಗೌರವ"],"note":"rala could only define it as a phrase: 'respect mixed with fear'. But Kannada does have the compound — ಭಯಭಕ್ತಿ, fear-and-devotion, the standard word for how one stands before a deity or a formidable elder. Awe as a social posture, not a private thrill."}]},{"en":"Excited","kn":"ಉತ್ಸಾಹ","tr":"utsāha","status":"direct","rala":["ಉತ್ತೇಜಿತ","ಉದ್ರಿಕ್ತ","ಉತ್ಸಾಹ"],"kids":[{"en":"Eager","kn":"ತವಕ","tr":"tavaka","status":"direct","rala":["ತವಕ","ಕಾತರದ","ಉತ್ಸುಕ","ಉತ್ಕಟ"],"note":"ತವಕ and ಕಾತರ are both eagerness with an edge of ache — waiting that has begun to hurt slightly."},{"en":"Energetic","kn":"ಹುರುಪು","tr":"hurupu","status":"direct","rala":["ಹುರುಪು","ಉತ್ಸಾಹ","ಶಕ್ತಿಯುತವಾದ"]}]}]},{"en":"Bad","kn":"ಬೇಸರ","tr":"bēsara","hue":"weary","status":"gap","rala":["ಕೆಟ್ಟ","ದುರ್ವರ್ತನೆ ⟨bad behaviour⟩","ವಸೂಲಾಗದ ಸಾಲ ⟨bad debt⟩","ವೈಮನಸ್ಯ ⟨bad blood⟩"],"note":"The hardest sector. Kannada's ಕೆಟ್ಟ is moral or qualitative — a bad man, spoiled milk — and cannot be a feeling. But look at what the English wheel actually files under 'Bad': bored, busy, stressed, tired. That whole zone has one Kannada name, ಬೇಸರ — a fused weariness-with-things that English needs four words to circle.","kids":[{"en":"Bored","kn":"ಬೇಜಾರು","tr":"bējāru","status":"gap","rala":[],"note":"No entry for <i>boredom</i>. ಬೇಜಾರು covers bored, mildly sad, and fed-up in one breath. 'ಬೇಜಾರಾಗಿದೆ' could be any of the three and the listener works it out from your face.","kids":[{"en":"Indifferent","kn":"ಉದಾಸೀನ","tr":"udāsīna","status":"direct","rala":["ಉದಾಸೀನ","ಅಸಡ್ಡೆಯ","ತಟಸ್ಥ"],"note":"In philosophy ಉದಾಸೀನ is the sage's equanimity. In an argument it is the coldest insult available."},{"en":"Apathetic","kn":"ನಿರಾಸಕ್ತಿ","tr":"nirāsakti","status":"direct","rala":["ನಿರಾಸಕ್ತ","ಆಸಕ್ತಿಯಿಲ್ಲದ","ಭಾವಶೂನ್ಯ"]}]},{"en":"Busy","kn":"ಧಾವಂತ","tr":"dhāvanta","status":"shaped","rala":["ಕಾರ್ಯಮಗ್ನ","ಬಿಡುವಿಲ್ಲದ","ನಿರತ"],"note":"rala's words describe a schedule. ಧಾವಂತ describes what the schedule does to you — the harried forward-lean of someone always mid-errand.","kids":[{"en":"Pressured","kn":"ಒತ್ತಡ","tr":"ottaḍa","status":"direct","rala":["ಒತ್ತಡ","ರಕ್ತ ಒತ್ತಡ ⟨blood pressure⟩","ವಾತಾವರಣದ ಒತ್ತಡ"],"note":"Same word for atmospheric pressure, blood pressure, and social pressure. Kannada did not borrow 'stress' — it extended 'push'."},{"en":"Rushed","kn":"ಆತುರ","tr":"ātura","status":"shaped","rala":["ಧಾವಿಸು","ಮುನ್ನುಗ್ಗು","ತೀವ್ರಗತಿ"],"note":"ಆತುರ is haste as a character flaw as much as a state — 'ಆತುರಗಾರನಿಗೆ ಬುದ್ಧಿ ಮಟ್ಟ', the hasty man is short on sense."}]},{"en":"Stressed","kn":"ತಳಮಳ","tr":"taḷamaḷa","status":"shaped","rala":["ಒತ್ತಡ","ಪ್ರತಿಬಲ ⟨tensile stress⟩","ಕರ್ತನ ಪ್ರತಿಬಲ ⟨shear stress⟩"],"note":"Every single hit was materials engineering. ತಳಮಳ is the churn — the word for boiling liquid and for a mind that will not settle.","kids":[{"en":"Overwhelmed","kn":"ಹೈರಾಣ","tr":"hairāṇa","status":"shaped","rala":["ಮುಳುಗಿಹೋಗು","ಭಾವಪರವಶಗೊಳ್ಳು"],"note":"English uses one <i>overwhelmed</i> in two places on this wheel. Kannada splits them by how you are swamped: ಹೈರಾಣ is worn down to nothing by too much work; ಕಳವಳ, over in ಭಯ, is being swamped by dread."},{"en":"Restless","kn":"ಚಡಪಡಿಕೆ","tr":"caḍapaḍike","status":"direct","rala":["ಚಡಪಡಿಸುವ","ತಳಮಳ","ವ್ಯಾಕುಲ","ಅಶಾಂತ"],"note":"Onomatopoeic — the sound of a fish on dry ground, or a body that cannot stay in the chair."}]},{"en":"Tired","kn":"ಆಯಾಸ","tr":"āyāsa","status":"shaped","rala":["ದಣಿದ ಮಣ್ಣು ⟨tired soil⟩"],"note":"The only match was agronomy: exhausted soil. ಆಯಾಸ is bodily fatigue; ದಣಿವು is the gentler, more native version.","kids":[{"en":"Sleepy","kn":"ಜೋಂಪು","tr":"jōmpu","status":"shaped","rala":["ತೂಕಡಿಸುವ","ನಿದ್ದೆ","ಜಡನಾದ"],"note":"ಜೋಂಪು is the specific drowse that comes over you sitting still in the afternoon — not sleep, the slide toward it."},{"en":"Unfocused","kn":"ಅನ್ಯಮನಸ್ಕ","tr":"anya-manaska","status":"direct","rala":["ಅನ್ಯಮನಸ್ಕ","ಏಕಾಗ್ರತೆಯಿಲ್ಲದ","ಮರೆಗುಳಿ"],"note":"'Other-minded' — your mind is somewhere, just not here. Kinder than 'distracted', which implies something pulled you."}]}]},{"en":"Fearful","kn":"ಭಯ","tr":"bhaya","hue":"fear","status":"direct","rala":["ಭಯ","ಹೆದರಿಕೆ","ಅಂಜಿಕೆ","ಭೀತಿ","ದಿಗಿಲು","ಆತಂಕ","ಗಾಬರಿ"],"note":"rala's richest sector — seven distinct words on the first page. Kannada grades fear finely: ಅಂಜಿಕೆ (timid), ಹೆದರಿಕೆ (scared), ದಿಗಿಲು (dread), ಗಾಬರಿ (panic), ಆತಂಕ (anxiety), ಭೀತಿ (terror).","kids":[{"en":"Scared","kn":"ಹೆದರಿಕೆ","tr":"hedarike","status":"direct","rala":["ಹೆದರಿಕೆ","ಗಾಬರಿ","ಭೀತಿ","ಬೆದರುಗೊಂಬೆ ⟨scarecrow⟩"],"kids":[{"en":"Helpless","kn":"ಅಸಹಾಯಕತೆ","tr":"asahāyakate","status":"direct","rala":["ಅಸಹಾಯಕ","ದಿಕ್ಕಿಲ್ಲದ","ತಬ್ಬಲಿ"],"note":"rala's ದಿಕ್ಕಿಲ್ಲದ is better than the headword: 'without a direction'. Helplessness as having nowhere to turn — literally no compass point."},{"en":"Frightened","kn":"ಅಂಜಿಕೆ","tr":"añjike","status":"direct","rala":["ಹೆದರಿಸು","ಭಯಪಡಿಸು","ದಿಗಿಲುಗೊಳಿಸು"]}]},{"en":"Anxious","kn":"ಆತಂಕ","tr":"ātaṅka","status":"direct","rala":["ಆತಂಕಗೊಂಡ","ವ್ಯಾಕುಲತೆ","ಚಿಂತಾಕ್ರಾಂತ","ತಲ್ಲಣಗೊಂಡ"],"note":"ಆತಂಕ is now the standard clinical word too. Its older sense is closer to 'impediment' — anxiety as the thing in your way.","kids":[{"en":"Worried","kn":"ಚಿಂತೆ","tr":"cinte","status":"direct","rala":["ಚಿಂತೆ","ಕಳವಳ","ಆತಂಕ","ಪೇಚಾಟ"],"note":"ಚಿಂತೆ is also simply 'thought'. To worry and to think are the same verb, which tells you something."},{"en":"Overwhelmed","kn":"ಕಳವಳ","tr":"kaḷavaḷa","status":"shaped","rala":["ಕಳವಳಗೊಂಡ","ವ್ಯಾಕುಲ"],"note":"The second of the split — see ಹೈರಾಣ under ಬೇಸರ. ಕಳವಳ is being flooded by apprehension rather than by workload."}]},{"en":"Insecure","kn":"ಅಭದ್ರತೆ","tr":"abhadrate","status":"direct","rala":["ಅಭದ್ರ","ಅಸುರಕ್ಷಿತ","ರಕ್ಷಣೆ ರಹಿತ"],"note":"Note the frame: Kannada's insecurity is about not being <i>guarded</i>, not about self-doubt. The psychological sense is a recent import.","kids":[{"en":"Inadequate","kn":"ಕೊರತೆ","tr":"korate","status":"shaped","rala":["ಸಾಕಾಗದ","ಅಸಮರ್ಥ","ಕೊರತೆಯುಳ್ಳ"],"note":"ಕೊರತೆ is a shortfall — of rain, of funds, of oneself. The same word, which quietly makes it feel less like a personal verdict."},{"en":"Inferior","kn":"ಕೀಳರಿಮೆ","tr":"kīḷarime","status":"shaped","rala":["ಕೀಳು","ಕಳಪೆ","ಕೆಳದರ್ಜೆಯ"],"note":"rala gives only the judgement (ಕೀಳು, low-grade). ಕೀಳರಿಮೆ is the feeling — 'low-self-knowing', the exact and rather beautiful Kannada for an inferiority complex."}]},{"en":"Weak","kn":"ದುರ್ಬಲ","tr":"durbala","status":"direct","rala":["ದುರ್ಬಲ","ಬಲಹೀನ","ನಿರ್ಬಲ"],"kids":[{"en":"Worthless","kn":"ನಿಷ್ಪ್ರಯೋಜಕ","tr":"niṣprayōjaka","status":"shaped","rala":["ಅಯೋಗ್ಯ"],"note":"rala offers ಅಯೋಗ್ಯ — but in Kannada that is thrown at someone, not felt about oneself. ನಿಷ್ಪ್ರಯೋಜಕ, 'of no use', is what the feeling actually says."},{"en":"Insignificant","kn":"ಕ್ಷುಲ್ಲಕ","tr":"kṣullaka","status":"direct","rala":["ಕ್ಷುಲ್ಲಕ","ಅತ್ಯಲ್ಪ","ನಿಕೃಷ್ಟ"]}]},{"en":"Rejected","kn":"ತಿರಸ್ಕಾರ","tr":"tiraskāra","status":"shaped","rala":["ಸೋತ ಅಭ್ಯರ್ಥಿ ⟨rejected candidate⟩","ತಿರಸ್ಕರಿಸತಕ್ಕದ್ದು","ಹಕ್ಕು ಸಾಧನೆಗಳು ⟨rejected claims⟩"],"note":"ತಿರಸ್ಕಾರ is what the other person did. As with ಒಪ್ಪಿಗೆ, Kannada gives you no noun for the receiving end — rejection is only ever described from outside.","kids":[{"en":"Excluded","kn":"ಬಹಿಷ್ಕಾರ","tr":"bahiṣkāra","status":"gap","rala":[],"note":"No entry. And ಬಹಿಷ್ಕಾರ is heavier than English 'excluded' — it is the word for social boycott and outcasting. In Kannada, being left out has a history attached to it."},{"en":"Persecuted","kn":"ಕಿರುಕುಳ","tr":"kirukuḷa","status":"direct","rala":["ಕಿರುಕುಳ ಕೊಡು","ಪೀಡಿಸು","ಹಿಂಸಿಸು"]}]},{"en":"Threatened","kn":"ಬೆದರಿಕೆ","tr":"bedarike","status":"gap","rala":[],"note":"No entry for the adjective. ಬೆದರಿಕೆ is the threat itself; feeling threatened is said as ಬೆದರಿಕೆ ಇದೆ — 'there is a threat' — placing it outside you rather than inside.","kids":[{"en":"Nervous","kn":"ನಡುಕ","tr":"naḍuka","status":"shaped","rala":["ನಡುಗುವ","ಅಂಜುಬುರುಕ","ನರವ್ಯೂಹ ⟨nervous system⟩"],"note":"Most hits were neuroanatomy. ನಡುಕ is the tremble itself — Kannada again naming the body and letting the feeling follow."},{"en":"Exposed","kn":"ಬಟಾಬಯಲು","tr":"baṭā-bayalu","status":"shaped","rala":["ಗುಟ್ಟುರಟ್ಟಾದ","ಸುರಕ್ಷಣೆ ಇಲ್ಲದ","ಬಹಿರಂಗಗೊಳಿಸಿದ"],"note":"ಬಟಾಬಯಲು is open ground with not one thing to hide behind — used for landscape and for people, with no change of tone."}]}]},{"en":"Angry","kn":"ಕೋಪ","tr":"kōpa","hue":"anger","status":"direct","rala":["ಕೋಪ","ಸಿಟ್ಟು","ಸಿಡುಕು","ರೋಷ","ಮುನಿಸು","ಕ್ರೋಧ","ತಾಪ"],"note":"Kannada separates anger by heat and by intimacy: ಸಿಟ್ಟು is hot and quick, ಕೋಪ is the general word, ಕ್ರೋಧ is grand and destructive, ಸಿಡುಕು is chronic and worn on the face — and ಮುನಿಸು is the anger you only get to have with someone who loves you.","kids":[{"en":"Let down","kn":"ಕೈಕೊಟ್ಟರು","tr":"kai-koṭṭaru","status":"gap","rala":["ಹಾಲೊಸರಿಕೆ ⟨milk let-down⟩"],"note":"rala's single match for <i>let down</i> is the dairy term for milk ejection. Kannada has no noun here either — you say ಕೈಕೊಟ್ಟರು, 'they gave me the hand', meaning they withdrew it at the moment you leaned on it.","kids":[{"en":"Betrayed","kn":"ದ್ರೋಹ","tr":"drōha","status":"direct","rala":["ದ್ರೋಹ ಮಾಡು","ವಿಶ್ವಾಸಘಾತ","ವಂಚಿಸು"],"note":"ದ್ರೋಹ is grave — the word used for treason and for betraying a guru. Kannada does not have a casual register for this."},{"en":"Resentful","kn":"ಅಸಮಾಧಾನ","tr":"asamādhāna","status":"direct","rala":["ಅಸಮಾಧಾನ","ಜಿದ್ದು","ಕರುಬು","ಹಗೆತನ"],"note":"Literally 'un-settledness' — the negation of ಸಮಾಧಾನ, consolation. Resentment as a grievance that was never talked down."}]},{"en":"Humiliated","kn":"ಅವಮಾನ","tr":"avamāna","status":"direct","rala":["ಅವಮಾನಿಸು","ತೇಜೋವಧೆ","ಮರ್ಯಾದೆ ಕಳೆ"],"note":"rala's ತೇಜೋವಧೆ is worth keeping: 'the murder of someone's lustre'. Humiliation as an assassination of light.","kids":[{"en":"Disrespected","kn":"ಅಗೌರವ","tr":"agaurava","status":"direct","rala":["ಅಗೌರವ","ಅವಮಾನ","ಉಪೇಕ್ಷೆ","ಅವಮರ್ಯಾದೆ"]},{"en":"Ridiculed","kn":"ಅಪಹಾಸ್ಯ","tr":"apahāsya","status":"direct","rala":["ಅಪಹಾಸ್ಯ","ಗೇಲಿ","ಅವಹೇಳನ","ಅಣಕಿಸು"],"note":"ಅಪಹಾಸ್ಯ is 'laughter turned bad' — the same root as ಹಾಸ್ಯ, mirth, which is one of the nine rasas. The wound is that a good thing was aimed at you."}]},{"en":"Bitter","kn":"ಕಹಿ","tr":"kahi","status":"shaped","rala":["ಹಾಗಲಕಾಯಿ ⟨bitter gourd⟩","ಕಹಿಗುಳಿಗೆ ⟨bitter pill⟩","ಕ್ರೂರ","ಕಠಿಣ"],"note":"rala gives mostly vegetables. But the metaphor is alive in Kannada too — ಮನಸ್ಸಿನಲ್ಲಿ ಕಹಿ, bitterness in the mind — so the taste-word earns its place here on its own terms, not as a calque.","kids":[{"en":"Indignant","kn":"ಆಕ್ರೋಶ","tr":"ākrōśa","status":"shaped","rala":["ಕುಪಿತ","ಕೆರಳಿದ","ರೇಗಿದ"],"note":"rala's words are plain anger. ಆಕ್ರೋಶ is anger with a case to argue — literally an outcry, the anger of protest."},{"en":"Violated","kn":"ಭಂಗ","tr":"bhaṅga","status":"gap","rala":["ಉಲ್ಲಂಘಿಸು ⟨violate a rule⟩","ಮಾನಭಂಗ ⟨sexual assault⟩"],"note":"A real hole. rala's options are either legal (breaking a rule) or the specific term for sexual assault. There is no neutral Kannada for 'I feel violated' — the therapeutic middle register simply hasn't been built yet."}]},{"en":"Mad","kn":"ಸಿಟ್ಟು","tr":"siṭṭu","status":"direct","rala":["ಸಿಟ್ಟು","ಹುಚ್ಚು ⟨insane⟩","ಮತಿಗೆಟ್ಟ"],"note":"English 'mad' means both furious and insane; so does rala's answer set. Kannada keeps them apart cleanly — ಸಿಟ್ಟು is anger, ಹುಚ್ಚು is madness, and no one confuses them.","kids":[{"en":"Furious","kn":"ರೋಷ","tr":"rōṣa","status":"direct","rala":["ರೋಷಾವೇಶದ","ಕ್ರೋಧಾವಿಷ್ಟ","ಉಗ್ರ","ಪ್ರಚಂಡ"]},{"en":"Jealous","kn":"ಹೊಟ್ಟೆಕಿಚ್ಚು","tr":"hoṭṭe-kiccu","status":"shaped","rala":["ಅಸೂಯೆಯ","ಮಾತ್ಸರ್ಯದ"],"note":"rala's ಅಸೂಯೆ and ಮಾತ್ಸರ್ಯ are correct and literary. But nobody says them at home. They say ಹೊಟ್ಟೆಕಿಚ್ಚು — belly-fire — and everyone knows exactly which organ is burning."}]},{"en":"Aggressive","kn":"ಆಕ್ರಮಣ","tr":"ākramaṇa","status":"direct","rala":["ಆಕ್ರಮಣಶೀಲ","ಜಗಳಗಂಟ","ಮೇಲೆ ಬೀಳುವ"],"note":"The full adjective is ಆಕ್ರಮಣಶೀಲ, shortened here to fit. rala's ಜಗಳಗಂಟ — 'quarrel-knot', a person who ties fights — is the everyday version.","kids":[{"en":"Provoked","kn":"ಕೆರಳಿಕೆ","tr":"keraḷike","status":"direct","rala":["ಕೆರಳಿಸು","ಕೆಣಕು","ಪ್ರಚೋದಿಸು","ರೇಗಿಸು"],"note":"ಕೆಣಕು is the good one: to poke a thing that was sitting quietly."},{"en":"Hostile","kn":"ಹಗೆತನ","tr":"hagetana","status":"direct","rala":["ಹಗೆಯ","ವೈರದ","ಶತ್ರುತ್ವದ","ಪ್ರತಿಕೂಲ"],"note":"ಹಗೆ is the old native word for enemy, and it is heavy — the enmity of feuds and epics, not of office politics."}]},{"en":"Frustrated","kn":"ರೇಜಿಗೆ","tr":"rējige","status":"shaped","rala":["ಆಶಾಭಂಗ ಹೊಂದಿದ","ವಿಫಲವಾದ","ಭಗ್ನ","ನಿಷ್ಫಲಗೊಳಿಸು"],"note":"rala reads <i>frustrate</i> as 'to thwart' — an outcome. Frustration as an ongoing state is ರೇಜಿಗೆ: exasperation at something that keeps not working.","kids":[{"en":"Infuriated","kn":"ಕೆಂಡಾಮಂಡಲ","tr":"keṇḍā-maṇḍala","status":"shaped","rala":["ರೇಗಿಸು","ಕೆರಳಿಸು"],"note":"'A whole mandala of live coals.' One of the finest anger words in the language, and unfindable from English."},{"en":"Annoyed","kn":"ಕಿರಿಕಿರಿ","tr":"kirikiri","status":"direct","rala":["ಕಿರಿಕಿರಿಮಾಡು","ರೇಗಿಸು","ಕಾಡಿಸು"],"note":"Onomatopoeia again — the sound of a small grating thing. Kannada builds its minor irritations out of noise."}]},{"en":"Distant","kn":"ಬಿಗುಮಾನ","tr":"bigumāna","status":"direct","rala":["ಬಿಗುಮಾನದ","ಸಲಿಗೆ ಇಲ್ಲದ","ದೂರದ"],"note":"rala found it exactly. ಬಿಗುಮಾನ is stiffness held on purpose — reserve that is also a kind of self-regard. And note its opposite in rala's own list: ಸಲಿಗೆ ಇಲ್ಲದ, 'without ಸಲಿಗೆ'.","kids":[{"en":"Withdrawn","kn":"ಮುದುಡು","tr":"muduḍu","status":"shaped","rala":["ವಾಪಸ್ಸು ಪಡೆದ ⟨withdrawn application⟩","ಹಿಂದಕ್ಕೆ ಪಡೆದ"],"note":"rala only knows withdrawn tenders. ಮುದುಡು is what a leaf or a touched mimosa does — to fold inward. Exactly right for a person."},{"en":"Numb","kn":"ಮರಗಟ್ಟುವಿಕೆ","tr":"maragaṭṭuvike","status":"direct","rala":["ಮರಗಟ್ಟಿದ","ಜೋಮುಹಿಡಿದ","ಜಡವಾದ"],"note":"ಮರ + ಕಟ್ಟು: to turn to wood. Used for a foot that has gone to sleep and for a grief that has stopped registering."}]},{"en":"Critical","kn":"ಟೀಕೆ","tr":"ṭīke","status":"shaped","rala":["ಕ್ರಾಂತಿಕೋನ ⟨critical angle⟩","ವಿಷಮ ಮೌಲ್ಯ ⟨critical value⟩","ವಿಮರ್ಶಾತ್ಮಕ"],"note":"Physics and statistics, mostly. ಟೀಕೆ is fault-finding; ವಿಮರ್ಶೆ, also in the list, is the honourable kind — literary criticism. Kannada distinguishes the two, English does not.","kids":[{"en":"Skeptical","kn":"ಅನುಮಾನ","tr":"anumāna","status":"direct","rala":["ಅನುಮಾನ","ಸಂಶಯ","ಸಂದೇಹ","ಶಂಕೆ"],"note":"Four graded words for doubt. ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward uncertainty about a fact."},{"en":"Dismissive","kn":"ಉಡಾಫೆ","tr":"uḍāphe","status":"shaped","rala":["ತಳ್ಳಿಹಾಕು","ನಿರ್ಲಕ್ಷಿಸು","ವಜಾ ಮಾಡು ⟨dismiss from service⟩"],"note":"ಉಡಾಫೆ is dismissiveness worn as a style — breezy, unbothered, faintly insulting. ಅಸಡ್ಡೆ and ತಾತ್ಸಾರ are the colder cousins."}]}]},{"en":"Disgusted","kn":"ಅಸಹ್ಯ","tr":"asahya","hue":"disgust","status":"direct","rala":["ಅಸಹ್ಯ","ಜಿಗುಪ್ಸೆ","ಹೇಸಿಕೆ","ರೋಸು","ವಾಕರಿಕೆ"],"note":"ಅಸಹ್ಯ literally means 'unbearable' — what cannot be borne. Kannada files disgust under endurance rather than under taste.","kids":[{"en":"Disapproving","kn":"ಅಸಮ್ಮತಿ","tr":"asammati","status":"direct","rala":["ಅಸಮ್ಮತಿ","ಮೆಚ್ಚದಿರು","ಒಪ್ಪದಿರು"],"kids":[{"en":"Judgmental","kn":"ಕೊಂಕು","tr":"koṅku","status":"shaped","rala":["ನ್ಯಾಯಾಧೀಶ ⟨judge⟩","ಜಿಲ್ಲಾ ನ್ಯಾಯಾಧೀಶ ⟨district judge⟩","ಖಂಡನೆ"],"note":"rala went straight to the judiciary. ಕೊಂಕು is the crooked remark — fault-finding delivered sideways, which is how it usually arrives."},{"en":"Embarrassed","kn":"ಮುಜುಗರ","tr":"mujugara","status":"direct","rala":["ಮುಜುಗರ ಉಂಟಾದ"],"note":"ಮುಜುಗರ is social awkwardness — the wince at a scene, often on someone else's behalf."}]},{"en":"Disappointed","kn":"ನಿರಾಸೆ","tr":"nirāse","status":"direct","rala":["ನಿರಾಶೆಗೊಂಡ","ಆಶಾಭಂಗ","ಹತಾಶೆ"],"note":"ನಿರಾಸೆ = ನಿರ್ + ಆಸೆ, de-hoped. ಆಶಾಭಂಗ, also offered, is stronger: hope actually broken.","kids":[{"en":"Appalled","kn":"ದಿಗ್ಭ್ರಮೆ","tr":"digbhrame","status":"direct","rala":["ದಿಗ್ಭ್ರಮೆಗೊಂಡ","ಭೀತ","ಗಾಬರಿಗೊಂಡ"],"note":"'Directions-confusion' — the compass spins. Shock that leaves you not knowing which way is which."},{"en":"Revolted","kn":"ರೋಸು","tr":"rōsu","status":"shaped","rala":["ದಂಗೆ ⟨rebellion⟩","ಬಂಡಾಯ","ವಿದ್ರೋಹ"],"note":"rala took <i>revolt</i> politically — every hit is an uprising. ರೋಸಿಹೋಗಿದೆ is the feeling: fed up to the point of nausea."}]},{"en":"Awful","kn":"ಅಸಹನೀಯ","tr":"asahanīya","status":"shaped","rala":["ಭಯಾನಕವಾದ","ಭೀಕರ"],"note":"rala's answers mean terrifying, which is <i>awe</i>-ful in the old sense. The modern 'this is awful' is ಅಸಹನೀಯ — unendurable.","kids":[{"en":"Nauseated","kn":"ವಾಕರಿಕೆ","tr":"vākarike","status":"direct","rala":["ವಾಕರಿಕೆ","ಓಕರಿಕೆ","ಹೊಟ್ಟೆ ತೊಳಸು"],"note":"ಹೊಟ್ಟೆ ತೊಳಸು — 'the stomach stirs'. Kannada has a full vocabulary for the gut, and uses it for feelings without apology."},{"en":"Detestable","kn":"ಹೇಸಿಗೆ","tr":"hēsige","status":"direct","rala":["ಹೇಸು","ಅಸಹ್ಯಪಡು","ಹೇಸಿಗೆ ಪಡು"],"note":"ಹೇಸಿಗೆ is also literally filth. The moral and the physical are the same word — no metaphor required."}]},{"en":"Repelled","kn":"ಜಿಗುಪ್ಸೆ","tr":"jigupse","status":"direct","rala":["ಜಿಗುಪ್ಸೆಗೊಳಿಸು","ಹಿಮ್ಮೆಟ್ಟಿಸು","ವಿಕರ್ಷಿಸು"],"note":"ಜಿಗುಪ್ಸೆ is world-weary revulsion — the disgust that makes people renounce things, not just push a plate away.","kids":[{"en":"Horrified","kn":"ದಿಗಿಲು","tr":"digilu","status":"direct","rala":["ದಿಗಿಲುಗೊಳಿಸು","ಭಯಹುಟ್ಟಿಸು","ದಿಕ್ಕುಗೆಡಿಸು"]},{"en":"Hesitant","kn":"ಹಿಂಜರಿಕೆ","tr":"hiñjarike","status":"direct","rala":["ಹಿಂಜರಿಯುವ","ಹಿಮ್ಮೆಟ್ಟುವ","ಶಂಕೆಯುಳ್ಳ"],"note":"ಹಿಂಜರಿ — to slide backwards. The foot that starts to move and then doesn't."}]}]},{"en":"Sad","kn":"ದುಃಖ","tr":"duḥkha","hue":"sorrow","status":"direct","rala":["ದುಃಖಕರ","ವಿಷಾದಕರ","ಶೋಚನೀಯ","ಕುಗ್ಗಿದ","ಸೊರಗಿದ","ಅಮಂಗಳ ⟨inauspicious⟩"],"note":"Note ಅಶುಭ / ಅಮಂಗಳ in rala's list — 'inauspicious'. For a large part of Kannada usage, sadness and bad omen are adjacent ideas; a sad event is an unlucky one.","kids":[{"en":"Lonely","kn":"ಒಂಟಿತನ","tr":"oṇṭitana","status":"direct","rala":["ಒಂಟಿ","ಏಕಾಂಗಿ","ಒಬ್ಬನೇ"],"note":"Kannada draws a line English blurs: ಒಂಟಿತನ is loneliness and it hurts; ಏಕಾಂತ is solitude, chosen, and is good for you. Same 'alone', opposite verdicts.","kids":[{"en":"Isolated","kn":"ಏಕಾಂಗಿತನ","tr":"ēkāṅgitana","status":"shaped","rala":["ಪ್ರತ್ಯೇಕಿಸಿದ","ಬೇರ್ಪಡಿಸಿದ","ಪ್ರತ್ಯೇಕ ಸ್ಥಳ"],"note":"rala's words are all quarantine and land-parcels. ಏಕಾಂಗಿ is 'single-bodied' — cut off with no one on your side."},{"en":"Abandoned","kn":"ತಬ್ಬಲಿತನ","tr":"tabbalitana","status":"shaped","rala":["ತೊರೆದ ಪ್ರದೇಶ ⟨abandoned area⟩","ತಬ್ಬಲಿ"],"note":"ತಬ್ಬಲಿ means orphan, and it is used far past its literal sense — for anyone left without their people. One of the saddest words in the language."}]},{"en":"Vulnerable","kn":"ದುರ್ಬಲತೆ","tr":"durbalate","status":"gap","rala":["ಸುಭೇದ್ಯ","ಭೇದ್ಯ","ದುರ್ಬಲ ಸ್ಥಿತಿ ⟨vulnerable stage⟩"],"note":"The clearest gap on the wheel. Every Kannada option means weak, breachable, at risk — all pejorative. The warm English sense of 'vulnerable', where opening up is a strength, has no Kannada word yet; people say ಮನಸ್ಸು ತೆರೆದಿಡುವುದು, 'to keep the mind open', as a description rather than a name.","kids":[{"en":"Victimised","kn":"ಬಲಿಪಶು","tr":"balipaśu","status":"direct","rala":["ಬಲಿಪಶುಮಾಡು","ಪೀಡಿಸು","ಸತಾಯಿಸು"],"note":"'Sacrificial animal'. Kannada's word for victim comes straight off the altar."},{"en":"Fragile","kn":"ನಾಜೂಕು","tr":"nājūku","status":"direct","rala":["ನಾಜೂಕಾದ","ಭಂಗುರ","ಶಿಥಿಲ"],"note":"ನಾಜೂಕು is fragile-and-fine, a compliment about a person's delicacy. ಭಂಗುರ is the philosophical one: that which is destined to break."}]},{"en":"Despair","kn":"ಹತಾಶೆ","tr":"hatāśe","status":"direct","rala":["ಹತಾಶೆ","ನಿರಾಶೆ","ಎದೆಗುಂದು","ಆಸೆಗೆಡು"],"note":"ಹತ + ಆಶೆ: hope, killed. The word contains the murder.","kids":[{"en":"Grief","kn":"ಅಳಲು","tr":"aḷalu","status":"direct","rala":["ಅಳಲು","ಶೋಕ","ಸಂಕಟ","ಕೊರಗು","ವ್ಯಥೆ"],"note":"rala's whole list is worth reading: ಶೋಕ is formal mourning, ಸಂಕಟ is the chest-squeeze, ಕೊರಗು is the grief that thins you over years, ಅಳಲು is the wail itself."},{"en":"Powerless","kn":"ಕೈಲಾಗದತನ","tr":"kailāgadatana","status":"shaped","rala":["ಶಕ್ತಿಹೀನ","ಬಲಹೀನ","ದುರ್ಬಲ"],"note":"rala offers strength-less. ಕೈಲಾಗದತನ is the spoken form: 'the state of the hands not managing it'."}]},{"en":"Guilty","kn":"ಪಾಪಪ್ರಜ್ಞೆ","tr":"pāpa-prajñe","status":"shaped","rala":["ಅಪರಾಧಿ","ತಪ್ಪಿತಸ್ಥ","ದೋಷಿ","ಅಪರಾಧಿ ಮನೋಭಾವ ⟨guilty mind⟩"],"note":"Every hit is courtroom Kannada — the accused, the convicted. The inner feeling had to be named religiously instead: ಪಾಪಪ್ರಜ್ಞೆ, sin-consciousness. Kannada's guilt is borrowed either from law or from temple; it has no private word of its own.","kids":[{"en":"Ashamed","kn":"ನಾಚಿಕೆ","tr":"nāchike","status":"shaped","rala":["ಅವಮಾನಗೊಂಡ","ಮಾನಗೆಟ್ಟ"],"note":"ನಾಚಿಕೆ is one word for shyness, modesty and shame — a bride's ನಾಚಿಕೆ and a thief's are the same noun. English needs three words and grades them differently; Kannada trusts context completely."},{"en":"Remorseful","kn":"ಪಶ್ಚಾತ್ತಾಪ","tr":"paścāttāpa","status":"direct","rala":["ಪಶ್ಚಾತ್ತಾಪ","ಅನುತಾಪ","ಮರುಕ"],"note":"'After-heat' — the burn that arrives once the act is over."}]},{"en":"Depressed","kn":"ಖಿನ್ನತೆ","tr":"khinnate","status":"shaped","rala":["ದಲಿತ ವರ್ಗ ⟨depressed classes⟩","ಶೋಷಿತ","ಕುಗ್ಗಿದ","ನಿರುತ್ಸಾಹದ"],"note":"A striking result: rala's first hits for <i>depressed</i> are ದಲಿತ and ಶೋಷಿತ — the colonial administrative phrase 'depressed classes'. The clinical word ಖಿನ್ನತೆ is recent; older Kannada said ಮನಸ್ಸು ಕುಗ್ಗಿದೆ, 'the mind has shrunk'.","kids":[{"en":"Inferior","kn":"ಕುಗ್ಗುವಿಕೆ","tr":"kugguvike","status":"shaped","rala":["ಕುಗ್ಗಿದ","ಇಳಿದ","ತಗ್ಗಿದ"],"note":"The English wheel repeats 'inferior' in two branches. Kannada usefully doesn't: under fear it is ಕೀಳರಿಮೆ, a belief about your rank; here under sadness it is ಕುಗ್ಗುವಿಕೆ, simply shrinking."},{"en":"Empty","kn":"ಬರಿದುತನ","tr":"bariduṭana","status":"shaped","rala":["ಬರಿದು","ಖಾಲಿ","ಪೊಳ್ಳು","ಶೂನ್ಯ"],"note":"rala's ಪೊಳ್ಳು is the good one — hollow, like a grain with nothing inside it. Used of people who look intact."}]},{"en":"Hurt","kn":"ನೋವು","tr":"nōvu","status":"direct","rala":["ನೋವು","ನೋಯಿಸು","ಗಾಯ","ಸಾಧಾರಣ ಗಾಯ ⟨simple hurt, IPC⟩"],"note":"ನೋವು is bodily pain and emotional pain with no distinction at all. 'ಮನಸ್ಸಿಗೆ ನೋವಾಯಿತು' — it hurt my mind — is the ordinary way to say you were wounded.","kids":[{"en":"Disappointed","kn":"ಆಶಾಭಂಗ","tr":"āśābhaṅga","status":"direct","rala":["ಆಶಾಭಂಗ","ನಿರಾಶೆಗೊಂಡ"],"note":"The second 'disappointed' on the wheel. ನಿರಾಸೆ over in ಅಸಹ್ಯ is hope that faded; ಆಶಾಭಂಗ is hope that snapped."},{"en":"Embarrassed","kn":"ಸಂಕೋಚ","tr":"saṅkōca","status":"shaped","rala":["ಮುಜುಗರ ಉಂಟಾದ"],"note":"The other 'embarrassed'. ಮುಜುಗರ is the wince at a social scene; ಸಂಕೋಚ is the shrinking-in-on-yourself, the hesitation to ask, to take, to take up room."}]}]}];
-const NATIVE = [{"kn":"ಮುನಿಸು","tr":"munisu","gloss":"The sulk you are only entitled to with someone who loves you. Anger that wants soothing, not resolution — and would be insulted by an apology that was merely correct."},{"kn":"ಸಲಿಗೆ","tr":"salige","gloss":"The earned licence to be informal with a person: to tease them, eat off their plate, drop the honorific. Intimacy defined as permission rather than as feeling."},{"kn":"ಹೊಟ್ಟೆಕಿಚ್ಚು","tr":"hoṭṭe-kiccu","gloss":"Belly-fire. Envy at someone else's good fortune, located precisely in the stomach — and said out loud, cheerfully, in a way English envy never is."},{"kn":"ಕರುಳು ಚುರುಕ್","tr":"karuḷu curuk","gloss":"'The intestine stings.' The involuntary gut-twinge of compassion on seeing a child or an animal in distress. Not pity — pity is a judgement; this is a reflex."},{"kn":"ಸಂಕಟ","tr":"saṅkaṭa","gloss":"Anguish felt as constriction — the chest closing. Used equally for a dying person's distress, a moral dilemma, and unbearable news."},{"kn":"ಕಸಿವಿಸಿ","tr":"kasivisi","gloss":"The small squirm when something is subtly off: an unwelcome guest, a joke that landed wrong. Too minor for 'discomfort', too bodily for 'unease'."},{"kn":"ಚಡಪಡಿಕೆ","tr":"caḍapaḍike","gloss":"The fidget of waiting — a body that cannot stay in the chair. Onomatopoeic, and used for a fish out of water without any sense of metaphor."},{"kn":"ವಾತ್ಸಲ್ಯ","tr":"vātsalya","gloss":"Tenderness that flows downward only: parent to child, elder to younger, teacher to student. English 'love' has no direction; this word is nothing but direction."},{"kn":"ಅಭಿಮಾನ","tr":"abhimāna","gloss":"Pride-as-loyalty — for your language, your team, your people. Its second sense is the wound when that loyalty is slighted, so the same word holds the devotion and the injury."},{"kn":"ಸಂಭ್ರಮ","tr":"sambhrama","gloss":"The busy, shared joy of an occasion — a wedding house at 6am. Joy that is plural and slightly frantic, and that no one experiences alone."},{"kn":"ಪುಳಕ","tr":"puḷaka","gloss":"The thrill that stands the body hair on end. Classical poetics treats it as visible evidence of an inner state, which is why it has its own noun."},{"kn":"ಹಂಬಲ","tr":"hambala","gloss":"Yearning toward something absent — a place, a person, a life not lived. Closer to Portuguese <i>saudade</i> than to 'longing'."},{"kn":"ಉಮ್ಮಳ","tr":"ummaḷa","gloss":"Grief welling up from below, the moment before it breaks. Names the swell, not the weeping."},{"kn":"ಹಳಹಳಿಕೆ","tr":"haḷahaḷike","gloss":"Regret braided with longing — remorse for something you would, honestly, do again."},{"kn":"ನೆಮ್ಮದಿ","tr":"nemmadi","gloss":"Peace of mind, sharply distinct from ಶಾಂತಿ, peace as the absence of conflict. You can have ಶಾಂತಿ in a house with no ನೆಮ್ಮದಿ in it."},{"kn":"ಅಳುಕು","tr":"aḷuku","gloss":"The small inward flinch of misgiving just before you do the thing anyway. Not fear — a hesitation with a conscience in it."}];
-const RASA = [{"kn":"ಶೃಂಗಾರ","tr":"śṛṅgāra","en":"love, the erotic","map":"No home on the English wheel at all — desire is not one of its seven."},{"kn":"ಹಾಸ್ಯ","tr":"hāsya","en":"mirth, the comic","map":"Only appears on the wheel as ಅಪಹಾಸ್ಯ — laughter aimed at someone."},{"kn":"ಕರುಣ","tr":"karuṇa","en":"compassion, pathos","map":"ದುಃಖ covers the grief; the wheel has no place for grief felt on another's behalf."},{"kn":"ರೌದ್ರ","tr":"raudra","en":"fury","map":"ಕೋಪ"},{"kn":"ವೀರ","tr":"vīra","en":"the heroic","map":"Reduced to a single outer petal, ಧೈರ್ಯ, under ಶಕ್ತಿ."},{"kn":"ಭಯಾನಕ","tr":"bhayānaka","en":"terror","map":"ಭಯ"},{"kn":"ಬೀಭತ್ಸ","tr":"bībhatsa","en":"disgust, the odious","map":"ಅಸಹ್ಯ"},{"kn":"ಅದ್ಭುತ","tr":"adbhuta","en":"wonder","map":"ಅಚ್ಚರಿ"},{"kn":"ಶಾಂತ","tr":"śānta","en":"repose","map":"The ninth rasa, added late and argued over. The wheel files peace as a kind of happiness; the rasa tradition makes it a state of its own."}];
+const WHEELS = [{"id":"bhava","name":"ಭಾವಚಕ್ರ","hubKn":"ಭಾವಚಕ್ರ","hubRom":"bhāva-cakra","hint":"Hover or tap any segment — the panel names it in both scripts. Tap a sector to zoom into it, and again to go back out.","blurb":"The English feeling wheel, taken through a Kannada dictionary and then argued with. Seven core feelings, three rings, 130 words. Where the dictionary was right it was kept; where it answered in the register of a government circular it was replaced with what a Kannada speaker would actually say — <em>ನೆಮ್ಮದಿ</em> and not ಶಾಂತಿ, <em>ಹೊಟ್ಟೆಕಿಚ್ಚು</em> and not ಅಸೂಯೆ.","aboutTitle":"ಎರವಲಿನ ಆಕಾರ","aboutLat":"a borrowed shape","about":"This wheel's structure is not Kannada. It is Gloria Willcox's Feeling Wheel and its widely circulated three-ring descendant, which is an English object with English assumptions — seven cores, a slot called <em>Bad</em>, a distinction between <em>guilty</em> and <em>ashamed</em>. Filling it in Kannada is worth doing precisely because the seams show, and the seams are the interesting part.","cards":[{"h":"Where it fits badly","p":"There is no Kannada feeling called <em>ಕೆಟ್ಟ</em>. But everything the English wheel files under <em>Bad</em> — bored, busy, stressed, tired — is one Kannada word, ಬೇಸರ. English needs four words to circle what Kannada says in one."},{"h":"Words with no slot","p":"ಒಪ್ಪಿಗೆ and ತಿರಸ್ಕಾರ describe what somebody did to you; Kannada gives no noun for the receiving end. ದುರ್ಬಲತೆ is the only word available for <em>vulnerable</em>, and it is an insult. Neither gap is a failure of the language — they are places the English wheel assumed something Kannada does not."},{"h":"Register, not correctness","p":"Almost every change made here was a register change rather than a correction. ಅಸೂಯೆ, ರೋಷ, ವಿಸ್ಮಯ and ಆಶಾವಾದ are all correct. They are also words nobody says at home, so the wheel uses ಹೊಟ್ಟೆಕಿಚ್ಚು, ರೊಚ್ಚು, ದಂಗು and ಭರವಸೆ instead."},{"h":"The evidence","p":"Every word here was looked up in rala first, and the full record — what the dictionary returned, what was kept, what was overruled and why — is in the <a href='https://github.com/pvnkmrksk/bhavachakra#readme'>README</a>. It is diagnostics, and it belongs there rather than here."}],"data":[{"en":"Happy","kn":"ಸಂತೋಷ","tr":"santōṣa","hue":"joy","status":"direct","rala":["ಸಂತೋಷದ","ಸಂತುಷ್ಟ","ಖುಷಿಯಾದ","ನೆಮ್ಮದಿಯ","ಭಾಗ್ಯವಂತನಾದ"],"note":"rala also returns ಭಾಗ್ಯವಂತ / ಅದೃಷ್ಟಶಾಲಿ — 'lucky'. English <i>happy</i> still carries its old root <i>hap</i>, chance. Kannada keeps luck and gladness in separate words.","kids":[{"en":"Playful","kn":"ತುಂಟತನ","tr":"ṭuṇṭatana","status":"gap","rala":["ದ್ರೋಹ ಮಾಡು ⟨foul play⟩","ನಾಟಕಕಾರ ⟨playwright⟩","ಚಕ್ಕರ್ ಕೊಡು ⟨play truant⟩"],"note":"A clean miss. rala only knows <i>play</i> as the noun — foul play, playwright, child's play. The felt state is ತುಂಟತನ, the mischief of a child you are not actually angry with.","kids":[{"en":"Aroused","kn":"ಉದ್ರೇಕ","tr":"udrēka","status":"shaped","rala":["ಉದ್ರೇಕಗೊಳ್ಳು","ಪ್ರಚೋದಿಸು","ಕೆರಳಿಸು"],"note":"In Kannada ಉದ್ರೇಕ is not primarily erotic — a crowd, a temper and a nerve can all be ಉದ್ರಿಕ್ತ. It means charged, and the charge can go either way."},{"en":"Cheeky","kn":"ಕೀಟಲೆ","tr":"kīṭale","status":"shaped","rala":["ಉದ್ಧಟ","ಒರಟುತನದ","ದುರಹಂಕಾರದ"],"note":"rala's ಉದ್ಧಟ / ದುರಹಂಕಾರ are genuinely insulting. Cheeky is affectionate — that is ಕೀಟಲೆ, teasing you are allowed to do."}]},{"en":"Content","kn":"ತೃಪ್ತಿ","tr":"tṛpti","status":"shaped","rala":["ತೃಪ್ತ","ತೃಪ್ತಿ","ಪರಿವಿಡಿ ⟨table of contents⟩","ತೇವಾಂಶ ⟨moisture content⟩"],"note":"The right word was in there, sitting under moisture content and table of contents. ತೃಪ್ತಿ is satiety — the feeling after a meal, and after a life.","kids":[{"en":"Free","kn":"ನಿರಾಳ","tr":"nirāḷa","status":"shaped","rala":["ಮುಕ್ತ","ಸ್ವತಂತ್ರ","ಕರಮುಕ್ತ ⟨duty-free⟩"],"note":"ಮುಕ್ತ and ಸ್ವತಂತ್ರ are freedoms of status — liberated, independent, tax-exempt. The <i>feeling</i> of free is ನಿರಾಳ: unclenched, the breath after the weight comes off."},{"en":"Joyful","kn":"ಹಿಗ್ಗು","tr":"higgu","status":"shaped","rala":["ಸಂತೋಷ","ಉಲ್ಲಾಸ","ಹರ್ಷ"],"note":"ಹರ್ಷ and ಉಲ್ಲಾಸ are correct and Sanskritic. ಹಿಗ್ಗು is the native verb-noun: to swell. Joy as something that expands you."}]},{"en":"Interested","kn":"ಆಸಕ್ತಿ","tr":"āsakti","status":"direct","rala":["ಆಸಕ್ತಿ ಇರುವ","ಸಂಬಂಧವುಳ್ಳ","ಪಕ್ಷಪಾತದ ⟨interested party⟩"],"kids":[{"en":"Curious","kn":"ಕುತೂಹಲ","tr":"kutūhala","status":"direct","rala":["ಕುತೂಹಲಕಾರಿ","ಕುತೂಹಲವುಳ್ಳ"]},{"en":"Inquisitive","kn":"ಕೆದಕುವಿಕೆ","tr":"kedakuvike","status":"shaped","rala":["ಕೆದಕುವ","ಶೋಧಿಸುವ","ವಿಚಾರಮಾಡುವ"],"note":"ಕೆದಕುವ is prying — poking at what isn't yours. ಜಿಜ್ಞಾಸೆ is the honourable version: the wish to know, the word used for philosophical enquiry. ಜಿಜ್ಞಾಸೆ is the Sanskrit word for philosophical enquiry and nobody uses it at a dinner table. ಕೆದಕು is to poke at something — the everyday word, and it carries the faint rudeness English 'inquisitive' also has."}]},{"en":"Proud","kn":"ಹೆಮ್ಮೆ","tr":"hemme","status":"gap","rala":[],"note":"rala returns nothing at all for <i>proud</i>. And Kannada would resist a single answer anyway: ಹೆಮ್ಮೆ is warm pride in someone, ಅಭಿಮಾನ is pride-as-loyalty, ಅಹಂಕಾರ is the pride that has gone bad. English collapses all three.","kids":[{"en":"Successful","kn":"ಸಾರ್ಥಕ","tr":"sārthaka","status":"shaped","rala":["ಯಶಸ್ವಿ","ವಿಜಯಿ","ವಿಜೇತ"],"note":"ಯಶಸ್ವಿ is the outcome — you won. ಸಾರ್ಥಕ is the feeling — it had meaning, it was worth it. Only one of those belongs on an emotion wheel."},{"en":"Confident","kn":"ಆತ್ಮವಿಶ್ವಾಸ","tr":"ātma-viśvāsa","status":"direct","rala":["ವಿಶ್ವಾಸವುಳ್ಳ","ನೆಚ್ಚಿಕೆಯ","ಧೈರ್ಯದ"],"note":"Literally 'self-trust'. Kannada builds confidence out of the same root as trusting another person. Everyday speech, despite the Sanskrit parts — ಆತ್ಮವಿಶ್ವಾಸ is said constantly."}]},{"en":"Accepted","kn":"ಒಪ್ಪಿಗೆ","tr":"oppige","status":"gap","rala":["ಅಂಗೀಕೃತ ಟೆಂಡರ್ ⟨accepted tender⟩","ಅಂಗೀಕೃತ ಠೇವಣಿ ⟨accepted deposit⟩","ಸ್ವೀಕೃತ"],"note":"Every hit is procurement paperwork. And Kannada has no noun for <i>the felt state of being accepted</i> — you say it as something others did: ನನ್ನನ್ನು ಒಪ್ಪಿಕೊಂಡರು, 'they took me in'. The feeling lives in a verb, not a noun.","kids":[{"en":"Respected","kn":"ಗೌರವ","tr":"gaurava","status":"shaped","rala":["ಆ ಸಂಬಂಧವಾದ ⟨with respect to⟩","ಸಂಬಂಧಿಸಿದಂತೆ ⟨in respect of⟩"],"note":"rala only found the clerical <i>in respect of</i>. ಗೌರವ is the real word, and in Kannada it is something you give, actively, not something you passively have."},{"en":"Valued","kn":"ಮನ್ನಣೆ","tr":"mannaṇe","status":"shaped","rala":["ಏಕಮೌಲ್ಯ ⟨single-valued⟩","ಮೌಲ್ಯ ಸಂದಾಯ ⟨value payable⟩"],"note":"ಮೌಲ್ಯ is price. ಮನ್ನಣೆ is being recognised and given your due — the thing people leave jobs for the lack of."}]},{"en":"Powerful","kn":"ಶಕ್ತಿ","tr":"śakti","status":"direct","rala":["ಶಕ್ತಿಶಾಲಿ","ಶಕ್ತಿವಂತ","ಶಕ್ತನಾದ"],"kids":[{"en":"Courageous","kn":"ಧೈರ್ಯ","tr":"dhairya","status":"direct","rala":["ಧೈರ್ಯದ","ಕೆಚ್ಚೆದೆಯ","ಎದೆಗಾರಿಕೆಯ"],"note":"ಧೈರ್ಯ is steadiness under fear. The native alternatives rala offers are more physical: ಕೆಚ್ಚು is heat in the chest, ಎದೆಗಾರಿಕೆ is literally chest-having."},{"en":"Creative","kn":"ಹೊಳಹು","tr":"hoḷahu","status":"direct","rala":["ಸೃಜನಾತ್ಮಕ","ರಚನಾತ್ಮಕ"],"note":"ಸೃಜನಶೀಲತೆ is the textbook word. ಹೊಳಹು is native and better: the flash — the moment a thing occurs to you."}]},{"en":"Peaceful","kn":"ನೆಮ್ಮದಿ","tr":"nemmadi","status":"shaped","rala":["ಶಾಂತಿಯ","ಶಾಂತಿಯುತ"],"note":"The single most important correction on this wheel. ಶಾಂತಿ is peace as the absence of war — treaties, ceasefires, ಶಾಂತಿ ಸಭೆ. ನೆಮ್ಮದಿ is peace of mind, and it is what people actually pray for.","kids":[{"en":"Loving","kn":"ಪ್ರೀತಿ","tr":"prīti","status":"gap","rala":["ನೆರಳು ಪ್ರಿಯ ⟨shade-loving⟩"],"note":"The only match in 478,680 entries was a botany term for shade-loving plants. Kannada is not short of love words — ಪ್ರೀತಿ, ಮಮತೆ, ವಾತ್ಸಲ್ಯ, ಅಕ್ಕರೆ, ಒಲವು — the dictionary just isn't built to find them from English."},{"en":"Thankful","kn":"ಕೃತಜ್ಞತೆ","tr":"kṛtajñate","status":"direct","rala":["ಕೃತಜ್ಞ","ಕೃತಜ್ಞನಾದ"],"note":"Literally 'knowing what was done'. Gratitude as accurate memory. Sanskrit, and unavoidable: Kannada has no native noun for gratitude that is still in use."}]},{"en":"Trusting","kn":"ನಂಬಿಕೆ","tr":"nambike","status":"shaped","rala":["ನಂಬಿಕೆ","ವಿಶ್ವಾಸ","ನ್ಯಾಸ ಖಾತೆ ⟨trust account⟩","ಟ್ರಸ್ಟ್ ಆಡಳಿತ"],"note":"Buried under thirty entries of trust deeds and trust accounts. ನಂಬಿಕೆ also means belief and superstition — in Kannada, trusting a person and believing a thing are one act.","kids":[{"en":"Sensitive","kn":"ಸೂಕ್ಷ್ಮ","tr":"sūkṣma","status":"direct","rala":["ಸೂಕ್ಷ್ಮಗ್ರಾಹಿ","ಸಂವೇದನಾಶೀಲ","ಸೂಕ್ಷ್ಮ"],"note":"ಸೂಕ್ಷ್ಮ means fine-grained, subtle-perceiving. Calling someone ಸೂಕ್ಷ್ಮ is praise — unlike English 'sensitive', which is half an accusation."},{"en":"Intimate","kn":"ಸಲಿಗೆ","tr":"salige","status":"direct","rala":["ಸಲಿಗೆ","ಅನ್ಯೋನ್ಯ","ಆತ್ಮೀಯ","ನಿಕಟ"],"note":"ಸಲಿಗೆ has no English word. It is the earned licence to be informal with someone — to tease them, take their food, drop the honorific. Intimacy defined as permission, not as feeling."}]},{"en":"Optimistic","kn":"ಭರವಸೆ","tr":"bharavase","status":"direct","rala":["ಆಶಾವಾದದ","ಆಶಾಪೂರ್ಣ"],"kids":[{"en":"Hopeful","kn":"ಆಸೆ","tr":"āse","status":"direct","rala":["ಭರವಸೆಯ","ಆಶಾದಾಯಕ"],"note":"ಭರವಸೆ is also the word for a promise or an assurance. Hope, in Kannada, is something somebody gave you. The plainest possible word: wish, want, hope, all one. Kannada does not separate hoping from wanting."},{"en":"Inspired","kn":"ಸ್ಫೂರ್ತಿ","tr":"sphūrti","status":"gap","rala":[],"note":"No result. ಸ್ಫೂರ್ತಿ is the everyday word — a sudden welling-up, the same root as a spark."}],"note":"ಆಶಾವಾದ is an -ism, borrowed to translate one. ಭರವಸೆ is what people actually have, and it also means a promise someone gave you."}]},{"en":"Surprised","kn":"ಅಚ್ಚರಿ","tr":"accari","hue":"wonder","status":"direct","rala":["ಆಶ್ಚರ್ಯ","ವಿಸ್ಮಯ","ಅನಿರೀಕ್ಷಿತ","ಹಠಾತ್ ತನಿಖೆ ⟨surprise inspection⟩"],"note":"ಅಚ್ಚರಿ is the native word, ಆಶ್ಚರ್ಯ the Sanskrit one everyone also uses. Kept ಅಚ್ಚರಿ at the centre because the wheel should sound like speech, not a textbook.","kids":[{"en":"Startled","kn":"ಬೆಚ್ಚು","tr":"beccu","status":"direct","rala":["ಚಕಿತಗೊಳಿಸು","ಗಾಬರಿಪಡಿಸು","ಬೆದರಿಸು"],"note":"ಬೆಚ್ಚಿಬೀಳು — to be startled and drop. Kannada builds the flinch out of a fall.","kids":[{"en":"Shocked","kn":"ಆಘಾತ","tr":"āghāta","status":"direct","rala":["ಆಘಾತ","ದಿಗಿಲುಂಟುಮಾಡು","ವಿದ್ಯುದಾಘಾತ ⟨electric shock⟩"]},{"en":"Dismayed","kn":"ಎದೆಗುಂದು","tr":"edegundu","status":"direct","rala":["ಎದೆಗುಂದಿಸು","ಅಧೈರ್ಯ","ದಿಗಿಲು","ಹತಾಶೆ"],"note":"Literally 'the chest sinks'. Kannada names the physical event and leaves you to infer the feeling — it does this constantly."}]},{"en":"Confused","kn":"ಗೊಂದಲ","tr":"gondala","status":"shaped","rala":["ತುಕ್ಕುಗೆಂಪು ⟨confused flour beetle⟩"],"note":"The dictionary's one match for <i>confused</i> is a species of beetle. ಗೊಂದಲ is the real word, and it also means a noisy crowd — confusion as too many voices at once.","kids":[{"en":"Disillusioned","kn":"ಭ್ರಮೆ ಕಳಚು","tr":"bhrame kaḷacu","status":"direct","rala":["ಭ್ರಮನಿರಸನಗೊಂಡ"],"note":"'The dispelling of the illusion' — a precise philosophical term doing everyday emotional work. ಭ್ರಮನಿರಸನ is a compound almost nobody says aloud. ಭ್ರಮೆ ಕಳಚಿತು — the illusion came unfastened — is ordinary speech."},{"en":"Perplexed","kn":"ಕಂಗೆಡು","tr":"kaṅgeḍu","status":"direct","rala":["ಕಂಗೆಡಿಸು","ವಿಭ್ರಾಂತಿ ತರು"],"note":"ಕಣ್ + ಕೆಡು: the eyes go bad. To be at a loss is, literally, to lose your sight of it."}]},{"en":"Amazed","kn":"ಬೆರಗು","tr":"beragu","status":"direct","rala":["ಬೆರಗುಗೊಳಿಸು","ಆಶ್ಚರ್ಯಗೊಳ್ಳು","ಚಕಿತನಾಗು"],"kids":[{"en":"Astonished","kn":"ದಂಗು","tr":"daṅgu","status":"direct","rala":["ವಿಸ್ಮಯವನ್ನುಂಟುಮಾಡು","ಅಚ್ಚರಿಗೊಳಿಸು"],"note":"ವಿಸ್ಮಯ is for poetry. ದಂಗಾದೆ — I was dumbfounded — is for Tuesday."},{"en":"Awe","kn":"ಭಯಭಕ್ತಿ","tr":"bhaya-bhakti","status":"direct","rala":["ಭಯಮಿಶ್ರಿತ ಗೌರವ","ಭಯ ತುಂಬಿದ ಗೌರವ"],"note":"rala could only define it as a phrase: 'respect mixed with fear'. But Kannada does have the compound — ಭಯಭಕ್ತಿ, fear-and-devotion, the standard word for how one stands before a deity or a formidable elder. Awe as a social posture, not a private thrill."}]},{"en":"Excited","kn":"ಉತ್ಸಾಹ","tr":"utsāha","status":"direct","rala":["ಉತ್ತೇಜಿತ","ಉದ್ರಿಕ್ತ","ಉತ್ಸಾಹ"],"kids":[{"en":"Eager","kn":"ತವಕ","tr":"tavaka","status":"direct","rala":["ತವಕ","ಕಾತರದ","ಉತ್ಸುಕ","ಉತ್ಕಟ"],"note":"ತವಕ and ಕಾತರ are both eagerness with an edge of ache — waiting that has begun to hurt slightly."},{"en":"Energetic","kn":"ಹುರುಪು","tr":"hurupu","status":"direct","rala":["ಹುರುಪು","ಉತ್ಸಾಹ","ಶಕ್ತಿಯುತವಾದ"]}]}]},{"en":"Bad","kn":"ಬೇಸರ","tr":"bēsara","hue":"weary","status":"gap","rala":["ಕೆಟ್ಟ","ದುರ್ವರ್ತನೆ ⟨bad behaviour⟩","ವಸೂಲಾಗದ ಸಾಲ ⟨bad debt⟩","ವೈಮನಸ್ಯ ⟨bad blood⟩"],"note":"The hardest sector. Kannada's ಕೆಟ್ಟ is moral or qualitative — a bad man, spoiled milk — and cannot be a feeling. But look at what the English wheel actually files under 'Bad': bored, busy, stressed, tired. That whole zone has one Kannada name, ಬೇಸರ — a fused weariness-with-things that English needs four words to circle.","kids":[{"en":"Bored","kn":"ಬೇಜಾರು","tr":"bējāru","status":"gap","rala":[],"note":"No entry for <i>boredom</i>. ಬೇಜಾರು covers bored, mildly sad, and fed-up in one breath. 'ಬೇಜಾರಾಗಿದೆ' could be any of the three and the listener works it out from your face.","kids":[{"en":"Indifferent","kn":"ಉದಾಸೀನ","tr":"udāsīna","status":"direct","rala":["ಉದಾಸೀನ","ಅಸಡ್ಡೆಯ","ತಟಸ್ಥ"],"note":"In philosophy ಉದಾಸೀನ is the sage's equanimity. In an argument it is the coldest insult available."},{"en":"Apathetic","kn":"ಅಸಡ್ಡೆ","tr":"asaḍḍe","status":"direct","rala":["ನಿರಾಸಕ್ತ","ಆಸಕ್ತಿಯಿಲ್ಲದ","ಭಾವಶೂನ್ಯ"],"note":"ನಿರಾಸಕ್ತಿ is the formal negation. ಅಸಡ್ಡೆ is the daily one, and it is colder — not caring, and slightly not bothering to hide it."}]},{"en":"Busy","kn":"ಧಾವಂತ","tr":"dhāvanta","status":"shaped","rala":["ಕಾರ್ಯಮಗ್ನ","ಬಿಡುವಿಲ್ಲದ","ನಿರತ"],"note":"rala's words describe a schedule. ಧಾವಂತ describes what the schedule does to you — the harried forward-lean of someone always mid-errand.","kids":[{"en":"Pressured","kn":"ಒತ್ತಡ","tr":"ottaḍa","status":"direct","rala":["ಒತ್ತಡ","ರಕ್ತ ಒತ್ತಡ ⟨blood pressure⟩","ವಾತಾವರಣದ ಒತ್ತಡ"],"note":"Same word for atmospheric pressure, blood pressure, and social pressure. Kannada did not borrow 'stress' — it extended 'push'."},{"en":"Rushed","kn":"ಆತುರ","tr":"ātura","status":"shaped","rala":["ಧಾವಿಸು","ಮುನ್ನುಗ್ಗು","ತೀವ್ರಗತಿ"],"note":"ಆತುರ is haste as a character flaw as much as a state — 'ಆತುರಗಾರನಿಗೆ ಬುದ್ಧಿ ಮಟ್ಟ', the hasty man is short on sense."}]},{"en":"Stressed","kn":"ತಳಮಳ","tr":"taḷamaḷa","status":"shaped","rala":["ಒತ್ತಡ","ಪ್ರತಿಬಲ ⟨tensile stress⟩","ಕರ್ತನ ಪ್ರತಿಬಲ ⟨shear stress⟩"],"note":"Every single hit was materials engineering. ತಳಮಳ is the churn — the word for boiling liquid and for a mind that will not settle.","kids":[{"en":"Overwhelmed","kn":"ಹೈರಾಣ","tr":"hairāṇa","status":"shaped","rala":["ಮುಳುಗಿಹೋಗು","ಭಾವಪರವಶಗೊಳ್ಳು"],"note":"English uses one <i>overwhelmed</i> in two places on this wheel. Kannada splits them by how you are swamped: ಹೈರಾಣ is worn down to nothing by too much work; ಕಳವಳ, over in ಭಯ, is being swamped by dread."},{"en":"Restless","kn":"ಚಡಪಡಿಕೆ","tr":"caḍapaḍike","status":"direct","rala":["ಚಡಪಡಿಸುವ","ತಳಮಳ","ವ್ಯಾಕುಲ","ಅಶಾಂತ"],"note":"Onomatopoeic — the sound of a fish on dry ground, or a body that cannot stay in the chair."}]},{"en":"Tired","kn":"ದಣಿವು","tr":"daṇivu","status":"shaped","rala":["ದಣಿದ ಮಣ್ಣು ⟨tired soil⟩"],"note":"The only match was agronomy: exhausted soil. ಆಯಾಸ is bodily fatigue; ದಣಿವು is the gentler, more native version. ಆಯಾಸ is correct and slightly medical. ದಣಿವು is the native word, used for a body and a day alike.","kids":[{"en":"Sleepy","kn":"ತೂಕಡಿಕೆ","tr":"tūkaḍike","status":"shaped","rala":["ತೂಕಡಿಸುವ","ನಿದ್ದೆ","ಜಡನಾದ"],"note":"ಜೋಂಪು is the specific drowse that comes over you sitting still in the afternoon — not sleep, the slide toward it. The nod of the head as you lose the fight. More common than ಜೋಂಪು, which is the deeper afternoon slide."},{"en":"Unfocused","kn":"ಅನ್ಯಮನಸ್ಕ","tr":"anya-manaska","status":"direct","rala":["ಅನ್ಯಮನಸ್ಕ","ಏಕಾಗ್ರತೆಯಿಲ್ಲದ","ಮರೆಗುಳಿ"],"note":"'Other-minded' — your mind is somewhere, just not here. Kinder than 'distracted', which implies something pulled you."}]}]},{"en":"Fearful","kn":"ಭಯ","tr":"bhaya","hue":"fear","status":"direct","rala":["ಭಯ","ಹೆದರಿಕೆ","ಅಂಜಿಕೆ","ಭೀತಿ","ದಿಗಿಲು","ಆತಂಕ","ಗಾಬರಿ"],"note":"rala's richest sector — seven distinct words on the first page. Kannada grades fear finely: ಅಂಜಿಕೆ (timid), ಹೆದರಿಕೆ (scared), ದಿಗಿಲು (dread), ಗಾಬರಿ (panic), ಆತಂಕ (anxiety), ಭೀತಿ (terror).","kids":[{"en":"Scared","kn":"ಹೆದರಿಕೆ","tr":"hedarike","status":"direct","rala":["ಹೆದರಿಕೆ","ಗಾಬರಿ","ಭೀತಿ","ಬೆದರುಗೊಂಬೆ ⟨scarecrow⟩"],"kids":[{"en":"Helpless","kn":"ಅಸಹಾಯಕತೆ","tr":"asahāyakate","status":"direct","rala":["ಅಸಹಾಯಕ","ದಿಕ್ಕಿಲ್ಲದ","ತಬ್ಬಲಿ"],"note":"rala's ದಿಕ್ಕಿಲ್ಲದ is better than the headword: 'without a direction'. Helplessness as having nowhere to turn — literally no compass point."},{"en":"Frightened","kn":"ಅಂಜಿಕೆ","tr":"añjike","status":"direct","rala":["ಹೆದರಿಸು","ಭಯಪಡಿಸು","ದಿಗಿಲುಗೊಳಿಸು"]}]},{"en":"Anxious","kn":"ಆತಂಕ","tr":"ātaṅka","status":"direct","rala":["ಆತಂಕಗೊಂಡ","ವ್ಯಾಕುಲತೆ","ಚಿಂತಾಕ್ರಾಂತ","ತಲ್ಲಣಗೊಂಡ"],"note":"ಆತಂಕ is now the standard clinical word too. Its older sense is closer to 'impediment' — anxiety as the thing in your way.","kids":[{"en":"Worried","kn":"ಚಿಂತೆ","tr":"cinte","status":"direct","rala":["ಚಿಂತೆ","ಕಳವಳ","ಆತಂಕ","ಪೇಚಾಟ"],"note":"ಚಿಂತೆ is also simply 'thought'. To worry and to think are the same verb, which tells you something."},{"en":"Overwhelmed","kn":"ಕಳವಳ","tr":"kaḷavaḷa","status":"shaped","rala":["ಕಳವಳಗೊಂಡ","ವ್ಯಾಕುಲ"],"note":"The second of the split — see ಹೈರಾಣ under ಬೇಸರ. ಕಳವಳ is being flooded by apprehension rather than by workload."}]},{"en":"Insecure","kn":"ಅಳುಕು","tr":"aḷuku","status":"direct","rala":["ಅಭದ್ರ","ಅಸುರಕ್ಷಿತ","ರಕ್ಷಣೆ ರಹಿತ"],"note":"Note the frame: Kannada's insecurity is about not being <i>guarded</i>, not about self-doubt. The psychological sense is a recent import. ಅಭದ್ರತೆ means physically unguarded — it is a word for buildings and borders. ಅಳುಕು is the small inward flinch, and it is what the feeling is.","kids":[{"en":"Inadequate","kn":"ಕೊರತೆ","tr":"korate","status":"shaped","rala":["ಸಾಕಾಗದ","ಅಸಮರ್ಥ","ಕೊರತೆಯುಳ್ಳ"],"note":"ಕೊರತೆ is a shortfall — of rain, of funds, of oneself. The same word, which quietly makes it feel less like a personal verdict."},{"en":"Inferior","kn":"ಕೀಳರಿಮೆ","tr":"kīḷarime","status":"shaped","rala":["ಕೀಳು","ಕಳಪೆ","ಕೆಳದರ್ಜೆಯ"],"note":"rala gives only the judgement (ಕೀಳು, low-grade). ಕೀಳರಿಮೆ is the feeling — 'low-self-knowing', the exact and rather beautiful Kannada for an inferiority complex."}]},{"en":"Weak","kn":"ದುರ್ಬಲ","tr":"durbala","status":"direct","rala":["ದುರ್ಬಲ","ಬಲಹೀನ","ನಿರ್ಬಲ"],"kids":[{"en":"Worthless","kn":"ದಂಡ","tr":"daṇḍa","status":"shaped","rala":["ಅಯೋಗ್ಯ"],"note":"rala offers ಅಯೋಗ್ಯ — but in Kannada that is thrown at someone, not felt about oneself. ನಿಷ್ಪ್ರಯೋಜಕ, 'of no use', is what the feeling actually says. Literally waste. 'ನಾನು ದಂಡ' — I'm a waste — is what people actually say about themselves. ನಿಷ್ಪ್ರಯೋಜಕ is what a report says about a scheme."},{"en":"Insignificant","kn":"ಲೆಕ್ಕಕ್ಕಿಲ್ಲ","tr":"lekkakkilla","status":"direct","rala":["ಕ್ಷುಲ್ಲಕ","ಅತ್ಯಲ್ಪ","ನಿಕೃಷ್ಟ"],"note":"'Not in the count.' ಕ್ಷುಲ್ಲಕ is literary; this is the idiom, and it is sharper — insignificance as an accounting error."}]},{"en":"Rejected","kn":"ತಿರಸ್ಕಾರ","tr":"tiraskāra","status":"shaped","rala":["ಸೋತ ಅಭ್ಯರ್ಥಿ ⟨rejected candidate⟩","ತಿರಸ್ಕರಿಸತಕ್ಕದ್ದು","ಹಕ್ಕು ಸಾಧನೆಗಳು ⟨rejected claims⟩"],"note":"ತಿರಸ್ಕಾರ is what the other person did. As with ಒಪ್ಪಿಗೆ, Kannada gives you no noun for the receiving end — rejection is only ever described from outside.","kids":[{"en":"Excluded","kn":"ಹೊರಗಿಡುವಿಕೆ","tr":"horagiḍuvike","status":"gap","rala":[],"note":"No entry. And ಬಹಿಷ್ಕಾರ is heavier than English 'excluded' — it is the word for social boycott and outcasting. In Kannada, being left out has a history attached to it. ಬಹಿಷ್ಕಾರ is social boycott and carries a history. For being left out of a group chat, Kannada just says ಹೊರಗಿಟ್ಟರು."},{"en":"Persecuted","kn":"ಕಿರುಕುಳ","tr":"kirukuḷa","status":"direct","rala":["ಕಿರುಕುಳ ಕೊಡು","ಪೀಡಿಸು","ಹಿಂಸಿಸು"]}]},{"en":"Threatened","kn":"ಬೆದರಿಕೆ","tr":"bedarike","status":"gap","rala":[],"note":"No entry for the adjective. ಬೆದರಿಕೆ is the threat itself; feeling threatened is said as ಬೆದರಿಕೆ ಇದೆ — 'there is a threat' — placing it outside you rather than inside.","kids":[{"en":"Nervous","kn":"ನಡುಕ","tr":"naḍuka","status":"shaped","rala":["ನಡುಗುವ","ಅಂಜುಬುರುಕ","ನರವ್ಯೂಹ ⟨nervous system⟩"],"note":"Most hits were neuroanatomy. ನಡುಕ is the tremble itself — Kannada again naming the body and letting the feeling follow."},{"en":"Exposed","kn":"ಬಟಾಬಯಲು","tr":"baṭā-bayalu","status":"shaped","rala":["ಗುಟ್ಟುರಟ್ಟಾದ","ಸುರಕ್ಷಣೆ ಇಲ್ಲದ","ಬಹಿರಂಗಗೊಳಿಸಿದ"],"note":"ಬಟಾಬಯಲು is open ground with not one thing to hide behind — used for landscape and for people, with no change of tone."}]}]},{"en":"Angry","kn":"ಕೋಪ","tr":"kōpa","hue":"anger","status":"direct","rala":["ಕೋಪ","ಸಿಟ್ಟು","ಸಿಡುಕು","ರೋಷ","ಮುನಿಸು","ಕ್ರೋಧ","ತಾಪ"],"note":"Kannada separates anger by heat and by intimacy: ಸಿಟ್ಟು is hot and quick, ಕೋಪ is the general word, ಕ್ರೋಧ is grand and destructive, ಸಿಡುಕು is chronic and worn on the face — and ಮುನಿಸು is the anger you only get to have with someone who loves you.","kids":[{"en":"Let down","kn":"ಕೈಕೊಟ್ಟರು","tr":"kai-koṭṭaru","status":"gap","rala":["ಹಾಲೊಸರಿಕೆ ⟨milk let-down⟩"],"note":"rala's single match for <i>let down</i> is the dairy term for milk ejection. Kannada has no noun here either — you say ಕೈಕೊಟ್ಟರು, 'they gave me the hand', meaning they withdrew it at the moment you leaned on it.","kids":[{"en":"Betrayed","kn":"ದ್ರೋಹ","tr":"drōha","status":"direct","rala":["ದ್ರೋಹ ಮಾಡು","ವಿಶ್ವಾಸಘಾತ","ವಂಚಿಸು"],"note":"ದ್ರೋಹ is grave — the word used for treason and for betraying a guru. Kannada does not have a casual register for this."},{"en":"Resentful","kn":"ಅಸಮಾಧಾನ","tr":"asamādhāna","status":"direct","rala":["ಅಸಮಾಧಾನ","ಜಿದ್ದು","ಕರುಬು","ಹಗೆತನ"],"note":"Literally 'un-settledness' — the negation of ಸಮಾಧಾನ, consolation. Resentment as a grievance that was never talked down."}]},{"en":"Humiliated","kn":"ಅವಮಾನ","tr":"avamāna","status":"direct","rala":["ಅವಮಾನಿಸು","ತೇಜೋವಧೆ","ಮರ್ಯಾದೆ ಕಳೆ"],"note":"rala's ತೇಜೋವಧೆ is worth keeping: 'the murder of someone's lustre'. Humiliation as an assassination of light.","kids":[{"en":"Disrespected","kn":"ಅವಮರ್ಯಾದೆ","tr":"avamaryāde","status":"direct","rala":["ಅಗೌರವ","ಅವಮಾನ","ಉಪೇಕ್ಷೆ","ಅವಮರ್ಯಾದೆ"],"note":"ಮರ್ಯಾದೆ — the respect owed to you in public — is one of the most-used words in Kannada. Its negation is the daily word for this."},{"en":"Ridiculed","kn":"ಗೇಲಿ","tr":"gēli","status":"direct","rala":["ಅಪಹಾಸ್ಯ","ಗೇಲಿ","ಅವಹೇಳನ","ಅಣಕಿಸು"],"note":"ಅಪಹಾಸ್ಯ is 'laughter turned bad' — the same root as ಹಾಸ್ಯ, mirth, which is one of the nine rasas. The wound is that a good thing was aimed at you. ಅಪಹಾಸ್ಯ is the newspaper word. ಗೇಲಿ is what happens in the room."}]},{"en":"Bitter","kn":"ಕಹಿ","tr":"kahi","status":"shaped","rala":["ಹಾಗಲಕಾಯಿ ⟨bitter gourd⟩","ಕಹಿಗುಳಿಗೆ ⟨bitter pill⟩","ಕ್ರೂರ","ಕಠಿಣ"],"note":"rala gives mostly vegetables. But the metaphor is alive in Kannada too — ಮನಸ್ಸಿನಲ್ಲಿ ಕಹಿ, bitterness in the mind — so the taste-word earns its place here on its own terms, not as a calque.","kids":[{"en":"Indignant","kn":"ಆಕ್ರೋಶ","tr":"ākrōśa","status":"shaped","rala":["ಕುಪಿತ","ಕೆರಳಿದ","ರೇಗಿದ"],"note":"rala's words are plain anger. ಆಕ್ರೋಶ is anger with a case to argue — literally an outcry, the anger of protest."},{"en":"Violated","kn":"ಭಂಗ","tr":"bhaṅga","status":"gap","rala":["ಉಲ್ಲಂಘಿಸು ⟨violate a rule⟩","ಮಾನಭಂಗ ⟨sexual assault⟩"],"note":"A real hole. rala's options are either legal (breaking a rule) or the specific term for sexual assault. There is no neutral Kannada for 'I feel violated' — the therapeutic middle register simply hasn't been built yet."}]},{"en":"Mad","kn":"ಸಿಟ್ಟು","tr":"siṭṭu","status":"direct","rala":["ಸಿಟ್ಟು","ಹುಚ್ಚು ⟨insane⟩","ಮತಿಗೆಟ್ಟ"],"note":"English 'mad' means both furious and insane; so does rala's answer set. Kannada keeps them apart cleanly — ಸಿಟ್ಟು is anger, ಹುಚ್ಚು is madness, and no one confuses them.","kids":[{"en":"Furious","kn":"ರೊಚ್ಚು","tr":"roccu","status":"direct","rala":["ರೋಷಾವೇಶದ","ಕ್ರೋಧಾವಿಷ್ಟ","ಉಗ್ರ","ಪ್ರಚಂಡ"],"note":"ರೋಷ is literary. ರೊಚ್ಚಿಗೇಳು — to rise into ರೊಚ್ಚು — is native, physical, and the thing people say."},{"en":"Jealous","kn":"ಹೊಟ್ಟೆಕಿಚ್ಚು","tr":"hoṭṭe-kiccu","status":"shaped","rala":["ಅಸೂಯೆಯ","ಮಾತ್ಸರ್ಯದ"],"note":"rala's ಅಸೂಯೆ and ಮಾತ್ಸರ್ಯ are correct and literary. But nobody says them at home. They say ಹೊಟ್ಟೆಕಿಚ್ಚು — belly-fire — and everyone knows exactly which organ is burning."}]},{"en":"Aggressive","kn":"ಜಗಳಗಂಟತನ","tr":"jagaḷagaṇṭatana","status":"direct","rala":["ಆಕ್ರಮಣಶೀಲ","ಜಗಳಗಂಟ","ಮೇಲೆ ಬೀಳುವ"],"note":"The full adjective is ಆಕ್ರಮಣಶೀಲ, shortened here to fit. rala's ಜಗಳಗಂಟ — 'quarrel-knot', a person who ties fights — is the everyday version. ಆಕ್ರಮಣ is what armies do. ಜಗಳಗಂಟ — quarrel-knot, a person who ties fights — is what rala itself offered, and it is the living word.","kids":[{"en":"Provoked","kn":"ಕೆರಳಿಕೆ","tr":"keraḷike","status":"direct","rala":["ಕೆರಳಿಸು","ಕೆಣಕು","ಪ್ರಚೋದಿಸು","ರೇಗಿಸು"],"note":"ಕೆಣಕು is the good one: to poke a thing that was sitting quietly."},{"en":"Hostile","kn":"ಹಗೆತನ","tr":"hagetana","status":"direct","rala":["ಹಗೆಯ","ವೈರದ","ಶತ್ರುತ್ವದ","ಪ್ರತಿಕೂಲ"],"note":"ಹಗೆ is the old native word for enemy, and it is heavy — the enmity of feuds and epics, not of office politics."}]},{"en":"Frustrated","kn":"ರೇಜಿಗೆ","tr":"rējige","status":"shaped","rala":["ಆಶಾಭಂಗ ಹೊಂದಿದ","ವಿಫಲವಾದ","ಭಗ್ನ","ನಿಷ್ಫಲಗೊಳಿಸು"],"note":"rala reads <i>frustrate</i> as 'to thwart' — an outcome. Frustration as an ongoing state is ರೇಜಿಗೆ: exasperation at something that keeps not working.","kids":[{"en":"Infuriated","kn":"ಕೆಂಡಾಮಂಡಲ","tr":"keṇḍā-maṇḍala","status":"shaped","rala":["ರೇಗಿಸು","ಕೆರಳಿಸು"],"note":"'A whole mandala of live coals.' One of the finest anger words in the language, and unfindable from English."},{"en":"Annoyed","kn":"ಕಿರಿಕಿರಿ","tr":"kirikiri","status":"direct","rala":["ಕಿರಿಕಿರಿಮಾಡು","ರೇಗಿಸು","ಕಾಡಿಸು"],"note":"Onomatopoeia again — the sound of a small grating thing. Kannada builds its minor irritations out of noise."}]},{"en":"Distant","kn":"ಬಿಗುಮಾನ","tr":"bigumāna","status":"direct","rala":["ಬಿಗುಮಾನದ","ಸಲಿಗೆ ಇಲ್ಲದ","ದೂರದ"],"note":"rala found it exactly. ಬಿಗುಮಾನ is stiffness held on purpose — reserve that is also a kind of self-regard. And note its opposite in rala's own list: ಸಲಿಗೆ ಇಲ್ಲದ, 'without ಸಲಿಗೆ'.","kids":[{"en":"Withdrawn","kn":"ಮುದುಡು","tr":"muduḍu","status":"shaped","rala":["ವಾಪಸ್ಸು ಪಡೆದ ⟨withdrawn application⟩","ಹಿಂದಕ್ಕೆ ಪಡೆದ"],"note":"rala only knows withdrawn tenders. ಮುದುಡು is what a leaf or a touched mimosa does — to fold inward. Exactly right for a person."},{"en":"Numb","kn":"ಮರಗಟ್ಟುವಿಕೆ","tr":"maragaṭṭuvike","status":"direct","rala":["ಮರಗಟ್ಟಿದ","ಜೋಮುಹಿಡಿದ","ಜಡವಾದ"],"note":"ಮರ + ಕಟ್ಟು: to turn to wood. Used for a foot that has gone to sleep and for a grief that has stopped registering."}]},{"en":"Critical","kn":"ಟೀಕೆ","tr":"ṭīke","status":"shaped","rala":["ಕ್ರಾಂತಿಕೋನ ⟨critical angle⟩","ವಿಷಮ ಮೌಲ್ಯ ⟨critical value⟩","ವಿಮರ್ಶಾತ್ಮಕ"],"note":"Physics and statistics, mostly. ಟೀಕೆ is fault-finding; ವಿಮರ್ಶೆ, also in the list, is the honourable kind — literary criticism. Kannada distinguishes the two, English does not.","kids":[{"en":"Skeptical","kn":"ಅನುಮಾನ","tr":"anumāna","status":"direct","rala":["ಅನುಮಾನ","ಸಂಶಯ","ಸಂದೇಹ","ಶಂಕೆ"],"note":"Four graded words for doubt. ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward uncertainty about a fact."},{"en":"Dismissive","kn":"ಉಡಾಫೆ","tr":"uḍāphe","status":"shaped","rala":["ತಳ್ಳಿಹಾಕು","ನಿರ್ಲಕ್ಷಿಸು","ವಜಾ ಮಾಡು ⟨dismiss from service⟩"],"note":"ಉಡಾಫೆ is dismissiveness worn as a style — breezy, unbothered, faintly insulting. ಅಸಡ್ಡೆ and ತಾತ್ಸಾರ are the colder cousins."}]}]},{"en":"Disgusted","kn":"ಅಸಹ್ಯ","tr":"asahya","hue":"disgust","status":"direct","rala":["ಅಸಹ್ಯ","ಜಿಗುಪ್ಸೆ","ಹೇಸಿಕೆ","ರೋಸು","ವಾಕರಿಕೆ"],"note":"ಅಸಹ್ಯ literally means 'unbearable' — what cannot be borne. Kannada files disgust under endurance rather than under taste.","kids":[{"en":"Disapproving","kn":"ಒಪ್ಪದಿರುವಿಕೆ","tr":"oppadiruvike","status":"direct","rala":["ಅಸಮ್ಮತಿ","ಮೆಚ್ಚದಿರು","ಒಪ್ಪದಿರು"],"kids":[{"en":"Judgmental","kn":"ಕೊಂಕು","tr":"koṅku","status":"shaped","rala":["ನ್ಯಾಯಾಧೀಶ ⟨judge⟩","ಜಿಲ್ಲಾ ನ್ಯಾಯಾಧೀಶ ⟨district judge⟩","ಖಂಡನೆ"],"note":"rala went straight to the judiciary. ಕೊಂಕು is the crooked remark — fault-finding delivered sideways, which is how it usually arrives."},{"en":"Embarrassed","kn":"ಮುಜುಗರ","tr":"mujugara","status":"direct","rala":["ಮುಜುಗರ ಉಂಟಾದ"],"note":"ಮುಜುಗರ is social awkwardness — the wince at a scene, often on someone else's behalf."}],"note":"ಅಸಮ್ಮತಿ belongs on a committee minute. The daily form is the plain negative verb: they did not agree."},{"en":"Disappointed","kn":"ನಿರಾಸೆ","tr":"nirāse","status":"direct","rala":["ನಿರಾಶೆಗೊಂಡ","ಆಶಾಭಂಗ","ಹತಾಶೆ"],"note":"ನಿರಾಸೆ = ನಿರ್ + ಆಸೆ, de-hoped. ಆಶಾಭಂಗ, also offered, is stronger: hope actually broken.","kids":[{"en":"Appalled","kn":"ಹೌಹಾರು","tr":"hauhāru","status":"direct","rala":["ದಿಗ್ಭ್ರಮೆಗೊಂಡ","ಭೀತ","ಗಾಬರಿಗೊಂಡ"],"note":"'Directions-confusion' — the compass spins. Shock that leaves you not knowing which way is which. Native, onomatopoeic, and exactly right — to recoil bodily on hearing something. ದಿಗ್ಭ್ರಮೆ is its Sanskrit understudy."},{"en":"Revolted","kn":"ರೋಸು","tr":"rōsu","status":"shaped","rala":["ದಂಗೆ ⟨rebellion⟩","ಬಂಡಾಯ","ವಿದ್ರೋಹ"],"note":"rala took <i>revolt</i> politically — every hit is an uprising. ರೋಸಿಹೋಗಿದೆ is the feeling: fed up to the point of nausea."}]},{"en":"Awful","kn":"ಘೋರ","tr":"ghōra","status":"shaped","rala":["ಭಯಾನಕವಾದ","ಭೀಕರ"],"note":"rala's answers mean terrifying, which is <i>awe</i>-ful in the old sense. The modern 'this is awful' is ಅಸಹನೀಯ — unendurable. Short, daily, and used for everything from an accident to a cricket collapse. ಅಸಹನೀಯ is nobody's spoken word.","kids":[{"en":"Nauseated","kn":"ವಾಕರಿಕೆ","tr":"vākarike","status":"direct","rala":["ವಾಕರಿಕೆ","ಓಕರಿಕೆ","ಹೊಟ್ಟೆ ತೊಳಸು"],"note":"ಹೊಟ್ಟೆ ತೊಳಸು — 'the stomach stirs'. Kannada has a full vocabulary for the gut, and uses it for feelings without apology."},{"en":"Detestable","kn":"ಹೇಸಿಗೆ","tr":"hēsige","status":"direct","rala":["ಹೇಸು","ಅಸಹ್ಯಪಡು","ಹೇಸಿಗೆ ಪಡು"],"note":"ಹೇಸಿಗೆ is also literally filth. The moral and the physical are the same word — no metaphor required."}]},{"en":"Repelled","kn":"ಜಿಗುಪ್ಸೆ","tr":"jigupse","status":"direct","rala":["ಜಿಗುಪ್ಸೆಗೊಳಿಸು","ಹಿಮ್ಮೆಟ್ಟಿಸು","ವಿಕರ್ಷಿಸು"],"note":"ಜಿಗುಪ್ಸೆ is world-weary revulsion — the disgust that makes people renounce things, not just push a plate away.","kids":[{"en":"Horrified","kn":"ದಿಗಿಲು","tr":"digilu","status":"direct","rala":["ದಿಗಿಲುಗೊಳಿಸು","ಭಯಹುಟ್ಟಿಸು","ದಿಕ್ಕುಗೆಡಿಸು"]},{"en":"Hesitant","kn":"ಹಿಂಜರಿಕೆ","tr":"hiñjarike","status":"direct","rala":["ಹಿಂಜರಿಯುವ","ಹಿಮ್ಮೆಟ್ಟುವ","ಶಂಕೆಯುಳ್ಳ"],"note":"ಹಿಂಜರಿ — to slide backwards. The foot that starts to move and then doesn't."}]}]},{"en":"Sad","kn":"ದುಃಖ","tr":"duḥkha","hue":"sorrow","status":"direct","rala":["ದುಃಖಕರ","ವಿಷಾದಕರ","ಶೋಚನೀಯ","ಕುಗ್ಗಿದ","ಸೊರಗಿದ","ಅಮಂಗಳ ⟨inauspicious⟩"],"note":"Note ಅಶುಭ / ಅಮಂಗಳ in rala's list — 'inauspicious'. For a large part of Kannada usage, sadness and bad omen are adjacent ideas; a sad event is an unlucky one.","kids":[{"en":"Lonely","kn":"ಒಂಟಿತನ","tr":"oṇṭitana","status":"direct","rala":["ಒಂಟಿ","ಏಕಾಂಗಿ","ಒಬ್ಬನೇ"],"note":"Kannada draws a line English blurs: ಒಂಟಿತನ is loneliness and it hurts; ಏಕಾಂತ is solitude, chosen, and is good for you. Same 'alone', opposite verdicts.","kids":[{"en":"Isolated","kn":"ಏಕಾಂಗಿ","tr":"ēkāṅgi","status":"shaped","rala":["ಪ್ರತ್ಯೇಕಿಸಿದ","ಬೇರ್ಪಡಿಸಿದ","ಪ್ರತ್ಯೇಕ ಸ್ಥಳ"],"note":"rala's words are all quarantine and land-parcels. ಏಕಾಂಗಿ is 'single-bodied' — cut off with no one on your side. 'Single-bodied.' Kept over ಪ್ರತ್ಯೇಕ, which in Kannada means quarantined or administratively separated."},{"en":"Abandoned","kn":"ತಬ್ಬಲಿ","tr":"tabbali","status":"shaped","rala":["ತೊರೆದ ಪ್ರದೇಶ ⟨abandoned area⟩","ತಬ್ಬಲಿ"],"note":"ತಬ್ಬಲಿ means orphan, and it is used far past its literal sense — for anyone left without their people. One of the saddest words in the language. Orphan — used far past its literal sense, for anyone left without their people. One of the saddest words in the language."}]},{"en":"Vulnerable","kn":"ದುರ್ಬಲತೆ","tr":"durbalate","status":"gap","rala":["ಸುಭೇದ್ಯ","ಭೇದ್ಯ","ದುರ್ಬಲ ಸ್ಥಿತಿ ⟨vulnerable stage⟩"],"note":"The clearest gap on the wheel. Every Kannada option means weak, breachable, at risk — all pejorative. The warm English sense of 'vulnerable', where opening up is a strength, has no Kannada word yet; people say ಮನಸ್ಸು ತೆರೆದಿಡುವುದು, 'to keep the mind open', as a description rather than a name.","kids":[{"en":"Victimised","kn":"ಬಲಿಪಶು","tr":"balipaśu","status":"direct","rala":["ಬಲಿಪಶುಮಾಡು","ಪೀಡಿಸು","ಸತಾಯಿಸು"],"note":"'Sacrificial animal'. Kannada's word for victim comes straight off the altar."},{"en":"Fragile","kn":"ನಾಜೂಕು","tr":"nājūku","status":"direct","rala":["ನಾಜೂಕಾದ","ಭಂಗುರ","ಶಿಥಿಲ"],"note":"ನಾಜೂಕು is fragile-and-fine, a compliment about a person's delicacy. ಭಂಗುರ is the philosophical one: that which is destined to break."}]},{"en":"Despair","kn":"ಹತಾಶೆ","tr":"hatāśe","status":"direct","rala":["ಹತಾಶೆ","ನಿರಾಶೆ","ಎದೆಗುಂದು","ಆಸೆಗೆಡು"],"note":"ಹತ + ಆಶೆ: hope, killed. The word contains the murder.","kids":[{"en":"Grief","kn":"ಅಳಲು","tr":"aḷalu","status":"direct","rala":["ಅಳಲು","ಶೋಕ","ಸಂಕಟ","ಕೊರಗು","ವ್ಯಥೆ"],"note":"rala's whole list is worth reading: ಶೋಕ is formal mourning, ಸಂಕಟ is the chest-squeeze, ಕೊರಗು is the grief that thins you over years, ಅಳಲು is the wail itself."},{"en":"Powerless","kn":"ಕೈಲಾಗದತನ","tr":"kailāgadatana","status":"shaped","rala":["ಶಕ್ತಿಹೀನ","ಬಲಹೀನ","ದುರ್ಬಲ"],"note":"rala offers strength-less. ಕೈಲಾಗದತನ is the spoken form: 'the state of the hands not managing it'."}]},{"en":"Guilty","kn":"ಪಾಪಪ್ರಜ್ಞೆ","tr":"pāpa-prajñe","status":"shaped","rala":["ಅಪರಾಧಿ","ತಪ್ಪಿತಸ್ಥ","ದೋಷಿ","ಅಪರಾಧಿ ಮನೋಭಾವ ⟨guilty mind⟩"],"note":"Every hit is courtroom Kannada — the accused, the convicted. The inner feeling had to be named religiously instead: ಪಾಪಪ್ರಜ್ಞೆ, sin-consciousness. Kannada's guilt is borrowed either from law or from temple; it has no private word of its own. ಪಾಪಪ್ರಜ್ಞೆ is borrowed from the temple, and kept only because Kannada offers nothing else that is not a courtroom term.","kids":[{"en":"Ashamed","kn":"ನಾಚಿಕೆ","tr":"nāchike","status":"shaped","rala":["ಅವಮಾನಗೊಂಡ","ಮಾನಗೆಟ್ಟ"],"note":"ನಾಚಿಕೆ is one word for shyness, modesty and shame — a bride's ನಾಚಿಕೆ and a thief's are the same noun. English needs three words and grades them differently; Kannada trusts context completely."},{"en":"Remorseful","kn":"ಪಶ್ಚಾತ್ತಾಪ","tr":"paścāttāpa","status":"direct","rala":["ಪಶ್ಚಾತ್ತಾಪ","ಅನುತಾಪ","ಮರುಕ"],"note":"'After-heat' — the burn that arrives once the act is over."}]},{"en":"Depressed","kn":"ಖಿನ್ನತೆ","tr":"khinnate","status":"shaped","rala":["ದಲಿತ ವರ್ಗ ⟨depressed classes⟩","ಶೋಷಿತ","ಕುಗ್ಗಿದ","ನಿರುತ್ಸಾಹದ"],"note":"A striking result: rala's first hits for <i>depressed</i> are ದಲಿತ and ಶೋಷಿತ — the colonial administrative phrase 'depressed classes'. The clinical word ಖಿನ್ನತೆ is recent; older Kannada said ಮನಸ್ಸು ಕುಗ್ಗಿದೆ, 'the mind has shrunk'. ಖಿನ್ನತೆ is retained because it is now genuinely the daily clinical word, not because it is elegant.","kids":[{"en":"Inferior","kn":"ಕುಗ್ಗುವಿಕೆ","tr":"kugguvike","status":"shaped","rala":["ಕುಗ್ಗಿದ","ಇಳಿದ","ತಗ್ಗಿದ"],"note":"The English wheel repeats 'inferior' in two branches. Kannada usefully doesn't: under fear it is ಕೀಳರಿಮೆ, a belief about your rank; here under sadness it is ಕುಗ್ಗುವಿಕೆ, simply shrinking."},{"en":"Empty","kn":"ಬರಿದುತನ","tr":"bariduṭana","status":"shaped","rala":["ಬರಿದು","ಖಾಲಿ","ಪೊಳ್ಳು","ಶೂನ್ಯ"],"note":"rala's ಪೊಳ್ಳು is the good one — hollow, like a grain with nothing inside it. Used of people who look intact."}]},{"en":"Hurt","kn":"ನೋವು","tr":"nōvu","status":"direct","rala":["ನೋವು","ನೋಯಿಸು","ಗಾಯ","ಸಾಧಾರಣ ಗಾಯ ⟨simple hurt, IPC⟩"],"note":"ನೋವು is bodily pain and emotional pain with no distinction at all. 'ಮನಸ್ಸಿಗೆ ನೋವಾಯಿತು' — it hurt my mind — is the ordinary way to say you were wounded.","kids":[{"en":"Disappointed","kn":"ಆಶಾಭಂಗ","tr":"āśābhaṅga","status":"direct","rala":["ಆಶಾಭಂಗ","ನಿರಾಶೆಗೊಂಡ"],"note":"The second 'disappointed' on the wheel. ನಿರಾಸೆ over in ಅಸಹ್ಯ is hope that faded; ಆಶಾಭಂಗ is hope that snapped."},{"en":"Embarrassed","kn":"ಸಂಕೋಚ","tr":"saṅkōca","status":"shaped","rala":["ಮುಜುಗರ ಉಂಟಾದ"],"note":"The other 'embarrassed'. ಮುಜುಗರ is the wince at a social scene; ಸಂಕೋಚ is the shrinking-in-on-yourself, the hesitation to ask, to take, to take up room."}]}]}]},{"id":"odalu","name":"ಒಡಲ ಚಕ್ರ","hubKn":"ಒಡಲು","hubRom":"oḍalu · the body as vessel","hint":"Hover or tap any segment. The centre is where in the body it happens, the middle ring is the feeling, and the outer ring is what Kannada actually says.","blurb":"Not a translation of anything. Kannada mostly names a feeling by saying <em>where in the body it is happening</em> — ಹೊಟ್ಟೆಕಿಚ್ಚು, belly-fire; ಎದೆಗುಂದು, the chest sinks; ಕರುಳು ಚುರುಕ್, the gut stings. So the seven seats are the centre, the feelings you would actually name are the middle ring, and the phrases people say are the outer one.","aboutTitle":"ಒಡಲು","aboutLat":"the body as the vessel of feeling","about":"ಒಡಲು is an old word for the body considered as a container — the thing feeling happens inside. English builds compounds like this too (heartbroken, gutted, hot-headed) but treats them as figurative colour on top of a real vocabulary. In Kannada they <em>are</em> the vocabulary, and they are not heard as metaphor: ಹೊಟ್ಟೆ ತೊಳಸು covers moral revulsion and actual nausea with nothing between the two senses.","cards":[{"h":"Navigate by the feeling, not the organ","p":"The seat is the grouping, but the ring you actually read is the middle one, and it holds ordinary feeling-names: ಧೈರ್ಯ, ಹೆಮ್ಮೆ, ಚಿಂತೆ, ಮುನಿಸು, ನೆಮ್ಮದಿ. The body explains why those particular feelings sit together."},{"h":"What it holds that the first wheel could not","p":"ಮುನಿಸು, the sulk you are only entitled to with someone who loves you. ಸಲಿಗೆ, the earned licence to be informal. ಕರುಳ ಬಳ್ಳಿ, the gut-vine. ಎದೆ ಝಲ್, the single cold jolt. None of them had an English slot to sit in."},{"h":"ಕರುಳು is the strange one","p":"In Kannada the gut is the organ of kinship — your child is your ಕರುಳ ಬಳ್ಳಿ — so every feeling sited there is about your own people. ಕರುಳು ಕಿತ್ತು ಬರು is kept for the death of a child or a parent, and using it lightly would be shocking."},{"h":"What it misses","p":"Feelings with no bodily seat fall off: ಅಭಿಮಾನ, ಹಂಬಲ, ಕೃತಜ್ಞತೆ, ಸಂಭ್ರಮ. Catching those needs a second axis — probably direction, since ವಾತ್ಸಲ್ಯ only ever flows downward, ಗೌರವ upward and ಸಲಿಗೆ sideways."}],"data":[{"kn":"ಎದೆ","tr":"ede","en":"chest","note":"Nerve and collapse. Kannada puts courage here rather than in the heart — ಕೆಚ್ಚೆದೆ, a chest of embers — and puts the loss of it here too.","kids":[{"kn":"ಧೈರ್ಯ","tr":"dhairya","en":"courage","note":"The chest holding.","kids":[{"kn":"ಕೆಚ್ಚೆದೆ","tr":"keccede","en":"fierce courage","lit":"a chest of embers","note":"ಕೆಚ್ಚು is heat held in the body. The bravery word is thermal, not moral."},{"kn":"ಎದೆಗಾರಿಕೆ","tr":"edegārike","en":"nerve","lit":"chest-having","note":"The willingness to stand up and say it — closer to 'having the guts', one organ higher."}]},{"kn":"ಕುಗ್ಗುವಿಕೆ","tr":"kugguvike","en":"losing heart","note":"The chest failing.","kids":[{"kn":"ಎದೆಗುಂದು","tr":"edegundu","en":"dismay","lit":"the chest sinks","note":"The standard word. Kannada names the physical drop and leaves the feeling to be inferred."},{"kn":"ಎದೆ ಒಡೆ","tr":"ede oḍe","en":"devastation","lit":"the chest breaks","note":"Reserved for news that arrives all at once. English 'heartbreak' drifted toward romance; this did not."}]},{"kn":"ದಿಗಿಲು","tr":"digilu","en":"dread","note":"The chest reacting before you do.","kids":[{"kn":"ಎದೆ ಡವಡವ","tr":"ede ḍavaḍava","en":"thudding fear","lit":"the chest goes thud-thud","note":"Anticipatory — the fear of a thing you can see coming."},{"kn":"ಎದೆ ಝಲ್","tr":"ede jhal","en":"the jolt of alarm","lit":"the chest goes cold, once","note":"A single event, not a state. There is no English noun for the one jolt."}]},{"kn":"ಹೆಮ್ಮೆ","tr":"hemme","en":"pride","note":"The chest filling.","kids":[{"kn":"ಎದೆ ತುಂಬು","tr":"ede tumbu","en":"pride on someone's behalf","lit":"the chest fills","note":"Said watching someone you raised do well. Not self-pride — English needs a whole clause."},{"kn":"ಎದೆಯುಬ್ಬು","tr":"edeyubbu","en":"swelling pride","lit":"the chest swells","note":"One degree louder, and faintly comic if you use it about yourself."}]},{"kn":"ಸಂಕಟ","tr":"saṅkaṭa","en":"anguish","note":"The chest closing.","kids":[{"kn":"ಎದೆ ಭಾರ","tr":"ede bhāra","en":"the weight before weeping","lit":"the chest is heavy","note":"The state just before tears, named as a load rather than a mood."},{"kn":"ಉಸಿರುಗಟ್ಟು","tr":"usirugaṭṭu","en":"suffocation","lit":"the breath is blocked","note":"Used for a room, a marriage and a job. Nobody hears it as metaphor."}]}]},{"kn":"ಹೊಟ್ಟೆ","tr":"hoṭṭe","en":"belly","note":"Appetite and envy. Kannada is unembarrassed about siting the ugly feelings in the stomach, and says them out loud.","kids":[{"kn":"ಹೊಟ್ಟೆಕಿಚ್ಚು","tr":"hoṭṭe-kiccu","en":"envy","note":"Belly-fire. The everyday word.","kids":[{"kn":"ಅಸೂಯೆ","tr":"asūye","en":"envy, formally","note":"Correct, literary, and not what anyone says at home."},{"kn":"ಕರುಬು","tr":"karubu","en":"to begrudge","lit":"to smoulder","note":"Native verb. The low-grade continuous version of the same fire."}]},{"kn":"ಹೊಟ್ಟೆಯುರಿ","tr":"hoṭṭeyuri","en":"burning resentment","note":"Distinct from envy: the heat of having been wronged, not of wanting what another has.","kids":[{"kn":"ಅಸಮಾಧಾನ","tr":"asamādhāna","en":"discontent","note":"'Un-settledness' — a grievance nobody talked down."},{"kn":"ಸೇಡು","tr":"sēḍu","en":"revenge","note":"ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು — to settle it — treats revenge as a debt."}]},{"kn":"ತೃಪ್ತಿ","tr":"tṛpti","en":"satiety","note":"The belly at rest.","kids":[{"kn":"ಹೊಟ್ಟೆ ತುಂಬು","tr":"hoṭṭe tumbu","en":"enough","lit":"the belly is full","note":"Used far past food: a full belly is the standard image for having had sufficient of anything."},{"kn":"ತಣಿವು","tr":"taṇivu","en":"slaked","lit":"cooling","note":"Satisfaction as cooling rather than filling — the other half of how Kannada thinks about want."}]},{"kn":"ದುರಾಸೆ","tr":"durāse","en":"greed","note":"ಆಸೆ is desire and is morally neutral; the prefix does all the work.","kids":[{"kn":"ಹೊಟ್ಟೆಬಾಕ","tr":"hoṭṭe-bāka","en":"glutton","lit":"belly-eater","note":"An insult about appetite that transfers cleanly to money and power."},{"kn":"ಆಸೆಬುರುಕ","tr":"āseburuka","en":"grasping","lit":"full of wanting","note":"The -ಬುರುಕ suffix makes any noun into a person overfull of it."}]},{"kn":"ವಾಕರಿಕೆ","tr":"vākarike","en":"revulsion","note":"The belly rejecting.","kids":[{"kn":"ಹೊಟ್ಟೆ ತೊಳಸು","tr":"hoṭṭe toḷasu","en":"the stomach stirs","lit":"the stomach is stirred","note":"Moral disgust and physical nausea in one phrase, with no marker between them."},{"kn":"ಹೇಸಿಗೆ","tr":"hēsige","en":"loathing","lit":"filth","note":"The moral and the physical are the same word."}]}]},{"kn":"ಕರುಳು","tr":"karuḷu","en":"gut","note":"The most untranslatable seat. In Kannada the gut is the organ of kinship — your child is your ಕರುಳ ಬಳ್ಳಿ, your gut-vine — so every feeling sited here is about your own people.","kids":[{"kn":"ಕನಿಕರ","tr":"kanikara","en":"compassion","note":"What the gut does when it sees suffering.","kids":[{"kn":"ಕರುಳು ಚುರುಕ್","tr":"karuḷu curuk","en":"the pang of pity","lit":"the gut stings","note":"Involuntary, on seeing a child or an animal in distress. Pity is a judgement; this is a reflex."},{"kn":"ಮರುಕ","tr":"maruka","en":"pity, ruth","lit":"turning back toward","note":"Older and softer than ಕನಿಕರ, and slightly literary now."}]},{"kn":"ಮರುಗುವಿಕೆ","tr":"maraguvike","en":"grieving for another","note":"ಮರುಗು is a native verb with no exact English partner: to ache on someone else's account. The gut under strain.","kids":[{"kn":"ಕರುಳು ಹಿಂಡು","tr":"karuḷu hiṇḍu","en":"wrung with pity","lit":"the gut is wrung","note":"The image is wringing a wet cloth. Used for watching suffering you cannot stop."},{"kn":"ತಳಮಳ","tr":"taḷamaḷa","en":"churn","note":"The word for boiling liquid and for a mind that will not settle."}]},{"kn":"ಅಗಲಿಕೆ","tr":"agalike","en":"loss, parting","note":"The gut torn.","kids":[{"kn":"ಕರುಳು ಕಿತ್ತು ಬರು","tr":"karuḷu kittu baru","en":"losing your own","lit":"the gut tears loose","note":"Kept for the death of a child or parent. Using it lightly would be shocking."},{"kn":"ಉಮ್ಮಳ","tr":"ummaḷa","en":"grief welling up","lit":"a swelling from below","note":"Names the swell, not the weeping."}]},{"kn":"ಮಮತೆ","tr":"mamate","en":"attachment-love","note":"The gut as a tie.","kids":[{"kn":"ಕರುಳ ಬಳ್ಳಿ","tr":"karuḷa baḷḷi","en":"one's own child","lit":"the gut-vine","note":"The umbilical cord as a creeper. English has no everyday phrase saying kinship is physical."},{"kn":"ವಾತ್ಸಲ್ಯ","tr":"vātsalya","en":"downward tenderness","lit":"the feeling toward a calf","note":"Flows one way only: elder to younger. English 'love' has no direction; this word is nothing but direction."}]}]},{"kn":"ಮನಸ್ಸು","tr":"manassu","en":"mind","note":"The general seat, and the only one that is not an organ you could point to. Everything a body does, the ಮನಸ್ಸು does — it fills, shrinks, lightens, opens.","kids":[{"kn":"ನೋವು","tr":"nōvu","en":"hurt","note":"ನೋವು is bodily and emotional pain with no distinction at all.","kids":[{"kn":"ಮನಸ್ಸಿಗೆ ನೋವು","tr":"manassige nōvu","en":"being wounded","lit":"pain to the mind","note":"The ordinary way to say someone hurt you."},{"kn":"ಮನಸ್ತಾಪ","tr":"manastāpa","en":"a falling-out","lit":"mind-heat","note":"Between two people who were close. Not anger, not grief — the cooled residue that keeps them apart."}]},{"kn":"ಖಿನ್ನತೆ","tr":"khinnate","en":"lowness","note":"Now the clinical word; the phrase beneath it is older.","kids":[{"kn":"ಮನಸ್ಸು ಕುಗ್ಗು","tr":"manassu kuggu","en":"the mind shrinks","lit":"the mind shrinks down","note":"What Kannada said before ಖಿನ್ನತೆ was coined. A description, where the new word is a diagnosis."},{"kn":"ಬೇಸರ","tr":"bēsara","en":"weary discontent","note":"One word for bored, mildly sad and fed up. 'ಬೇಸರಾಗಿದೆ' could be any of the three."}]},{"kn":"ತೆರೆದುಕೊಳ್ಳುವಿಕೆ","tr":"teredukoḷḷuvike","en":"opening up","note":"The nearest Kannada gets to the therapeutic sense of vulnerable — and it is an act, not a state.","kids":[{"kn":"ಮನಸ್ಸು ಬಿಚ್ಚು","tr":"manassu biccu","en":"to unfold the mind","lit":"to untie the mind","note":"The same verb as untying a knot or opening a parcel."},{"kn":"ಸಲಿಗೆ","tr":"salige","en":"earned informality","note":"The licence to tease someone, eat off their plate, drop the honorific. Intimacy defined as permission."}]},{"kn":"ಕರಗುವಿಕೆ","tr":"karaguvike","en":"being moved","note":"The mind melting — Kannada's standard image for being touched.","kids":[{"kn":"ಮನ ಮುಟ್ಟು","tr":"mana muṭṭu","en":"it touched me","lit":"it touched the mind","note":"The agent is the thing, not you. A song ಮನ ಮುಟ್ಟುತ್ತದೆ."},{"kn":"ಮೆಚ್ಚುಗೆ","tr":"meccuge","en":"admiration","note":"Both the feeling and its expression — to ಮೆಚ್ಚು silently is incomplete."}]},{"kn":"ನೆಮ್ಮದಿ","tr":"nemmadi","en":"peace of mind","note":"Sharply distinct from ಶಾಂತಿ, peace as the absence of conflict.","kids":[{"kn":"ಮನಸ್ಸು ಹಗುರ","tr":"manassu hagura","en":"relief","lit":"the mind is light","note":"Specifically after confessing or weeping. Relief as a change in weight."},{"kn":"ಸಮಾಧಾನ","tr":"samādhāna","en":"being consoled","lit":"a settling","note":"Both the comfort someone gives you and the state it produces."}]},{"kn":"ಒಪ್ಪಿಗೆ","tr":"oppige","en":"assent","note":"Kannada distinguishes agreeing out loud from your ಮನಸ್ಸು having agreed, and gives you the phrase to say so.","kids":[{"kn":"ಮನಸ್ಸು ಒಪ್ಪು","tr":"manassu oppu","en":"felt consent","lit":"the mind agrees","note":"You can say yes without this having happened, and everyone knows it."},{"kn":"ಮನಃಪೂರ್ವಕ","tr":"manaḥpūrvaka","en":"wholeheartedly","lit":"mind-first","note":"The adverb you attach to a thank-you to mean you meant it."}]}]},{"kn":"ತಲೆ","tr":"tale","en":"head","note":"Worry and standing. The head overheats, spoils and spins — and it is also the thing you raise or lower in front of other people.","kids":[{"kn":"ಚಿಂತೆ","tr":"cinte","en":"worry","note":"ಚಿಂತೆ is also simply 'thought'. To worry and to think are the same word.","kids":[{"kn":"ತಲೆಬಿಸಿ","tr":"talebisi","en":"worry as overheating","lit":"head-heat","note":"You can tell someone not to take ತಲೆಬಿಸಿ the way you would tell them to cool down."},{"kn":"ಯೋಚನೆ","tr":"yōcane","en":"thinking it over","note":"Neutral by itself; 'ಯೋಚನೆ ಮಾಡಬೇಡ' means stop worrying."}]},{"kn":"ಗೊಂದಲ","tr":"gondala","en":"confusion","note":"Also the word for a noisy crowd — confusion as too many voices at once.","kids":[{"kn":"ತಲೆಕೆಡು","tr":"talekeḍu","en":"driven out of your mind","lit":"the head spoils","note":"Same verb as milk going off. Covers exam season and genuine breakdown, with tone doing the work."},{"kn":"ಕಕ್ಕಾಬಿಕ್ಕಿ","tr":"kakkābikki","en":"flustered","note":"A sound-word with no parts that mean anything alone — the flap of not knowing what to do with your hands."}]},{"kn":"ಹೈರಾಣ","tr":"hairāṇa","en":"worn out","note":"Overwhelm as depletion rather than dread.","kids":[{"kn":"ತಲೆ ಸುತ್ತು","tr":"tale suttu","en":"can't take any more","lit":"the head spins","note":"Physical dizziness and being overwhelmed share the phrase entirely."},{"kn":"ದಣಿವು","tr":"daṇivu","en":"tiredness","note":"The native word, used of a body and of a day alike."}]},{"kn":"ಮರ್ಯಾದೆ","tr":"maryāde","en":"standing, face","note":"One of the most-used words in Kannada. Self-respect described entirely as a posture held in public.","kids":[{"kn":"ತಲೆ ಎತ್ತು","tr":"tale ettu","en":"dignity","lit":"to raise the head","note":"ಘನತೆ is the abstract noun; this is what people actually say."},{"kn":"ತಲೆತಗ್ಗಿಸು","tr":"taletaggisu","en":"shame","lit":"to lower the head","note":"The same axis in the other direction. Kannada's shame is visible before it is internal."}]}]},{"kn":"ಮೈ","tr":"mai","en":"body","note":"The surface. Everything here is involuntary and visible — the hair standing up, the burn, the forgetting of the body altogether.","kids":[{"kn":"ಪುಳಕ","tr":"puḷaka","en":"thrill","note":"Classical poetics counts it as visible evidence of an inner state, which is why it has its own noun.","kids":[{"kn":"ಮೈ ಝುಮ್","tr":"mai jhum","en":"the thrill of music","lit":"the body tingles","note":"Specifically aesthetic. You would say it about a raga, rarely about good news."},{"kn":"ರೋಮಾಂಚ","tr":"rōmāñca","en":"horripilation","lit":"hair-motion","note":"The Sanskrit register of exactly the same event."}]},{"kn":"ನಡುಕ","tr":"naḍuka","en":"the body's alarm","note":"The skin knowing before the mind does. Kannada names the tremble and lets the fear be inferred.","kids":[{"kn":"ಮೈ ನವಿರೇಳು","tr":"mai navirēḷu","en":"awe or dread","lit":"the fine hair stands","note":"Which of the two it is comes from context alone. Kannada declines to separate the physiology."},{"kn":"ಬೆವರು","tr":"bevaru","en":"sweat","note":"'ಬೆವರಿಬಿಟ್ಟೆ' — I broke into a sweat — is a complete statement about fear."}]},{"kn":"ಉರಿ","tr":"uri","en":"burning","note":"The point at which anger stops being an opinion.","kids":[{"kn":"ಮೈ ಉರಿ","tr":"mai uri","en":"rage gone physical","lit":"the body burns","note":"Also literally a fever or a rash — the phrase does not choose."},{"kn":"ಸಿಡುಕು","tr":"siḍuku","en":"worn-in irritability","note":"Not an episode but a temperament, and one you wear on your face."}]},{"kn":"ಮೈಮರೆವು","tr":"maimarevu","en":"absorption","note":"The body forgotten — the highest praise available for listening to music.","kids":[{"kn":"ಮೈ ಮರೆ","tr":"mai mare","en":"lost in it","lit":"to forget the body","note":"Also what you say about someone who missed their stop."},{"kn":"ಭಾವಪರವಶ","tr":"bhāva-paravaśa","en":"carried away","lit":"subject to the feeling","note":"ಪರವಶ means under another's control. The grammar says the feeling is driving."}]}]},{"kn":"ಮುಖ","tr":"mukha","en":"face","note":"The public instrument. These are the feelings other people read off you whether or not you meant them to — which is why the sulk lives here and not in ಕೋಪ.","kids":[{"kn":"ಮುನಿಸು","tr":"munisu","en":"the loving sulk","note":"The anger you are only entitled to with someone who loves you. It wants soothing, not resolution, and would be insulted by an apology that was merely correct.","kids":[{"kn":"ಮುಖ ಊದಿಸು","tr":"mukha ūdisu","en":"sulking","lit":"to puff the face","note":"Described as something you actively do to your own face. The performance is the point."},{"kn":"ಸೆಡವು","tr":"seḍavu","en":"a huff","note":"Native, and shorter-lived than ಮುನಿಸು — an afternoon rather than a week."}]},{"kn":"ಸಪ್ಪೆ","tr":"sappe","en":"flatness","note":"ಸಪ್ಪೆ is what you call unsalted food. A dejected face is described as under-seasoned.","kids":[{"kn":"ಮುಖ ಕಪ್ಪಿಡು","tr":"mukha kappiḍu","en":"crestfallen","lit":"the face darkens","note":"The visible fall when someone hears they were left out."},{"kn":"ಸಪ್ಪೆ ಮೋರೆ","tr":"sappe mōre","en":"a long face","lit":"an insipid face","note":"ಮೋರೆ is the blunt, slightly rude word for a face."}]},{"kn":"ಅಳು","tr":"aḷu","en":"weeping","note":"The plainest native verb. The eye as the place the mind overflows.","kids":[{"kn":"ಕಣ್ಣು ತುಂಬು","tr":"kaṇṇu tumbu","en":"moved to tears","lit":"the eyes fill","note":"Reversible in a way English is not: a sight can also ಕಣ್ಣು ತುಂಬು you, by being beautiful."},{"kn":"ಕಣ್ಣೀರು","tr":"kaṇṇīru","en":"tears","lit":"eye-water","note":"Plain compound, no ceremony. Kannada saves its ceremony for the phrases around it."}]},{"kn":"ಸಿಟ್ಟು","tr":"siṭṭu","en":"visible anger","note":"Anger as something the room can read.","kids":[{"kn":"ಕಣ್ಣು ಕೆಂಪು","tr":"kaṇṇu kempu","en":"about to break","lit":"red eyes","note":"A warning read by everyone present. The threat is in the description, not in any word for anger."},{"kn":"ಹುಬ್ಬು ಗಂಟು","tr":"hubbu gaṇṭu","en":"a knitted brow","lit":"the eyebrows knot","note":"The smallest visible unit of displeasure, and often the only one you get."}]},{"kn":"ನಾಚಿಕೆ","tr":"nāchike","en":"shyness and shame at once","note":"A bride's ನಾಚಿಕೆ and a thief's are the same noun. English needs three words and grades them differently; Kannada trusts context completely.","kids":[{"kn":"ಕಣ್ಣು ತಗ್ಗಿಸು","tr":"kaṇṇu taggisu","en":"averting the eyes","lit":"to lower the eyes","note":"The gesture that covers modesty, shyness and guilt without distinguishing them."},{"kn":"ಮುಜುಗರ","tr":"mujugara","en":"awkwardness","note":"The wince at a social scene, often on someone else's behalf."}]}]}]},{"id":"rasa","name":"ರಸಚಕ್ರ","hubKn":"ನವರಸ","hubRom":"nava-rasa · the nine flavours","hint":"Hover or tap any segment. The nine rasas are the centre; underneath each one are the words Kannada actually uses for that flavour.","blurb":"The oldest map of feeling this language has, opened out. The nine rasas are an aesthetic theory — what an audience can be made to feel — and a thousand years of Kannada poetry is organised by them. Here each rasa keeps its Sanskrit name, because that is what everyone calls it, and everything beneath it is the daily word: ಸಿಟ್ಟು under ರೌದ್ರ, ಬೆರಗು under ಅದ್ಭುತ, ಬೇಸರ under ಬೀಭತ್ಸ.","aboutTitle":"ನವರಸ","aboutLat":"nine flavours, not nine emotions","about":"A rasa is not an emotion. It is the flavour an audience tastes — which is why each has a ಸ್ಥಾಯಿಭಾವ, a durable underlying feeling, listed separately in the panel: ಶೃಂಗಾರ is the flavour, ರತಿ is the feeling. That distinction has no equivalent in any Western emotion wheel, and it is the reason this map can hold ವೀರ and ಹಾಸ್ಯ, which the other two cannot.","cards":[{"h":"Sanskrit at the centre, Kannada everywhere else","p":"The nine names are Sanskrit and stay Sanskrit: ಶೃಂಗಾರ, ಹಾಸ್ಯ, ಕರುಣ, ರೌದ್ರ, ವೀರ, ಭಯಾನಕ, ಬೀಭತ್ಸ, ಅದ್ಭುತ, ಶಾಂತ. Every Kannada speaker who has watched a dance recital knows them. Underneath, the words are ordinary: ರೊಚ್ಚು, ಗಾಬರಿ, ಹೊಟ್ಟೆ ತೊಳಸು, ಗತ್ತು, ದಂಗು, ಸೇಡು."},{"h":"The two the other wheels lose","p":"ವೀರ, the heroic, and ಶೃಂಗಾರ, the erotic. No English feeling wheel has a slot for either. ವೀರ's underlying feeling is not courage but ಉತ್ಸಾಹ, energy — which quietly claims heroism is a kind of enthusiasm."},{"h":"ಶಾಂತ, the one they argued about","p":"The ninth rasa was added late and disputed for centuries: can the absence of agitation be a flavour at all? The English wheel files peace under happiness. The rasa tradition insists it is a state of its own, and gives it ಶಮ — quiet — as its durable feeling."},{"h":"The colours are not decoration","p":"The Nāṭyaśāstra assigns each rasa a colour, and this wheel follows them: ಶೃಂಗಾರ śyāma green, ರೌದ್ರ red, ವೀರ wheaten gold, ಭಯಾನಕ black, ಬೀಭತ್ಸ blue, ಅದ್ಭುತ yellow, ಕರುಣ dove grey, ಹಾಸ್ಯ and ಶಾಂತ white — the last three shifted just far enough to stay legible on both a light and a dark ground."}],"data":[{"kn":"ಶೃಂಗಾರ","tr":"śṛṅgāra","en":"love, the erotic","sthayi":"ರತಿ · rati, desire","note":"The first and most argued-over rasa. It is not romance in the modern sense — ಶೃಂಗಾರ covers the whole apparatus of attraction, adornment and separation, and half of it is about being apart.","kids":[{"kn":"ಒಲವು","tr":"olavu","en":"fondness, leaning-toward","note":"Native, and the gentlest of the love words. You have ಒಲವು for a person, a place, or an idea.","kids":[{"kn":"ಪ್ರೀತಿ","tr":"prīti","en":"love","note":"The general word, used for parents, friends and lovers without embarrassment."},{"kn":"ಮೆಚ್ಚುಗೆ","tr":"meccuge","en":"liking, approval","note":"Both the feeling and its expression — to ಮೆಚ್ಚು silently is incomplete."}]},{"kn":"ಸರಸ","tr":"sarasa","en":"playful flirtation","note":"Literally 'with rasa'. The word for banter between people who like each other, and it is not coy about it.","kids":[{"kn":"ಚೆಲ್ಲಾಟ","tr":"cellāṭa","en":"dalliance","note":"Play with a loose edge to it — used affectionately and as a mild accusation."},{"kn":"ನಾಚಿಕೆ","tr":"nāchike","en":"bashfulness","note":"Shyness, modesty and shame in one noun. A bride's ನಾಚಿಕೆ and a thief's are the same word."}]},{"kn":"ವಿರಹ","tr":"viraha","en":"the pain of separation","note":"A whole genre of Kannada poetry sits here. English has no single word, which is why so much of it gets translated as 'longing' and loses the ache.","kids":[{"kn":"ಹಂಬಲ","tr":"hambala","en":"yearning","note":"The pull toward something absent — a place, a person, a life not lived."},{"kn":"ಕಾತರ","tr":"kātara","en":"aching eagerness","note":"Waiting that has begun to hurt slightly."}]},{"kn":"ಮೋಹ","tr":"mōha","en":"infatuation","note":"In philosophy ಮೋಹ is delusion, one of the six enemies. In daily speech it is simply being besotted — the moral warning is still audible underneath.","kids":[{"kn":"ಸೆಳೆತ","tr":"seḷeta","en":"pull, attraction","note":"Native and physical: the same word for an undertow and for a muscle cramp."},{"kn":"ವ್ಯಾಮೋಹ","tr":"vyāmōha","en":"obsessive attachment","note":"ಮೋಹ with the brakes off. Said of parents about children as often as of lovers."}]}]},{"kn":"ಹಾಸ್ಯ","tr":"hāsya","en":"mirth, the comic","sthayi":"ಹಾಸ · hāsa, laughter","note":"The rasa the English feeling wheel has no room for at all. Kannada grades laughter finely, and most of the grades are about who is being laughed at.","kids":[{"kn":"ನಗು","tr":"nagu","en":"laughter","note":"The plain native verb-noun. Everything else in this sector is a shade of it.","kids":[{"kn":"ನಗೆ","tr":"nage","en":"a laugh","note":"The countable one — you can have a ನಗೆ, you cannot have a ನಗು."},{"kn":"ಕಿಸಿಕಿಸಿ","tr":"kisikisi","en":"giggling","note":"Sound-word. The laughter you are trying and failing to suppress."}]},{"kn":"ತಮಾಷೆ","tr":"tamāṣe","en":"fun","note":"Borrowed from Urdu and now completely at home. 'ತಮಾಷೆಗೆ ಹೇಳಿದೆ' — I said it for fun — is the standard retreat.","kids":[{"kn":"ತುಂಟತನ","tr":"ṭuṇṭatana","en":"mischief","note":"The naughtiness of a child you are not actually angry with."},{"kn":"ಕೀಟಲೆ","tr":"kīṭale","en":"teasing","note":"Teasing you are allowed to do, which means it is a claim about the relationship."}]},{"kn":"ಗೇಲಿ","tr":"gēli","en":"mockery","note":"Where ಹಾಸ್ಯ turns and points at someone. The wound in ಅಪಹಾಸ್ಯ is that a good thing was aimed at you.","kids":[{"kn":"ಅಣಕ","tr":"aṇaka","en":"mimicry","note":"Doing an impression of someone to their disadvantage."},{"kn":"ವ್ಯಂಗ್ಯ","tr":"vyaṅgya","en":"sarcasm","note":"In poetics ವ್ಯಂಗ್ಯ is suggested meaning — the good kind. In an argument it is the knife."}]},{"kn":"ಮುಗುಳ್ನಗೆ","tr":"muguḷnage","en":"a smile","note":"'Bud-laugh' — the laugh that has not opened. A compound of exactly the kind Kannada makes best.","kids":[{"kn":"ಸಂತಸ","tr":"santasa","en":"gladness","note":"Softer and more native-feeling than ಸಂತೋಷ, and slightly more literary now."},{"kn":"ಹಗುರ","tr":"hagura","en":"lightness","note":"The change in weight after something is resolved."}]}]},{"kn":"ಕರುಣ","tr":"karuṇa","en":"compassion, pathos","sthayi":"ಶೋಕ · śōka, grief","note":"The rasa Kannada literature is most at home in. Note that it names not grief itself but grief-made-shareable — the feeling an audience has, not the one the character has.","kids":[{"kn":"ಅಳಲು","tr":"aḷalu","en":"the wail","note":"Native, and it is the sound before it is the feeling.","kids":[{"kn":"ದುಃಖ","tr":"duḥkha","en":"sorrow","note":"The general word, and also the technical Buddhist one. Kannada uses it for a bad afternoon."},{"kn":"ಕಣ್ಣೀರು","tr":"kaṇṇīru","en":"tears","note":"Eye-water. Plain compound, no ceremony — Kannada saves the ceremony for the phrases around it."}]},{"kn":"ಕನಿಕರ","tr":"kanikara","en":"compassion","note":"What you feel toward someone whose situation you can see clearly. Not quite pity — there is less height in it.","kids":[{"kn":"ಮರುಕ","tr":"maruka","en":"pity, ruth","note":"'Turning back toward.' Older and softer, and now slightly literary."},{"kn":"ಕರುಳು ಚುರುಕ್","tr":"karuḷu curuk","en":"the gut-pang","note":"The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex."}]},{"kn":"ಸಂಕಟ","tr":"saṅkaṭa","en":"anguish","note":"Felt as constriction — the chest closing. Used equally for a dying person's distress and for an impossible choice.","kids":[{"kn":"ಉಮ್ಮಳ","tr":"ummaḷa","en":"grief welling up","note":"Names the swell, not the weeping — the moment before it breaks."},{"kn":"ಕೊರಗು","tr":"koragu","en":"pining","note":"The grief that thins you over years rather than days."}]},{"kn":"ಹಳಹಳಿಕೆ","tr":"haḷahaḷike","en":"regret braided with longing","note":"Remorse for something you would, honestly, do again. English has to use a whole sentence.","kids":[{"kn":"ಪಶ್ಚಾತ್ತಾಪ","tr":"paścāttāpa","en":"remorse","note":"'After-heat' — the burn that arrives once the act is over."},{"kn":"ವಿಷಾದ","tr":"viṣāda","en":"melancholy","note":"Sadness with the edges worn off. The word Kannada writers reach for when nothing in particular is wrong."}]}]},{"kn":"ರೌದ್ರ","tr":"raudra","en":"fury","sthayi":"ಕ್ರೋಧ · krōdha, wrath","note":"Named for Rudra. The rasa is deliberately grand — a god's anger, not a bad mood — which is why the daily words underneath it feel so much smaller and so much more used.","kids":[{"kn":"ಸಿಟ್ಟು","tr":"siṭṭu","en":"anger","note":"Hot, quick, and the word actually used. ಕ್ರೋಧ is for epics.","kids":[{"kn":"ಕೋಪ","tr":"kōpa","en":"anger, the general word","note":"Slightly more composed than ಸಿಟ್ಟು — you can have ಕೋಪ quietly."},{"kn":"ಸಿಡುಕು","tr":"siḍuku","en":"irritability","note":"Not an episode but a temperament, and one you wear on your face."}]},{"kn":"ರೊಚ್ಚು","tr":"roccu","en":"rage","note":"Native and physical — ರೊಚ್ಚಿಗೇಳು, to rise into it.","kids":[{"kn":"ಕೆಂಡಾಮಂಡಲ","tr":"keṇḍā-maṇḍala","en":"incandescent","note":"'A whole mandala of live coals.' One of the finest anger words in the language."},{"kn":"ಆವೇಶ","tr":"āvēśa","en":"frenzy","note":"Also the word for being possessed by a deity. The grammar says the feeling is driving, not you."}]},{"kn":"ಹಗೆ","tr":"hage","en":"enmity","note":"The old native word for an enemy, and heavy — the enmity of feuds, not of office politics.","kids":[{"kn":"ದ್ವೇಷ","tr":"dvēṣa","en":"hatred","note":"Settled and directed. One of the six enemies in the moral vocabulary."},{"kn":"ಸೇಡು","tr":"sēḍu","en":"revenge","note":"Native. ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು — to settle the revenge — treats it as a debt."}]},{"kn":"ಆಕ್ರೋಶ","tr":"ākrōśa","en":"outcry","note":"Anger with a case to argue. The word every Kannada news bulletin uses for public anger.","kids":[{"kn":"ಅಸಮಾಧಾನ","tr":"asamādhāna","en":"discontent","note":"'Un-settledness' — the negation of consolation. A grievance nobody talked down."},{"kn":"ಬಂಡಾಯ","tr":"baṇḍāya","en":"revolt","note":"Also the name of a Kannada literary movement, which is the right amount of baggage."}]}]},{"kn":"ವೀರ","tr":"vīra","en":"the heroic","sthayi":"ಉತ್ಸಾಹ · utsāha, vigour","note":"The rasa with no home on the English wheel at all. Its ಸ್ಥಾಯಿಭಾವ is not courage but ಉತ್ಸಾಹ — energy — which quietly claims that heroism is a kind of enthusiasm.","kids":[{"kn":"ಧೈರ್ಯ","tr":"dhairya","en":"courage","note":"Steadiness under fear. The everyday word, and the one you tell someone to have.","kids":[{"kn":"ಕೆಚ್ಚು","tr":"keccu","en":"fierce courage","note":"Heat held in the body. Kannada's bravery word is thermal, not moral."},{"kn":"ಎದೆಗಾರಿಕೆ","tr":"edegārike","en":"nerve","note":"'Chest-having' — the willingness to stand up and say it."}]},{"kn":"ಛಲ","tr":"chala","en":"resolve","note":"One of the most-used words in Kannada self-description. Not stubbornness — the refusal to be finished with something.","kids":[{"kn":"ಹಠ","tr":"haṭha","en":"insistence","note":"ಛಲ's difficult sibling. A child throwing ಹಠ and a satyagrahi holding it are the same noun."},{"kn":"ಪಟ್ಟು","tr":"paṭṭu","en":"a hold, a grip","note":"From wrestling. ಪಟ್ಟು ಬಿಡದೆ — without letting go of the hold — is how persistence is described."}]},{"kn":"ಹೆಮ್ಮೆ","tr":"hemme","en":"pride","note":"Warm pride, usually in someone else. Distinct from ಅಹಂಕಾರ, which is the pride that has gone bad.","kids":[{"kn":"ಅಭಿಮಾನ","tr":"abhimāna","en":"pride-as-loyalty","note":"For your language, your team, your people. Its second sense is the wound when that loyalty is slighted."},{"kn":"ಗತ್ತು","tr":"gattu","en":"swagger","note":"Native, and affectionately used — the carriage of someone who knows they are good."}]},{"kn":"ಹುರುಪು","tr":"hurupu","en":"vigour","note":"Native. The energy you start a thing with, before ಛಲ has to take over.","kids":[{"kn":"ಉಮೇದು","tr":"umēdu","en":"zest","note":"Borrowed and thoroughly domesticated. 'ಉಮೇದು ಇಲ್ಲ' is a complete diagnosis."},{"kn":"ಸಂಭ್ರಮ","tr":"sambhrama","en":"festive elation","note":"Busy, shared, slightly frantic joy — a wedding house at six in the morning. Nobody has ಸಂಭ್ರಮ alone."}]}]},{"kn":"ಭಯಾನಕ","tr":"bhayānaka","en":"terror","sthayi":"ಭಯ · bhaya, fear","note":"Kannada's richest sector by count. Fear is graded by intensity and by whether you can see it coming.","kids":[{"kn":"ಹೆದರಿಕೆ","tr":"hedarike","en":"being scared","note":"The plain daily word, and the one children are told not to have.","kids":[{"kn":"ಅಂಜಿಕೆ","tr":"añjike","en":"timidity","note":"Fear as a disposition. ಅಂಜುಬುರುಕ, one who is full of it, is a mild insult."},{"kn":"ಬೆದರಿಕೆ","tr":"bedarike","en":"a threat","note":"The threat itself. Kannada places it outside you — 'ಬೆದರಿಕೆ ಇದೆ', there is a threat."}]},{"kn":"ದಿಗಿಲು","tr":"digilu","en":"dread","note":"Heavier and more still than ಹೆದರಿಕೆ. The fear that has settled in and is waiting.","kids":[{"kn":"ಆತಂಕ","tr":"ātaṅka","en":"anxiety","note":"Now the standard clinical word too. Its older sense is closer to 'impediment' — anxiety as the thing in your way."},{"kn":"ತಳಮಳ","tr":"taḷamaḷa","en":"churn","note":"The word for boiling liquid and for a mind that will not settle."}]},{"kn":"ಗಾಬರಿ","tr":"gābari","en":"panic","note":"Sudden, visible, and slightly undignified — the fear other people can see you having.","kids":[{"kn":"ಬೆಚ್ಚು","tr":"beccu","en":"a startle","note":"ಬೆಚ್ಚಿಬೀಳು — to be startled and drop. Kannada builds the flinch out of a fall."},{"kn":"ನಡುಕ","tr":"naḍuka","en":"the tremble","note":"The body named, the feeling left to be inferred."}]},{"kn":"ಅಳುಕು","tr":"aḷuku","en":"misgiving","note":"The small inward flinch just before you do the thing anyway. Not fear — a hesitation with a conscience in it.","kids":[{"kn":"ಹಿಂಜರಿಕೆ","tr":"hiñjarike","en":"hesitation","note":"To slide backwards — the foot that starts to move and then does not."},{"kn":"ಅನುಮಾನ","tr":"anumāna","en":"doubt","note":"One of four graded doubt words. ಶಂಕೆ leans to fear, ಸಂಶಯ to suspicion of a person, ಸಂದೇಹ to uncertainty about a fact."}]}]},{"kn":"ಬೀಭತ್ಸ","tr":"bībhatsa","en":"disgust, the odious","sthayi":"ಜುಗುಪ್ಸೆ · jugupse, revulsion","note":"The rasa nobody wants and every tradition keeps. Kannada files disgust under endurance — ಅಸಹ್ಯ literally means what cannot be borne.","kids":[{"kn":"ಅಸಹ್ಯ","tr":"asahya","en":"disgust","note":"'Unbearable.' The daily word, used for a smell and for a politician with equal ease.","kids":[{"kn":"ಹೇಸಿಗೆ","tr":"hēsige","en":"filth, loathing","note":"Also literally filth. The moral and the physical are one word — no metaphor required."},{"kn":"ಕೊಳಕು","tr":"koḷaku","en":"dirt","note":"Native and blunt. Calling a person ಕೊಳಕು is not a comment on hygiene."}]},{"kn":"ವಾಕರಿಕೆ","tr":"vākarike","en":"nausea","note":"The bodily end of the sector, and Kannada moves between it and the moral end without a signal.","kids":[{"kn":"ಓಕರಿಕೆ","tr":"ōkarike","en":"retching","note":"Onomatopoeic and unglamorous."},{"kn":"ಹೊಟ್ಟೆ ತೊಳಸು","tr":"hoṭṭe toḷasu","en":"the stomach stirs","note":"Used for moral revulsion and actual nausea with nothing between the two senses."}]},{"kn":"ರೋಸು","tr":"rōsu","en":"being fed up","note":"ರೋಸಿಹೋಗಿದೆ — fed up to the point of nausea. The most useful word in this sector.","kids":[{"kn":"ಬೇಸರ","tr":"bēsara","en":"weary discontent","note":"One word for bored, mildly sad, and fed up. The listener reads your face for which."},{"kn":"ರೇಜಿಗೆ","tr":"rējige","en":"exasperation","note":"Disgust at something that keeps not working, rather than at something foul."}]},{"kn":"ತಾತ್ಸಾರ","tr":"tātsāra","en":"disdain","note":"Disgust cooled into a social posture — the version you can hold at a wedding.","kids":[{"kn":"ಅಸಡ್ಡೆ","tr":"asaḍḍe","en":"not caring, coldly","note":"Not bothering, and not quite hiding that you are not bothering."},{"kn":"ಕೊಂಕು","tr":"koṅku","en":"the crooked remark","note":"Fault-finding delivered sideways, which is how it usually arrives."}]}]},{"kn":"ಅದ್ಭುತ","tr":"adbhuta","en":"wonder","sthayi":"ವಿಸ್ಮಯ · vismaya, astonishment","note":"The rasa that most resembles a modern emotion. Kannada keeps a native word for it — ಬೆರಗು — which is rarer than it should be.","kids":[{"kn":"ಬೆರಗು","tr":"beragu","en":"amazement","note":"Native. Wonder that stops you where you are.","kids":[{"kn":"ಅಚ್ಚರಿ","tr":"accari","en":"surprise","note":"The native cousin of ಆಶ್ಚರ್ಯ, and the one that sounds like speech."},{"kn":"ದಂಗು","tr":"daṅgu","en":"dumbfounded","note":"ದಂಗಾದೆ — I was floored. Everyday, and slightly comic."}]},{"kn":"ಕುತೂಹಲ","tr":"kutūhala","en":"curiosity","note":"Wonder that has turned into a question. Kannada treats it as a virtue.","kids":[{"kn":"ಆಸಕ್ತಿ","tr":"āsakti","en":"interest","note":"Literally attachment — interest as a mild binding to a thing."},{"kn":"ತವಕ","tr":"tavaka","en":"eagerness","note":"Eagerness with an edge of ache in it."}]},{"kn":"ಪುಳಕ","tr":"puḷaka","en":"the thrill","note":"Classical poetics counts it as visible evidence of an inner state, which is why it has its own noun.","kids":[{"kn":"ರೋಮಾಂಚ","tr":"rōmāñca","en":"horripilation","note":"'Hair-motion.' The Sanskrit register of the same event."},{"kn":"ಮೈ ಝುಮ್","tr":"mai jhum","en":"the body tingles","note":"The spoken version, and specifically aesthetic — you say it about a raga."}]},{"kn":"ಭಯಭಕ್ತಿ","tr":"bhaya-bhakti","en":"awe","note":"Fear-and-devotion, in one compound. Awe as a social posture — how one stands before a deity or a formidable elder.","kids":[{"kn":"ಗೌರವ","tr":"gaurava","en":"respect","note":"Something you give, actively, not something you passively have."},{"kn":"ದಿಗ್ಭ್ರಮೆ","tr":"digbhrame","en":"stupefaction","note":"'Directions-confusion' — the compass spins and you cannot tell which way is which."}]}]},{"kn":"ಶಾಂತ","tr":"śānta","en":"repose","sthayi":"ಶಮ · śama, quiet","note":"The ninth rasa, added late and argued over for centuries — can the absence of agitation be a flavour? The English wheel files peace under happiness; the rasa tradition insists it is a state of its own.","kids":[{"kn":"ನೆಮ್ಮದಿ","tr":"nemmadi","en":"peace of mind","note":"Sharply distinct from ಶಾಂತಿ, which is peace as the absence of conflict. You can have ಶಾಂತಿ in a house with no ನೆಮ್ಮದಿ in it.","kids":[{"kn":"ನಿರಾಳ","tr":"nirāḷa","en":"unclenched","note":"The breath after the weight comes off. Freedom as a bodily state, not a political one."},{"kn":"ಸಮಾಧಾನ","tr":"samādhāna","en":"being consoled","note":"Both the comfort someone gives and the state it produces."}]},{"kn":"ತೃಪ್ತಿ","tr":"tṛpti","en":"satiety","note":"The feeling after a meal, and after a life. Kannada uses the same word without irony.","kids":[{"kn":"ತಣಿವು","tr":"taṇivu","en":"slaked","note":"Satisfaction as cooling rather than filling — the other half of how Kannada thinks about want."},{"kn":"ಸಾರ್ಥಕ","tr":"sārthaka","en":"it was worth it","note":"'Having meaning.' The feeling, where ಯಶಸ್ವಿ is only the outcome."}]},{"kn":"ವೈರಾಗ್ಯ","tr":"vairāgya","en":"detachment","note":"Ordinary speech in Kannada, not only monastic — said of anyone who has stopped wanting a thing they used to want.","kids":[{"kn":"ಉದಾಸೀನ","tr":"udāsīna","en":"equanimity, or the cold shoulder","note":"In philosophy the sage's evenness. In an argument, the coldest insult available. Same word."},{"kn":"ನಿರ್ಲಿಪ್ತ","tr":"nirlipta","en":"unsmeared","note":"Literally not stuck to anything — the lotus-leaf image, worn down into an ordinary adjective."}]},{"kn":"ಮೌನ","tr":"mauna","en":"silence","note":"Treated as an action, not an absence. ಮೌನ ವಹಿಸು — to take up silence — is something you do to someone.","kids":[{"kn":"ಏಕಾಂತ","tr":"ēkānta","en":"solitude, chosen","note":"The good kind of alone. Kannada draws the line English blurs: ಒಂಟಿತನ hurts, ಏಕಾಂತ is sought."},{"kn":"ತಂಪು","tr":"tampu","en":"coolness","note":"Native, and the whole thermal vocabulary in one word — the opposite pole from ಸಿಟ್ಟು, ಕಿಚ್ಚು, ಬಿಸಿ and ಉರಿ."}]}]}]}];
 
-(function(){
-const SVG="http://www.w3.org/2000/svg";
-const cx=400, cy=400;
-const R=[96,186,262,352];               // hub edge, core/mid, mid/leaf, outer
-const FS=[21,14.5,11.8];                // base font size per ring
-const MIX=["100%","var(--mix-mid)","var(--mix-leaf)"];  // share of hue surviving per ring
-const svg=document.getElementById("wheel");
-const detail=document.getElementById("detail");
-const hubWord=document.getElementById("hubWord");
-const hubRom=document.getElementById("hubRom");
-let english=false, pinned=null;
+/* Sunburst renderer shared by all three wheels.
+   Two rules learned the hard way:
+   1. Never use <textPath> for Kannada. It positions each glyph separately along
+      the arc, which shatters an akshara into base + vowel sign + ottakshara,
+      each rotated on its own. Core labels are therefore horizontal, and the two
+      outer rings rotate the whole string as a single unit.
+   2. Zooming is a transform on the root <g>, not a viewBox tween, so it can be
+      handed to CSS and stays smooth on a phone.                               */
+(function () {
+  const SVG = "http://www.w3.org/2000/svg";
+  const CX = 400, CY = 400;
+  const R = [96, 186, 262, 352];
+  const FS = [20, 14.5, 11.8];
+  const MIX = ["100%", "var(--mix-mid)", "var(--mix-leaf)"];
 
-const totalLeaves=WHEEL.reduce((s,c)=>s+c.kids.reduce((t,m)=>t+m.kids.length,0),0);
-const unit=360/totalLeaves;
+  const svg = document.getElementById("wheel");
+  const gRoot = document.createElementNS(SVG, "g");
+  const detail = document.getElementById("detail");
+  const hub = document.getElementById("hub");
+  const hubWord = document.getElementById("hubWord");
+  const hubRom = document.getElementById("hubRom");
+  const backBtn = document.getElementById("zoomOut");
 
-function pol(a,r){const t=(a-90)*Math.PI/180; return [cx+r*Math.cos(t), cy+r*Math.sin(t)];}
-function arcPath(a0,a1,r0,r1){
-  const large=(a1-a0)>180?1:0;
-  const [x0,y0]=pol(a0,r1),[x1,y1]=pol(a1,r1),[x2,y2]=pol(a1,r0),[x3,y3]=pol(a0,r0);
-  return `M${x0} ${y0}A${r1} ${r1} 0 ${large} 1 ${x1} ${y1}L${x2} ${y2}A${r0} ${r0} 0 ${large} 0 ${x3} ${y3}Z`;
-}
-function el(n,attrs){const e=document.createElementNS(SVG,n); for(const k in attrs) e.setAttribute(k,attrs[k]); return e;}
+  let nodes = [], wheel = null, english = false, focus = null, hoverLock = null;
 
-// ---- build node list with geometry ----
-const nodes=[]; let cursor=0;
-WHEEL.forEach(core=>{
-  const coreLeaves=core.kids.reduce((t,m)=>t+m.kids.length,0);
-  const coreA0=cursor*unit, coreA1=(cursor+coreLeaves)*unit;
-  nodes.push({d:core, ring:0, a0:coreA0, a1:coreA1, hue:core.hue, core:core, path:[core]});
-  core.kids.forEach(mid=>{
-    const midA0=cursor*unit, midA1=(cursor+mid.kids.length)*unit;
-    nodes.push({d:mid, ring:1, a0:midA0, a1:midA1, hue:core.hue, core:core, path:[core,mid]});
-    mid.kids.forEach(leaf=>{
-      nodes.push({d:leaf, ring:2, a0:cursor*unit, a1:(cursor+1)*unit, hue:core.hue, core:core, path:[core,mid,leaf]});
-      cursor++;
-    });
-  });
-});
-
-// ---- render ----
-const gRoot=el("g",{});
-svg.appendChild(el("circle",{cx:cx,cy:cy,r:R[0]-1,fill:"var(--plate)",stroke:"var(--rule)","stroke-width":1}));
-svg.appendChild(gRoot);
-nodes.forEach((n,i)=>{
-  const g=el("g",{class:"seg", tabindex:"0", role:"button"});
-  g.style.animationDelay=(0.18+ (n.a0/360)*0.55 + n.ring*0.05).toFixed(3)+"s";
-  const fill=`color-mix(in oklab, var(--h-${n.hue}) ${MIX[n.ring]}, var(--mixer))`;
-  const p=el("path",{d:arcPath(n.a0,n.a1,R[n.ring],R[n.ring+1]), fill:fill,
-                     stroke:"var(--ground)", "stroke-width":n.ring===2?1:1.6});
-  g.appendChild(p);
-
-  const mid=(n.a0+n.a1)/2, rMid=(R[n.ring]+R[n.ring+1])/2, band=R[n.ring+1]-R[n.ring];
-  const t=el("text",{
-    "text-anchor":"middle","dominant-baseline":"central",
-    "font-size":FS[n.ring], "font-weight":n.ring===0?600:n.ring===1?550:480,
-    fill:n.ring===0?"var(--core-ink)":n.ring===1?"var(--mid-ink)":"var(--leaf-ink)"
-  });
-  if(n.ring===0){
-    // core words run along the arc, which gives them far more room than the radial band
-    const flip = mid>90 && mid<270;
-    const [ax,ay]=pol(flip?n.a1:n.a0, rMid), [bx,by]=pol(flip?n.a0:n.a1, rMid);
-    const id="arc"+i;
-    gRoot.appendChild(el("path",{id:id, d:`M${ax} ${ay}A${rMid} ${rMid} 0 0 ${flip?0:1} ${bx} ${by}`, fill:"none"}));
-    const tp=document.createElementNS(SVG,"textPath");
-    tp.setAttribute("href","#"+id); tp.setAttribute("startOffset","50%");
-    tp.textContent=n.d.kn; t.appendChild(tp);
-    n.tp=tp; n.arcLen=Math.abs(n.a1-n.a0)*Math.PI/180*rMid;
-  } else {
-    let rot=mid-90; if(mid>180) rot+=180;
-    t.setAttribute("transform",`translate(${pol(mid,rMid)[0]} ${pol(mid,rMid)[1]}) rotate(${rot})`);
-    t.textContent=n.d.kn;
+  const el = (n, a) => {
+    const e = document.createElementNS(SVG, n);
+    for (const k in a) e.setAttribute(k, a[k]);
+    return e;
+  };
+  const pol = (a, r) => {
+    const t = (a - 90) * Math.PI / 180;
+    return [CX + r * Math.cos(t), CY + r * Math.sin(t)];
+  };
+  function arcPath(a0, a1, r0, r1) {
+    const big = (a1 - a0) > 180 ? 1 : 0;
+    const [x0, y0] = pol(a0, r1), [x1, y1] = pol(a1, r1);
+    const [x2, y2] = pol(a1, r0), [x3, y3] = pol(a0, r0);
+    return `M${x0} ${y0}A${r1} ${r1} 0 ${big} 1 ${x1} ${y1}L${x2} ${y2}A${r0} ${r0} 0 ${big} 0 ${x3} ${y3}Z`;
   }
-  g.appendChild(t);
-  g.setAttribute("aria-label",`${n.d.kn}, ${n.d.tr}, ${n.d.en}`);
-  n.g=g; n.text=t; n.band=band;
-  g.addEventListener("pointerenter",()=>{ if(!pinned) activate(n); });
-  g.addEventListener("focus",()=>activate(n));
-  g.addEventListener("click",e=>{ e.stopPropagation(); pinned = (pinned===n)?null:n; activate(n); });
-  gRoot.appendChild(g);
-});
+  const esc = s => String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-svg.appendChild(el("circle",{cx:cx,cy:cy,r:R[3],fill:"none",stroke:"var(--rule)","stroke-width":1,"pointer-events":"none"}));
+  /* ---------------------------------------------------------------- build */
+  function build(w) {
+    wheel = w;
+    svg.textContent = "";
+    gRoot.textContent = "";
+    nodes = [];
+    focus = null;
+    hoverLock = null;
 
-function fitLabels(){
-  nodes.forEach(n=>{
-    n.text.setAttribute("font-size",FS[n.ring]);
-    const max = n.ring===0 ? n.arcLen*0.78 : n.band*(n.ring===1?0.82:0.86);
-    let len=0; try{ len=n.text.getComputedTextLength(); }catch(e){ return; }
-    if(len>max) n.text.setAttribute("font-size",Math.max(7.6,FS[n.ring]*max/len).toFixed(2));
+    const totalLeaves = w.data.reduce(
+      (s, c) => s + c.kids.reduce((t, m) => t + m.kids.length, 0), 0);
+    const unit = 360 / totalLeaves;
+
+    let cursor = 0;
+    w.data.forEach((core, ci) => {
+      const span = core.kids.reduce((t, m) => t + m.kids.length, 0);
+      nodes.push({ d: core, ring: 0, a0: cursor * unit, a1: (cursor + span) * unit,
+                   hue: ci, core, path: [core] });
+      core.kids.forEach(mid => {
+        nodes.push({ d: mid, ring: 1, a0: cursor * unit, a1: (cursor + mid.kids.length) * unit,
+                     hue: ci, core, path: [core, mid] });
+        mid.kids.forEach(leaf => {
+          nodes.push({ d: leaf, ring: 2, a0: cursor * unit, a1: (cursor + 1) * unit,
+                       hue: ci, core, path: [core, mid, leaf] });
+          cursor++;
+        });
+      });
+    });
+
+    svg.appendChild(el("circle", { cx: CX, cy: CY, r: R[0] - 1,
+      fill: "var(--plate)", stroke: "var(--rule)", "stroke-width": 1 }));
+    svg.appendChild(gRoot);
+
+    nodes.forEach(n => {
+      const g = el("g", { class: "seg", tabindex: "0", role: "button" });
+      g.style.animationDelay = (0.12 + (n.a0 / 360) * 0.4 + n.ring * 0.04).toFixed(3) + "s";
+      g.appendChild(el("path", {
+        d: arcPath(n.a0, n.a1, R[n.ring], R[n.ring + 1]),
+        fill: `color-mix(in oklab, var(--${w.id}-${n.hue}) ${MIX[n.ring]}, var(--mixer))`,
+        stroke: "var(--ground)", "stroke-width": n.ring === 2 ? 1 : 1.6,
+        "vector-effect": "non-scaling-stroke"
+      }));
+
+      const mid = (n.a0 + n.a1) / 2;
+      const rMid = (R[n.ring] + R[n.ring + 1]) / 2;
+      const t = el("text", {
+        "text-anchor": "middle", "dominant-baseline": "central",
+        "font-size": FS[n.ring],
+        "font-weight": n.ring === 0 ? 600 : n.ring === 1 ? 550 : 480,
+        fill: n.ring === 0 ? "var(--core-ink)"
+            : n.ring === 1 ? "var(--mid-ink)" : "var(--leaf-ink)"
+      });
+      const [px, py] = pol(mid, rMid);
+      if (n.ring === 0) {
+        // upright, never rotated: the safest possible setting for Kannada
+        t.setAttribute("x", px); t.setAttribute("y", py);
+        const chord = 2 * rMid * Math.sin(((n.a1 - n.a0) / 2) * Math.PI / 180);
+        n.room = Math.min(R[1] - R[0], chord) * 0.88;
+      } else {
+        let rot = mid - 90; if (mid > 180) rot += 180;
+        t.setAttribute("transform", `translate(${px} ${py}) rotate(${rot})`);
+        n.room = (R[n.ring + 1] - R[n.ring]) * (n.ring === 1 ? 0.82 : 0.86);
+      }
+      t.textContent = n.d.kn;
+      g.appendChild(t);
+      g.setAttribute("aria-label", `${n.d.kn} — ${n.d.tr} — ${n.d.en}`);
+      n.g = g; n.text = t;
+
+      g.addEventListener("pointerenter", () => { if (!hoverLock) show(n); });
+      g.addEventListener("focus", () => show(n));
+      g.addEventListener("click", e => {
+        e.stopPropagation();
+        show(n); hoverLock = n;
+        if (n.ring === 0) zoom(focus === n ? null : n);
+        else if (n.ring === 1) zoom(focus === n ? n.path[0] : n);
+      });
+      gRoot.appendChild(g);
+    });
+
+    svg.appendChild(el("circle", { cx: CX, cy: CY, r: R[3], fill: "none",
+      stroke: "var(--rule)", "stroke-width": 1, "pointer-events": "none" }));
+
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    setTimeout(fit, 700);
+    zoom(null);   // a wheel switch must drop the previous wheel's zoom
+    reset();
+  }
+
+  function fit() {
+    nodes.forEach(n => {
+      n.text.setAttribute("font-size", FS[n.ring]);
+      let len = 0;
+      try { len = n.text.getComputedTextLength(); } catch (e) { return; }
+      if (len > n.room)
+        n.text.setAttribute("font-size", Math.max(7.4, FS[n.ring] * n.room / len).toFixed(2));
+    });
+  }
+
+  /* ----------------------------------------------------------- zoom level */
+  function wedgeBox(n) {
+    let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    for (let a = n.a0; a <= n.a1 + 0.001; a += Math.min(3, (n.a1 - n.a0) / 8)) {
+      for (const r of [R[n.ring], R[3]]) {
+        const [x, y] = pol(a, r);
+        x0 = Math.min(x0, x); y0 = Math.min(y0, y);
+        x1 = Math.max(x1, x); y1 = Math.max(y1, y);
+      }
+    }
+    return { x: (x0 + x1) / 2, y: (y0 + y1) / 2, w: x1 - x0, h: y1 - y0 };
+  }
+
+  function zoom(n) {
+    focus = n;
+    if (!n) {
+      gRoot.style.transform = "";
+      svg.classList.remove("zoomed");
+      backBtn.hidden = true;
+      hub.hidden = false;
+      return;
+    }
+    const b = wedgeBox(n);
+    const k = Math.min(3.4, Math.max(1.15, Math.min(720 / b.w, 720 / b.h)));
+    gRoot.style.transform =
+      `translate(${CX}px, ${CY}px) scale(${k}) translate(${-b.x}px, ${-b.y}px)`;
+    svg.classList.add("zoomed");
+    backBtn.hidden = false;
+    backBtn.textContent = n.ring === 1
+      ? `← ${english ? n.path[0].en : n.path[0].kn}`
+      : "← ಪೂರ್ಣ ಚಕ್ರ · whole wheel";
+    hub.hidden = true;
+  }
+
+  /* -------------------------------------------------------- detail panel */
+  function show(n) {
+    svg.classList.add("dimmed");
+    nodes.forEach(o => o.g.classList.toggle("on",
+      o.core === n.core && (o.ring === 0 || n.ring === 0 || o.path.includes(n.path[1]))));
+    hubWord.textContent = n.d.kn;
+    hubRom.textContent = n.d.tr;
+
+    const crumb = n.path.map((x, i) =>
+      i === n.path.length - 1
+        ? `<b>${esc(x.kn)}</b>`
+        : `<span>${esc(x.kn)} <i>${esc(x.en)}</i></span>`).join("<em>›</em>");
+
+    detail.innerHTML =
+      `<div class="crumb">${crumb}</div>` +
+      `<div class="word">${esc(n.d.kn)}</div>` +
+      `<div class="rom">${esc(n.d.tr)}</div>` +
+      `<div class="means">${esc(n.d.en)}</div>` +
+      (n.d.lit ? `<div class="lit">literally, ${esc(n.d.lit)}</div>` : "") +
+      (n.d.sthayi ? `<div class="lit">ಸ್ಥಾಯಿಭಾವ · ${esc(n.d.sthayi)}</div>` : "") +
+      (n.d.note ? `<p class="note">${n.d.note}</p>` : "");
+  }
+
+  function reset() {
+    hoverLock = null;
+    svg.classList.remove("dimmed");
+    nodes.forEach(o => o.g.classList.remove("on"));
+    hubWord.textContent = wheel.hubKn;
+    hubRom.textContent = wheel.hubRom;
+    detail.innerHTML = `<p class="hint">${wheel.hint}</p>`;
+  }
+
+  svg.addEventListener("pointerleave", () => { if (!hoverLock) reset(); });
+  document.addEventListener("click", () => { if (hoverLock) reset(); });
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    if (focus) zoom(focus.ring === 1 ? focus.path[0] : null); else reset();
   });
-}
-if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitLabels);
-requestAnimationFrame(fitLabels); setTimeout(fitLabels,900);
+  backBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    zoom(focus && focus.ring === 1 ? focus.path[0] : null);
+  });
 
-// ---- interaction ----
-const LABEL={direct:"rala's own answer", shaped:"reshaped by ear", gap:"no usable entry"};
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-// rala strings and notes are authored here, so limited inline markup is allowed in notes only
-function activate(n){
-  svg.classList.add("dimmed");
-  nodes.forEach(o=>o.g.classList.toggle("on", o.core===n.core &&
-    (o.ring===0 || o.path.includes(n.path[1]) || n.ring===0)));
-  hubWord.textContent=n.d.kn; hubRom.textContent=n.d.tr;
-  const crumb=n.path.map((x,i)=> i===n.path.length-1 ? `<b>${esc(x.kn)}</b>` : esc(x.kn)).join(" › ");
-  const rl=(n.d.rala&&n.d.rala.length)
-    ? `<div class="rlist">${n.d.rala.map(r=>`<span>${esc(r)}</span>`).join("")}</div>`
-    : `<div class="rlist"><span class="none">no results at all</span></div>`;
-  detail.innerHTML=
-    `<div class="crumb">${crumb}</div>`+
-    `<div class="word">${esc(n.d.kn)}</div>`+
-    `<div class="rom">${esc(n.d.tr)}</div>`+
-    `<div class="src">for English <b>${esc(n.d.en)}</b></div>`+
-    `<span class="chip ${n.d.status}">${LABEL[n.d.status]}</span>`+
-    `<h4>What rala returned</h4>${rl}`+
-    (n.d.note?`<h4>Reading</h4><p class="note">${n.d.note}</p>`:"");
-}
-function clear(){
-  if(pinned) return;
-  svg.classList.remove("dimmed");
-  nodes.forEach(o=>o.g.classList.remove("on"));
-  hubWord.textContent="ಭಾವಚಕ್ರ"; hubRom.textContent="bhāva-cakra";
-  detail.innerHTML=`<p class="hint">Hover or tap any segment. Each card shows what rala returned for the English word, and why the Kannada on the wheel is or isn't that.</p>`;
-}
-svg.addEventListener("pointerleave",clear);
-document.addEventListener("click",()=>{ if(pinned){ pinned=null; clear(); } });
-document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ pinned=null; clear(); } });
+  // Wedge labels take only the first clause of an English gloss — the panel
+  // carries the full sense, and "equanimity, or the cold shoulder" shrinks to
+  // an illegible 7px if you try to fit all of it into one segment.
+  const shortEn = s => s.split(/[,;(]|\s—\s/)[0].trim();
 
-// ---- language toggle ----
-const btn=document.getElementById("langToggle");
-btn.addEventListener("click",()=>{
-  english=!english;
-  btn.setAttribute("aria-pressed",String(english));
-  btn.textContent=english?"ಕನ್ನಡ ತೋರಿಸು":"Show English";
-  nodes.forEach(n=>{ (n.tp||n.text).textContent = english?n.d.en:n.d.kn; });
-  fitLabels();
-});
+  function setLang(v) {
+    english = v;
+    nodes.forEach(n => { n.text.textContent = english ? shortEn(n.d.en) : n.d.kn; });
+    fit();
+    if (focus) zoom(focus);
+  }
 
-// ---- sections ----
-document.getElementById("nativeCards").innerHTML=NATIVE.map(w=>
-  `<div class="card"><div class="w">${esc(w.kn)}</div><div class="r">${esc(w.tr)}</div><div class="g">${w.gloss}</div></div>`
-).join("");
-document.getElementById("rasaBody").innerHTML=RASA.map(r=>
-  `<tr><td class="k">${esc(r.kn)}</td><td class="t">${esc(r.tr)}</td><td class="e">${esc(r.en)}</td><td class="m">${esc(r.map)}</td></tr>`
-).join("");
+  window.Wheel = { build, setLang, reset, isEnglish: () => english };
+})();
+
+/* Page shell: wheel switching, the language slider, and the prose that
+   changes with each wheel. All three wheels share one renderer. */
+(function () {
+  const stage = document.querySelector(".stage");
+  const thumb = document.getElementById("thumb");
+  const opts = [...document.querySelectorAll(".opt")];
+  const langBtn = document.getElementById("langBtn");
+  const lopts = [...document.querySelectorAll(".lopt")];
+  let current = -1;
+
+  function paint(i) {
+    if (i === current) return;
+    current = i;
+    const w = WHEELS[i];
+    stage.dataset.wheel = w.id;
+    document.getElementById("mastTitle").textContent = w.name;
+    document.getElementById("mastSub").innerHTML = w.blurb;
+    document.getElementById("aboutTitle").innerHTML =
+      `${w.aboutTitle} <span class="lat">${w.aboutLat}</span>`;
+    document.getElementById("aboutBody").innerHTML = w.about;
+    document.getElementById("aboutGrid").innerHTML = w.cards
+      .map(c => `<div><h3>${c.h}</h3><p>${c.p}</p></div>`).join("");
+    opts.forEach((o, j) => o.setAttribute("aria-selected", String(j === i)));
+    thumb.style.transform = `translateX(${i * 100}%)`;
+    Wheel.build(w);
+    if (Wheel.isEnglish()) Wheel.setLang(true);
+  }
+
+  opts.forEach(o => o.addEventListener("click", () => paint(+o.dataset.i)));
+  document.querySelector(".switcher").addEventListener("keydown", e => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    const next = (current + (e.key === "ArrowRight" ? 1 : WHEELS.length - 1)) % WHEELS.length;
+    paint(next); opts[next].focus();
+  });
+
+  langBtn.addEventListener("click", () => {
+    const on = langBtn.getAttribute("aria-checked") !== "true";
+    langBtn.setAttribute("aria-checked", String(on));
+    lopts[0].classList.toggle("on", !on);
+    lopts[1].classList.toggle("on", on);
+    Wheel.setLang(on);
+  });
+
+  paint(0);
 })();
 
 </script>

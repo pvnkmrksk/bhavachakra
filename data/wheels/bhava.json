@@ -114,15 +114,15 @@
      },
      {
       "en": "Inquisitive",
-      "kn": "ಜಿಜ್ಞಾಸೆ",
-      "tr": "jijñāse",
+      "kn": "ಕೆದಕುವಿಕೆ",
+      "tr": "kedakuvike",
       "status": "shaped",
       "rala": [
        "ಕೆದಕುವ",
        "ಶೋಧಿಸುವ",
        "ವಿಚಾರಮಾಡುವ"
       ],
-      "note": "ಕೆದಕುವ is prying — poking at what isn't yours. ಜಿಜ್ಞಾಸೆ is the honourable version: the wish to know, the word used for philosophical enquiry."
+      "note": "ಕೆದಕುವ is prying — poking at what isn't yours. ಜಿಜ್ಞಾಸೆ is the honourable version: the wish to know, the word used for philosophical enquiry. ಜಿಜ್ಞಾಸೆ is the Sanskrit word for philosophical enquiry and nobody uses it at a dinner table. ಕೆದಕು is to poke at something — the everyday word, and it carries the faint rudeness English 'inquisitive' also has."
      }
     ]
    },
@@ -156,7 +156,7 @@
        "ನೆಚ್ಚಿಕೆಯ",
        "ಧೈರ್ಯದ"
       ],
-      "note": "Literally 'self-trust'. Kannada builds confidence out of the same root as trusting another person."
+      "note": "Literally 'self-trust'. Kannada builds confidence out of the same root as trusting another person. Everyday speech, despite the Sanskrit parts — ಆತ್ಮವಿಶ್ವಾಸ is said constantly."
      }
     ]
    },
@@ -221,13 +221,14 @@
      },
      {
       "en": "Creative",
-      "kn": "ಸೃಜನಶೀಲತೆ",
-      "tr": "sṛjanaśīlate",
+      "kn": "ಹೊಳಹು",
+      "tr": "hoḷahu",
       "status": "direct",
       "rala": [
        "ಸೃಜನಾತ್ಮಕ",
        "ರಚನಾತ್ಮಕ"
-      ]
+      ],
+      "note": "ಸೃಜನಶೀಲತೆ is the textbook word. ಹೊಳಹು is native and better: the flash — the moment a thing occurs to you."
      }
     ]
    },
@@ -261,7 +262,7 @@
        "ಕೃತಜ್ಞ",
        "ಕೃತಜ್ಞನಾದ"
       ],
-      "note": "Literally 'knowing what was done'. Gratitude as accurate memory."
+      "note": "Literally 'knowing what was done'. Gratitude as accurate memory. Sanskrit, and unavoidable: Kannada has no native noun for gratitude that is still in use."
      }
     ]
    },
@@ -307,8 +308,8 @@
    },
    {
     "en": "Optimistic",
-    "kn": "ಆಶಾವಾದ",
-    "tr": "āśāvāda",
+    "kn": "ಭರವಸೆ",
+    "tr": "bharavase",
     "status": "direct",
     "rala": [
      "ಆಶಾವಾದದ",
@@ -317,14 +318,14 @@
     "kids": [
      {
       "en": "Hopeful",
-      "kn": "ಭರವಸೆ",
-      "tr": "bharavase",
+      "kn": "ಆಸೆ",
+      "tr": "āse",
       "status": "direct",
       "rala": [
        "ಭರವಸೆಯ",
        "ಆಶಾದಾಯಕ"
       ],
-      "note": "ಭರವಸೆ is also the word for a promise or an assurance. Hope, in Kannada, is something somebody gave you."
+      "note": "ಭರವಸೆ is also the word for a promise or an assurance. Hope, in Kannada, is something somebody gave you. The plainest possible word: wish, want, hope, all one. Kannada does not separate hoping from wanting."
      },
      {
       "en": "Inspired",
@@ -334,7 +335,8 @@
       "rala": [],
       "note": "No result. ಸ್ಫೂರ್ತಿ is the everyday word — a sudden welling-up, the same root as a spark."
      }
-    ]
+    ],
+    "note": "ಆಶಾವಾದ is an -ism, borrowed to translate one. ಭರವಸೆ is what people actually have, and it also means a promise someone gave you."
    }
   ]
  },
@@ -402,13 +404,13 @@
     "kids": [
      {
       "en": "Disillusioned",
-      "kn": "ಭ್ರಮನಿರಸನ",
-      "tr": "bhrama-nirasana",
+      "kn": "ಭ್ರಮೆ ಕಳಚು",
+      "tr": "bhrame kaḷacu",
       "status": "direct",
       "rala": [
        "ಭ್ರಮನಿರಸನಗೊಂಡ"
       ],
-      "note": "'The dispelling of the illusion' — a precise philosophical term doing everyday emotional work."
+      "note": "'The dispelling of the illusion' — a precise philosophical term doing everyday emotional work. ಭ್ರಮನಿರಸನ is a compound almost nobody says aloud. ಭ್ರಮೆ ಕಳಚಿತು — the illusion came unfastened — is ordinary speech."
      },
      {
       "en": "Perplexed",
@@ -436,13 +438,14 @@
     "kids": [
      {
       "en": "Astonished",
-      "kn": "ವಿಸ್ಮಯ",
-      "tr": "vismaya",
+      "kn": "ದಂಗು",
+      "tr": "daṅgu",
       "status": "direct",
       "rala": [
        "ವಿಸ್ಮಯವನ್ನುಂಟುಮಾಡು",
        "ಅಚ್ಚರಿಗೊಳಿಸು"
-      ]
+      ],
+      "note": "ವಿಸ್ಮಯ is for poetry. ದಂಗಾದೆ — I was dumbfounded — is for Tuesday."
      },
      {
       "en": "Awe",
@@ -532,14 +535,15 @@
      },
      {
       "en": "Apathetic",
-      "kn": "ನಿರಾಸಕ್ತಿ",
-      "tr": "nirāsakti",
+      "kn": "ಅಸಡ್ಡೆ",
+      "tr": "asaḍḍe",
       "status": "direct",
       "rala": [
        "ನಿರಾಸಕ್ತ",
        "ಆಸಕ್ತಿಯಿಲ್ಲದ",
        "ಭಾವಶೂನ್ಯ"
-      ]
+      ],
+      "note": "ನಿರಾಸಕ್ತಿ is the formal negation. ಅಸಡ್ಡೆ is the daily one, and it is colder — not caring, and slightly not bothering to hide it."
      }
     ]
    },
@@ -621,25 +625,25 @@
    },
    {
     "en": "Tired",
-    "kn": "ಆಯಾಸ",
-    "tr": "āyāsa",
+    "kn": "ದಣಿವು",
+    "tr": "daṇivu",
     "status": "shaped",
     "rala": [
      "ದಣಿದ ಮಣ್ಣು ⟨tired soil⟩"
     ],
-    "note": "The only match was agronomy: exhausted soil. ಆಯಾಸ is bodily fatigue; ದಣಿವು is the gentler, more native version.",
+    "note": "The only match was agronomy: exhausted soil. ಆಯಾಸ is bodily fatigue; ದಣಿವು is the gentler, more native version. ಆಯಾಸ is correct and slightly medical. ದಣಿವು is the native word, used for a body and a day alike.",
     "kids": [
      {
       "en": "Sleepy",
-      "kn": "ಜೋಂಪು",
-      "tr": "jōmpu",
+      "kn": "ತೂಕಡಿಕೆ",
+      "tr": "tūkaḍike",
       "status": "shaped",
       "rala": [
        "ತೂಕಡಿಸುವ",
        "ನಿದ್ದೆ",
        "ಜಡನಾದ"
       ],
-      "note": "ಜೋಂಪು is the specific drowse that comes over you sitting still in the afternoon — not sleep, the slide toward it."
+      "note": "ಜೋಂಪು is the specific drowse that comes over you sitting still in the afternoon — not sleep, the slide toward it. The nod of the head as you lose the fight. More common than ಜೋಂಪು, which is the deeper afternoon slide."
      },
      {
       "en": "Unfocused",
@@ -752,15 +756,15 @@
    },
    {
     "en": "Insecure",
-    "kn": "ಅಭದ್ರತೆ",
-    "tr": "abhadrate",
+    "kn": "ಅಳುಕು",
+    "tr": "aḷuku",
     "status": "direct",
     "rala": [
      "ಅಭದ್ರ",
      "ಅಸುರಕ್ಷಿತ",
      "ರಕ್ಷಣೆ ರಹಿತ"
     ],
-    "note": "Note the frame: Kannada's insecurity is about not being <i>guarded</i>, not about self-doubt. The psychological sense is a recent import.",
+    "note": "Note the frame: Kannada's insecurity is about not being <i>guarded</i>, not about self-doubt. The psychological sense is a recent import. ಅಭದ್ರತೆ means physically unguarded — it is a word for buildings and borders. ಅಳುಕು is the small inward flinch, and it is what the feeling is.",
     "kids": [
      {
       "en": "Inadequate",
@@ -801,24 +805,25 @@
     "kids": [
      {
       "en": "Worthless",
-      "kn": "ನಿಷ್ಪ್ರಯೋಜಕ",
-      "tr": "niṣprayōjaka",
+      "kn": "ದಂಡ",
+      "tr": "daṇḍa",
       "status": "shaped",
       "rala": [
        "ಅಯೋಗ್ಯ"
       ],
-      "note": "rala offers ಅಯೋಗ್ಯ — but in Kannada that is thrown at someone, not felt about oneself. ನಿಷ್ಪ್ರಯೋಜಕ, 'of no use', is what the feeling actually says."
+      "note": "rala offers ಅಯೋಗ್ಯ — but in Kannada that is thrown at someone, not felt about oneself. ನಿಷ್ಪ್ರಯೋಜಕ, 'of no use', is what the feeling actually says. Literally waste. 'ನಾನು ದಂಡ' — I'm a waste — is what people actually say about themselves. ನಿಷ್ಪ್ರಯೋಜಕ is what a report says about a scheme."
      },
      {
       "en": "Insignificant",
-      "kn": "ಕ್ಷುಲ್ಲಕ",
-      "tr": "kṣullaka",
+      "kn": "ಲೆಕ್ಕಕ್ಕಿಲ್ಲ",
+      "tr": "lekkakkilla",
       "status": "direct",
       "rala": [
        "ಕ್ಷುಲ್ಲಕ",
        "ಅತ್ಯಲ್ಪ",
        "ನಿಕೃಷ್ಟ"
-      ]
+      ],
+      "note": "'Not in the count.' ಕ್ಷುಲ್ಲಕ is literary; this is the idiom, and it is sharper — insignificance as an accounting error."
      }
     ]
    },
@@ -836,11 +841,11 @@
     "kids": [
      {
       "en": "Excluded",
-      "kn": "ಬಹಿಷ್ಕಾರ",
-      "tr": "bahiṣkāra",
+      "kn": "ಹೊರಗಿಡುವಿಕೆ",
+      "tr": "horagiḍuvike",
       "status": "gap",
       "rala": [],
-      "note": "No entry. And ಬಹಿಷ್ಕಾರ is heavier than English 'excluded' — it is the word for social boycott and outcasting. In Kannada, being left out has a history attached to it."
+      "note": "No entry. And ಬಹಿಷ್ಕಾರ is heavier than English 'excluded' — it is the word for social boycott and outcasting. In Kannada, being left out has a history attached to it. ಬಹಿಷ್ಕಾರ is social boycott and carries a history. For being left out of a group chat, Kannada just says ಹೊರಗಿಟ್ಟರು."
      },
      {
       "en": "Persecuted",
@@ -959,20 +964,21 @@
     "kids": [
      {
       "en": "Disrespected",
-      "kn": "ಅಗೌರವ",
-      "tr": "agaurava",
+      "kn": "ಅವಮರ್ಯಾದೆ",
+      "tr": "avamaryāde",
       "status": "direct",
       "rala": [
        "ಅಗೌರವ",
        "ಅವಮಾನ",
        "ಉಪೇಕ್ಷೆ",
        "ಅವಮರ್ಯಾದೆ"
-      ]
+      ],
+      "note": "ಮರ್ಯಾದೆ — the respect owed to you in public — is one of the most-used words in Kannada. Its negation is the daily word for this."
      },
      {
       "en": "Ridiculed",
-      "kn": "ಅಪಹಾಸ್ಯ",
-      "tr": "apahāsya",
+      "kn": "ಗೇಲಿ",
+      "tr": "gēli",
       "status": "direct",
       "rala": [
        "ಅಪಹಾಸ್ಯ",
@@ -980,7 +986,7 @@
        "ಅವಹೇಳನ",
        "ಅಣಕಿಸು"
       ],
-      "note": "ಅಪಹಾಸ್ಯ is 'laughter turned bad' — the same root as ಹಾಸ್ಯ, mirth, which is one of the nine rasas. The wound is that a good thing was aimed at you."
+      "note": "ಅಪಹಾಸ್ಯ is 'laughter turned bad' — the same root as ಹಾಸ್ಯ, mirth, which is one of the nine rasas. The wound is that a good thing was aimed at you. ಅಪಹಾಸ್ಯ is the newspaper word. ಗೇಲಿ is what happens in the room."
      }
     ]
    },
@@ -1036,15 +1042,16 @@
     "kids": [
      {
       "en": "Furious",
-      "kn": "ರೋಷ",
-      "tr": "rōṣa",
+      "kn": "ರೊಚ್ಚು",
+      "tr": "roccu",
       "status": "direct",
       "rala": [
        "ರೋಷಾವೇಶದ",
        "ಕ್ರೋಧಾವಿಷ್ಟ",
        "ಉಗ್ರ",
        "ಪ್ರಚಂಡ"
-      ]
+      ],
+      "note": "ರೋಷ is literary. ರೊಚ್ಚಿಗೇಳು — to rise into ರೊಚ್ಚು — is native, physical, and the thing people say."
      },
      {
       "en": "Jealous",
@@ -1061,15 +1068,15 @@
    },
    {
     "en": "Aggressive",
-    "kn": "ಆಕ್ರಮಣ",
-    "tr": "ākramaṇa",
+    "kn": "ಜಗಳಗಂಟತನ",
+    "tr": "jagaḷagaṇṭatana",
     "status": "direct",
     "rala": [
      "ಆಕ್ರಮಣಶೀಲ",
      "ಜಗಳಗಂಟ",
      "ಮೇಲೆ ಬೀಳುವ"
     ],
-    "note": "The full adjective is ಆಕ್ರಮಣಶೀಲ, shortened here to fit. rala's ಜಗಳಗಂಟ — 'quarrel-knot', a person who ties fights — is the everyday version.",
+    "note": "The full adjective is ಆಕ್ರಮಣಶೀಲ, shortened here to fit. rala's ಜಗಳಗಂಟ — 'quarrel-knot', a person who ties fights — is the everyday version. ಆಕ್ರಮಣ is what armies do. ಜಗಳಗಂಟ — quarrel-knot, a person who ties fights — is what rala itself offered, and it is the living word.",
     "kids": [
      {
       "en": "Provoked",
@@ -1232,8 +1239,8 @@
   "kids": [
    {
     "en": "Disapproving",
-    "kn": "ಅಸಮ್ಮತಿ",
-    "tr": "asammati",
+    "kn": "ಒಪ್ಪದಿರುವಿಕೆ",
+    "tr": "oppadiruvike",
     "status": "direct",
     "rala": [
      "ಅಸಮ್ಮತಿ",
@@ -1263,7 +1270,8 @@
       ],
       "note": "ಮುಜುಗರ is social awkwardness — the wince at a scene, often on someone else's behalf."
      }
-    ]
+    ],
+    "note": "ಅಸಮ್ಮತಿ belongs on a committee minute. The daily form is the plain negative verb: they did not agree."
    },
    {
     "en": "Disappointed",
@@ -1279,15 +1287,15 @@
     "kids": [
      {
       "en": "Appalled",
-      "kn": "ದಿಗ್ಭ್ರಮೆ",
-      "tr": "digbhrame",
+      "kn": "ಹೌಹಾರು",
+      "tr": "hauhāru",
       "status": "direct",
       "rala": [
        "ದಿಗ್ಭ್ರಮೆಗೊಂಡ",
        "ಭೀತ",
        "ಗಾಬರಿಗೊಂಡ"
       ],
-      "note": "'Directions-confusion' — the compass spins. Shock that leaves you not knowing which way is which."
+      "note": "'Directions-confusion' — the compass spins. Shock that leaves you not knowing which way is which. Native, onomatopoeic, and exactly right — to recoil bodily on hearing something. ದಿಗ್ಭ್ರಮೆ is its Sanskrit understudy."
      },
      {
       "en": "Revolted",
@@ -1305,14 +1313,14 @@
    },
    {
     "en": "Awful",
-    "kn": "ಅಸಹನೀಯ",
-    "tr": "asahanīya",
+    "kn": "ಘೋರ",
+    "tr": "ghōra",
     "status": "shaped",
     "rala": [
      "ಭಯಾನಕವಾದ",
      "ಭೀಕರ"
     ],
-    "note": "rala's answers mean terrifying, which is <i>awe</i>-ful in the old sense. The modern 'this is awful' is ಅಸಹನೀಯ — unendurable.",
+    "note": "rala's answers mean terrifying, which is <i>awe</i>-ful in the old sense. The modern 'this is awful' is ಅಸಹನೀಯ — unendurable. Short, daily, and used for everything from an accident to a cricket collapse. ಅಸಹನೀಯ is nobody's spoken word.",
     "kids": [
      {
       "en": "Nauseated",
@@ -1409,26 +1417,26 @@
     "kids": [
      {
       "en": "Isolated",
-      "kn": "ಏಕಾಂಗಿತನ",
-      "tr": "ēkāṅgitana",
+      "kn": "ಏಕಾಂಗಿ",
+      "tr": "ēkāṅgi",
       "status": "shaped",
       "rala": [
        "ಪ್ರತ್ಯೇಕಿಸಿದ",
        "ಬೇರ್ಪಡಿಸಿದ",
        "ಪ್ರತ್ಯೇಕ ಸ್ಥಳ"
       ],
-      "note": "rala's words are all quarantine and land-parcels. ಏಕಾಂಗಿ is 'single-bodied' — cut off with no one on your side."
+      "note": "rala's words are all quarantine and land-parcels. ಏಕಾಂಗಿ is 'single-bodied' — cut off with no one on your side. 'Single-bodied.' Kept over ಪ್ರತ್ಯೇಕ, which in Kannada means quarantined or administratively separated."
      },
      {
       "en": "Abandoned",
-      "kn": "ತಬ್ಬಲಿತನ",
-      "tr": "tabbalitana",
+      "kn": "ತಬ್ಬಲಿ",
+      "tr": "tabbali",
       "status": "shaped",
       "rala": [
        "ತೊರೆದ ಪ್ರದೇಶ ⟨abandoned area⟩",
        "ತಬ್ಬಲಿ"
       ],
-      "note": "ತಬ್ಬಲಿ means orphan, and it is used far past its literal sense — for anyone left without their people. One of the saddest words in the language."
+      "note": "ತಬ್ಬಲಿ means orphan, and it is used far past its literal sense — for anyone left without their people. One of the saddest words in the language. Orphan — used far past its literal sense, for anyone left without their people. One of the saddest words in the language."
      }
     ]
    },
@@ -1522,7 +1530,7 @@
      "ದೋಷಿ",
      "ಅಪರಾಧಿ ಮನೋಭಾವ ⟨guilty mind⟩"
     ],
-    "note": "Every hit is courtroom Kannada — the accused, the convicted. The inner feeling had to be named religiously instead: ಪಾಪಪ್ರಜ್ಞೆ, sin-consciousness. Kannada's guilt is borrowed either from law or from temple; it has no private word of its own.",
+    "note": "Every hit is courtroom Kannada — the accused, the convicted. The inner feeling had to be named religiously instead: ಪಾಪಪ್ರಜ್ಞೆ, sin-consciousness. Kannada's guilt is borrowed either from law or from temple; it has no private word of its own. ಪಾಪಪ್ರಜ್ಞೆ is borrowed from the temple, and kept only because Kannada offers nothing else that is not a courtroom term.",
     "kids": [
      {
       "en": "Ashamed",
@@ -1560,7 +1568,7 @@
      "ಕುಗ್ಗಿದ",
      "ನಿರುತ್ಸಾಹದ"
     ],
-    "note": "A striking result: rala's first hits for <i>depressed</i> are ದಲಿತ and ಶೋಷಿತ — the colonial administrative phrase 'depressed classes'. The clinical word ಖಿನ್ನತೆ is recent; older Kannada said ಮನಸ್ಸು ಕುಗ್ಗಿದೆ, 'the mind has shrunk'.",
+    "note": "A striking result: rala's first hits for <i>depressed</i> are ದಲಿತ and ಶೋಷಿತ — the colonial administrative phrase 'depressed classes'. The clinical word ಖಿನ್ನತೆ is recent; older Kannada said ಮನಸ್ಸು ಕುಗ್ಗಿದೆ, 'the mind has shrunk'. ಖಿನ್ನತೆ is retained because it is now genuinely the daily clinical word, not because it is elegant.",
     "kids": [
      {
       "en": "Inferior",

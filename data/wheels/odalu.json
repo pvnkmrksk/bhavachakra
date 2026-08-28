@@ -1,0 +1,770 @@
+[
+ {
+  "kn": "ಎದೆ",
+  "tr": "ede",
+  "en": "chest",
+  "note": "Nerve and collapse. Kannada puts courage here rather than in the heart — ಕೆಚ್ಚೆದೆ, a chest of embers — and puts the loss of it here too.",
+  "kids": [
+   {
+    "kn": "ಧೈರ್ಯ",
+    "tr": "dhairya",
+    "en": "courage",
+    "note": "The chest holding.",
+    "kids": [
+     {
+      "kn": "ಕೆಚ್ಚೆದೆ",
+      "tr": "keccede",
+      "en": "fierce courage",
+      "lit": "a chest of embers",
+      "note": "ಕೆಚ್ಚು is heat held in the body. The bravery word is thermal, not moral."
+     },
+     {
+      "kn": "ಎದೆಗಾರಿಕೆ",
+      "tr": "edegārike",
+      "en": "nerve",
+      "lit": "chest-having",
+      "note": "The willingness to stand up and say it — closer to 'having the guts', one organ higher."
+     }
+    ]
+   },
+   {
+    "kn": "ಕುಗ್ಗುವಿಕೆ",
+    "tr": "kugguvike",
+    "en": "losing heart",
+    "note": "The chest failing.",
+    "kids": [
+     {
+      "kn": "ಎದೆಗುಂದು",
+      "tr": "edegundu",
+      "en": "dismay",
+      "lit": "the chest sinks",
+      "note": "The standard word. Kannada names the physical drop and leaves the feeling to be inferred."
+     },
+     {
+      "kn": "ಎದೆ ಒಡೆ",
+      "tr": "ede oḍe",
+      "en": "devastation",
+      "lit": "the chest breaks",
+      "note": "Reserved for news that arrives all at once. English 'heartbreak' drifted toward romance; this did not."
+     }
+    ]
+   },
+   {
+    "kn": "ದಿಗಿಲು",
+    "tr": "digilu",
+    "en": "dread",
+    "note": "The chest reacting before you do.",
+    "kids": [
+     {
+      "kn": "ಎದೆ ಡವಡವ",
+      "tr": "ede ḍavaḍava",
+      "en": "thudding fear",
+      "lit": "the chest goes thud-thud",
+      "note": "Anticipatory — the fear of a thing you can see coming."
+     },
+     {
+      "kn": "ಎದೆ ಝಲ್",
+      "tr": "ede jhal",
+      "en": "the jolt of alarm",
+      "lit": "the chest goes cold, once",
+      "note": "A single event, not a state. There is no English noun for the one jolt."
+     }
+    ]
+   },
+   {
+    "kn": "ಹೆಮ್ಮೆ",
+    "tr": "hemme",
+    "en": "pride",
+    "note": "The chest filling.",
+    "kids": [
+     {
+      "kn": "ಎದೆ ತುಂಬು",
+      "tr": "ede tumbu",
+      "en": "pride on someone's behalf",
+      "lit": "the chest fills",
+      "note": "Said watching someone you raised do well. Not self-pride — English needs a whole clause."
+     },
+     {
+      "kn": "ಎದೆಯುಬ್ಬು",
+      "tr": "edeyubbu",
+      "en": "swelling pride",
+      "lit": "the chest swells",
+      "note": "One degree louder, and faintly comic if you use it about yourself."
+     }
+    ]
+   },
+   {
+    "kn": "ಸಂಕಟ",
+    "tr": "saṅkaṭa",
+    "en": "anguish",
+    "note": "The chest closing.",
+    "kids": [
+     {
+      "kn": "ಎದೆ ಭಾರ",
+      "tr": "ede bhāra",
+      "en": "the weight before weeping",
+      "lit": "the chest is heavy",
+      "note": "The state just before tears, named as a load rather than a mood."
+     },
+     {
+      "kn": "ಉಸಿರುಗಟ್ಟು",
+      "tr": "usirugaṭṭu",
+      "en": "suffocation",
+      "lit": "the breath is blocked",
+      "note": "Used for a room, a marriage and a job. Nobody hears it as metaphor."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kn": "ಹೊಟ್ಟೆ",
+  "tr": "hoṭṭe",
+  "en": "belly",
+  "note": "Appetite and envy. Kannada is unembarrassed about siting the ugly feelings in the stomach, and says them out loud.",
+  "kids": [
+   {
+    "kn": "ಹೊಟ್ಟೆಕಿಚ್ಚು",
+    "tr": "hoṭṭe-kiccu",
+    "en": "envy",
+    "note": "Belly-fire. The everyday word.",
+    "kids": [
+     {
+      "kn": "ಅಸೂಯೆ",
+      "tr": "asūye",
+      "en": "envy, formally",
+      "note": "Correct, literary, and not what anyone says at home."
+     },
+     {
+      "kn": "ಕರುಬು",
+      "tr": "karubu",
+      "en": "to begrudge",
+      "lit": "to smoulder",
+      "note": "Native verb. The low-grade continuous version of the same fire."
+     }
+    ]
+   },
+   {
+    "kn": "ಹೊಟ್ಟೆಯುರಿ",
+    "tr": "hoṭṭeyuri",
+    "en": "burning resentment",
+    "note": "Distinct from envy: the heat of having been wronged, not of wanting what another has.",
+    "kids": [
+     {
+      "kn": "ಅಸಮಾಧಾನ",
+      "tr": "asamādhāna",
+      "en": "discontent",
+      "note": "'Un-settledness' — a grievance nobody talked down."
+     },
+     {
+      "kn": "ಸೇಡು",
+      "tr": "sēḍu",
+      "en": "revenge",
+      "note": "ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು — to settle it — treats revenge as a debt."
+     }
+    ]
+   },
+   {
+    "kn": "ತೃಪ್ತಿ",
+    "tr": "tṛpti",
+    "en": "satiety",
+    "note": "The belly at rest.",
+    "kids": [
+     {
+      "kn": "ಹೊಟ್ಟೆ ತುಂಬು",
+      "tr": "hoṭṭe tumbu",
+      "en": "enough",
+      "lit": "the belly is full",
+      "note": "Used far past food: a full belly is the standard image for having had sufficient of anything."
+     },
+     {
+      "kn": "ತಣಿವು",
+      "tr": "taṇivu",
+      "en": "slaked",
+      "lit": "cooling",
+      "note": "Satisfaction as cooling rather than filling — the other half of how Kannada thinks about want."
+     }
+    ]
+   },
+   {
+    "kn": "ದುರಾಸೆ",
+    "tr": "durāse",
+    "en": "greed",
+    "note": "ಆಸೆ is desire and is morally neutral; the prefix does all the work.",
+    "kids": [
+     {
+      "kn": "ಹೊಟ್ಟೆಬಾಕ",
+      "tr": "hoṭṭe-bāka",
+      "en": "glutton",
+      "lit": "belly-eater",
+      "note": "An insult about appetite that transfers cleanly to money and power."
+     },
+     {
+      "kn": "ಆಸೆಬುರುಕ",
+      "tr": "āseburuka",
+      "en": "grasping",
+      "lit": "full of wanting",
+      "note": "The -ಬುರುಕ suffix makes any noun into a person overfull of it."
+     }
+    ]
+   },
+   {
+    "kn": "ವಾಕರಿಕೆ",
+    "tr": "vākarike",
+    "en": "revulsion",
+    "note": "The belly rejecting.",
+    "kids": [
+     {
+      "kn": "ಹೊಟ್ಟೆ ತೊಳಸು",
+      "tr": "hoṭṭe toḷasu",
+      "en": "the stomach stirs",
+      "lit": "the stomach is stirred",
+      "note": "Moral disgust and physical nausea in one phrase, with no marker between them."
+     },
+     {
+      "kn": "ಹೇಸಿಗೆ",
+      "tr": "hēsige",
+      "en": "loathing",
+      "lit": "filth",
+      "note": "The moral and the physical are the same word."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kn": "ಕರುಳು",
+  "tr": "karuḷu",
+  "en": "gut",
+  "note": "The most untranslatable seat. In Kannada the gut is the organ of kinship — your child is your ಕರುಳ ಬಳ್ಳಿ, your gut-vine — so every feeling sited here is about your own people.",
+  "kids": [
+   {
+    "kn": "ಕನಿಕರ",
+    "tr": "kanikara",
+    "en": "compassion",
+    "note": "What the gut does when it sees suffering.",
+    "kids": [
+     {
+      "kn": "ಕರುಳು ಚುರುಕ್",
+      "tr": "karuḷu curuk",
+      "en": "the pang of pity",
+      "lit": "the gut stings",
+      "note": "Involuntary, on seeing a child or an animal in distress. Pity is a judgement; this is a reflex."
+     },
+     {
+      "kn": "ಮರುಕ",
+      "tr": "maruka",
+      "en": "pity, ruth",
+      "lit": "turning back toward",
+      "note": "Older and softer than ಕನಿಕರ, and slightly literary now."
+     }
+    ]
+   },
+   {
+    "kn": "ಮರುಗುವಿಕೆ",
+    "tr": "maraguvike",
+    "en": "grieving for another",
+    "note": "ಮರುಗು is a native verb with no exact English partner: to ache on someone else's account. The gut under strain.",
+    "kids": [
+     {
+      "kn": "ಕರುಳು ಹಿಂಡು",
+      "tr": "karuḷu hiṇḍu",
+      "en": "wrung with pity",
+      "lit": "the gut is wrung",
+      "note": "The image is wringing a wet cloth. Used for watching suffering you cannot stop."
+     },
+     {
+      "kn": "ತಳಮಳ",
+      "tr": "taḷamaḷa",
+      "en": "churn",
+      "note": "The word for boiling liquid and for a mind that will not settle."
+     }
+    ]
+   },
+   {
+    "kn": "ಅಗಲಿಕೆ",
+    "tr": "agalike",
+    "en": "loss, parting",
+    "note": "The gut torn.",
+    "kids": [
+     {
+      "kn": "ಕರುಳು ಕಿತ್ತು ಬರು",
+      "tr": "karuḷu kittu baru",
+      "en": "losing your own",
+      "lit": "the gut tears loose",
+      "note": "Kept for the death of a child or parent. Using it lightly would be shocking."
+     },
+     {
+      "kn": "ಉಮ್ಮಳ",
+      "tr": "ummaḷa",
+      "en": "grief welling up",
+      "lit": "a swelling from below",
+      "note": "Names the swell, not the weeping."
+     }
+    ]
+   },
+   {
+    "kn": "ಮಮತೆ",
+    "tr": "mamate",
+    "en": "attachment-love",
+    "note": "The gut as a tie.",
+    "kids": [
+     {
+      "kn": "ಕರುಳ ಬಳ್ಳಿ",
+      "tr": "karuḷa baḷḷi",
+      "en": "one's own child",
+      "lit": "the gut-vine",
+      "note": "The umbilical cord as a creeper. English has no everyday phrase saying kinship is physical."
+     },
+     {
+      "kn": "ವಾತ್ಸಲ್ಯ",
+      "tr": "vātsalya",
+      "en": "downward tenderness",
+      "lit": "the feeling toward a calf",
+      "note": "Flows one way only: elder to younger. English 'love' has no direction; this word is nothing but direction."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kn": "ಮನಸ್ಸು",
+  "tr": "manassu",
+  "en": "mind",
+  "note": "The general seat, and the only one that is not an organ you could point to. Everything a body does, the ಮನಸ್ಸು does — it fills, shrinks, lightens, opens.",
+  "kids": [
+   {
+    "kn": "ನೋವು",
+    "tr": "nōvu",
+    "en": "hurt",
+    "note": "ನೋವು is bodily and emotional pain with no distinction at all.",
+    "kids": [
+     {
+      "kn": "ಮನಸ್ಸಿಗೆ ನೋವು",
+      "tr": "manassige nōvu",
+      "en": "being wounded",
+      "lit": "pain to the mind",
+      "note": "The ordinary way to say someone hurt you."
+     },
+     {
+      "kn": "ಮನಸ್ತಾಪ",
+      "tr": "manastāpa",
+      "en": "a falling-out",
+      "lit": "mind-heat",
+      "note": "Between two people who were close. Not anger, not grief — the cooled residue that keeps them apart."
+     }
+    ]
+   },
+   {
+    "kn": "ಖಿನ್ನತೆ",
+    "tr": "khinnate",
+    "en": "lowness",
+    "note": "Now the clinical word; the phrase beneath it is older.",
+    "kids": [
+     {
+      "kn": "ಮನಸ್ಸು ಕುಗ್ಗು",
+      "tr": "manassu kuggu",
+      "en": "the mind shrinks",
+      "lit": "the mind shrinks down",
+      "note": "What Kannada said before ಖಿನ್ನತೆ was coined. A description, where the new word is a diagnosis."
+     },
+     {
+      "kn": "ಬೇಸರ",
+      "tr": "bēsara",
+      "en": "weary discontent",
+      "note": "One word for bored, mildly sad and fed up. 'ಬೇಸರಾಗಿದೆ' could be any of the three."
+     }
+    ]
+   },
+   {
+    "kn": "ತೆರೆದುಕೊಳ್ಳುವಿಕೆ",
+    "tr": "teredukoḷḷuvike",
+    "en": "opening up",
+    "note": "The nearest Kannada gets to the therapeutic sense of vulnerable — and it is an act, not a state.",
+    "kids": [
+     {
+      "kn": "ಮನಸ್ಸು ಬಿಚ್ಚು",
+      "tr": "manassu biccu",
+      "en": "to unfold the mind",
+      "lit": "to untie the mind",
+      "note": "The same verb as untying a knot or opening a parcel."
+     },
+     {
+      "kn": "ಸಲಿಗೆ",
+      "tr": "salige",
+      "en": "earned informality",
+      "note": "The licence to tease someone, eat off their plate, drop the honorific. Intimacy defined as permission."
+     }
+    ]
+   },
+   {
+    "kn": "ಕರಗುವಿಕೆ",
+    "tr": "karaguvike",
+    "en": "being moved",
+    "note": "The mind melting — Kannada's standard image for being touched.",
+    "kids": [
+     {
+      "kn": "ಮನ ಮುಟ್ಟು",
+      "tr": "mana muṭṭu",
+      "en": "it touched me",
+      "lit": "it touched the mind",
+      "note": "The agent is the thing, not you. A song ಮನ ಮುಟ್ಟುತ್ತದೆ."
+     },
+     {
+      "kn": "ಮೆಚ್ಚುಗೆ",
+      "tr": "meccuge",
+      "en": "admiration",
+      "note": "Both the feeling and its expression — to ಮೆಚ್ಚು silently is incomplete."
+     }
+    ]
+   },
+   {
+    "kn": "ನೆಮ್ಮದಿ",
+    "tr": "nemmadi",
+    "en": "peace of mind",
+    "note": "Sharply distinct from ಶಾಂತಿ, peace as the absence of conflict.",
+    "kids": [
+     {
+      "kn": "ಮನಸ್ಸು ಹಗುರ",
+      "tr": "manassu hagura",
+      "en": "relief",
+      "lit": "the mind is light",
+      "note": "Specifically after confessing or weeping. Relief as a change in weight."
+     },
+     {
+      "kn": "ಸಮಾಧಾನ",
+      "tr": "samādhāna",
+      "en": "being consoled",
+      "lit": "a settling",
+      "note": "Both the comfort someone gives you and the state it produces."
+     }
+    ]
+   },
+   {
+    "kn": "ಒಪ್ಪಿಗೆ",
+    "tr": "oppige",
+    "en": "assent",
+    "note": "Kannada distinguishes agreeing out loud from your ಮನಸ್ಸು having agreed, and gives you the phrase to say so.",
+    "kids": [
+     {
+      "kn": "ಮನಸ್ಸು ಒಪ್ಪು",
+      "tr": "manassu oppu",
+      "en": "felt consent",
+      "lit": "the mind agrees",
+      "note": "You can say yes without this having happened, and everyone knows it."
+     },
+     {
+      "kn": "ಮನಃಪೂರ್ವಕ",
+      "tr": "manaḥpūrvaka",
+      "en": "wholeheartedly",
+      "lit": "mind-first",
+      "note": "The adverb you attach to a thank-you to mean you meant it."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kn": "ತಲೆ",
+  "tr": "tale",
+  "en": "head",
+  "note": "Worry and standing. The head overheats, spoils and spins — and it is also the thing you raise or lower in front of other people.",
+  "kids": [
+   {
+    "kn": "ಚಿಂತೆ",
+    "tr": "cinte",
+    "en": "worry",
+    "note": "ಚಿಂತೆ is also simply 'thought'. To worry and to think are the same word.",
+    "kids": [
+     {
+      "kn": "ತಲೆಬಿಸಿ",
+      "tr": "talebisi",
+      "en": "worry as overheating",
+      "lit": "head-heat",
+      "note": "You can tell someone not to take ತಲೆಬಿಸಿ the way you would tell them to cool down."
+     },
+     {
+      "kn": "ಯೋಚನೆ",
+      "tr": "yōcane",
+      "en": "thinking it over",
+      "note": "Neutral by itself; 'ಯೋಚನೆ ಮಾಡಬೇಡ' means stop worrying."
+     }
+    ]
+   },
+   {
+    "kn": "ಗೊಂದಲ",
+    "tr": "gondala",
+    "en": "confusion",
+    "note": "Also the word for a noisy crowd — confusion as too many voices at once.",
+    "kids": [
+     {
+      "kn": "ತಲೆಕೆಡು",
+      "tr": "talekeḍu",
+      "en": "driven out of your mind",
+      "lit": "the head spoils",
+      "note": "Same verb as milk going off. Covers exam season and genuine breakdown, with tone doing the work."
+     },
+     {
+      "kn": "ಕಕ್ಕಾಬಿಕ್ಕಿ",
+      "tr": "kakkābikki",
+      "en": "flustered",
+      "note": "A sound-word with no parts that mean anything alone — the flap of not knowing what to do with your hands."
+     }
+    ]
+   },
+   {
+    "kn": "ಹೈರಾಣ",
+    "tr": "hairāṇa",
+    "en": "worn out",
+    "note": "Overwhelm as depletion rather than dread.",
+    "kids": [
+     {
+      "kn": "ತಲೆ ಸುತ್ತು",
+      "tr": "tale suttu",
+      "en": "can't take any more",
+      "lit": "the head spins",
+      "note": "Physical dizziness and being overwhelmed share the phrase entirely."
+     },
+     {
+      "kn": "ದಣಿವು",
+      "tr": "daṇivu",
+      "en": "tiredness",
+      "note": "The native word, used of a body and of a day alike."
+     }
+    ]
+   },
+   {
+    "kn": "ಮರ್ಯಾದೆ",
+    "tr": "maryāde",
+    "en": "standing, face",
+    "note": "One of the most-used words in Kannada. Self-respect described entirely as a posture held in public.",
+    "kids": [
+     {
+      "kn": "ತಲೆ ಎತ್ತು",
+      "tr": "tale ettu",
+      "en": "dignity",
+      "lit": "to raise the head",
+      "note": "ಘನತೆ is the abstract noun; this is what people actually say."
+     },
+     {
+      "kn": "ತಲೆತಗ್ಗಿಸು",
+      "tr": "taletaggisu",
+      "en": "shame",
+      "lit": "to lower the head",
+      "note": "The same axis in the other direction. Kannada's shame is visible before it is internal."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kn": "ಮೈ",
+  "tr": "mai",
+  "en": "body",
+  "note": "The surface. Everything here is involuntary and visible — the hair standing up, the burn, the forgetting of the body altogether.",
+  "kids": [
+   {
+    "kn": "ಪುಳಕ",
+    "tr": "puḷaka",
+    "en": "thrill",
+    "note": "Classical poetics counts it as visible evidence of an inner state, which is why it has its own noun.",
+    "kids": [
+     {
+      "kn": "ಮೈ ಝುಮ್",
+      "tr": "mai jhum",
+      "en": "the thrill of music",
+      "lit": "the body tingles",
+      "note": "Specifically aesthetic. You would say it about a raga, rarely about good news."
+     },
+     {
+      "kn": "ರೋಮಾಂಚ",
+      "tr": "rōmāñca",
+      "en": "horripilation",
+      "lit": "hair-motion",
+      "note": "The Sanskrit register of exactly the same event."
+     }
+    ]
+   },
+   {
+    "kn": "ನಡುಕ",
+    "tr": "naḍuka",
+    "en": "the body's alarm",
+    "note": "The skin knowing before the mind does. Kannada names the tremble and lets the fear be inferred.",
+    "kids": [
+     {
+      "kn": "ಮೈ ನವಿರೇಳು",
+      "tr": "mai navirēḷu",
+      "en": "awe or dread",
+      "lit": "the fine hair stands",
+      "note": "Which of the two it is comes from context alone. Kannada declines to separate the physiology."
+     },
+     {
+      "kn": "ಬೆವರು",
+      "tr": "bevaru",
+      "en": "sweat",
+      "note": "'ಬೆವರಿಬಿಟ್ಟೆ' — I broke into a sweat — is a complete statement about fear."
+     }
+    ]
+   },
+   {
+    "kn": "ಉರಿ",
+    "tr": "uri",
+    "en": "burning",
+    "note": "The point at which anger stops being an opinion.",
+    "kids": [
+     {
+      "kn": "ಮೈ ಉರಿ",
+      "tr": "mai uri",
+      "en": "rage gone physical",
+      "lit": "the body burns",
+      "note": "Also literally a fever or a rash — the phrase does not choose."
+     },
+     {
+      "kn": "ಸಿಡುಕು",
+      "tr": "siḍuku",
+      "en": "worn-in irritability",
+      "note": "Not an episode but a temperament, and one you wear on your face."
+     }
+    ]
+   },
+   {
+    "kn": "ಮೈಮರೆವು",
+    "tr": "maimarevu",
+    "en": "absorption",
+    "note": "The body forgotten — the highest praise available for listening to music.",
+    "kids": [
+     {
+      "kn": "ಮೈ ಮರೆ",
+      "tr": "mai mare",
+      "en": "lost in it",
+      "lit": "to forget the body",
+      "note": "Also what you say about someone who missed their stop."
+     },
+     {
+      "kn": "ಭಾವಪರವಶ",
+      "tr": "bhāva-paravaśa",
+      "en": "carried away",
+      "lit": "subject to the feeling",
+      "note": "ಪರವಶ means under another's control. The grammar says the feeling is driving."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kn": "ಮುಖ",
+  "tr": "mukha",
+  "en": "face",
+  "note": "The public instrument. These are the feelings other people read off you whether or not you meant them to — which is why the sulk lives here and not in ಕೋಪ.",
+  "kids": [
+   {
+    "kn": "ಮುನಿಸು",
+    "tr": "munisu",
+    "en": "the loving sulk",
+    "note": "The anger you are only entitled to with someone who loves you. It wants soothing, not resolution, and would be insulted by an apology that was merely correct.",
+    "kids": [
+     {
+      "kn": "ಮುಖ ಊದಿಸು",
+      "tr": "mukha ūdisu",
+      "en": "sulking",
+      "lit": "to puff the face",
+      "note": "Described as something you actively do to your own face. The performance is the point."
+     },
+     {
+      "kn": "ಸೆಡವು",
+      "tr": "seḍavu",
+      "en": "a huff",
+      "note": "Native, and shorter-lived than ಮುನಿಸು — an afternoon rather than a week."
+     }
+    ]
+   },
+   {
+    "kn": "ಸಪ್ಪೆ",
+    "tr": "sappe",
+    "en": "flatness",
+    "note": "ಸಪ್ಪೆ is what you call unsalted food. A dejected face is described as under-seasoned.",
+    "kids": [
+     {
+      "kn": "ಮುಖ ಕಪ್ಪಿಡು",
+      "tr": "mukha kappiḍu",
+      "en": "crestfallen",
+      "lit": "the face darkens",
+      "note": "The visible fall when someone hears they were left out."
+     },
+     {
+      "kn": "ಸಪ್ಪೆ ಮೋರೆ",
+      "tr": "sappe mōre",
+      "en": "a long face",
+      "lit": "an insipid face",
+      "note": "ಮೋರೆ is the blunt, slightly rude word for a face."
+     }
+    ]
+   },
+   {
+    "kn": "ಅಳು",
+    "tr": "aḷu",
+    "en": "weeping",
+    "note": "The plainest native verb. The eye as the place the mind overflows.",
+    "kids": [
+     {
+      "kn": "ಕಣ್ಣು ತುಂಬು",
+      "tr": "kaṇṇu tumbu",
+      "en": "moved to tears",
+      "lit": "the eyes fill",
+      "note": "Reversible in a way English is not: a sight can also ಕಣ್ಣು ತುಂಬು you, by being beautiful."
+     },
+     {
+      "kn": "ಕಣ್ಣೀರು",
+      "tr": "kaṇṇīru",
+      "en": "tears",
+      "lit": "eye-water",
+      "note": "Plain compound, no ceremony. Kannada saves its ceremony for the phrases around it."
+     }
+    ]
+   },
+   {
+    "kn": "ಸಿಟ್ಟು",
+    "tr": "siṭṭu",
+    "en": "visible anger",
+    "note": "Anger as something the room can read.",
+    "kids": [
+     {
+      "kn": "ಕಣ್ಣು ಕೆಂಪು",
+      "tr": "kaṇṇu kempu",
+      "en": "about to break",
+      "lit": "red eyes",
+      "note": "A warning read by everyone present. The threat is in the description, not in any word for anger."
+     },
+     {
+      "kn": "ಹುಬ್ಬು ಗಂಟು",
+      "tr": "hubbu gaṇṭu",
+      "en": "a knitted brow",
+      "lit": "the eyebrows knot",
+      "note": "The smallest visible unit of displeasure, and often the only one you get."
+     }
+    ]
+   },
+   {
+    "kn": "ನಾಚಿಕೆ",
+    "tr": "nāchike",
+    "en": "shyness and shame at once",
+    "note": "A bride's ನಾಚಿಕೆ and a thief's are the same noun. English needs three words and grades them differently; Kannada trusts context completely.",
+    "kids": [
+     {
+      "kn": "ಕಣ್ಣು ತಗ್ಗಿಸು",
+      "tr": "kaṇṇu taggisu",
+      "en": "averting the eyes",
+      "lit": "to lower the eyes",
+      "note": "The gesture that covers modesty, shyness and guilt without distinguishing them."
+     },
+     {
+      "kn": "ಮುಜುಗರ",
+      "tr": "mujugara",
+      "en": "awkwardness",
+      "note": "The wince at a social scene, often on someone else's behalf."
+     }
+    ]
+   }
+  ]
+ }
+]
