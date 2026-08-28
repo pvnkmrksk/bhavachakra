@@ -13,6 +13,7 @@
     current = i;
     const w = WHEELS[i];
     stage.dataset.wheel = w.id;
+    document.getElementById("tag").innerHTML = w.tag;
     document.getElementById("mastTitle").textContent = w.name;
     document.getElementById("mastSub").innerHTML = w.blurb;
     document.getElementById("aboutTitle").innerHTML =

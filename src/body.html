@@ -1,13 +1,5 @@
-<header class="wrap">
-  <div class="mast">
-    <div class="eyebrow">ಕನ್ನಡದಲ್ಲಿ ಭಾವನೆಗಳ ನಕ್ಷೆ · three feeling wheels in Kannada</div>
-    <h1 id="mastTitle">ಭಾವಚಕ್ರ</h1>
-    <p class="sub serif" id="mastSub"></p>
-  </div>
-</header>
-
-<div class="wrap">
-  <div class="switcher" role="tablist" aria-label="Choose a wheel">
+<div class="wrap top">
+  <nav class="switcher" role="tablist" aria-label="Choose a wheel">
     <div class="track"><span class="thumb" id="thumb"></span>
       <button role="tab" class="opt" data-i="0" aria-selected="true">
         <b>ಭಾವಚಕ್ರ</b><span>from English</span></button>
@@ -16,22 +8,21 @@
       <button role="tab" class="opt" data-i="2" aria-selected="false">
         <b>ರಸಚಕ್ರ</b><span>from the rasas</span></button>
     </div>
-  </div>
+  </nav>
 
   <div class="bar">
-    <button class="zoomout" id="zoomOut" hidden>← ಪೂರ್ಣ ಚಕ್ರ · whole wheel</button>
-    <div class="langslide">
-      <button class="lang" id="langBtn" role="switch" aria-checked="false"
-              aria-label="Wheel labels: Kannada or English">
-        <span class="lthumb"></span>
-        <span class="lopt on">ಕನ್ನಡ</span><span class="lopt">English</span>
-      </button>
-    </div>
+    <p class="tag" id="tag"></p>
+    <button class="lang" id="langBtn" role="switch" aria-checked="false"
+            aria-label="Wheel labels: Kannada or English">
+      <span class="lthumb"></span>
+      <span class="lopt on">ಕನ್ನಡ</span><span class="lopt">English</span>
+    </button>
   </div>
 
   <div class="stage">
     <div class="wheelbox">
-      <a class="skip" href="#more">Skip the wheel</a>
+      <a class="skip" href="#about">Skip the wheel</a>
+      <button class="zoomout" id="zoomOut" hidden></button>
       <svg class="wheel" id="wheel" viewBox="0 0 800 800" role="img"
            aria-label="An emotion wheel in Kannada"></svg>
       <div class="hub" id="hub" aria-hidden="true">
@@ -43,9 +34,13 @@
   </div>
 </div>
 
-<main class="wrap" id="more">
+<main class="wrap" id="about">
 <section>
   <div class="shead">
+    <h1 id="mastTitle">ಭಾವಚಕ್ರ</h1>
+    <p class="sub serif" id="mastSub"></p>
+  </div>
+  <div class="shead sub2">
     <h2 id="aboutTitle"></h2>
     <p id="aboutBody"></p>
   </div>
@@ -54,8 +49,8 @@
     Words checked against <a href="https://pvnkmrksk.github.io/rala/">rala</a>, a reversal of
     <a href="https://alar.ink">Alar</a> by V. Krishna (ODC-ODbL) combined with Padakanaja,
     Government of Karnataka. alar.ink itself was never queried.
-    The full word lists, the dictionary evidence behind every choice, and the lookup code are in the
-    <a href="https://github.com/pvnkmrksk/bhavachakra">repository</a>.
+    Every word, its synonyms and the dictionary evidence are listed in the
+    <a href="https://github.com/pvnkmrksk/bhavachakra#readme">README</a>.
   </footer>
 </section>
 </main>

@@ -22,6 +22,7 @@
   const backBtn = document.getElementById("zoomOut");
 
   let nodes = [], wheel = null, english = false, focus = null, hoverLock = null;
+  let nodeOf = new Map();   // data object -> its rendered node
 
   const el = (n, a) => {
     const e = document.createElementNS(SVG, n);
@@ -47,6 +48,7 @@
     svg.textContent = "";
     gRoot.textContent = "";
     nodes = [];
+    nodeOf = new Map();
     focus = null;
     hoverLock = null;
 
@@ -70,11 +72,13 @@
       });
     });
 
-    const core = el("circle", { cx: CX, cy: CY, r: R[0] - 1, class: "hubdisc",
-      fill: "var(--plate)", stroke: "var(--rule)", "stroke-width": 1 });
+    nodes.forEach(n => nodeOf.set(n.d, n));   // parents are stored as data, not nodes
+
+    const core = el("circle", { cx: CX, cy: CY, r: R[0], class: "hubdisc",
+      fill: "var(--plate)", stroke: "none" });
     core.addEventListener("click", e => {   // tap the middle to come back out
       e.stopPropagation();
-      if (focus) zoom(focus.ring === 1 ? focus.path[0] : null); else reset();
+      if (focus) zoom(focus.ring === 1 ? nodeOf.get(focus.path[0]) : null); else reset();
     });
     svg.appendChild(core);
     svg.appendChild(gRoot);
@@ -118,9 +122,11 @@
       g.addEventListener("focus", () => show(n));
       g.addEventListener("click", e => {
         e.stopPropagation();
+        const wasFocus = focus === n;
         show(n); hoverLock = n;
-        if (n.ring === 0) zoom(focus === n ? null : n);
-        else if (n.ring === 1) zoom(focus === n ? n.path[0] : n);
+        if (n.ring === 0) zoom(wasFocus ? null : n);
+        else if (n.ring === 1) zoom(wasFocus ? nodeOf.get(n.path[0]) : n);
+        else if (!focus) zoom(nodeOf.get(n.path[1]));  // a leaf tapped cold zooms to its branch
       });
       gRoot.appendChild(g);
     });
@@ -218,14 +224,19 @@
   }
 
   svg.addEventListener("pointerleave", () => { if (!hoverLock) reset(); });
+  svg.addEventListener("click", e => {
+    if (e.target !== svg) return;               // the ground, not a wedge
+    e.stopPropagation();
+    if (focus) zoom(focus.ring === 1 ? nodeOf.get(focus.path[0]) : null); else reset();
+  });
   document.addEventListener("click", () => { if (hoverLock) reset(); });
   document.addEventListener("keydown", e => {
     if (e.key !== "Escape") return;
-    if (focus) zoom(focus.ring === 1 ? focus.path[0] : null); else reset();
+    if (focus) zoom(focus.ring === 1 ? nodeOf.get(focus.path[0]) : null); else reset();
   });
   backBtn.addEventListener("click", e => {
     e.stopPropagation();
-    zoom(focus && focus.ring === 1 ? focus.path[0] : null);
+    zoom(focus && focus.ring === 1 ? nodeOf.get(focus.path[0]) : null);
   });
 
   // Wedge labels take only the first clause of an English gloss — the panel

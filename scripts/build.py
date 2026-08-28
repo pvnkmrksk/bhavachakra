@@ -19,6 +19,11 @@ import json
 import pathlib
 import re
 
+# Flip this to "https://bhava.kutuhula.in" once the DNS CNAME exists, and add a
+# CNAME file at the repo root with the bare host. Doing it before DNS resolves
+# takes the github.io URL down too, because Pages starts redirecting to it.
+SITE = "https://pvnkmrksk.github.io/bhavachakra"
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SRC = ROOT / "data", ROOT / "src"
 RINGS = ["core", "branch", "leaf"]
@@ -27,6 +32,7 @@ load = lambda n: json.loads((DATA / "wheels" / f"{n}.json").read_text(encoding="
 
 WHEELS = [
  {"id": "bhava", "file": "bhava",
+  "tag": "Seven core feelings, three rings, 130 words — the English feeling wheel put into Kannada, seams and all.",
   "name": "ಭಾವಚಕ್ರ", "hubKn": "ಭಾವಚಕ್ರ", "hubRom": "bhāva-cakra",
   "hint": "Tap or hover any segment: the panel names it in both scripts and lists the "
           "words that did not fit. Tap a sector to zoom in, and the middle of the wheel "
@@ -65,6 +71,7 @@ WHEELS = [
           "diagnostics, and it belongs there rather than here."}]},
 
  {"id": "odalu", "file": "odalu",
+  "tag": "Seven seats of the body, 106 words — not a translation of anything.",
   "name": "ಒಡಲ ಚಕ್ರ", "hubKn": "ಒಡಲು", "hubRom": "oḍalu · the body as vessel",
   "hint": "The centre is where in the body it happens, the middle ring is the feeling, and "
           "the outer ring is what gets said. Tap to zoom in; tap the middle to come back out.",
@@ -99,6 +106,7 @@ WHEELS = [
           "downward, ಗೌರವ upward and ಸಲಿಗೆ sideways."}]},
 
  {"id": "rasa", "file": "rasa",
+  "tag": "The nine rasas, each with its ಸ್ಥಾಯಿಭಾವ, opened out into 117 daily Kannada words.",
   "name": "ರಸಚಕ್ರ", "hubKn": "ನವರಸ", "hubRom": "nava-rasa · the nine flavours",
   "hint": "The nine rasas are the centre; underneath each one are the words Kannada uses "
           "for that flavour. Tap to zoom in; tap the middle to come back out.",
@@ -169,6 +177,8 @@ def build_html():
 <meta property="og:title" content="ಭಾವಚಕ್ರ">
 <meta property="og:description" content="Three emotion wheels in Kannada — from English, from the body, from the nine rasas.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="{SITE}/">
+<link rel="canonical" href="{SITE}/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%239C6E0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E6E9E2'/%3E%3C/svg%3E">
 {head}
 </head>
@@ -207,7 +217,7 @@ def build_readme():
     add = L.append
     total = sum(len(list(walk(w["data"]))) for w in WHEELS)
     add("# ಭಾವಚಕ್ರ · three feeling wheels in Kannada\n")
-    add("**[Open the wheels →](https://pvnkmrksk.github.io/bhavachakra/)**\n")
+    add(f"**[Open the wheels →]({SITE}/)**\n")
     add(f"{total} words across three maps of the same territory:\n")
     add("| wheel | built from | words |\n|---|---|---:|")
     src = {"bhava": "the English feeling wheel, translated and then argued with",
@@ -275,36 +285,29 @@ def build_readme():
             if core.get("sthayi"):
                 head_bits.append(f"ಸ್ಥಾಯಿಭಾವ · {core['sthayi']}")
             add("  \n".join(head_bits) + "\n")
-            cols = "| ring | ಕನ್ನಡ | roman | meaning |"
-            sep = "|---|---|---|---|"
-            if w["id"] == "bhava":
-                cols = "| ring | ಕನ್ನಡ | roman | English slot | status | rala's hits |"
-                sep = "|---|---|---|---|---|---|"
-            add(cols); add(sep)
-            ordered = [(0, core)]
+
+            def line(n, depth):
+                pad = "  " * depth
+                bits = [f"{pad}- **{n['kn']}** · *{n['tr']}* · {md(n['en'])}"]
+                if n.get("lit"):
+                    bits.append(f"literally {md(n['lit'])}")
+                if w["id"] == "bhava" and n.get("status"):
+                    bits.append(f"`{n['status']}`")
+                add(" · ".join(bits))
+                if n.get("also"):
+                    add(f"{pad}  - also said: " + ", ".join(
+                        f"**{a['kn']}** *{a['tr']}* {md(a['en'])}" for a in n["also"]))
+                if n.get("rala"):
+                    add(f"{pad}  - rala returned: " + ", ".join(md(h) for h in n["rala"]))
+                if n.get("note"):
+                    add(f"{pad}  - {md(n['note'])}")
+
+            line(core, 0)
             for m in core["kids"]:
-                ordered.append((1, m))
-                ordered += [(2, l) for l in m["kids"]]
-            for ring, n in ordered:
-                if w["id"] == "bhava":
-                    hits = ", ".join(md(h) for h in (n.get("rala") or [])) or "—"
-                    add(f"| {RINGS[ring]} | **{n['kn']}** | *{n['tr']}* | {n['en']} | "
-                        f"`{n.get('status','')}` | {hits} |")
-                else:
-                    m = n["en"] + (f" — literally, {n['lit']}" if n.get("lit") else "")
-                    add(f"| {RINGS[ring]} | **{n['kn']}** | *{n['tr']}* | {md(m)} |")
+                line(m, 1)
+                for l in m["kids"]:
+                    line(l, 2)
             add("")
-            notes = [n for _, n in ordered if n.get("note")]
-            if notes:
-                add("<details><summary>Reading</summary>\n")
-                for n in notes:
-                    line = f"- **{n['kn']}** *({n['en']})* — {md(n['note'])}"
-                    if n.get("also"):
-                        line += ("  \n  also said: "
-                                 + ", ".join(f"**{a['kn']}** *{a['tr']}*, {md(a['en'])}"
-                                             for a in n["also"]))
-                    add(line)
-                add("\n</details>\n")
 
     native = json.loads((DATA / "native.json").read_text(encoding="utf-8"))
     add("## Appendix — words with nowhere to sit\n")
