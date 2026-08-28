@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A Kannada emotion wheel built on where in the body each feeling is sited, rather than translated from English.">
+<meta property="og:title" content="ಒಡಲ ಚಕ್ರ">
+<meta property="og:description" content="A Kannada emotion wheel organised by the body, not translated from English.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23A6384A'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E6E9E2'/%3E%3C/svg%3E">
+<title>ಒಡಲ ಚಕ್ರ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@300..700&family=Anek+Latin:wght@300..700&family=Noto+Serif+Kannada:wght@400..700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  /* soapstone — the green-grey of Hoysala chloritic schist */
+  --ground:#E6E9E2; --plate:#F1F3ED; --sunk:#DBDFD4;
+  --ink:#191E1A; --ink-2:#4A534B; --ink-3:#7C857C;
+  --rule:#C9CFC2; --rule-soft:#D9DED2;
+  --accent:#A6384A;            /* turmeric, dulled for light ground */
+  --accent-soft:#F2DFE1;
+  --mixer:#FFFFFF;             /* rings mix toward this */
+  --mix-mid:68%;               /* how much hue survives in each ring */
+  --mix-leaf:40%;
+  --leaf-ink:#1C221D;          /* dark label ink on the pale outer rings */
+  --mid-ink:#161A17;
+  --core-ink:#FFFFFF;
+  --shadow:0 1px 2px rgba(25,30,26,.07), 0 8px 28px -12px rgba(25,30,26,.22);
+  --h-ede:#A6384A; --h-hotte:#946E10; --h-karulu:#7A2B45;
+  --h-manassu:#3C4890; --h-tale:#146A75; --h-mai:#6A3F8E; --h-mukha:#586B3E;
+  --ok:#4B7A3F; --warn:#9A6B12; --gapc:#A33F5E;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#12160F; --plate:#1A1F19; --sunk:#0D110B;
+    --ink:#E4E8DD; --ink-2:#A8B1A4; --ink-3:#79826F;
+    --rule:#2B3229; --rule-soft:#232920;
+    --accent:#DE6B7C; --accent-soft:#33191C;
+    --mixer:#0C0F0A;
+    --mix-mid:54%; --mix-leaf:30%;
+    --leaf-ink:#DDE2D6; --mid-ink:#EAEEE3; --core-ink:#0E120C;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 34px -14px rgba(0,0,0,.8);
+    --h-ede:#DE6B7C; --h-hotte:#D2A032; --h-karulu:#C0637F;
+    --h-manassu:#6C77CE; --h-tale:#2E9BA6; --h-mai:#A177CE; --h-mukha:#94AB6C;
+    --ok:#7FB86E; --warn:#D3A03C; --gapc:#DE7C99;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12160F; --plate:#1A1F19; --sunk:#0D110B;
+  --ink:#E4E8DD; --ink-2:#A8B1A4; --ink-3:#79826F;
+  --rule:#2B3229; --rule-soft:#232920;
+  --accent:#DE6B7C; --accent-soft:#33191C;
+  --mixer:#0C0F0A;
+  --mix-mid:54%; --mix-leaf:30%;
+  --leaf-ink:#DDE2D6; --mid-ink:#EAEEE3; --core-ink:#0E120C;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 34px -14px rgba(0,0,0,.8);
+  --h-ede:#DE6B7C; --h-hotte:#D2A032; --h-karulu:#C0637F;
+  --h-manassu:#6C77CE; --h-tale:#2E9BA6; --h-mai:#A177CE; --h-mukha:#94AB6C;
+  --ok:#7FB86E; --warn:#D3A03C; --gapc:#DE7C99;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:'Anek Latin','Anek Kannada',system-ui,sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:'Spectral','Noto Serif Kannada',Georgia,serif}
+.kn{font-family:'Noto Serif Kannada','Spectral',serif}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+.col{max-width:660px}
+h1,h2,h3{margin:0; font-weight:600; text-wrap:balance; line-height:1.18}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:3px}
+.eyebrow{
+  font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600;
+}
+
+/* ---------- masthead ---------- */
+header{padding:clamp(48px,7vw,88px) 0 0}
+.mast{display:flex; flex-direction:column; gap:18px}
+.mast h1{
+  font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:clamp(52px,10vw,104px); line-height:.98; letter-spacing:-.01em;
+}
+.mast .sub{
+  font-family:'Spectral',Georgia,serif; font-size:clamp(17px,2.1vw,21px);
+  line-height:1.55; color:var(--ink-2); max-width:60ch;
+}
+.mast .sub em{color:var(--ink); font-style:italic}
+.tally{display:flex; flex-wrap:wrap; gap:0; margin-top:10px; border-top:1px solid var(--rule)}
+.tally div{
+  padding:14px 26px 14px 0; margin-right:26px; border-right:1px solid var(--rule-soft);
+}
+.tally div:last-child{border-right:0}
+.tally b{
+  display:block; font-size:26px; font-weight:600; line-height:1.1;
+  font-variant-numeric:tabular-nums; color:var(--ink);
+}
+.tally span{font-size:12.5px; color:var(--ink-3); letter-spacing:.02em}
+
+/* ---------- controls ---------- */
+.bar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 20px;
+  margin:44px 0 6px; padding-bottom:14px; border-bottom:1px solid var(--rule);
+}
+.legend{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center}
+.lg{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-2)}
+.dot{width:9px; height:9px; border-radius:50%; flex:none}
+.dot.direct{background:var(--ok)} .dot.shaped{background:var(--warn)} .dot.gap{background:var(--gapc)}
+button.toggle{
+  font:inherit; font-size:13px; font-weight:500; color:var(--ink-2);
+  background:var(--plate); border:1px solid var(--rule); border-radius:999px;
+  padding:6px 15px; cursor:pointer; margin-left:auto; transition:.18s;
+}
+button.toggle[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent)}
+button.toggle:hover{border-color:var(--accent)}
+
+/* ---------- wheel ---------- */
+.stage{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:32px; align-items:start; margin-top:22px}
+@media (max-width:900px){.stage{grid-template-columns:1fr}}
+.wheelbox{position:relative}
+.skip{
+  position:absolute; left:0; top:0; z-index:3; font-size:13px; padding:6px 12px;
+  background:var(--plate); color:var(--ink); border:1px solid var(--accent); border-radius:2px;
+  transform:translateY(-140%); opacity:0;
+}
+.skip:focus{transform:none; opacity:1}
+svg.wheel{width:100%; height:auto; display:block; touch-action:manipulation}
+svg.wheel g.seg{cursor:pointer}
+svg.wheel g.seg path{transition:opacity .22s ease, filter .22s ease}
+svg.wheel text{pointer-events:none; user-select:none; font-family:'Anek Kannada','Anek Latin',sans-serif}
+svg.wheel.dimmed g.seg:not(.on) path{opacity:.17}
+svg.wheel.dimmed g.seg:not(.on) text{opacity:.22}
+g.seg.on path{filter:saturate(1.12)}
+.hub{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:22%; text-align:center; pointer-events:none;
+}
+.hub .hw{
+  font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:clamp(15px,2.5vw,27px); line-height:1.15; color:var(--ink);
+  overflow-wrap:anywhere;
+}
+.hub .ht{font-size:clamp(9px,1.15vw,12px); color:var(--ink-3); letter-spacing:.04em; margin-top:3px}
+
+/* ---------- detail ---------- */
+.detail{
+  background:var(--plate); border:1px solid var(--rule); border-radius:2px;
+  padding:22px; box-shadow:var(--shadow); position:sticky; top:22px;
+}
+.detail .crumb{font-size:11.5px; letter-spacing:.05em; color:var(--ink-3); margin-bottom:12px}
+.detail .crumb b{color:var(--ink-2); font-weight:600}
+.detail .word{
+  font-family:'Noto Serif Kannada',serif; font-weight:600;
+  font-size:34px; line-height:1.2; margin-bottom:2px;
+}
+.detail .rom{font-size:14px; color:var(--ink-2); font-style:italic; font-family:'Spectral',serif}
+.detail .src{font-size:13px; color:var(--ink-3); margin-top:2px}
+.chip{
+  display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600;
+  letter-spacing:.03em; padding:3px 10px; border-radius:999px; margin-top:14px;
+  border:1px solid currentColor;
+}
+.chip.direct{color:var(--ok)} .chip.shaped{color:var(--warn)} .chip.gap{color:var(--gapc)}
+.detail h4{
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+  font-weight:600; margin:20px 0 8px; padding-top:16px; border-top:1px solid var(--rule-soft);
+}
+.rlist{display:flex; flex-wrap:wrap; gap:6px}
+.rlist span{
+  font-size:12.5px; background:var(--sunk); color:var(--ink-2);
+  padding:3px 9px; border-radius:2px; border:1px solid var(--rule-soft);
+}
+.rlist .none{background:none; border:1px dashed var(--rule); color:var(--ink-3); font-style:italic}
+.detail .note{font-family:'Spectral',Georgia,serif; font-size:14.5px; line-height:1.6; color:var(--ink-2)}
+.detail .note i, .detail .note em{color:var(--ink)}
+.hint{color:var(--ink-3); font-size:14px; font-family:'Spectral',serif; font-style:italic}
+
+/* ---------- sections ---------- */
+section{padding:clamp(56px,8vw,104px) 0 0}
+.shead{display:flex; flex-direction:column; gap:12px; margin-bottom:34px}
+.shead h2{font-family:'Noto Serif Kannada',serif; font-size:clamp(28px,4.4vw,42px)}
+.shead h2 .lat{font-family:'Spectral',serif; font-style:italic; font-weight:400; color:var(--ink-3); font-size:.55em}
+.shead p{font-family:'Spectral',Georgia,serif; font-size:16.5px; color:var(--ink-2); max-width:62ch}
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:1px; background:var(--rule-soft); border:1px solid var(--rule-soft)}
+.card{background:var(--plate); padding:22px 20px 24px}
+.card .w{font-family:'Noto Serif Kannada',serif; font-weight:600; font-size:25px; line-height:1.25}
+.card .r{font-family:'Spectral',serif; font-style:italic; font-size:13px; color:var(--ink-3); margin-bottom:10px}
+.card .g{font-family:'Spectral',Georgia,serif; font-size:14.5px; line-height:1.62; color:var(--ink-2)}
+.card .g i{color:var(--ink)}
+
+table.rasa{width:100%; border-collapse:collapse; font-size:15px}
+table.rasa th{
+  text-align:left; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600; padding:0 14px 10px 0; border-bottom:1px solid var(--rule);
+}
+table.rasa td{padding:14px 14px 14px 0; border-bottom:1px solid var(--rule-soft); vertical-align:baseline}
+table.rasa td.k{font-family:'Noto Serif Kannada',serif; font-size:20px; font-weight:600; white-space:nowrap}
+table.rasa td.t{font-family:'Spectral',serif; font-style:italic; color:var(--ink-3); font-size:13.5px; white-space:nowrap}
+table.rasa td.e{color:var(--ink-2); white-space:nowrap}
+table.rasa td.m{font-family:'Spectral',Georgia,serif; color:var(--ink-2); font-size:14.5px}
+.scroll{overflow-x:auto}
+
+.method{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:28px 34px}
+.method h3{font-size:14px; letter-spacing:.02em; margin-bottom:8px}
+.method p{font-family:'Spectral',Georgia,serif; font-size:14.5px; color:var(--ink-2); line-height:1.62}
+code{
+  font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12.5px;
+  background:var(--sunk); border:1px solid var(--rule-soft); padding:2px 6px; border-radius:2px;
+  color:var(--ink-2); overflow-wrap:anywhere;
+}
+pre{margin:10px 0 0; overflow-x:auto; background:var(--sunk); border:1px solid var(--rule-soft); padding:12px 14px; border-radius:2px}
+pre code{background:none; border:0; padding:0; white-space:pre}
+footer{margin-top:clamp(56px,8vw,96px); padding:26px 0 60px; border-top:1px solid var(--rule); color:var(--ink-3); font-size:13px}
+footer a{color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+@keyframes seg-in{from{opacity:0; transform:scale(.965)} to{opacity:1; transform:scale(1)}}
+svg.wheel g.seg{animation:seg-in .5s cubic-bezier(.2,.7,.3,1) backwards; transform-origin:400px 400px}
+</style>
+
+</head>
+<body>
+
+<header class="wrap">
+  <div class="mast">
+    <div class="eyebrow">ಡ್ರಾಫ್ಟ್ · draft two · not a translation of anything</div>
+    <h1>ಒಡಲ ಚಕ್ರ</h1>
+    <p class="sub serif">The <a href="../">first wheel</a> was the English feeling wheel put into Kannada, and it showed its seams — ಶಾಂತಿ where ನೆಮ್ಮದಿ was meant, no word at all for <em>proud</em> or <em>vulnerable</em>. This one starts somewhere else. Kannada mostly names a feeling by saying <em>where in the body it is happening</em> and <em>what that part is doing</em>: ಹೊಟ್ಟೆಕಿಚ್ಚು, belly-fire. ಎದೆಗುಂದು, the chest sinks. ಕರುಳು ಚುರುಕ್, the gut stings. So the seat is the centre ring, the verb is the middle ring, and the feeling is what the two make together.</p>
+    <div class="tally">
+      <div><b>7</b><span>ಒಡಲ ನೆಲೆಗಳು · seats</span></div>
+      <div><b>32</b><span>ಕ್ರಿಯೆಗಳು · movements</span></div>
+      <div><b>64</b><span>ಭಾವಗಳು · feelings</span></div>
+      <div><b>0</b><span>translated from English</span></div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div class="legend">
+      <span class="lg">centre · where it happens &nbsp;→&nbsp; middle · what that part does &nbsp;→&nbsp; outer · the feeling</span>
+    </div>
+    <button class="toggle" id="langToggle" aria-pressed="false">Show meanings</button>
+  </div>
+
+  <div class="stage">
+    <div class="wheelbox">
+      <a class="skip" href="#reading">Skip the wheel's 103 segments</a>
+      <svg class="wheel" id="wheel" viewBox="0 0 800 800" role="img" aria-label="A Kannada emotion wheel organised by the part of the body each feeling is sited in"></svg>
+      <div class="hub" id="hub" aria-hidden="true">
+        <div class="hw" id="hubWord">ಒಡಲು</div>
+        <div class="ht" id="hubRom">oḍalu · the body as vessel</div>
+      </div>
+    </div>
+    <aside class="detail" id="detail" aria-live="polite">
+      <p class="hint">Hover or tap any segment. The centre ring is where in the body the feeling is sited, the middle ring is what that part does, and the outer ring is the feeling that compound names.</p>
+    </aside>
+  </div>
+</header>
+
+<main class="wrap">
+<section id="reading">
+  <div class="shead">
+    <div class="eyebrow">ಏಕೆ ಹೀಗೆ · why this shape</div>
+    <h2>ಒಡಲು <span class="lat">the body as the vessel of feeling</span></h2>
+    <p>ಒಡಲು is an old Kannada word for the body considered as a container — the thing feeling happens inside. It is the right centre for this wheel because Kannada's emotional vocabulary is overwhelmingly compositional: a body part plus a verb. English does this too (heartbroken, gutted, hot-headed) but treats it as figurative colour on top of a real vocabulary. In Kannada it <em>is</em> the vocabulary, and it is not felt as metaphor — ಹೊಟ್ಟೆ ತೊಳಸು is used for moral revulsion and for actual nausea with no marker between the two senses.</p>
+  </div>
+  <div class="method">
+    <div>
+      <h3>What this buys you</h3>
+      <p>An entry point English wheels do not have. "Where do you feel it?" is a better first question than "which of these seven?", and it is the question this wheel asks. It also holds words the first wheel had to leave out — ಮುನಿಸು, ಸಲಿಗೆ, ಕರುಳ ಬಳ್ಳಿ, ಮನಸ್ಸು ಬಿಚ್ಚು — because they had no English slot to sit in.</p>
+    </div>
+    <div>
+      <h3>What it costs</h3>
+      <p>Some real feelings have no bodily seat and are missing here: ಅಭಿಮಾನ, ಹಂಬಲ, ಕೃತಜ್ಞತೆ, ಸಂಭ್ರಮ. A second organising axis would catch them — direction of feeling (ವಾತ್ಸಲ್ಯ flows down, ಗೌರವ flows up, ಸಲಿಗೆ flows sideways), which is the other thing Kannada is strict about.</p>
+    </div>
+    <div>
+      <h3>Open questions for a native ear</h3>
+      <p>Every phrase here is one I can defend, but a draft is a draft. Worth checking: whether ಎದೆ ಝಲ್ and ಮೈ ಝುಮ್ read as too colloquial to print; whether ಸಪ್ಪೆ ಮೋರೆ is regional; whether ಒಡಲು survives as a living word or has gone fully literary; and whether ಕರುಳು deserves more of the wheel than it has, given how much of Kannada kinship runs through it.</p>
+    </div>
+    <div>
+      <h3>Not from a dictionary</h3>
+      <p>Unlike the <a href="../">first wheel</a>, this one was not assembled from rala lookups — an English→Kannada dictionary cannot produce a structure that has no English to start from. rala was used only in the other direction, to check that candidate words exist and to widen the outer ring (ತಣಿವು, ರೋಮಾಂಚ, ಕಕ್ಕಾಬಿಕ್ಕಿ, ಕನಿಕರ, ಮರುಕ all came out of it).</p>
+    </div>
+  </div>
+  <footer>
+    Draft two of <a href="https://github.com/pvnkmrksk/bhavachakra">ಭಾವಚಕ್ರ</a>. The <a href="../">first wheel</a> translates and shows its seams; this one starts from Kannada and will be wrong in different places. Corrections welcome as issues.
+  </footer>
+</section>
+</main>
+
+<script>
+const SEATS = [{"kn":"ಎದೆ","tr":"ede","en":"chest","lit":"the chest","note":"The seat of nerve and of collapse. Kannada puts courage here, not in the heart — ಕೆಚ್ಚೆದೆ, a chest of embers — and puts the loss of courage here too.","kids":[{"kn":"ತುಂಬು","tr":"tumbu","en":"fills","lit":"to fill","kids":[{"kn":"ಎದೆ ತುಂಬು","tr":"ede tumbu","en":"pride, fullness","lit":"the chest fills","note":"Said of watching someone you raised do well. Not self-pride — pride on behalf of another, which English needs a whole clause for."},{"kn":"ಎದೆಯುಬ್ಬು","tr":"edeyubbu","en":"swelling pride","lit":"the chest swells","note":"The same event one degree louder, and slightly comic if you use it about yourself."}]},{"kn":"ಗುಂದು","tr":"gundu","en":"sinks","lit":"to lose height","kids":[{"kn":"ಎದೆಗುಂದು","tr":"edegundu","en":"dismay, losing heart","lit":"the chest sinks","note":"The standard word for dismay. Kannada names the physical drop and leaves the feeling to be inferred — it does this constantly."},{"kn":"ಎದೆ ಒಡೆ","tr":"ede oḍe","en":"devastation","lit":"the chest breaks","note":"Reserved for news that arrives all at once. English 'heartbreak' has drifted toward romance; this has not."}]},{"kn":"ನಡುಗು","tr":"naḍugu","en":"trembles","lit":"to tremble","kids":[{"kn":"ಎದೆ ಡವಡವ","tr":"ede ḍavaḍava","en":"dread","lit":"the chest goes thud-thud","note":"Onomatopoeic, and specifically anticipatory — the fear of a thing you can see coming."},{"kn":"ಎದೆ ಝಲ್","tr":"ede jhal","en":"the instant of alarm","lit":"the chest goes cold, once","note":"A single event, not a state. There is no English noun for the one jolt."}]},{"kn":"ಗಟ್ಟಿಯಾಗು","tr":"gaṭṭiyāgu","en":"hardens","lit":"to harden","kids":[{"kn":"ಕೆಚ್ಚೆದೆ","tr":"keccede","en":"fierce courage","lit":"a chest of embers","note":"ಕೆಚ್ಚು is heat held in the body. The bravery word in Kannada is thermal, not moral."},{"kn":"ಎದೆಗಾರಿಕೆ","tr":"edegārike","en":"nerve","lit":"chest-having","note":"The willingness to stand up and say it. Closer to 'having the guts' than to 'courage', and located one organ higher."}]},{"kn":"ಭಾರವಾಗು","tr":"bhāravāgu","en":"weighs","lit":"to grow heavy","kids":[{"kn":"ಎದೆ ಭಾರ","tr":"ede bhāra","en":"the weight before weeping","lit":"the chest is heavy","note":"The state just before tears, named as a load rather than a mood."},{"kn":"ಎದೆ ಸಂಕಟ","tr":"ede saṅkaṭa","en":"anguish","lit":"the chest constricts","note":"ಸಂಕಟ is used equally for a dying person's distress, a moral dilemma, and unbearable news. The body and the ethics share a word."}]}]},{"kn":"ಹೊಟ್ಟೆ","tr":"hoṭṭe","en":"belly","lit":"the belly","note":"Appetite, envy and grudging. Kannada is unembarrassed about siting the ugly feelings in the stomach, and says them out loud.","kids":[{"kn":"ಉರಿ","tr":"uri","en":"burns","lit":"to burn","kids":[{"kn":"ಹೊಟ್ಟೆಕಿಚ್ಚು","tr":"hoṭṭe-kiccu","en":"envy","lit":"belly-fire","note":"The everyday word. The literary ಅಸೂಯೆ and ಮಾತ್ಸರ್ಯ exist, and nobody says them at home."},{"kn":"ಹೊಟ್ಟೆಯುರಿ","tr":"hoṭṭeyuri","en":"burning resentment","lit":"the belly burns","note":"Distinct from envy — this is the heat of having been wronged, not of wanting what another has."}]},{"kn":"ತುಂಬು","tr":"tumbu","en":"fills","lit":"to fill","kids":[{"kn":"ಹೊಟ್ಟೆ ತುಂಬು","tr":"hoṭṭe tumbu","en":"enough, contentment","lit":"the belly is full","note":"Used far past food: a full belly is the standard image for having had sufficient of anything."},{"kn":"ತಣಿವು","tr":"taṇivu","en":"slaked satisfaction","lit":"cooling, quenching","note":"Satisfaction as cooling rather than filling — the other half of how Kannada thinks about want."}]},{"kn":"ತೊಳಸು","tr":"toḷasu","en":"churns","lit":"to stir","kids":[{"kn":"ಹೊಟ್ಟೆ ತೊಳಸು","tr":"hoṭṭe toḷasu","en":"revulsion","lit":"the stomach stirs","note":"Moral disgust and physical nausea in one phrase, with no metaphor marker between them."},{"kn":"ಜಿಗುಪ್ಸೆ","tr":"jigupse","en":"world-weary disgust","lit":"revulsion","note":"The disgust that makes people renounce things, rather than merely push a plate away."}]},{"kn":"ಬಾಕತನ","tr":"bākatana","en":"devours","lit":"gluttony","kids":[{"kn":"ಹೊಟ್ಟೆಬಾಕ","tr":"hoṭṭe-bāka","en":"greed","lit":"belly-eater","note":"An insult about appetite that transfers cleanly to money and power."},{"kn":"ದುರಾಸೆ","tr":"durāse","en":"avarice","lit":"bad wanting","note":"ಆಸೆ is desire and is morally neutral; the prefix does all the work."}]}]},{"kn":"ಕರುಳು","tr":"karuḷu","en":"gut","lit":"the intestine","note":"The most untranslatable seat. In Kannada the gut is the organ of kinship — your child is your ಕರುಳ ಬಳ್ಳಿ, your gut-vine — so every feeling sited here is about your own people.","kids":[{"kn":"ಚುರುಕ್ ಎನ್ನು","tr":"curuk ennu","en":"stings","lit":"to go 'churuk'","kids":[{"kn":"ಕರುಳು ಚುರುಕ್","tr":"karuḷu curuk","en":"the pang of pity","lit":"the gut stings","note":"Involuntary, on seeing a child or an animal in distress. Pity is a judgement; this is a reflex, and Kannada marks the difference."},{"kn":"ಕನಿಕರ","tr":"kanikara","en":"compassion","lit":"tenderness toward","note":"The considered version of the same movement — what you do after the gut has stung."}]},{"kn":"ಹಿಂಡು","tr":"hiṇḍu","en":"wrings","lit":"to wring out","kids":[{"kn":"ಕರುಳು ಹಿಂಡು","tr":"karuḷu hiṇḍu","en":"agony for another","lit":"the gut is wrung","note":"The image is wringing a wet cloth. Used for watching suffering you cannot stop."},{"kn":"ಮರುಕ","tr":"maruka","en":"pity, ruth","lit":"turning back toward","note":"Older and softer than ಕನಿಕರ, and slightly literary now."}]},{"kn":"ಕಿತ್ತು ಬರು","tr":"kittu baru","en":"tears loose","lit":"to come away torn","kids":[{"kn":"ಕರುಳು ಕಿತ್ತು ಬರು","tr":"karuḷu kittu baru","en":"the grief of losing your own","lit":"the gut tears loose","note":"Kept for the death of a child or parent. Using it lightly would be shocking."},{"kn":"ಉಮ್ಮಳ","tr":"ummaḷa","en":"grief welling up","lit":"a swelling from below","note":"Names the swell, not the weeping — the moment before it breaks."}]},{"kn":"ಬಳ್ಳಿಯಾಗು","tr":"baḷḷiyāgu","en":"ties","lit":"to become a vine","kids":[{"kn":"ಕರುಳ ಬಳ್ಳಿ","tr":"karuḷa baḷḷi","en":"one's own child","lit":"the gut-vine","note":"The umbilical cord as a creeper. English has no everyday phrase that says kinship is physical."},{"kn":"ವಾತ್ಸಲ್ಯ","tr":"vātsalya","en":"downward tenderness","lit":"the feeling toward a calf","note":"Flows one way only: parent to child, elder to younger, teacher to student. English 'love' has no direction; this word is nothing but direction."}]}]},{"kn":"ಮನಸ್ಸು","tr":"manassu","en":"mind","lit":"the mind-heart","note":"The general seat, and the only one that is not an organ you could point to. Everything that can be said of a body here can be said of the mind — it fills, shrinks, lightens, opens.","kids":[{"kn":"ನೋಯು","tr":"nōyu","en":"hurts","lit":"to be in pain","kids":[{"kn":"ಮನಸ್ಸಿಗೆ ನೋವು","tr":"manassige nōvu","en":"being wounded","lit":"pain to the mind","note":"ನೋವು is bodily and emotional pain with no distinction at all. This is simply the ordinary way to say someone hurt you."},{"kn":"ಮನಸ್ತಾಪ","tr":"manastāpa","en":"a falling-out","lit":"mind-heat","note":"Specifically between two people who were close. Not anger, not grief — the cooled-off residue that keeps them apart."}]},{"kn":"ಕುಗ್ಗು","tr":"kuggu","en":"shrinks","lit":"to shrink down","kids":[{"kn":"ಮನಸ್ಸು ಕುಗ್ಗು","tr":"manassu kuggu","en":"depression","lit":"the mind shrinks","note":"What Kannada said before ಖಿನ್ನತೆ was coined. The older phrase is a description; the new word is a diagnosis."},{"kn":"ಬೇಸರ","tr":"bēsara","en":"weary discontent","lit":"fed-up-ness","note":"One word for bored, mildly sad, and fed up. 'ಬೇಸರಾಗಿದೆ' could be any of the three and the listener reads your face."}]},{"kn":"ಬಿಚ್ಚು","tr":"biccu","en":"opens","lit":"to unfold, untie","kids":[{"kn":"ಮನಸ್ಸು ಬಿಚ್ಚು","tr":"manassu biccu","en":"opening up","lit":"to unfold the mind","note":"The nearest Kannada gets to the therapeutic sense of 'vulnerable' — and note it is an act you perform, not a state you are in."},{"kn":"ಸಲಿಗೆ","tr":"salige","en":"earned informality","lit":"licence, familiarity","note":"The permission to tease someone, eat off their plate, drop the honorific. Intimacy defined as permission rather than as feeling."}]},{"kn":"ಮುಟ್ಟು","tr":"muṭṭu","en":"is touched","lit":"to touch","kids":[{"kn":"ಮನ ಮುಟ್ಟು","tr":"mana muṭṭu","en":"being moved","lit":"it touched the mind","note":"Said of a song, a gesture, a line of poetry. The agent is the thing, not you."},{"kn":"ಮೆಚ್ಚು","tr":"meccu","en":"admiration","lit":"to approve of","note":"Both the feeling and its expression — to ಮೆಚ್ಚು someone silently is slightly incomplete."}]},{"kn":"ಹಗುರವಾಗು","tr":"haguravāgu","en":"lightens","lit":"to grow light","kids":[{"kn":"ಮನಸ್ಸು ಹಗುರ","tr":"manassu hagura","en":"relief","lit":"the mind is light","note":"Specifically after confessing or weeping. Relief as a change in weight."},{"kn":"ನೆಮ್ಮದಿ","tr":"nemmadi","en":"peace of mind","lit":"settledness","note":"Sharply distinct from ಶಾಂತಿ, peace as the absence of conflict. You can have ಶಾಂತಿ in a house with no ನೆಮ್ಮದಿ in it."}]},{"kn":"ಒಪ್ಪು","tr":"oppu","en":"assents","lit":"to agree","kids":[{"kn":"ಮನಸ್ಸು ಒಪ್ಪು","tr":"manassu oppu","en":"felt consent","lit":"the mind agrees","note":"Distinguished from agreeing out loud. You can say yes without your ಮನಸ್ಸು having agreed, and Kannada gives you the phrase to say so."},{"kn":"ಸಮಾಧಾನ","tr":"samādhāna","en":"being consoled","lit":"a settling","note":"Both the comfort someone gives you and the state it produces. Its negation, ಅಸಮಾಧಾನ, is the standard word for resentment."}]}]},{"kn":"ತಲೆ","tr":"tale","en":"head","lit":"the head","note":"Worry and dignity. The head overheats, spoils and spins — and it is also the thing you raise or lower in front of other people.","kids":[{"kn":"ಬಿಸಿಯಾಗು","tr":"bisiyāgu","en":"overheats","lit":"to grow hot","kids":[{"kn":"ತಲೆಬಿಸಿ","tr":"talebisi","en":"worry","lit":"head-heat","note":"Worry as a thermal problem. You can tell someone not to take ತಲೆಬಿಸಿ the way you would tell them to cool down."},{"kn":"ಚಿಂತೆ","tr":"cinte","en":"care, worry","lit":"thought","note":"ಚಿಂತೆ is also simply 'thought'. To worry and to think are the same word, which tells you something."}]},{"kn":"ಕೆಡು","tr":"keḍu","en":"spoils","lit":"to go bad","kids":[{"kn":"ತಲೆಕೆಡು","tr":"talekeḍu","en":"driven out of your mind","lit":"the head spoils","note":"Same verb as milk going off. Used for exam season and for genuine breakdown, with the seriousness carried by tone."},{"kn":"ಗೊಂದಲ","tr":"gondala","en":"confusion","lit":"a din, a crowd","note":"Confusion as too many voices at once — the word is also used for an actual noisy crowd."}]},{"kn":"ಸುತ್ತು","tr":"suttu","en":"spins","lit":"to revolve","kids":[{"kn":"ತಲೆ ಸುತ್ತು","tr":"tale suttu","en":"overwhelm","lit":"the head spins","note":"Physical dizziness and 'I can't take any more' share the phrase entirely."},{"kn":"ಕಕ್ಕಾಬಿಕ್ಕಿ","tr":"kakkābikki","en":"flustered bewilderment","lit":"(reduplicative)","note":"A sound-word with no parts that mean anything on their own — the flap of not knowing what to do with your hands."}]},{"kn":"ಎತ್ತು ಮತ್ತು ತಗ್ಗಿಸು","tr":"ettu / taggisu","en":"raises or lowers","lit":"to lift / to lower","kids":[{"kn":"ತಲೆ ಎತ್ತು","tr":"tale ettu","en":"dignity","lit":"to raise the head","note":"Self-respect described entirely as a posture held in public. ಘನತೆ is the abstract noun, this is the thing people actually say."},{"kn":"ತಲೆತಗ್ಗಿಸು","tr":"taletaggisu","en":"shame","lit":"to lower the head","note":"Shame as the same axis in the other direction. Kannada's shame is social and visible before it is internal."}]}]},{"kn":"ಮೈ","tr":"mai","en":"body","lit":"the body, the skin","note":"The surface. Everything here is involuntary and visible — the hair standing up, the burn, the forgetting of the body altogether.","kids":[{"kn":"ಝುಮ್ ಎನ್ನು","tr":"jhum ennu","en":"tingles","lit":"to go 'jhum'","kids":[{"kn":"ಮೈ ಝುಮ್","tr":"mai jhum","en":"the thrill of music","lit":"the body tingles","note":"Specifically aesthetic. You would say it about a raga or a line, rarely about good news."},{"kn":"ಪುಳಕ","tr":"puḷaka","en":"horripilation","lit":"the standing of body hair","note":"Classical poetics counts it as visible evidence of an inner state, which is why it has its own noun."}]},{"kn":"ನವಿರೇಳು","tr":"navirēḷu","en":"bristles","lit":"the down rises","kids":[{"kn":"ಮೈ ನವಿರೇಳು","tr":"mai navirēḷu","en":"awe or dread","lit":"the fine hair stands","note":"Which of the two it is comes from context alone. Kannada declines to separate the physiology."},{"kn":"ರೋಮಾಂಚ","tr":"rōmāñca","en":"thrill","lit":"hair-motion","note":"The Sanskrit register of exactly the same event."}]},{"kn":"ಉರಿ","tr":"uri","en":"burns","lit":"to burn","kids":[{"kn":"ಮೈ ಉರಿ","tr":"mai uri","en":"rage gone physical","lit":"the body burns","note":"The point at which anger stops being an opinion. Also literally a fever or a rash — the phrase does not choose."},{"kn":"ಸಿಡುಕು","tr":"siḍuku","en":"worn-in irritability","lit":"snappishness","note":"Not an episode but a temperament, and one you wear on your face."}]},{"kn":"ಮರೆ","tr":"mare","en":"forgets itself","lit":"to forget","kids":[{"kn":"ಮೈ ಮರೆ","tr":"mai mare","en":"absorption, rapture","lit":"to forget the body","note":"The highest praise available for listening to music. Also what you say about someone who missed their stop."},{"kn":"ಭಾವಪರವಶ","tr":"bhāva-paravaśa","en":"carried away by feeling","lit":"subject to the emotion","note":"The grammar is the point: ಪರವಶ means under another's control. The feeling is driving."}]}]},{"kn":"ಮುಖ","tr":"mukha","en":"face","lit":"the face and the eye","note":"The public instrument. These are the feelings other people read off you, whether or not you meant them to — which is why the sulk lives here and not in ಕೋಪ.","kids":[{"kn":"ಊದಿಸು","tr":"ūdisu","en":"puffs up","lit":"to inflate","kids":[{"kn":"ಮುಖ ಊದಿಸು","tr":"mukha ūdisu","en":"sulking","lit":"to puff the face","note":"Sulking described as a thing you actively do to your own face. The performance is the point."},{"kn":"ಮುನಿಸು","tr":"munisu","en":"the loving sulk","lit":"pique","note":"The anger you are only entitled to with someone who loves you. It wants soothing, not resolution, and would be insulted by an apology that was merely correct."}]},{"kn":"ಕಪ್ಪಿಡು","tr":"kappiḍu","en":"darkens","lit":"to blacken","kids":[{"kn":"ಮುಖ ಕಪ್ಪಿಡು","tr":"mukha kappiḍu","en":"crestfallen","lit":"the face darkens","note":"The visible fall when someone hears they were left out."},{"kn":"ಸಪ್ಪೆ ಮೋರೆ","tr":"sappe mōre","en":"dejection","lit":"an insipid face","note":"ಸಪ್ಪೆ is what you call unsalted food. A dejected face is described as under-seasoned."}]},{"kn":"ತುಂಬು","tr":"tumbu","en":"fills","lit":"to fill","kids":[{"kn":"ಕಣ್ಣು ತುಂಬು","tr":"kaṇṇu tumbu","en":"moved to tears","lit":"the eyes fill","note":"Reversible in a way English is not: a sight can also ಕಣ್ಣು ತುಂಬು you — fill your eyes by being beautiful."},{"kn":"ಕಣ್ಣೀರು","tr":"kaṇṇīru","en":"tears","lit":"eye-water","note":"Plain compound, no ceremony. Kannada saves its ceremony for the phrases around it."}]},{"kn":"ಕೆಂಪಗಾಗು","tr":"kempagāgu","en":"reddens","lit":"to turn red","kids":[{"kn":"ಕಣ್ಣು ಕೆಂಪು","tr":"kaṇṇu kempu","en":"anger about to break","lit":"red eyes","note":"A warning read by everyone in the room. The threat is in the description, not in any word for anger."},{"kn":"ರೋಷ","tr":"rōṣa","en":"fury","lit":"wrath","note":"The literary register — ರೌದ್ರ rasa's everyday cousin."}]},{"kn":"ತಗ್ಗಿಸು","tr":"taggisu","en":"lowers","lit":"to lower","kids":[{"kn":"ಕಣ್ಣು ತಗ್ಗಿಸು","tr":"kaṇṇu taggisu","en":"averting the eyes","lit":"to lower the eyes","note":"The gesture that covers modesty, shyness and guilt without distinguishing them."},{"kn":"ನಾಚಿಕೆ","tr":"nāchike","en":"shyness and shame at once","lit":"bashfulness","note":"A bride's ನಾಚಿಕೆ and a thief's are the same noun. English needs three words and grades them differently; Kannada trusts context completely."}]}]}];
+
+(function(){
+const SVG="http://www.w3.org/2000/svg";
+const cx=400, cy=400;
+const R=[96,186,262,352];               // hub edge, core/mid, mid/leaf, outer
+const FS=[21,14.5,11.8];                // base font size per ring
+const MIX=["100%","var(--mix-mid)","var(--mix-leaf)"];  // share of hue surviving per ring
+const svg=document.getElementById("wheel");
+const detail=document.getElementById("detail");
+const hubWord=document.getElementById("hubWord");
+const hubRom=document.getElementById("hubRom");
+let english=false, pinned=null;
+
+const HUES=["ede","hotte","karulu","manassu","tale","mai","mukha"];
+const totalLeaves=SEATS.reduce((s,c)=>s+c.kids.reduce((t,m)=>t+m.kids.length,0),0);
+const unit=360/totalLeaves;
+
+function pol(a,r){const t=(a-90)*Math.PI/180; return [cx+r*Math.cos(t), cy+r*Math.sin(t)];}
+function arcPath(a0,a1,r0,r1){
+  const large=(a1-a0)>180?1:0;
+  const [x0,y0]=pol(a0,r1),[x1,y1]=pol(a1,r1),[x2,y2]=pol(a1,r0),[x3,y3]=pol(a0,r0);
+  return `M${x0} ${y0}A${r1} ${r1} 0 ${large} 1 ${x1} ${y1}L${x2} ${y2}A${r0} ${r0} 0 ${large} 0 ${x3} ${y3}Z`;
+}
+function el(n,attrs){const e=document.createElementNS(SVG,n); for(const k in attrs) e.setAttribute(k,attrs[k]); return e;}
+
+// ---- build node list with geometry ----
+const nodes=[]; let cursor=0;
+SEATS.forEach((core,ci)=>{
+  core.hue=HUES[ci];
+  const coreLeaves=core.kids.reduce((t,m)=>t+m.kids.length,0);
+  const coreA0=cursor*unit, coreA1=(cursor+coreLeaves)*unit;
+  nodes.push({d:core, ring:0, a0:coreA0, a1:coreA1, hue:core.hue, core:core, path:[core]});
+  core.kids.forEach(mid=>{
+    const midA0=cursor*unit, midA1=(cursor+mid.kids.length)*unit;
+    nodes.push({d:mid, ring:1, a0:midA0, a1:midA1, hue:core.hue, core:core, path:[core,mid]});
+    mid.kids.forEach(leaf=>{
+      nodes.push({d:leaf, ring:2, a0:cursor*unit, a1:(cursor+1)*unit, hue:core.hue, core:core, path:[core,mid,leaf]});
+      cursor++;
+    });
+  });
+});
+
+// ---- render ----
+const gRoot=el("g",{});
+svg.appendChild(el("circle",{cx:cx,cy:cy,r:R[0]-1,fill:"var(--plate)",stroke:"var(--rule)","stroke-width":1}));
+svg.appendChild(gRoot);
+nodes.forEach((n,i)=>{
+  const g=el("g",{class:"seg", tabindex:"0", role:"button"});
+  g.style.animationDelay=(0.18+ (n.a0/360)*0.55 + n.ring*0.05).toFixed(3)+"s";
+  const fill=`color-mix(in oklab, var(--h-${n.hue}) ${MIX[n.ring]}, var(--mixer))`;
+  const p=el("path",{d:arcPath(n.a0,n.a1,R[n.ring],R[n.ring+1]), fill:fill,
+                     stroke:"var(--ground)", "stroke-width":n.ring===2?1:1.6});
+  g.appendChild(p);
+
+  const mid=(n.a0+n.a1)/2, rMid=(R[n.ring]+R[n.ring+1])/2, band=R[n.ring+1]-R[n.ring];
+  const t=el("text",{
+    "text-anchor":"middle","dominant-baseline":"central",
+    "font-size":FS[n.ring], "font-weight":n.ring===0?600:n.ring===1?550:480,
+    fill:n.ring===0?"var(--core-ink)":n.ring===1?"var(--mid-ink)":"var(--leaf-ink)"
+  });
+  if(n.ring===0){
+    // core words run along the arc, which gives them far more room than the radial band
+    const flip = mid>90 && mid<270;
+    const [ax,ay]=pol(flip?n.a1:n.a0, rMid), [bx,by]=pol(flip?n.a0:n.a1, rMid);
+    const id="arc"+i;
+    gRoot.appendChild(el("path",{id:id, d:`M${ax} ${ay}A${rMid} ${rMid} 0 0 ${flip?0:1} ${bx} ${by}`, fill:"none"}));
+    const tp=document.createElementNS(SVG,"textPath");
+    tp.setAttribute("href","#"+id); tp.setAttribute("startOffset","50%");
+    tp.textContent=n.d.kn; t.appendChild(tp);
+    n.tp=tp; n.arcLen=Math.abs(n.a1-n.a0)*Math.PI/180*rMid;
+  } else {
+    let rot=mid-90; if(mid>180) rot+=180;
+    t.setAttribute("transform",`translate(${pol(mid,rMid)[0]} ${pol(mid,rMid)[1]}) rotate(${rot})`);
+    t.textContent=n.d.kn;
+  }
+  g.appendChild(t);
+  g.setAttribute("aria-label",`${n.d.kn}, ${n.d.tr}, ${n.d.en}`);
+  n.g=g; n.text=t; n.band=band;
+  g.addEventListener("pointerenter",()=>{ if(!pinned) activate(n); });
+  g.addEventListener("focus",()=>activate(n));
+  g.addEventListener("click",e=>{ e.stopPropagation(); pinned = (pinned===n)?null:n; activate(n); });
+  gRoot.appendChild(g);
+});
+
+svg.appendChild(el("circle",{cx:cx,cy:cy,r:R[3],fill:"none",stroke:"var(--rule)","stroke-width":1,"pointer-events":"none"}));
+
+function fitLabels(){
+  nodes.forEach(n=>{
+    n.text.setAttribute("font-size",FS[n.ring]);
+    const max = n.ring===0 ? n.arcLen*0.78 : n.band*(n.ring===1?0.82:0.86);
+    let len=0; try{ len=n.text.getComputedTextLength(); }catch(e){ return; }
+    if(len>max) n.text.setAttribute("font-size",Math.max(7.6,FS[n.ring]*max/len).toFixed(2));
+  });
+}
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitLabels);
+requestAnimationFrame(fitLabels); setTimeout(fitLabels,900);
+
+// ---- interaction ----
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function activate(n){
+  svg.classList.add("dimmed");
+  nodes.forEach(o=>o.g.classList.toggle("on", o.core===n.core &&
+    (o.ring===0 || o.path.includes(n.path[1]) || n.ring===0)));
+  hubWord.textContent=n.d.kn; hubRom.textContent=n.d.tr;
+  const crumb=n.path.map((x,i)=> i===n.path.length-1 ? `<b>${esc(x.kn)}</b>` : esc(x.kn)).join(" › ");
+  detail.innerHTML=
+    `<div class="crumb">${crumb}</div>`+
+    `<div class="word">${esc(n.d.kn)}</div>`+
+    `<div class="rom">${esc(n.d.tr)}</div>`+
+    `<div class="src">${["seat","movement","feeling"][n.ring]}</div>`+
+    `<h4>Literally</h4><p class="note">${esc(n.d.lit)}</p>`+
+    `<h4>What it names</h4><p class="note">${esc(n.d.en)}</p>`+
+    (n.d.note?`<h4>Reading</h4><p class="note">${n.d.note}</p>`:"");
+}
+function clear(){
+  if(pinned) return;
+  svg.classList.remove("dimmed");
+  nodes.forEach(o=>o.g.classList.remove("on"));
+  hubWord.textContent="ಒಡಲು"; hubRom.textContent="oḍalu · the body as vessel";
+  detail.innerHTML=`<p class="hint">Hover or tap any segment. The centre ring is where in the body the feeling is sited, the middle ring is what that part does, and the outer ring is the feeling that compound names.</p>`;
+}
+svg.addEventListener("pointerleave",clear);
+document.addEventListener("click",()=>{ if(pinned){ pinned=null; clear(); } });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ pinned=null; clear(); } });
+
+// ---- language toggle ----
+const btn=document.getElementById("langToggle");
+btn.addEventListener("click",()=>{
+  english=!english;
+  btn.setAttribute("aria-pressed",String(english));
+  btn.textContent=english?"ಕನ್ನಡ ತೋರಿಸು":"Show meanings";
+  nodes.forEach(n=>{ (n.tp||n.text).textContent = english?n.d.en:n.d.kn; });
+  fitLabels();
+});
+})();
+
+</script>
+</body>
+</html>
