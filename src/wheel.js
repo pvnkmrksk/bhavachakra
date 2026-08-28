@@ -82,7 +82,7 @@
       n.text = el("text", { "text-anchor": "middle", "dominant-baseline": "central" });
       n.text.textContent = n.d.kn;
       g.appendChild(n.path); g.appendChild(n.text);
-      g.setAttribute("aria-label", `${n.d.kn} — ${n.d.tr} — ${n.d.en}`);
+      g.setAttribute("aria-label", `${n.d.kn}, ${n.d.tr}, ${n.d.en}`);
       n.g = g;
 
       g.addEventListener("pointerenter", () => { setHot(n); if (!held) show(n); });
@@ -166,7 +166,7 @@
       const [px, py] = pol(mid, rMid);
       const band = t.r1 - t.r0;
       const chord = 2 * rMid * Math.sin(((t.a1 - t.a0) / 2) * Math.PI / 180);
-      // upright wherever there is room for it — radial only on the crowded
+      // upright wherever there is room for it: radial only on the crowded
       // outer rings of the whole wheel, where a word has nowhere else to go
       const upright = focus || lv === 0;
       if (upright) {
@@ -219,7 +219,7 @@
   }
 
   /* ------------------------------------------------------ detail panel */
-  const shortEn = s => s.split(/[,;(]|\s—\s/)[0].trim();
+  const shortEn = s => s.split(/[,;(:]/)[0].trim();
 
   function chain(n) { const c = []; for (let x = n; x; x = x.parent) c.unshift(x); return c; }
 
@@ -252,7 +252,7 @@
     return { open: focus ? focus.d.kn : "", sel: held ? chain(held).map(x => x.d.kn) : [] };
   }
 
-  // restore what a link asks for, silently — never bounce the URL back out
+  // restore what a link asks for, silently: never bounce the URL back out
   function apply(open, sel) {
     const o = open ? byName.get(open) : null;
     drill(o || null, true);          // unknown or absent -> back to the whole wheel

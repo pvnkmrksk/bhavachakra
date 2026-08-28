@@ -1,5 +1,5 @@
 """
-wheels.py — read data/words.csv, the one file you edit by hand.
+wheels.py: read data/words.csv, the one file you edit by hand.
 
 Every wheel, ring and word is a row. Hierarchy comes from row order plus the
 `level` column, exactly like an indented outline, so it opens in any

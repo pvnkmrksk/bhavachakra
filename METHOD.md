@@ -12,9 +12,9 @@ GET https://rala-search.rala-search.workers.dev/?q=<english word>
   "results": [ { "kannada", "definition", "type", "source" } ] }
 ```
 
-Calls were made one at a time with 0.35 s between them and without the `X-Rala-Intent: primary` header, so none of this reached rala's own search analytics. [alar.ink](https://alar.ink) was never queried — Alar arrives here only through rala's reversal of it.
+Calls were made one at a time with 0.35 s between them and without the `X-Rala-Intent: primary` header, so none of this reached rala's own search analytics. [alar.ink](https://alar.ink) was never queried: Alar arrives here only through rala's reversal of it.
 
-rala matches whole words against definition text, so a query only finds the exact form the dictionary happens to use: `annoyed` returns nothing, `annoy` returns thirteen entries. [`scripts/rala.py`](scripts/rala.py) fixes this client-side with a morphological expander — 26 suffix rules, longest first, doubled-consonant undo, and one level of recursion so `playfully → playful → play`.
+rala matches whole words against definition text, so a query only finds the exact form the dictionary happens to use: `annoyed` returns nothing, `annoy` returns thirteen entries. [`scripts/rala.py`](scripts/rala.py) fixes this client-side with a morphological expander: 26 suffix rules, longest first, doubled-consonant undo, and one level of recursion so `playfully → playful → play`.
 
 ```
 loneliness  → loneliness, lonely, lone
@@ -23,7 +23,7 @@ victimised  → victimised, victimise, victimize
 stopped     → stopped, stopp, stoppe, stop
 ```
 
-Of the 52 words that first came back empty, morphology alone recovered 38. The last 14 needed hand-picked synonyms — `repelled → repulse`, `boredom → tedium`, `skeptical → sceptic` — which stemming cannot reach, and which is the argument for a thesaurus layer inside the worker rather than in every client.
+Of the 52 words that first came back empty, morphology alone recovered 38. The last 14 needed hand-picked synonyms, `repelled → repulse`, `boredom → tedium`, `skeptical → sceptic`, which stemming cannot reach, and which is the argument for a thesaurus layer inside the worker rather than in every client.
 
 ## What came back, for ಭಾವಚಕ್ರ
 
@@ -34,20 +34,20 @@ Of the 52 words that first came back empty, morphology alone recovered 38. The l
 | `gap` | 12 | no usable entry; the word comes from Kannada usage |
 | | **130** | |
 
-Where rala is excellent: fear, anger and grief. Seven graded fear words, four for doubt, and ತೇಜೋವಧೆ — "the murder of someone's lustre" — for *humiliate*.
+Where rala is excellent: fear, anger and grief. Seven graded fear words, four for doubt, and ತೇಜೋವಧೆ, "the murder of someone's lustre", for *humiliate*.
 
 Where it falls down it falls down structurally, because rala's bulk is Padakanaja, which is administrative, legal, scientific and agricultural:
 
 | query | what rala returned |
 |---|---|
-| `stressed` | ಪ್ರತಿಬಲ — tensile stress, shear stress |
-| `confused` | ತುಕ್ಕುಗೆಂಪು — the confused flour beetle |
-| `let down` | ಹಾಲೊಸರಿಕೆ — milk let-down, the dairy term |
-| `loving` | ನೆರಳು ಪ್ರಿಯ — shade-loving, of plants |
-| `depressed` | ದಲಿತ, ಶೋಷಿತ — from the phrase "depressed classes" |
-| `accepted` | ಅಂಗೀಕೃತ ಟೆಂಡರ್ — accepted tender |
-| `tired` | ದಣಿದ ಮಣ್ಣು — tired soil |
-| `critical` | ಕ್ರಾಂತಿಕೋನ — critical angle |
+| `stressed` | ಪ್ರತಿಬಲ, tensile stress, shear stress |
+| `confused` | ತುಕ್ಕುಗೆಂಪು, the confused flour beetle |
+| `let down` | ಹಾಲೊಸರಿಕೆ, milk let-down, the dairy term |
+| `loving` | ನೆರಳು ಪ್ರಿಯ, shade-loving, of plants |
+| `depressed` | ದಲಿತ, ಶೋಷಿತ, from the phrase "depressed classes" |
+| `accepted` | ಅಂಗೀಕೃತ ಟೆಂಡರ್, accepted tender |
+| `tired` | ದಣಿದ ಮಣ್ಣು, tired soil |
+| `critical` | ಕ್ರಾಂತಿಕೋನ: critical angle |
 | `proud / inspired / boredom / threatened` | nothing at all |
 
 ## Every lookup
@@ -66,7 +66,7 @@ Raw responses are in [`data/rala-responses.json`](data/rala-responses.json), key
 | **ಆಸಕ್ತಿ** | Interested | `direct` | ಆಸಕ್ತಿ ಇರುವ, ಸಂಬಂಧವುಳ್ಳ, ಪಕ್ಷಪಾತದ ⟨interested party⟩ |
 | **ಕುತೂಹಲ** | Curious | `direct` | ಕುತೂಹಲಕಾರಿ, ಕುತೂಹಲವುಳ್ಳ |
 | **ಕೆದಕು** | Inquisitive | `shaped` | ಕೆದಕುವ, ಶೋಧಿಸುವ, ವಿಚಾರಮಾಡುವ |
-| **ಹೆಮ್ಮೆ** | Proud | `gap` | — nothing |
+| **ಹೆಮ್ಮೆ** | Proud | `gap` | nothing |
 | **ಸಾರ್ಥಕ** | Successful | `shaped` | ಯಶಸ್ವಿ, ವಿಜಯಿ, ವಿಜೇತ |
 | **ಆತ್ಮವಿಶ್ವಾಸ** | Confident | `direct` | ವಿಶ್ವಾಸವುಳ್ಳ, ನೆಚ್ಚಿಕೆಯ, ಧೈರ್ಯದ |
 | **ಒಪ್ಪಿಗೆ** | Accepted | `gap` | ಅಂಗೀಕೃತ ಟೆಂಡರ್ ⟨accepted tender⟩, ಅಂಗೀಕೃತ ಠೇವಣಿ ⟨accepted deposit⟩, ಸ್ವೀಕೃತ |
@@ -83,7 +83,7 @@ Raw responses are in [`data/rala-responses.json`](data/rala-responses.json), key
 | **ಸಲಿಗೆ** | Intimate | `direct` | ಸಲಿಗೆ, ಅನ್ಯೋನ್ಯ, ಆತ್ಮೀಯ, ನಿಕಟ |
 | **ಭರವಸೆ** | Optimistic | `direct` | ಆಶಾವಾದದ, ಆಶಾಪೂರ್ಣ |
 | **ಆಸೆ** | Hopeful | `direct` | ಭರವಸೆಯ, ಆಶಾದಾಯಕ |
-| **ಸ್ಫೂರ್ತಿ** | Inspired | `gap` | — nothing |
+| **ಸ್ಫೂರ್ತಿ** | Inspired | `gap` | nothing |
 | **ಅಚ್ಚರಿ** | Surprised | `direct` | ಆಶ್ಚರ್ಯ, ವಿಸ್ಮಯ, ಅನಿರೀಕ್ಷಿತ, ಹಠಾತ್ ತನಿಖೆ ⟨surprise inspection⟩ |
 | **ಬೆಚ್ಚು** | Startled | `direct` | ಚಕಿತಗೊಳಿಸು, ಗಾಬರಿಪಡಿಸು, ಬೆದರಿಸು |
 | **ಆಘಾತ** | Shocked | `direct` | ಆಘಾತ, ದಿಗಿಲುಂಟುಮಾಡು, ವಿದ್ಯುದಾಘಾತ ⟨electric shock⟩ |
@@ -98,7 +98,7 @@ Raw responses are in [`data/rala-responses.json`](data/rala-responses.json), key
 | **ತವಕ** | Eager | `direct` | ತವಕ, ಕಾತರದ, ಉತ್ಸುಕ, ಉತ್ಕಟ |
 | **ಹುರುಪು** | Energetic | `direct` | ಹುರುಪು, ಉತ್ಸಾಹ, ಶಕ್ತಿಯುತವಾದ |
 | **ಬೇಸರ** | Bad | `gap` | ಕೆಟ್ಟ, ದುರ್ವರ್ತನೆ ⟨bad behaviour⟩, ವಸೂಲಾಗದ ಸಾಲ ⟨bad debt⟩, ವೈಮನಸ್ಯ ⟨bad blood⟩ |
-| **ಬೇಜಾರು** | Bored | `gap` | — nothing |
+| **ಬೇಜಾರು** | Bored | `gap` | nothing |
 | **ಉದಾಸೀನ** | Indifferent | `direct` | ಉದಾಸೀನ, ಅಸಡ್ಡೆಯ, ತಟಸ್ಥ |
 | **ಅಸಡ್ಡೆ** | Apathetic | `direct` | ನಿರಾಸಕ್ತ, ಆಸಕ್ತಿಯಿಲ್ಲದ, ಭಾವಶೂನ್ಯ |
 | **ಧಾವಂತ** | Busy | `shaped` | ಕಾರ್ಯಮಗ್ನ, ಬಿಡುವಿಲ್ಲದ, ನಿರತ |
@@ -124,9 +124,9 @@ Raw responses are in [`data/rala-responses.json`](data/rala-responses.json), key
 | **ದಂಡ** | Worthless | `shaped` | ಅಯೋಗ್ಯ |
 | **ಲೆಕ್ಕಕ್ಕಿಲ್ಲ** | Insignificant | `direct` | ಕ್ಷುಲ್ಲಕ, ಅತ್ಯಲ್ಪ, ನಿಕೃಷ್ಟ |
 | **ತಿರಸ್ಕಾರ** | Rejected | `shaped` | ಸೋತ ಅಭ್ಯರ್ಥಿ ⟨rejected candidate⟩, ತಿರಸ್ಕರಿಸತಕ್ಕದ್ದು, ಹಕ್ಕು ಸಾಧನೆಗಳು ⟨rejected claims⟩ |
-| **ಹೊರಗಿಡು** | Excluded | `gap` | — nothing |
+| **ಹೊರಗಿಡು** | Excluded | `gap` | nothing |
 | **ಕಿರುಕುಳ** | Persecuted | `direct` | ಕಿರುಕುಳ ಕೊಡು, ಪೀಡಿಸು, ಹಿಂಸಿಸು |
-| **ಬೆದರಿಕೆ** | Threatened | `gap` | — nothing |
+| **ಬೆದರಿಕೆ** | Threatened | `gap` | nothing |
 | **ನಡುಕ** | Nervous | `shaped` | ನಡುಗುವ, ಅಂಜುಬುರುಕ, ನರವ್ಯೂಹ ⟨nervous system⟩ |
 | **ಬಟಾಬಯಲು** | Exposed | `shaped` | ಗುಟ್ಟುರಟ್ಟಾದ, ಸುರಕ್ಷಣೆ ಇಲ್ಲದ, ಬಹಿರಂಗಗೊಳಿಸಿದ |
 | **ಕೋಪ** | Angry | `direct` | ಕೋಪ, ಸಿಟ್ಟು, ಸಿಡುಕು, ರೋಷ, ಮುನಿಸು, ಕ್ರೋಧ, ತಾಪ |
@@ -189,5 +189,5 @@ Raw responses are in [`data/rala-responses.json`](data/rala-responses.json), key
 
 ## One rendering note
 
-Do not use SVG `<textPath>` for Kannada. It positions each glyph separately along the path, which shatters an akshara into base, vowel sign and ottakshara, each rotated on its own — ಅಸಹ್ಯ came out as three unrelated pieces. Labels on the innermost visible ring are upright and never rotated; the outer rings rotate the whole string as one unit, which is safe.
+Do not use SVG `<textPath>` for Kannada. It positions each glyph separately along the path, which shatters an akshara into base, vowel sign and ottakshara, each rotated on its own: ಅಸಹ್ಯ came out as three unrelated pieces. Labels on the innermost visible ring are upright and never rotated; the outer rings rotate the whole string as one unit, which is safe.
 

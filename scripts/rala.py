@@ -1,5 +1,5 @@
 """
-rala.py — a thin client for the rala English→Kannada API, with the
+rala.py: a thin client for the rala English→Kannada API, with the
 morphological expansion the API does not (yet) do itself.
 
 rala matches whole words against definition text, so it only finds a word in

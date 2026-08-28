@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build.py — assemble the site and the README from data/wheels/*.json.
+build.py: assemble the site and the README from data/wheels/*.json.
 
   data/wheels/{bhava,odalu,rasa}.json
       -> index.html       three wheels behind one slider, no build step at serve time
@@ -37,32 +37,32 @@ WHEELS = [
   "hint": "Tap or hover any segment: the panel names it in both scripts and lists the "
           "words that did not fit. Tap a sector to zoom in, and the middle of the wheel "
           "to come back out.",
-  "blurb": "Seven core feelings, three rings, 130 words. The shape is borrowed — Gloria "
-           "Willcox's Feeling Wheel, the one that circulates as a therapy handout — and the "
+  "blurb": "Seven core feelings, three rings, 130 words. The shape is borrowed from Gloria "
+           "Willcox's Feeling Wheel, the one that circulates as a therapy handout. The "
            "Kannada in it is the word you would reach for out loud, with its close relatives "
            "listed beside it. Open a sector to read it.",
   "aboutTitle": "ಎರವಲಿನ ಆಕಾರ", "aboutLat": "a borrowed shape",
   "about": "Seven cores, a slot called <em>Bad</em>, <em>ashamed</em> kept apart from "
            "<em>guilty</em>: those are English assumptions about where feeling divides. "
-           "Filling them in Kannada is worth doing exactly where the two languages disagree — "
+           "Filling them in Kannada is worth doing exactly where the two languages disagree, "
            "and they disagree often enough that the other two wheels start somewhere else "
            "instead.",
   "cards": [
     {"h": "ಬೇಸರ does the work of four",
-     "p": "Everything the English wheel files under <em>Bad</em> — bored, busy, stressed, "
-          "tired — sits in one Kannada word. ಬೇಸರಾಗಿದೆ can be any of them, and the listener "
+     "p": "Bored, busy, stressed and tired are four separate slots on the English wheel. "
+          "In Kannada they sit in one word. ಬೇಸರಾಗಿದೆ can be any of them, and the listener "
           "works out which from your face."},
     {"h": "Where one word covers two",
      "p": "ನೋವು is bodily pain and hurt feelings without distinction: ಮನಸ್ಸಿಗೆ ನೋವಾಯಿತು, it "
           "hurt my mind, is the ordinary way to say you were wounded. ಚಿಂತೆ is worry and "
           "simply thought. ನಾಚಿಕೆ is shyness, modesty and shame at once."},
     {"h": "Where Kannada has six and a wedge has one",
-     "p": "Fear comes graded — ಅಂಜಿಕೆ, ಹೆದರಿಕೆ, ದಿಗಿಲು, ಗಾಬರಿ, ಆತಂಕ, ಭೀತಿ — and doubt four "
+     "p": "Fear comes graded, ಅಂಜಿಕೆ, ಹೆದರಿಕೆ, ದಿಗಿಲು, ಗಾಬರಿ, ಆತಂಕ, ಭೀತಿ, and doubt four "
           "ways: ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward "
           "uncertainty about a fact, ಅನುಮಾನ is the everyday one. The wheel shows one and "
           "keeps the rest under ಹೀಗೂ ಹೇಳುತ್ತಾರೆ."},
     {"h": "Where the wheel asks for something not there",
-     "p": "<em>Vulnerable</em> in its warm modern sense has no Kannada noun — ದುರ್ಬಲತೆ and "
+     "p": "<em>Vulnerable</em> in its warm modern sense has no Kannada noun: ದುರ್ಬಲತೆ and "
           "ಸುಭೇದ್ಯ mean weak and breachable. Kannada puts it as something you do rather than "
           "something you are: ಮನಸ್ಸು ಬಿಚ್ಚು, to unfold the mind."}]},
 
@@ -70,12 +70,12 @@ WHEELS = [
   "hint": "The centre is where in the body it happens, the middle ring is the feeling, and "
           "the outer ring is what gets said. Tap to zoom in; tap the middle to come back out.",
   "blurb": "Not a translation of anything. Kannada mostly names a feeling by saying "
-           "<em>where in the body it is happening</em> — ಹೊಟ್ಟೆಕಿಚ್ಚು, belly-fire; ಎದೆಗುಂದು, "
+           "<em>where in the body it is happening</em>: ಹೊಟ್ಟೆಕಿಚ್ಚು, belly-fire; ಎದೆಗುಂದು, "
            "the chest sinks; ಕರುಳು ಚುರುಕ್, the gut stings. So the seven seats are the centre, "
            "the feelings you would actually name are the middle ring, and the phrases people "
            "say are the outer one.",
   "aboutTitle": "ಒಡಲು", "aboutLat": "the body as the vessel of feeling",
-  "about": "ಒಡಲು is an old word for the body considered as a container — the thing feeling "
+  "about": "ಒಡಲು is an old word for the body considered as a container: the thing feeling "
            "happens inside. English builds compounds like this too (heartbroken, gutted, "
            "hot-headed) but treats them as figurative colour on top of a real vocabulary. "
            "In Kannada they <em>are</em> the vocabulary, and they are not heard as metaphor: "
@@ -88,27 +88,27 @@ WHEELS = [
           "explains why those particular feelings sit together."},
     {"h": "Words with no English slot",
      "p": "ಮುನಿಸು, the sulk you are only entitled to with someone who loves you. ಸಲಿಗೆ, the "
-          "earned licence to be informal with a person. ಕರುಳ ಬಳ್ಳಿ, the gut-vine — your own "
+          "earned licence to be informal with a person. ಕರುಳ ಬಳ್ಳಿ, the gut-vine: your own "
           "child. ಎದೆ ಝಲ್, the single cold jolt of alarm."},
     {"h": "ಕರುಳು is the strange one",
-     "p": "In Kannada the gut is the organ of kinship — your child is your ಕರುಳ ಬಳ್ಳಿ — so "
+     "p": "In Kannada the gut is the organ of kinship, your child is your ಕರುಳ ಬಳ್ಳಿ, so "
           "every feeling sited there is about your own people. ಕರುಳು ಕಿತ್ತು ಬರು is kept for "
           "the death of a child or a parent, and using it lightly would be shocking."},
     {"h": "What it misses",
      "p": "Feelings with no bodily seat fall off: ಅಭಿಮಾನ, ಹಂಬಲ, ಕೃತಜ್ಞತೆ, ಸಂಭ್ರಮ. Catching "
-          "those needs a second axis — probably direction, since ವಾತ್ಸಲ್ಯ only ever flows "
+          "those needs a second axis: probably direction, since ವಾತ್ಸಲ್ಯ only ever flows "
           "downward, ಗೌರವ upward and ಸಲಿಗೆ sideways."}]},
 
  {"id": "rasa",
   "hint": "The nine rasas are the centre; underneath each one are the words Kannada uses "
           "for that flavour. Tap to zoom in; tap the middle to come back out.",
   "blurb": "The oldest map of feeling this language has, opened out. The nine rasas are an "
-           "aesthetic theory — what an audience can be made to feel — and a thousand years "
+           "aesthetic theory, what an audience can be made to feel, and a thousand years "
            "of Kannada poetry is organised by them. Here each rasa keeps its Sanskrit name, "
            "because that is what everyone calls it, and everything beneath it is the daily "
            "word: ಸಿಟ್ಟು under ರೌದ್ರ, ಬೆರಗು under ಅದ್ಭುತ, ಬೇಸರ under ಬೀಭತ್ಸ.",
   "aboutTitle": "ನವರಸ", "aboutLat": "nine flavours, not nine emotions",
-  "about": "A rasa is not an emotion. It is the flavour an audience tastes — which is why "
+  "about": "A rasa is not an emotion. It is the flavour an audience tastes, which is why "
            "each has a ಸ್ಥಾಯಿಭಾವ, a durable underlying feeling, listed separately in the "
            "panel: ಶೃಂಗಾರ is the flavour, ರತಿ is the feeling. That distinction has no "
            "equivalent in any Western emotion wheel, and it is the reason this map can hold "
@@ -121,17 +121,17 @@ WHEELS = [
           "ತೊಳಸು, ಗತ್ತು, ದಂಗು, ಸೇಡು."},
     {"h": "The two the other wheels lose",
      "p": "ವೀರ, the heroic, and ಶೃಂಗಾರ, the erotic. No English feeling wheel has a slot for "
-          "either. ವೀರ's underlying feeling is not courage but ಉತ್ಸಾಹ, energy — which "
+          "either. ವೀರ's underlying feeling is not courage but ಉತ್ಸಾಹ, energy, which "
           "quietly claims heroism is a kind of enthusiasm."},
     {"h": "ಶಾಂತ, the one they argued about",
      "p": "The ninth rasa was added late and disputed for centuries: can the absence of "
           "agitation be a flavour at all? The English wheel files peace under happiness. The "
-          "rasa tradition insists it is a state of its own, and gives it ಶಮ — quiet — as its "
+          "rasa tradition insists it is a state of its own, and gives it ಶಮ, quiet: as its "
           "durable feeling."},
     {"h": "The colours are not decoration",
      "p": "The Nāṭyaśāstra assigns each rasa a colour, and this wheel follows them: ಶೃಂಗಾರ "
           "śyāma green, ರೌದ್ರ red, ವೀರ wheaten gold, ಭಯಾನಕ black, ಬೀಭತ್ಸ blue, ಅದ್ಭುತ yellow, "
-          "ಕರುಣ dove grey, ಹಾಸ್ಯ and ಶಾಂತ white — the last three shifted just far enough to "
+          "ಕರುಣ dove grey, ಹಾಸ್ಯ and ಶಾಂತ white: the last three shifted just far enough to "
           "stay legible on both a light and a dark ground."}]},
 ]
 
@@ -169,11 +169,11 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Three emotion wheels in Kannada: one translated from the English feeling wheel, one built from the body, one from the nine rasas.">
 <meta property="og:title" content="ಭಾವಚಕ್ರ">
-<meta property="og:description" content="Three emotion wheels in Kannada — from English, from the body, from the nine rasas.">
+<meta property="og:description" content="Three emotion wheels in Kannada: from English, from the body, from the nine rasas.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{SITE}/">
 <link rel="canonical" href="{SITE}/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%239C6E0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E6E9E2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='16'%20fill='%239C6E0C'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='11'%20fill='%2316696E'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='6'%20fill='%23A53426'/%3E%3C/svg%3E">
 {head}
 </head>
 <body>
@@ -205,9 +205,9 @@ BUILT_FROM = {"bhava": "the English feeling wheel, translated and then argued wi
 
 
 def nested(w, out):
-    """Every ring of one wheel as an indented list — readable, and easy to scrape."""
+    """Every ring of one wheel as an indented list: readable, and easy to scrape."""
     for core in w["data"]:
-        head = [f"### {core['kn']} · {core['en']} — *{core['tr']}*"]
+        head = [f"### {core['kn']} · {core['en']} · *{core['tr']}*"]
         if core.get("sthayi"):
             head.append(f"ಸ್ಥಾಯಿಭಾವ · {core['sthayi']}")
         out.append("  \n".join(head) + "\n")
@@ -255,12 +255,12 @@ def build_readme():
         "rasa   2      ಪ್ರೀತಿ     prīti      love                                    ಮಮತೆ|mamate|attachment-love\n```\n")
 
     for w in WHEELS:
-        add(f"## {w['name']} — {BUILT_FROM[w['id']]}\n")
+        add(f"## {w['name']} · {BUILT_FROM[w['id']]}\n")
         add(f"*{w['tag']}*\n")
         nested(w, L)
 
     native = json.loads((DATA / "native.json").read_text(encoding="utf-8"))
-    add("## Appendix — words with nowhere to sit\n")
+    add("## Appendix: words with nowhere to sit\n")
     add("Feelings Kannada names precisely and English can only paraphrase. Most now live "
         "inside one of the wheels; the list is the argument for redrawing a wheel rather "
         "than translating one.\n")
@@ -292,20 +292,20 @@ def build_method():
         "  \"results\": [ { \"kannada\", \"definition\", \"type\", \"source\" } ] }\n```\n")
     add("Calls were made one at a time with 0.35 s between them and without the "
         "`X-Rala-Intent: primary` header, so none of this reached rala's own search "
-        "analytics. [alar.ink](https://alar.ink) was never queried — Alar arrives here only "
+        "analytics. [alar.ink](https://alar.ink) was never queried: Alar arrives here only "
         "through rala's reversal of it.\n")
     add("rala matches whole words against definition text, so a query only finds the exact "
         "form the dictionary happens to use: `annoyed` returns nothing, `annoy` returns "
         "thirteen entries. [`scripts/rala.py`](scripts/rala.py) fixes this client-side with "
-        "a morphological expander — 26 suffix rules, longest first, doubled-consonant undo, "
+        "a morphological expander: 26 suffix rules, longest first, doubled-consonant undo, "
         "and one level of recursion so `playfully → playful → play`.\n")
     add("```\nloneliness  → loneliness, lonely, lone\n"
         "frustrated  → frustrated, frustrat, frustrate\n"
         "victimised  → victimised, victimise, victimize\n"
         "stopped     → stopped, stopp, stoppe, stop\n```\n")
     add("Of the 52 words that first came back empty, morphology alone recovered 38. The last "
-        "14 needed hand-picked synonyms — `repelled → repulse`, `boredom → tedium`, "
-        "`skeptical → sceptic` — which stemming cannot reach, and which is the argument for "
+        "14 needed hand-picked synonyms, `repelled → repulse`, `boredom → tedium`, "
+        "`skeptical → sceptic`, which stemming cannot reach, and which is the argument for "
         "a thesaurus layer inside the worker rather than in every client.\n")
 
     counts = {}
@@ -319,18 +319,18 @@ def build_method():
         add(f"| `{k}` | {counts.get(k,0)} | {label} |")
     add(f"| | **{sum(counts.values())}** | |\n")
     add("Where rala is excellent: fear, anger and grief. Seven graded fear words, four for "
-        "doubt, and ತೇಜೋವಧೆ — \"the murder of someone's lustre\" — for *humiliate*.\n")
+        "doubt, and ತೇಜೋವಧೆ, \"the murder of someone's lustre\", for *humiliate*.\n")
     add("Where it falls down it falls down structurally, because rala's bulk is Padakanaja, "
         "which is administrative, legal, scientific and agricultural:\n")
     add("| query | what rala returned |\n|---|---|")
-    for q, r in [("stressed", "ಪ್ರತಿಬಲ — tensile stress, shear stress"),
-                 ("confused", "ತುಕ್ಕುಗೆಂಪು — the confused flour beetle"),
-                 ("let down", "ಹಾಲೊಸರಿಕೆ — milk let-down, the dairy term"),
-                 ("loving", "ನೆರಳು ಪ್ರಿಯ — shade-loving, of plants"),
-                 ("depressed", "ದಲಿತ, ಶೋಷಿತ — from the phrase \"depressed classes\""),
-                 ("accepted", "ಅಂಗೀಕೃತ ಟೆಂಡರ್ — accepted tender"),
-                 ("tired", "ದಣಿದ ಮಣ್ಣು — tired soil"),
-                 ("critical", "ಕ್ರಾಂತಿಕೋನ — critical angle"),
+    for q, r in [("stressed", "ಪ್ರತಿಬಲ, tensile stress, shear stress"),
+                 ("confused", "ತುಕ್ಕುಗೆಂಪು, the confused flour beetle"),
+                 ("let down", "ಹಾಲೊಸರಿಕೆ, milk let-down, the dairy term"),
+                 ("loving", "ನೆರಳು ಪ್ರಿಯ, shade-loving, of plants"),
+                 ("depressed", "ದಲಿತ, ಶೋಷಿತ, from the phrase \"depressed classes\""),
+                 ("accepted", "ಅಂಗೀಕೃತ ಟೆಂಡರ್, accepted tender"),
+                 ("tired", "ದಣಿದ ಮಣ್ಣು, tired soil"),
+                 ("critical", "ಕ್ರಾಂತಿಕೋನ: critical angle"),
                  ("proud / inspired / boredom / threatened", "nothing at all")]:
         add(f"| `{q}` | {r} |")
     add("")
@@ -341,12 +341,12 @@ def build_method():
     add("| ಕನ್ನಡ | English slot | status | what rala returned |\n|---|---|---|---|")
     for kn, v in SOURCES.get("bhava", {}).items():
         add(f"| **{kn}** | {v['english']} | `{v['status']}` | "
-            f"{', '.join(md(h) for h in v['rala']) or '— nothing'} |")
+            f"{', '.join(md(h) for h in v['rala']) or 'nothing'} |")
     add("")
     add("## One rendering note\n")
     add("Do not use SVG `<textPath>` for Kannada. It positions each glyph separately along "
         "the path, which shatters an akshara into base, vowel sign and ottakshara, each "
-        "rotated on its own — ಅಸಹ್ಯ came out as three unrelated pieces. Labels on the "
+        "rotated on its own: ಅಸಹ್ಯ came out as three unrelated pieces. Labels on the "
         "innermost visible ring are upright and never rotated; the outer rings rotate the "
         "whole string as one unit, which is safe.\n")
     (ROOT / "METHOD.md").write_text("\n".join(L) + "\n", encoding="utf-8")
