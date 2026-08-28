@@ -31,6 +31,8 @@
 
   let gRoot, hubDisc, hubText, nodes = [], wheel = null;
   let english = false, focus = null, held = null, anim = null, hot = null;
+  let byName = new Map();          // kannada -> node, for restoring a shared link
+  let onChange = () => {};
 
   const el = (n, a) => {
     const e = document.createElementNS(SVG, n);
@@ -70,6 +72,8 @@
       });
     })(w.data, 0, null, 0);
 
+    byName = new Map(nodes.map(n => [n.d.kn, n]));   // for restoring a shared link
+
     nodes.forEach(n => {
       const g = el("g", { class: "seg", tabindex: "0", role: "button" });
       n.path = el("path", {
@@ -87,7 +91,8 @@
       g.addEventListener("click", e => {
         e.stopPropagation();
         show(n); held = n;
-        if (!focus) drill(n);                          // open its sector
+        if (!focus) drill(n, true);                    // open its sector
+        onChange();
       });
       gRoot.appendChild(g);
     });
@@ -105,7 +110,7 @@
     svg.appendChild(hubText);
 
     layout(true);
-    reset();
+    reset(true);
   }
 
   /* ------------------------------------------------- geometry per level */
@@ -202,7 +207,7 @@
 
   // there are exactly two states: the whole wheel, or one sector opened out.
   // drilling to a branch would give it 360 degrees to share between two leaves.
-  function drill(n) {
+  function drill(n, quiet) {
     n = sectorOf(n);
     if (focus === n) return;
     focus = n;
@@ -210,6 +215,7 @@
     if (n) backBtn.textContent = `← ${wheel.name}`;
     layout();
     reset();
+    if (!quiet) onChange();
   }
 
   /* ------------------------------------------------------ detail panel */
@@ -241,6 +247,19 @@
       (n.d.note ? `<p class="note">${n.d.note}</p>` : "");
   }
 
+  /* --------------------------------------------- shareable link state */
+  function state() {
+    return { open: focus ? focus.d.kn : "", sel: held ? chain(held).map(x => x.d.kn) : [] };
+  }
+
+  // restore what a link asks for, silently — never bounce the URL back out
+  function apply(open, sel) {
+    const o = open ? byName.get(open) : null;
+    drill(o || null, true);          // unknown or absent -> back to the whole wheel
+    const leaf = sel && sel.length && byName.get(sel[sel.length - 1]);
+    if (leaf) { show(leaf); held = leaf; }
+  }
+
   function setHub(word, rom, en, back) {
     const r = focus ? R_ZOOM[0] : R_FULL[0];
     const room = r * 1.62;                      // chord across the disc, with margin
@@ -270,25 +289,37 @@
     [was, n].forEach(x => { if (x && !anim) draw(x, 1); });
   }
 
-  function reset() {
+  function reset(quiet) {
     held = null; setHot(null);
     svg.classList.remove("dimmed");
     nodes.forEach(o => { o.g.classList.remove("on"); o.g.classList.remove("sel"); });
     if (focus) setHub(focus.d.kn, focus.d.tr, focus.d.en, true);
     else setHub(wheel.hubKn, wheel.hubRom, "", false);
     detail.innerHTML = `<p class="hint">${wheel.hint}</p>`;
+    if (!quiet) onChange();
   }
 
   svg.addEventListener("pointerleave", () => { if (!held) reset(); });
   svg.addEventListener("click", e => { if (e.target === svg) { e.stopPropagation(); drill(null); } });
-  document.addEventListener("click", () => { if (held) reset(); });
+  document.addEventListener("click", e => {
+    // clicking a control, or the panel itself, must not drop the selection
+    if (held && !e.target.closest(".bar, .switcher, .detail, .zoomout")) reset();
+  });
   document.addEventListener("keydown", e => {
     if (e.key !== "Escape") return;
     if (focus) drill(null); else reset();
   });
   backBtn.addEventListener("click", e => { e.stopPropagation(); drill(null); });
 
-  function setLang(v) { english = v; place(focus ? R_ZOOM : R_FULL); reset(); }
+  function setLang(v) {
+    english = v;
+    place(focus ? R_ZOOM : R_FULL);
+    const keep = held;                 // switching script must not lose the word
+    reset(true);
+    if (keep) { show(keep); held = keep; }
+  }
 
-  window.Wheel = { build, setLang, isEnglish: () => english };
+  window.Wheel = { build, setLang, apply, state,
+    isEnglish: () => english,
+    onChange: fn => { onChange = fn; } };
 })();
