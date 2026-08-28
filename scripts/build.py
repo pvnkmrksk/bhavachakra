@@ -30,7 +30,7 @@ DATA, SRC = ROOT / "data", ROOT / "src"
 RINGS = ["core", "branch", "leaf"]
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from wheels import parse, walk          # noqa: E402
+from wheels import load, walk           # noqa: E402
 
 WHEELS = [
  {"id": "bhava",
@@ -139,11 +139,8 @@ WHEELS = [
           "stay legible on both a light and a dark ground."}]},
 ]
 
-for w in WHEELS:
-    src = parse(DATA / f"{w['id']}.md")
-    hub_kn, _, hub_rom = src["hub"].partition("|")
-    w.update(name=src["name"], tag=src["tag"], data=src["data"],
-             hubKn=hub_kn.strip(), hubRom=hub_rom.strip())
+PROSE = {w["id"]: w for w in WHEELS}
+WHEELS = [dict(PROSE[w["id"]], **w) for w in load(DATA / "words.csv")]
 
 SOURCES = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
 
@@ -205,20 +202,6 @@ def build_json():
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-# ----------------------------------------------------------------- words.csv
-def build_csv():
-    with (DATA / "words.csv").open("w", newline="", encoding="utf-8") as f:
-        c = csv.writer(f)
-        c.writerow(["wheel", "ring", "sector", "kannada", "transliteration", "english",
-                    "literal", "also_said", "note"])
-        for w in WHEELS:
-            for ring, sector, n in walk(w["data"]):
-                c.writerow([w["id"], RINGS[ring], sector, n["kn"], n["tr"], n["en"],
-                            n.get("lit", ""),
-                            " ; ".join(f"{a['kn']} ({a['en']})" for a in n.get("also") or []),
-                            re.sub(r"</?(?:i|em)>", "", n.get("note", ""))])
-
-
 # ------------------------------------------------------- README + METHOD
 BUILT_FROM = {"bhava": "the English feeling wheel, translated and then argued with",
        "odalu": "the part of the body Kannada sites each feeling in",
@@ -263,19 +246,17 @@ def build_readme():
     for w in WHEELS:
         add(f"| **{w['name']}** `{w['id']}` | {BUILT_FROM[w['id']]} | {sum(1 for _ in walk(w['data']))} |")
     add("")
-    add("**The words live in [`data/bhava.md`](data/bhava.md), "
-        "[`data/odalu.md`](data/odalu.md) and [`data/rasa.md`](data/rasa.md)** — plain "
-        "indented lists, meant to be edited by hand. Everything else in this repository is "
-        "generated from them by `python3 scripts/build.py`: the site, this README, "
-        "[`data/wheels.json`](data/wheels.json) and [`data/words.csv`](data/words.csv). "
-        "How the words were found, and what the dictionary returned for each one, is in "
-        "[METHOD.md](METHOD.md).\n")
-    add("```\n- ಶೃಂಗಾರ | śṛṅgāra | love, the erotic\n"
-        "  sthayi: ರತಿ · rati, desire\n"
-        "  note: prose about the word\n"
-        "  - ಒಲವು | olavu | fondness\n"
-        "    - ಪ್ರೀತಿ | prīti | love\n"
-        "      also: ಮಮತೆ | mamate | attachment-love ;; ಅಕ್ಕರೆ | akkare | fondness\n```\n")
+    add("**Everything lives in one file: [`data/words.csv`](data/words.csv).** One row per "
+        "word, hierarchy from the `level` column and row order, exactly like an indented "
+        "outline. Edit it in a spreadsheet or a text editor, run "
+        "`python3 scripts/build.py`, and the site, this README and "
+        "[`data/wheels.json`](data/wheels.json) all follow. Nothing else needs touching. "
+        "How the words were found is in [METHOD.md](METHOD.md).\n")
+    add("```\nwheel  level  kannada  roman      english           literal  sthayi  also  note\n"
+        "rasa   wheel  ರಸಚಕ್ರ    nava-rasa  <caption>         ನವರಸ\n"
+        "rasa   0      ಶೃಂಗಾರ    śṛṅgāra    love, the erotic           ರತಿ · rati\n"
+        "rasa   1      ಒಲವು      olavu      fondness\n"
+        "rasa   2      ಪ್ರೀತಿ     prīti      love                                    ಮಮತೆ|mamate|attachment-love\n```\n")
 
     for w in WHEELS:
         add(f"## {w['name']} — {BUILT_FROM[w['id']]}\n")
@@ -378,7 +359,6 @@ def build_method():
 
 if __name__ == "__main__":
     h = build_html()
-    build_csv()
     build_json()
     r = build_readme()
     m = build_method()

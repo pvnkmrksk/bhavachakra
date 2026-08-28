@@ -15,10 +15,14 @@
 (function () {
   const SVG = "http://www.w3.org/2000/svg";
   const CX = 400, CY = 400;
-  const R_FULL = [96, 186, 262, 352];   // whole wheel: core, branch, leaf
-  const R_ZOOM = [136, 244, 352];       // one sector: branch, leaf
-  const FS_FULL = [20, 14.5, 11.8];
-  const FS_ZOOM = [19, 14];
+  const R_FULL = [96, 186, 262, 352];   // whole wheel: sector, branch, leaf
+  const R_ZOOM = [140, 250, 352];       // one sector opened out: branch, leaf
+  const FS_FULL = [21, 15, 12];
+  const FS_ZOOM = [26, 17];
+  // a ring keeps the colour it has on the whole wheel, so opening a sector does
+  // not recolour it: mix by the word's real depth, never by where it is drawn
+  const MIX = ["100%", "var(--mix-mid)", "var(--mix-leaf)"];
+  const INK = ["var(--core-ink)", "var(--mid-ink)", "var(--leaf-ink)"];
   const EASE = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
   const svg = document.getElementById("wheel");
@@ -26,7 +30,7 @@
   const backBtn = document.getElementById("zoomOut");
 
   let gRoot, hubDisc, hubText, nodes = [], wheel = null;
-  let english = false, focus = null, held = null, anim = null;
+  let english = false, focus = null, held = null, anim = null, hot = null;
 
   const el = (n, a) => {
     const e = document.createElementNS(SVG, n);
@@ -68,7 +72,8 @@
 
     nodes.forEach(n => {
       const g = el("g", { class: "seg", tabindex: "0", role: "button" });
-      n.path = el("path", { fill: `var(--${w.id}-${n.sector})`,
+      n.path = el("path", {
+        fill: `color-mix(in oklab, var(--${w.id}-${n.sector}) ${MIX[n.depth]}, var(--mixer))`,
         stroke: "var(--ground)", "stroke-width": 1.4, "vector-effect": "non-scaling-stroke" });
       n.text = el("text", { "text-anchor": "middle", "dominant-baseline": "central" });
       n.text.textContent = n.d.kn;
@@ -76,7 +81,8 @@
       g.setAttribute("aria-label", `${n.d.kn} — ${n.d.tr} — ${n.d.en}`);
       n.g = g;
 
-      g.addEventListener("pointerenter", () => { if (!held) show(n); });
+      g.addEventListener("pointerenter", () => { setHot(n); if (!held) show(n); });
+      g.addEventListener("pointerleave", () => { if (hot === n) setHot(null); });
       g.addEventListener("focus", () => show(n));
       g.addEventListener("click", e => {
         e.stopPropagation();
@@ -137,7 +143,8 @@
       r0: c.r0 + (t.r0 - c.r0) * f, r1: c.r1 + (t.r1 - c.r1) * f,
       o: c.o + (t.o - c.o) * f
     };
-    n.path.setAttribute("d", arc(g.a0, g.a1, g.r0, g.r1));
+    const lift = n === hot ? 4 : 0;
+    n.path.setAttribute("d", arc(g.a0, g.a1, g.r0, g.r1 + lift * g.o));
     n.g.style.opacity = g.o;
     n.g.style.pointerEvents = g.o > .5 ? "auto" : "none";
     return g;
@@ -154,20 +161,22 @@
       const [px, py] = pol(mid, rMid);
       const band = t.r1 - t.r0;
       const chord = 2 * rMid * Math.sin(((t.a1 - t.a0) / 2) * Math.PI / 180);
-      if (lv === 0) {                    // innermost visible ring: never rotated
+      // upright wherever there is room for it — radial only on the crowded
+      // outer rings of the whole wheel, where a word has nowhere else to go
+      const upright = focus || lv === 0;
+      if (upright) {
         n.text.setAttribute("x", px); n.text.setAttribute("y", py);
         n.text.removeAttribute("transform");
-        n.room = Math.min(band, chord) * .88;
+        n.room = Math.min(band, chord) * .9;
       } else {
         let rot = mid - 90; if (mid > 180) rot += 180;
         n.text.removeAttribute("x"); n.text.removeAttribute("y");
         n.text.setAttribute("transform", `translate(${px} ${py}) rotate(${rot})`);
-        n.room = band * .84;
+        n.room = band * .86;
       }
       n.text.setAttribute("font-size", fs[lv]);
-      n.text.setAttribute("font-weight", lv === 0 ? 600 : 500);
-      n.text.setAttribute("fill", lv === 0 ? "var(--core-ink)"
-        : lv === 1 && !focus ? "var(--mid-ink)" : "var(--leaf-ink)");
+      n.text.setAttribute("font-weight", n.depth === 0 ? 600 : 500);
+      n.text.setAttribute("fill", INK[n.depth]);
       let len = 0;
       try { len = n.text.getComputedTextLength(); } catch (e) { return; }
       if (len > n.room)
@@ -216,7 +225,7 @@
         (line.length === 1 || chain(o).includes(line[1]) || o.depth < line.length - 1));
       o.g.classList.toggle("sel", o === n);
     });
-    setHub(n.d.kn, n.d.tr, n.d.en, focus ? "← ಹಿಂದೆ · back" : "");
+    setHub(n.d.kn, n.d.tr, n.d.en, !!focus);
     detail.innerHTML =
       `<div class="crumb">${line.map((x, i) => i === line.length - 1
         ? `<b>${esc(x.d.kn)}</b>`
@@ -240,7 +249,7 @@
       { t: word, size: 34, y: en ? -20 : -6, cls: "hw" },
       { t: rom,  size: 15, y: en ? 6 : 18,   cls: "hr" },
       { t: en,   size: 16, y: 28,            cls: "he" },
-      { t: back, size: 13, y: 52,            cls: "hb" }
+      { t: back ? "\u2190" : "", size: 22, y: 56, cls: "hb" }
     ];
     rows.forEach(row => {
       if (!row.t) return;
@@ -254,12 +263,19 @@
     });
   }
 
+  // one cheap redraw of just the two wedges whose lift changed
+  function setHot(n) {
+    if (hot === n) return;
+    const was = hot; hot = n;
+    [was, n].forEach(x => { if (x && !anim) draw(x, 1); });
+  }
+
   function reset() {
-    held = null;
+    held = null; setHot(null);
     svg.classList.remove("dimmed");
     nodes.forEach(o => { o.g.classList.remove("on"); o.g.classList.remove("sel"); });
-    if (focus) setHub(focus.d.kn, focus.d.tr, focus.d.en, "← ಹಿಂದೆ · back");
-    else setHub(wheel.hubKn, wheel.hubRom, "", "");
+    if (focus) setHub(focus.d.kn, focus.d.tr, focus.d.en, true);
+    else setHub(wheel.hubKn, wheel.hubRom, "", false);
     detail.innerHTML = `<p class="hint">${wheel.hint}</p>`;
   }
 

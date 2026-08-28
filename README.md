@@ -10,15 +10,14 @@
 | **ಒಡಲ ಚಕ್ರ** `odalu` | the part of the body Kannada sites each feeling in | 106 |
 | **ರಸಚಕ್ರ** `rasa` | the nine rasas of the Nāṭyaśāstra, opened out into daily Kannada | 117 |
 
-**The words live in [`data/bhava.md`](data/bhava.md), [`data/odalu.md`](data/odalu.md) and [`data/rasa.md`](data/rasa.md)** — plain indented lists, meant to be edited by hand. Everything else in this repository is generated from them by `python3 scripts/build.py`: the site, this README, [`data/wheels.json`](data/wheels.json) and [`data/words.csv`](data/words.csv). How the words were found, and what the dictionary returned for each one, is in [METHOD.md](METHOD.md).
+**Everything lives in one file: [`data/words.csv`](data/words.csv).** One row per word, hierarchy from the `level` column and row order, exactly like an indented outline. Edit it in a spreadsheet or a text editor, run `python3 scripts/build.py`, and the site, this README and [`data/wheels.json`](data/wheels.json) all follow. Nothing else needs touching. How the words were found is in [METHOD.md](METHOD.md).
 
 ```
-- ಶೃಂಗಾರ | śṛṅgāra | love, the erotic
-  sthayi: ರತಿ · rati, desire
-  note: prose about the word
-  - ಒಲವು | olavu | fondness
-    - ಪ್ರೀತಿ | prīti | love
-      also: ಮಮತೆ | mamate | attachment-love ;; ಅಕ್ಕರೆ | akkare | fondness
+wheel  level  kannada  roman      english           literal  sthayi  also  note
+rasa   wheel  ರಸಚಕ್ರ    nava-rasa  <caption>         ನವರಸ
+rasa   0      ಶೃಂಗಾರ    śṛṅgāra    love, the erotic           ರತಿ · rati
+rasa   1      ಒಲವು      olavu      fondness
+rasa   2      ಪ್ರೀತಿ     prīti      love                                    ಮಮತೆ|mamate|attachment-love
 ```
 
 ## ಭಾವಚಕ್ರ — the English feeling wheel, translated and then argued with
