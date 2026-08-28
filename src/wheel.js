@@ -90,8 +90,8 @@
       g.addEventListener("focus", () => show(n));
       g.addEventListener("click", e => {
         e.stopPropagation();
-        show(n); held = n;
-        if (!focus) drill(n, true);                    // open its sector
+        if (!focus) drill(n, true);   // open the sector first: drilling resets
+        show(n); held = n;            // ...then keep the word that was tapped
         onChange();
       });
       gRoot.appendChild(g);

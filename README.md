@@ -256,6 +256,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
   - **ಟೀಕೆ** · *ṭīke* · Critical
     - Physics and statistics, mostly. ಟೀಕೆ is fault-finding; ವಿಮರ್ಶೆ, also in the list, is the honourable kind — literary criticism. Kannada distinguishes the two, English does not.
     - **ಅನುಮಾನ** · *anumāna* · Skeptical
+      - also said: **ಶಂಕೆ** *śaṅke* misgiving with fear in it, **ಸಂಶಯ** *saṁśaya* suspicion of a person, **ಸಂದೇಹ** *sandēha* uncertainty about a fact
       - Four graded words for doubt. ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward uncertainty about a fact.
     - **ಉಡಾಫೆ** · *uḍāphe* · Dismissive
       - ಉಡಾಫೆ is dismissiveness worn as a style — breezy, unbothered, faintly insulting. ಅಸಡ್ಡೆ and ತಾತ್ಸಾರ are the colder cousins.
@@ -801,6 +802,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
     - **ಹಿಂಜರಿಕೆ** · *hiñjarike* · hesitation
       - To slide backwards — the foot that starts to move and then does not.
     - **ಅನುಮಾನ** · *anumāna* · doubt
+      - also said: **ಶಂಕೆ** *śaṅke* misgiving with fear in it, **ಸಂಶಯ** *saṁśaya* suspicion of a person, **ಸಂದೇಹ** *sandēha* uncertainty about a fact
       - One of four graded doubt words. ಶಂಕೆ leans to fear, ಸಂಶಯ to suspicion of a person, ಸಂದೇಹ to uncertainty about a fact.
 
 ### ಬೀಭತ್ಸ · disgust, the odious — *bībhatsa*  

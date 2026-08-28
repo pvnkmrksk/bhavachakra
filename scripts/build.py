@@ -37,38 +37,34 @@ WHEELS = [
   "hint": "Tap or hover any segment: the panel names it in both scripts and lists the "
           "words that did not fit. Tap a sector to zoom in, and the middle of the wheel "
           "to come back out.",
-  "blurb": "The English feeling wheel, taken through a Kannada dictionary and then argued "
-           "with. Seven core feelings, three rings, 130 words. Where the dictionary was "
-           "right it was kept; where it answered in the register of a government circular "
-           "it was replaced with what a Kannada speaker would actually say — "
-           "<em>ನೆಮ್ಮದಿ</em> and not ಶಾಂತಿ, <em>ಹೊಟ್ಟೆಕಿಚ್ಚು</em> and not ಅಸೂಯೆ.",
+  "blurb": "Seven core feelings, three rings, 130 words. The shape is borrowed — Gloria "
+           "Willcox's Feeling Wheel, the one that circulates as a therapy handout — and the "
+           "Kannada in it is the word you would reach for out loud, with its close relatives "
+           "listed beside it. Open a sector to read it.",
   "aboutTitle": "ಎರವಲಿನ ಆಕಾರ", "aboutLat": "a borrowed shape",
-  "about": "This wheel's structure is not Kannada. It is Gloria Willcox's Feeling Wheel and "
-           "its widely circulated three-ring descendant, which is an English object with "
-           "English assumptions — seven cores, a slot called <em>Bad</em>, a distinction "
-           "between <em>guilty</em> and <em>ashamed</em>. Filling it in Kannada is worth "
-           "doing precisely because the seams show, and the seams are the interesting part.",
+  "about": "Seven cores, a slot called <em>Bad</em>, <em>ashamed</em> kept apart from "
+           "<em>guilty</em>: those are English assumptions about where feeling divides. "
+           "Filling them in Kannada is worth doing exactly where the two languages disagree — "
+           "and they disagree often enough that the other two wheels start somewhere else "
+           "instead.",
   "cards": [
-    {"h": "Where it fits badly",
-     "p": "There is no Kannada feeling called <em>ಕೆಟ್ಟ</em>. But everything the English wheel "
-          "files under <em>Bad</em> — bored, busy, stressed, tired — is one Kannada word, "
-          "ಬೇಸರ. English needs four words to circle what Kannada says in one."},
-    {"h": "Words with no slot",
-     "p": "ಒಪ್ಪಿಗೆ and ತಿರಸ್ಕಾರ describe what somebody did to you; Kannada gives no noun for "
-          "the receiving end. ದುರ್ಬಲತೆ is the only word available for <em>vulnerable</em>, "
-          "and it is an insult. Neither gap is a failure of the language — they are places "
-          "the English wheel assumed something Kannada does not."},
-    {"h": "Register, not correctness",
-     "p": "Almost every change here was a register change, not a correction. ಅಸೂಯೆ, ರೋಷ, "
-          "ವಿಸ್ಮಯ and ಆಶಾವಾದ are all in use; the wheel simply shows the shorter, warmer "
-          "member of each set — ಹೊಟ್ಟೆಕಿಚ್ಚು, ರೊಚ್ಚು, ದಂಗು, ಭರವಸೆ — and keeps the rest under "
-          "<em>ಹೀಗೂ ಹೇಳುತ್ತಾರೆ</em> in the panel. A wheel has room for one word; a language "
-          "does not work that way."},
-    {"h": "The evidence",
-     "p": "Every word here was looked up in rala first, and the full record — what the "
-          "dictionary returned, what was kept, what was overruled and why — is in the "
-          "<a href='https://github.com/pvnkmrksk/bhavachakra#readme'>README</a>. It is "
-          "diagnostics, and it belongs there rather than here."}]},
+    {"h": "ಬೇಸರ does the work of four",
+     "p": "Everything the English wheel files under <em>Bad</em> — bored, busy, stressed, "
+          "tired — sits in one Kannada word. ಬೇಸರಾಗಿದೆ can be any of them, and the listener "
+          "works out which from your face."},
+    {"h": "Where one word covers two",
+     "p": "ನೋವು is bodily pain and hurt feelings without distinction: ಮನಸ್ಸಿಗೆ ನೋವಾಯಿತು, it "
+          "hurt my mind, is the ordinary way to say you were wounded. ಚಿಂತೆ is worry and "
+          "simply thought. ನಾಚಿಕೆ is shyness, modesty and shame at once."},
+    {"h": "Where Kannada has six and a wedge has one",
+     "p": "Fear comes graded — ಅಂಜಿಕೆ, ಹೆದರಿಕೆ, ದಿಗಿಲು, ಗಾಬರಿ, ಆತಂಕ, ಭೀತಿ — and doubt four "
+          "ways: ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward "
+          "uncertainty about a fact, ಅನುಮಾನ is the everyday one. The wheel shows one and "
+          "keeps the rest under ಹೀಗೂ ಹೇಳುತ್ತಾರೆ."},
+    {"h": "Where the wheel asks for something not there",
+     "p": "<em>Vulnerable</em> in its warm modern sense has no Kannada noun — ದುರ್ಬಲತೆ and "
+          "ಸುಭೇದ್ಯ mean weak and breachable. Kannada puts it as something you do rather than "
+          "something you are: ಮನಸ್ಸು ಬಿಚ್ಚು, to unfold the mind."}]},
 
  {"id": "odalu",
   "hint": "The centre is where in the body it happens, the middle ring is the feeling, and "
@@ -90,10 +86,10 @@ WHEELS = [
      "p": "The seat is the grouping, but the ring you actually read is the middle one, and "
           "it holds ordinary feeling-names: ಧೈರ್ಯ, ಹೆಮ್ಮೆ, ಚಿಂತೆ, ಮುನಿಸು, ನೆಮ್ಮದಿ. The body "
           "explains why those particular feelings sit together."},
-    {"h": "What it holds that the first wheel could not",
+    {"h": "Words with no English slot",
      "p": "ಮುನಿಸು, the sulk you are only entitled to with someone who loves you. ಸಲಿಗೆ, the "
-          "earned licence to be informal. ಕರುಳ ಬಳ್ಳಿ, the gut-vine. ಎದೆ ಝಲ್, the single cold "
-          "jolt. None of them had an English slot to sit in."},
+          "earned licence to be informal with a person. ಕರುಳ ಬಳ್ಳಿ, the gut-vine — your own "
+          "child. ಎದೆ ಝಲ್, the single cold jolt of alarm."},
     {"h": "ಕರುಳು is the strange one",
      "p": "In Kannada the gut is the organ of kinship — your child is your ಕರುಳ ಬಳ್ಳಿ — so "
           "every feeling sited there is about your own people. ಕರುಳು ಕಿತ್ತು ಬರು is kept for "

@@ -96,7 +96,7 @@ bhava,1,ಬಿಗುಮಾನ,bigumāna,Distant,,,,Stiffness held on purpose —
 bhava,2,ಮುದುಡು,muduḍu,Withdrawn,,,,What a leaf or a touched mimosa does — to fold inward. Exactly right for a person.
 bhava,2,ಮರಗಟ್ಟು,maragaṭṭu,Numb,,,,ಮರ + ಕಟ್ಟು: to turn to wood. Used for a foot that has gone to sleep and for a grief that has stopped registering.
 bhava,1,ಟೀಕೆ,ṭīke,Critical,,,,"Physics and statistics, mostly. ಟೀಕೆ is fault-finding; ವಿಮರ್ಶೆ, also in the list, is the honourable kind — literary criticism. Kannada distinguishes the two, English does not."
-bhava,2,ಅನುಮಾನ,anumāna,Skeptical,,,,"Four graded words for doubt. ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward uncertainty about a fact."
+bhava,2,ಅನುಮಾನ,anumāna,Skeptical,,,ಶಂಕೆ|śaṅke|misgiving with fear in it ;; ಸಂಶಯ|saṁśaya|suspicion of a person ;; ಸಂದೇಹ|sandēha|uncertainty about a fact,"Four graded words for doubt. ಶಂಕೆ leans toward fear, ಸಂಶಯ toward suspicion of a person, ಸಂದೇಹ toward uncertainty about a fact."
 bhava,2,ಉಡಾಫೆ,uḍāphe,Dismissive,,,,"ಉಡಾಫೆ is dismissiveness worn as a style — breezy, unbothered, faintly insulting. ಅಸಡ್ಡೆ and ತಾತ್ಸಾರ are the colder cousins."
 bhava,0,ಅಸಹ್ಯ,asahya,Disgusted,,,"ಜಿಗುಪ್ಸೆ|jigupse|world-weary revulsion ;; ಜುಗುಪ್ಸೆ|jugupse|the same, other spelling ;; ಹೇಸಿಗೆ|hēsige|filth, loathing ;; ರೋಸು|rōsu|fed up to nausea ;; ವಾಕರಿಕೆ|vākarike|nausea",ಅಸಹ್ಯ literally means 'unbearable' — what cannot be borne. Kannada files disgust under endurance rather than under taste.
 bhava,1,ಒಪ್ಪದಿರು,oppadiru,Disapproving,,,ಅಸಮ್ಮತಿ|asammati|dissent ;; ಮೆಚ್ಚದಿರು|meccadiru|to not approve ;; ಆಕ್ಷೇಪ|ākṣēpa|objection,Kannada's ordinary form here is the plain negative verb: they did not agree.
@@ -315,7 +315,7 @@ rasa,2,ಬೆಚ್ಚು,beccu,a startle,,,,ಬೆಚ್ಚಿಬೀಳು — 
 rasa,2,ನಡುಕ,naḍuka,the tremble,,,,"The body named, the feeling left to be inferred."
 rasa,1,ಅಳುಕು,aḷuku,misgiving,,,"ಅಭದ್ರತೆ|abhadrate|insecurity, of a thing unguarded ;; ಹಿಂಜರಿಕೆ|hiñjarike|hesitation ;; ಶಂಕೆ|śaṅke|misgiving with fear in it","The small inward flinch before you do the thing anyway. ಅಭದ್ರತೆ carries the other sense of <i>insecure</i> — physically unguarded, a word for buildings and borders."
 rasa,2,ಹಿಂಜರಿಕೆ,hiñjarike,hesitation,,,,To slide backwards — the foot that starts to move and then does not.
-rasa,2,ಅನುಮಾನ,anumāna,doubt,,,,"One of four graded doubt words. ಶಂಕೆ leans to fear, ಸಂಶಯ to suspicion of a person, ಸಂದೇಹ to uncertainty about a fact."
+rasa,2,ಅನುಮಾನ,anumāna,doubt,,,ಶಂಕೆ|śaṅke|misgiving with fear in it ;; ಸಂಶಯ|saṁśaya|suspicion of a person ;; ಸಂದೇಹ|sandēha|uncertainty about a fact,"One of four graded doubt words. ಶಂಕೆ leans to fear, ಸಂಶಯ to suspicion of a person, ಸಂದೇಹ to uncertainty about a fact."
 rasa,0,ಬೀಭತ್ಸ,bībhatsa,"disgust, the odious",,"ಜುಗುಪ್ಸೆ · jugupse, revulsion",,The rasa nobody wants and every tradition keeps. Kannada files disgust under endurance — ಅಸಹ್ಯ literally means what cannot be borne.
 rasa,1,ಅಸಹ್ಯ,asahya,disgust,,,"ಜಿಗುಪ್ಸೆ|jigupse|world-weary revulsion ;; ಜುಗುಪ್ಸೆ|jugupse|the same, other spelling ;; ಹೇಸಿಗೆ|hēsige|filth, loathing ;; ರೋಸು|rōsu|fed up to nausea ;; ವಾಕರಿಕೆ|vākarike|nausea","'Unbearable.' The daily word, used for a smell and for a politician with equal ease."
 rasa,2,ಹೇಸಿಗೆ,hēsige,"filth, loathing",,,ಅಸಹ್ಯ|asahya|disgust ;; ಕೊಳಕು|koḷaku|dirt ;; ಜುಗುಪ್ಸೆ|jugupse|revulsion,Also literally filth. The moral and the physical are one word — no metaphor required.
