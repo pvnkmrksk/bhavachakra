@@ -16,7 +16,7 @@
   <a href="https://bhava.kutuhula.in/#w=rasa"><img src="assets/rasa.png" width="32%" alt="ರಸಚಕ್ರ, the nine rasas opened out"></a>
 </p>
 
-*Full size: [ಭಾವಚಕ್ರ](assets/bhava.png) · [ಒಡಲ ಚಕ್ರ](assets/odalu.png) · [ರಸಚಕ್ರ](assets/rasa.png). As vector: [bhava.svg](assets/bhava.svg) · [odalu.svg](assets/odalu.svg) · [rasa.svg](assets/rasa.svg). CC BY-SA 4.0, the same as the text, so they can go on Wikipedia. Regenerate them with [`scripts/export_wheels.js`](scripts/export_wheels.js) and [`scripts/export_wheels.sh`](scripts/export_wheels.sh).*
+*Full size: [ಭಾವಚಕ್ರ](assets/bhava.png) · [ಒಡಲ ಚಕ್ರ](assets/odalu.png) · [ರಸಚಕ್ರ](assets/rasa.png). As vector: [bhava.svg](assets/bhava.svg) · [odalu.svg](assets/odalu.svg) · [rasa.svg](assets/rasa.svg). The page and the drawing code are MIT; the words they draw come from `data/`, which is ODC-ODbL, derived from Alar via rala. An image made from an ODbL database is a Produced Work, so you may put it out under a licence of your choosing as long as the ODbL attribution travels with it — worth settling deliberately before any upload to Wikimedia Commons, which does not itself accept ODbL for media. See [LICENSE](LICENSE). Regenerate them with [`scripts/export_wheels.js`](scripts/export_wheels.js) and [`scripts/export_wheels.sh`](scripts/export_wheels.sh).*
 
 **Everything lives in one file: [`data/words.csv`](data/words.csv).** One row per word, hierarchy from the `level` column and row order, exactly like an indented outline. Edit it in a spreadsheet or a text editor, commit, and push: [the build workflow](.github/workflows/build.yml) runs `scripts/build.py` and commits the rebuilt site back, so the CSV is the only file you ever touch. How the words were found is in [METHOD.md](METHOD.md).
 

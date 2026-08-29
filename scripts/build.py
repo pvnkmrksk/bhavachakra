@@ -293,7 +293,12 @@ def build_readme():
     add("*Full size: [ಭಾವಚಕ್ರ](assets/bhava.png) · [ಒಡಲ ಚಕ್ರ](assets/odalu.png) · "
         "[ರಸಚಕ್ರ](assets/rasa.png). As vector: [bhava.svg](assets/bhava.svg) · "
         "[odalu.svg](assets/odalu.svg) · [rasa.svg](assets/rasa.svg). "
-        "CC BY-SA 4.0, the same as the text, so they can go on Wikipedia. "
+        "The page and the drawing code are MIT; the words they draw come from "
+        "`data/`, which is ODC-ODbL, derived from Alar via rala. An image made "
+        "from an ODbL database is a Produced Work, so you may put it out under a "
+        "licence of your choosing as long as the ODbL attribution travels with it "
+        "\u2014 worth settling deliberately before any upload to Wikimedia Commons, "
+        "which does not itself accept ODbL for media. See [LICENSE](LICENSE). "
         "Regenerate them with [`scripts/export_wheels.js`](scripts/export_wheels.js) "
         "and [`scripts/export_wheels.sh`](scripts/export_wheels.sh).*\n")
 
