@@ -1,0 +1,91 @@
+# bhava-log
+
+A counter for [ಭಾವಚಕ್ರ](https://bhava.kutuhula.in). One Cloudflare Worker, one
+D1 table, no third party.
+
+The question it exists to answer is not *how many people looked at ಕರುಣ* but
+*where did they come from, and where did they go next*. A pile of view counts
+cannot tell you that readers reach ವಿರಹ from ಪ್ರೀತಿ rather than from ಶೃಂಗಾರ.
+So every selection records the word before it and how long the reader stayed
+there, which turns the log into a graph of moves.
+
+## What is stored
+
+| column | |
+|---|---|
+| `aid` | a random uuid kept in the reader's own localStorage |
+| `sid` | one visit; new on every page load |
+| `ev` | `open` · `sel` · `drill` · `play` · `listen` · `lang` |
+| `wheel`, `word` | which wheel, which word |
+| `prev` | for `sel`, the word they came from |
+| `ms` | dwell on `prev`, or milliseconds of song that actually sounded |
+| `yt` | the song, when one played |
+
+Not stored: IP, user agent, referrer, country, or anything typed. No cookies.
+Readers who send Do Not Track or Global Privacy Control are not counted at
+all, and `localStorage['bhava.notrack'] = 1` opts out by hand.
+
+## Deploy
+
+```sh
+cd worker
+npx wrangler d1 create bhava-log          # paste the id into wrangler.toml
+npx wrangler d1 execute bhava-log --remote --file=schema.sql
+npx wrangler deploy
+npx wrangler secret put STATS_KEY         # optional, opens /stats
+```
+
+Then put the deployed URL into `ENDPOINT` at the top of
+[`src/track.js`](../src/track.js) and push. Until that line is filled in the
+tracker is inert: nothing is sent, and no id is even minted.
+
+## Reading it
+
+`GET /stats?key=…&days=30` returns the aggregates below as JSON. Or ask D1
+directly:
+
+```sh
+npx wrangler d1 execute bhava-log --remote --command "..."
+```
+
+**The words people actually open**
+
+```sql
+SELECT wheel, word, COUNT(*) opens, COUNT(DISTINCT aid) people
+  FROM events WHERE ev='sel' GROUP BY wheel, word ORDER BY opens DESC LIMIT 30;
+```
+
+**How they move: the edges of the graph**
+
+```sql
+SELECT wheel, prev AS from_word, word AS to_word, COUNT(*) n
+  FROM events WHERE ev='sel' AND prev IS NOT NULL
+ GROUP BY wheel, prev, word ORDER BY n DESC LIMIT 40;
+```
+
+**Where people stop** — the last word of each visit, which is as close as this
+gets to asking what someone was looking for
+
+```sql
+SELECT word, COUNT(*) n FROM events e
+ WHERE ev='sel' AND ts = (SELECT MAX(ts) FROM events WHERE sid = e.sid AND ev='sel')
+ GROUP BY word ORDER BY n DESC LIMIT 20;
+```
+
+**Which songs are listened to rather than merely started**
+
+```sql
+SELECT word, yt, COUNT(*) plays, SUM(ms)/1000 secs, SUM(ms)/COUNT(*)/1000 avg_secs
+  FROM events WHERE ev='listen' GROUP BY word, yt ORDER BY secs DESC LIMIT 30;
+```
+
+A song with many plays and a low `avg_secs` is one people skip: either the
+`start` offset lands in the wrong place, or the song is wrong for the word.
+
+**How long a word holds someone**
+
+```sql
+SELECT prev AS word, COUNT(*) n, AVG(ms)/1000 avg_secs
+  FROM events WHERE ev='sel' AND prev IS NOT NULL AND ms < 600000
+ GROUP BY prev HAVING n > 5 ORDER BY avg_secs DESC LIMIT 30;
+```

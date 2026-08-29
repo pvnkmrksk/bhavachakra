@@ -1,0 +1,63 @@
+{
+ "name": "ಭಾವಚಕ್ರ · three feeling wheels in Kannada",
+ "short_name": "ಭಾವಚಕ್ರ",
+ "description": "353 Kannada words for feeling, in three wheels.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "any",
+ "lang": "kn",
+ "dir": "ltr",
+ "background_color": "#E6E9E2",
+ "theme_color": "#E6E9E2",
+ "icons": [
+  {
+   "src": "assets/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "ಭಾವಚಕ್ರ",
+   "url": "./#w=bhava",
+   "icons": [
+    {
+     "src": "assets/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ಒಡಲ ಚಕ್ರ",
+   "url": "./#w=odalu",
+   "icons": [
+    {
+     "src": "assets/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ರಸಚಕ್ರ",
+   "url": "./#w=rasa",
+   "icons": [
+    {
+     "src": "assets/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ]
+}

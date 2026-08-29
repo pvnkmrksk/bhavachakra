@@ -27,6 +27,7 @@
 
   let decks = [], live = 0, ready = false, booted = false;
   let cur = null, err = null, want = null, chain = [], rung = 0;
+  let word = null, since = 0;          // what is playing, and since when
 
   const other = () => (live + 1) % 2;
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g,
@@ -77,9 +78,18 @@
   }
 
   /* --------------------------------------------------------------- play */
+  /* Report the song that is ending before the next one starts. Seconds that
+     actually sounded, not seconds the page was open.                        */
+  function done() {
+    if (!since || !window.Track) { since = 0; return; }
+    Track("listen", { k: word, yt: cur, ms: Date.now() - since });
+    since = 0;
+  }
+
   function flush() { if (want) { const c = want; want = null; start(c); } }
 
-  function play(songs) {
+  function play(songs, forWord) {
+    if (forWord !== undefined) word = forWord;
     const list = [].concat(songs).filter(Boolean);
     if (!list.length) return;
     if (!SERVED) {
@@ -88,6 +98,7 @@
       emit(); return;
     }
     chain = list; rung = 0;
+    done();
     boot();
     if (!ready) { want = list; cur = list[0].yt; err = null; emit(); return; }
     start(list);
@@ -106,6 +117,8 @@
     const incoming = decks[other()], outgoing = decks[live];
     cur = song.yt; err = null;
 
+    if (window.Track) Track("play", { k: word, yt: song.yt });
+    since = Date.now();
     incoming.loadVideoById({ videoId: song.yt, startSeconds: song.st || 0 });
     incoming.unMute();               // it can arrive muted; volume alone will not save you
     incoming.setVolume(0);
@@ -118,15 +131,16 @@
   }
 
   function stop() {
+    done();
     want = null; chain = []; cur = null; err = null;
     const d = decks[live];
     if (ready && d) fadeTo(d, 0, CROSS / 2, () => d.pauseVideo());
     emit();
   }
 
-  const toggle = songs => {
+  const toggle = (songs, forWord) => {
     const first = [].concat(songs).filter(Boolean)[0];
-    return first && cur === first.yt ? stop() : play(songs);
+    return first && cur === first.yt ? stop() : play(songs, forWord);
   };
   const playing = id => cur === id;
   const onChange = fn => listeners.add(fn);

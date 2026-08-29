@@ -1,0 +1,25 @@
+# Deploy:
+#   cd worker
+#   npx wrangler d1 create bhava-log
+#   # paste the database_id it prints into the block below
+#   npx wrangler d1 execute bhava-log --remote --file=schema.sql
+#   npx wrangler deploy
+#
+# Then put the URL it prints into ENDPOINT at the top of src/track.js,
+# push, and the build workflow does the rest.
+
+name = "bhava-log"
+main = "analytics.js"
+compatibility_date = "2026-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bhava-log"
+database_id = "PASTE_THE_ID_FROM_d1_create_HERE"
+
+[vars]
+# Only these origins may post. Anything else is refused.
+ALLOWED = "https://bhava.kutuhula.in,http://localhost:8732"
+
+# /stats is closed unless you set a secret:
+#   npx wrangler secret put STATS_KEY

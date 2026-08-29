@@ -14,6 +14,7 @@ Run:  python3 scripts/build.py
 """
 
 import csv
+import hashlib
 import json
 import pathlib
 import re
@@ -159,7 +160,7 @@ def build_html():
     head = (SRC / "head.html").read_text(encoding="utf-8")
     body = (SRC / "body.html").read_text(encoding="utf-8")
     js = "\n".join((SRC / f).read_text(encoding="utf-8")
-                   for f in ("wheel.js", "player.js", "app.js"))
+                   for f in ("track.js", "wheel.js", "player.js", "app.js"))
     payload = "const WHEELS = " + json.dumps(
         [{k: v for k, v in w.items() if k != "file"} for w in WHEELS],
         ensure_ascii=False, separators=(",", ":")) + ";"
@@ -175,6 +176,12 @@ def build_html():
 <meta property="og:url" content="{SITE}/">
 <link rel="canonical" href="{SITE}/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='16'%20fill='%239C6E0C'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='11'%20fill='%2316696E'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='6'%20fill='%23A53426'/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#E6E9E2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12160F" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ಭಾವಚಕ್ರ">
 {head}
 </head>
 <body>
@@ -188,7 +195,42 @@ def build_html():
 </html>
 """
     (ROOT / "index.html").write_text(doc, encoding="utf-8")
+    build_pwa(doc)
     return len(doc)
+
+
+# ------------------------------------------------------------------- the PWA
+def build_pwa(doc):
+    """manifest + service worker, so the wheel installs to a home screen."""
+    version = hashlib.sha256(doc.encode("utf-8")).hexdigest()[:12]
+    manifest = {
+        "name": "ಭಾವಚಕ್ರ · three feeling wheels in Kannada",
+        "short_name": "ಭಾವಚಕ್ರ",
+        "description": "353 Kannada words for feeling, in three wheels.",
+        "start_url": "./",
+        "scope": "./",
+        "display": "standalone",
+        "orientation": "any",
+        "lang": "kn",
+        "dir": "ltr",
+        "background_color": "#E6E9E2",
+        "theme_color": "#E6E9E2",
+        "icons": [
+            {"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"},
+            {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"},
+            {"src": "assets/icon-maskable-512.png", "sizes": "512x512",
+             "type": "image/png", "purpose": "maskable"},
+        ],
+        "shortcuts": [
+            {"name": w["name"], "url": f"./#w={w['id']}",
+             "icons": [{"src": "assets/icon-192.png", "sizes": "192x192"}]}
+            for w in WHEELS
+        ],
+    }
+    (ROOT / "manifest.webmanifest").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+    sw = (SRC / "sw.js").read_text(encoding="utf-8").replace("__VERSION__", version)
+    (ROOT / "sw.js").write_text(sw, encoding="utf-8")
 
 
 # ---------------------------------------------------------------- wheels.json
@@ -243,6 +285,18 @@ def build_readme():
     for w in WHEELS:
         add(f"| **{w['name']}** `{w['id']}` | {BUILT_FROM[w['id']]} | {sum(1 for _ in walk(w['data']))} |")
     add("")
+    add("<p align=\"center\">\n"
+        "  <a href=\"https://bhava.kutuhula.in/#w=bhava\"><img src=\"assets/bhava.png\" width=\"32%\" alt=\"ಭಾವಚಕ್ರ, the feeling wheel in Kannada\"></a>\n"
+        "  <a href=\"https://bhava.kutuhula.in/#w=odalu\"><img src=\"assets/odalu.png\" width=\"32%\" alt=\"ಒಡಲ ಚಕ್ರ, feelings by where in the body they happen\"></a>\n"
+        "  <a href=\"https://bhava.kutuhula.in/#w=rasa\"><img src=\"assets/rasa.png\" width=\"32%\" alt=\"ರಸಚಕ್ರ, the nine rasas opened out\"></a>\n"
+        "</p>\n")
+    add("*Full size: [ಭಾವಚಕ್ರ](assets/bhava.png) · [ಒಡಲ ಚಕ್ರ](assets/odalu.png) · "
+        "[ರಸಚಕ್ರ](assets/rasa.png). As vector: [bhava.svg](assets/bhava.svg) · "
+        "[odalu.svg](assets/odalu.svg) · [rasa.svg](assets/rasa.svg). "
+        "CC BY-SA 4.0, the same as the text, so they can go on Wikipedia. "
+        "Regenerate them with [`scripts/export_wheels.js`](scripts/export_wheels.js) "
+        "and [`scripts/export_wheels.sh`](scripts/export_wheels.sh).*\n")
+
     add("**Everything lives in one file: [`data/words.csv`](data/words.csv).** One row per "
         "word, hierarchy from the `level` column and row order, exactly like an indented "
         "outline. Edit it in a spreadsheet or a text editor, commit, and push: "

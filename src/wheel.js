@@ -32,6 +32,7 @@
   let gRoot, hubDisc, hubText, nodes = [], wheel = null;
   let english = false, focus = null, held = null, anim = null, hot = null;
   let byName = new Map();          // kannada -> node, for restoring a shared link
+  let lastSel = null, lastSelAt = 0;   // where the reader came from, and when
   let onChange = () => {};
 
   const el = (n, a) => {
@@ -101,7 +102,9 @@
         show(n); held = n;            // ...then keep the word that was tapped
         // the click is the gesture the browser wants, so the song starts here
         // and never in show(), which also runs on hover
-        if (n.d.song && window.Song && !Song.playing(n.d.song.yt)) Song.play(songChain(n));
+        if (n.d.song && window.Song && !Song.playing(n.d.song.yt))
+          Song.play(songChain(n), n.d.kn);
+        trackSel(n);
         onChange();
       });
       gRoot.appendChild(g);
@@ -259,6 +262,17 @@
     wireSong(n);
   }
 
+  /* A move, not a view. `p` is the word they were on before this one and
+     `ms` is how long they stayed there: a pile of view counts cannot tell you
+     that readers reach ವಿರಹ from ಪ್ರೀತಿ rather than from ಶೃಂಗಾರ.            */
+  function trackSel(n) {
+    if (!window.Track) return;
+    const now = Date.now();
+    Track("sel", { w: wheel.id, k: n.d.kn,
+                   p: lastSel, ms: lastSel ? now - lastSelAt : null });
+    lastSel = n.d.kn; lastSelAt = now;
+  }
+
   /* --------------------------------------------------------------- song */
   /* Most specific first: this word's song, then the song of the word above it.
      If an id has gone private since it was last checked the player falls to
@@ -302,7 +316,7 @@
         oops.textContent = on && err ? err : "";
       }
     };
-    b.addEventListener("click", () => Song.toggle(songChain(n)));
+    b.addEventListener("click", () => Song.toggle(songChain(n), n.d.kn));
     Song.onChange(sync);
     sync();
   }

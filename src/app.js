@@ -34,6 +34,7 @@
     opts.forEach((o, j) => o.setAttribute("aria-selected", String(j === i)));
     thumb.style.transform = `translateX(${i * 100}%)`;
     Wheel.build(w);
+    if (window.Track) Track("open", { w: w.id });
     if (Wheel.isEnglish()) Wheel.setLang(true);
     if (!quiet) writeUrl();
   }
@@ -77,6 +78,7 @@
     lopts[0].classList.toggle("on", !on);
     lopts[1].classList.toggle("on", on);
     Wheel.setLang(on);
+    if (window.Track) Track("lang", { k: on ? "en" : "kn" });
     if (!quiet) writeUrl();
   }
   langBtn.addEventListener("click", () =>
@@ -84,3 +86,10 @@
 
   readUrl();
 })();
+
+/* Register the service worker so the wheel can be installed to a home screen
+   and opened without a network. Failure here is not worth a broken page: an
+   uninstalled site works exactly as it always did.                          */
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
