@@ -3199,7 +3199,15 @@
           "tr": "olavu",
           "en": "leaning toward"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಒಲವಿನ ಉಡುಗೊರೆ ಕೊಡಲೇನು",
+         "by": "ಎಂ. ರಂಗರಾವ್",
+         "src": "ಒಲವಿನ ಉಡುಗೊರೆ · 1987",
+         "yt": "19r6J7zYjcA",
+         "st": 20,
+         "from": "ಒಲವು"
+        }
        },
        {
         "kn": "ಮೆಚ್ಚುಗೆ",
@@ -3223,10 +3231,25 @@
           "tr": "iṣṭa",
           "en": "liking"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಒಲವಿನ ಉಡುಗೊರೆ ಕೊಡಲೇನು",
+         "by": "ಎಂ. ರಂಗರಾವ್",
+         "src": "ಒಲವಿನ ಉಡುಗೊರೆ · 1987",
+         "yt": "19r6J7zYjcA",
+         "st": 20,
+         "from": "ಒಲವು"
+        }
        }
       ],
-      "note": "Native, and the gentlest of the love words. You have ಒಲವು for a person, a place, or an idea."
+      "note": "Native, and the gentlest of the love words. You have ಒಲವು for a person, a place, or an idea.",
+      "song": {
+       "t": "ಒಲವಿನ ಉಡುಗೊರೆ ಕೊಡಲೇನು",
+       "by": "ಎಂ. ರಂಗರಾವ್",
+       "src": "ಒಲವಿನ ಉಡುಗೊರೆ · 1987",
+       "yt": "19r6J7zYjcA",
+       "st": 20
+      }
      },
      {
       "kn": "ಸರಸ",
@@ -3238,7 +3261,15 @@
         "tr": "cellāṭa",
         "en": "dalliance",
         "kids": [],
-        "note": "Play with a loose edge to it: used affectionately and as a mild accusation."
+        "note": "Play with a loose edge to it: used affectionately and as a mild accusation.",
+        "song": {
+         "t": "ಚೆಲುವೆ ಒಂದು ಕೇಳ್ತೀನಿ",
+         "by": "ಹಂಸಲೇಖ",
+         "src": "ಪ್ರೇಮಲೋಕ · 1987",
+         "yt": "ntte23oU56A",
+         "st": 30,
+         "from": "ಸರಸ"
+        }
        },
        {
         "kn": "ನಾಚಿಕೆ",
@@ -3262,10 +3293,25 @@
           "tr": "lajje",
           "en": "modesty, shame"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಚೆಲುವೆ ಒಂದು ಕೇಳ್ತೀನಿ",
+         "by": "ಹಂಸಲೇಖ",
+         "src": "ಪ್ರೇಮಲೋಕ · 1987",
+         "yt": "ntte23oU56A",
+         "st": 30,
+         "from": "ಸರಸ"
+        }
        }
       ],
-      "note": "Literally 'with rasa'. The word for banter between people who like each other, and it is not coy about it."
+      "note": "Literally 'with rasa'. The word for banter between people who like each other, and it is not coy about it. ಸರಸ is the asking, not the having.",
+      "song": {
+       "t": "ಚೆಲುವೆ ಒಂದು ಕೇಳ್ತೀನಿ",
+       "by": "ಹಂಸಲೇಖ",
+       "src": "ಪ್ರೇಮಲೋಕ · 1987",
+       "yt": "ntte23oU56A",
+       "st": 30
+      }
      },
      {
       "kn": "ವಿರಹ",
@@ -3294,17 +3340,40 @@
           "tr": "hapahapi",
           "en": "craving"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಯಾವ ಮೋಹನ ಮುರಳಿ ಕರೆಯಿತು",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಗೋಪಾಲಕೃಷ್ಣ ಅಡಿಗ · ಅಮೆರಿಕ ಅಮೆರಿಕ",
+         "yt": "iaNgco2oRUs",
+         "st": 35,
+         "from": "ವಿರಹ"
+        }
        },
        {
         "kn": "ಕಾತರ",
         "tr": "kātara",
         "en": "aching eagerness",
         "kids": [],
-        "note": "Waiting that has begun to hurt slightly."
+        "note": "Waiting that has begun to hurt slightly.",
+        "song": {
+         "t": "ಯಾವ ಮೋಹನ ಮುರಳಿ ಕರೆಯಿತು",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಗೋಪಾಲಕೃಷ್ಣ ಅಡಿಗ · ಅಮೆರಿಕ ಅಮೆರಿಕ",
+         "yt": "iaNgco2oRUs",
+         "st": 35,
+         "from": "ವಿರಹ"
+        }
        }
       ],
-      "note": "A whole genre of Kannada poetry sits here. English has no single word, which is why so much of it gets translated as 'longing' and loses the ache."
+      "note": "A whole genre of Kannada poetry sits here. English has no single word, which is why so much of it gets translated as 'longing' and loses the ache. A poem before it was a film song; the separation is from a flute you cannot find.",
+      "song": {
+       "t": "ಯಾವ ಮೋಹನ ಮುರಳಿ ಕರೆಯಿತು",
+       "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+       "src": "ಗೋಪಾಲಕೃಷ್ಣ ಅಡಿಗ · ಅಮೆರಿಕ ಅಮೆರಿಕ",
+       "yt": "iaNgco2oRUs",
+       "st": 35
+      }
      },
      {
       "kn": "ಮೋಹ",
@@ -3316,21 +3385,51 @@
         "tr": "seḷeta",
         "en": "pull, attraction",
         "kids": [],
-        "note": "Native and physical: the same word for an undertow and for a muscle cramp."
+        "note": "Native and physical: the same word for an undertow and for a muscle cramp.",
+        "song": {
+         "t": "ಅನಿಸುತಿದೆ ಯಾಕೋ ಇಂದು",
+         "by": "ಮನೋಮೂರ್ತಿ · ಸೋನು ನಿಗಮ್",
+         "src": "ಮುಂಗಾರು ಮಳೆ · 2006",
+         "yt": "nlsLKA6hlVQ",
+         "st": 35,
+         "from": "ಮೋಹ"
+        }
        },
        {
         "kn": "ವ್ಯಾಮೋಹ",
         "tr": "vyāmōha",
         "en": "obsessive attachment",
         "kids": [],
-        "note": "ಮೋಹ with the brakes off. Said of parents about children as often as of lovers."
+        "note": "ಮೋಹ with the brakes off. Said of parents about children as often as of lovers.",
+        "song": {
+         "t": "ಅನಿಸುತಿದೆ ಯಾಕೋ ಇಂದು",
+         "by": "ಮನೋಮೂರ್ತಿ · ಸೋನು ನಿಗಮ್",
+         "src": "ಮುಂಗಾರು ಮಳೆ · 2006",
+         "yt": "nlsLKA6hlVQ",
+         "st": 35,
+         "from": "ಮೋಹ"
+        }
        }
       ],
-      "note": "In philosophy ಮೋಹ is delusion, one of the six enemies. In daily speech it is simply being besotted: the moral warning is still audible underneath."
+      "note": "In philosophy ಮೋಹ is delusion, one of the six enemies. In daily speech it is simply being besotted: the moral warning is still audible underneath.",
+      "song": {
+       "t": "ಅನಿಸುತಿದೆ ಯಾಕೋ ಇಂದು",
+       "by": "ಮನೋಮೂರ್ತಿ · ಸೋನು ನಿಗಮ್",
+       "src": "ಮುಂಗಾರು ಮಳೆ · 2006",
+       "yt": "nlsLKA6hlVQ",
+       "st": 35
+      }
      }
     ],
     "sthayi": "ರತಿ · rati, desire",
-    "note": "The first and most argued-over rasa. It is not romance in the modern sense: ಶೃಂಗಾರ covers the whole apparatus of attraction, adornment and separation, and half of it is about being apart."
+    "note": "The first and most argued-over rasa. It is not romance in the modern sense: ಶೃಂಗಾರ covers the whole apparatus of attraction, adornment and separation, and half of it is about being apart.",
+    "song": {
+     "t": "ಜೊತೆಯಲಿ ಜೊತೆ ಜೊತೆಯಲಿ",
+     "by": "ಇಳಯರಾಜ · ಎಸ್.ಪಿ.ಬಿ",
+     "src": "ಗೀತಾ · 1981",
+     "yt": "8HbwsAOfoRY",
+     "st": 25
+    }
    },
    {
     "kn": "ಹಾಸ್ಯ",
@@ -3347,17 +3446,40 @@
         "tr": "nage",
         "en": "a laugh",
         "kids": [],
-        "note": "The countable one: you can have a ನಗೆ, you cannot have a ನಗು."
+        "note": "The countable one: you can have a ನಗೆ, you cannot have a ನಗು.",
+        "song": {
+         "t": "ನಗು ನಗುತಾ ನಲಿ ನಲಿ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+         "yt": "uJRbb59gN0s",
+         "st": 55,
+         "from": "ನಗು"
+        }
        },
        {
         "kn": "ಕಿಸಿಕಿಸಿ",
         "tr": "kisikisi",
         "en": "giggling",
         "kids": [],
-        "note": "Sound-word. The laughter you are trying and failing to suppress."
+        "note": "Sound-word. The laughter you are trying and failing to suppress.",
+        "song": {
+         "t": "ನಗು ನಗುತಾ ನಲಿ ನಲಿ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+         "yt": "uJRbb59gN0s",
+         "st": 55,
+         "from": "ನಗು"
+        }
        }
       ],
-      "note": "The plain native verb-noun. Everything else in this sector is a shade of it."
+      "note": "The plain native verb-noun. Everything else in this sector is a shade of it.",
+      "song": {
+       "t": "ನಗು ನಗುತಾ ನಲಿ ನಲಿ",
+       "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+       "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+       "yt": "uJRbb59gN0s",
+       "st": 55
+      }
      },
      {
       "kn": "ತಮಾಷೆ",
@@ -3369,17 +3491,40 @@
         "tr": "ṭuṇṭatana",
         "en": "mischief",
         "kids": [],
-        "note": "The naughtiness of a child you are not actually angry with."
+        "note": "The naughtiness of a child you are not actually angry with.",
+        "song": {
+         "t": "ಯಾರಿಗೆ ಹೇಳೋಣ ನಮ್ಮ ಪ್ರಾಬ್ಲಮ್ಮು",
+         "by": "ಮನೋಮೂರ್ತಿ",
+         "src": "ಲೈಫು ಇಷ್ಟೇನೆ · 2011",
+         "yt": "f86MjXLG6js",
+         "st": 25,
+         "from": "ತಮಾಷೆ"
+        }
        },
        {
         "kn": "ಕೀಟಲೆ",
         "tr": "kīṭale",
         "en": "teasing",
         "kids": [],
-        "note": "Teasing you are allowed to do, which means it is a claim about the relationship."
+        "note": "Teasing you are allowed to do, which means it is a claim about the relationship.",
+        "song": {
+         "t": "ಯಾರಿಗೆ ಹೇಳೋಣ ನಮ್ಮ ಪ್ರಾಬ್ಲಮ್ಮು",
+         "by": "ಮನೋಮೂರ್ತಿ",
+         "src": "ಲೈಫು ಇಷ್ಟೇನೆ · 2011",
+         "yt": "f86MjXLG6js",
+         "st": 25,
+         "from": "ತಮಾಷೆ"
+        }
        }
       ],
-      "note": "Borrowed from Urdu and now completely at home. 'ತಮಾಷೆಗೆ ಹೇಳಿದೆ', I said it for fun, is the standard retreat."
+      "note": "Borrowed from Urdu and now completely at home. 'ತಮಾಷೆಗೆ ಹೇಳಿದೆ', I said it for fun, is the standard retreat.",
+      "song": {
+       "t": "ಯಾರಿಗೆ ಹೇಳೋಣ ನಮ್ಮ ಪ್ರಾಬ್ಲಮ್ಮು",
+       "by": "ಮನೋಮೂರ್ತಿ",
+       "src": "ಲೈಫು ಇಷ್ಟೇನೆ · 2011",
+       "yt": "f86MjXLG6js",
+       "st": 25
+      }
      },
      {
       "kn": "ಗೇಲಿ",
@@ -3391,17 +3536,40 @@
         "tr": "aṇaka",
         "en": "mimicry",
         "kids": [],
-        "note": "Doing an impression of someone to their disadvantage."
+        "note": "Doing an impression of someone to their disadvantage.",
+        "song": {
+         "t": "ಓಳು ಬರಿ ಓಳು",
+         "by": "ಗುರುಕಿರಣ್",
+         "src": "ಉಪೇಂದ್ರ · 1999",
+         "yt": "-MKlrMx2k1c",
+         "st": 30,
+         "from": "ಗೇಲಿ"
+        }
        },
        {
         "kn": "ವ್ಯಂಗ್ಯ",
         "tr": "vyaṅgya",
         "en": "sarcasm",
         "kids": [],
-        "note": "In poetics ವ್ಯಂಗ್ಯ is suggested meaning: the good kind. In an argument it is the knife."
+        "note": "In poetics ವ್ಯಂಗ್ಯ is suggested meaning: the good kind. In an argument it is the knife.",
+        "song": {
+         "t": "ಓಳು ಬರಿ ಓಳು",
+         "by": "ಗುರುಕಿರಣ್",
+         "src": "ಉಪೇಂದ್ರ · 1999",
+         "yt": "-MKlrMx2k1c",
+         "st": 30,
+         "from": "ಗೇಲಿ"
+        }
        }
       ],
-      "note": "Laughter turned and pointed. The wound is that a good thing was aimed at you.",
+      "note": "Laughter turned and pointed. The wound is that a good thing was aimed at you. ಗೇಲಿ with the safety off: the song calls the whole audience a fool.",
+      "song": {
+       "t": "ಓಳು ಬರಿ ಓಳು",
+       "by": "ಗುರುಕಿರಣ್",
+       "src": "ಉಪೇಂದ್ರ · 1999",
+       "yt": "-MKlrMx2k1c",
+       "st": 30
+      },
       "also": [
        {
         "kn": "ಅಪಹಾಸ್ಯ",
@@ -3435,21 +3603,51 @@
         "tr": "santasa",
         "en": "gladness",
         "kids": [],
-        "note": "Gladness, with a quieter and more inward feel than ಸಂತೋಷ."
+        "note": "Gladness, with a quieter and more inward feel than ಸಂತೋಷ.",
+        "song": {
+         "t": "ನಗುವ ನಯನ ಮಧುರ ಮೌನ",
+         "by": "ಇಳಯರಾಜ · ಎಸ್.ಪಿ.ಬಿ",
+         "src": "ಪಲ್ಲವಿ ಅನುಪಲ್ಲವಿ · 1983",
+         "yt": "AJSeaFthdeE",
+         "st": 30,
+         "from": "ಮುಗುಳ್ನಗೆ"
+        }
        },
        {
         "kn": "ಹಗುರ",
         "tr": "hagura",
         "en": "lightness",
         "kids": [],
-        "note": "The change in weight after something is resolved."
+        "note": "The change in weight after something is resolved.",
+        "song": {
+         "t": "ನಗುವ ನಯನ ಮಧುರ ಮೌನ",
+         "by": "ಇಳಯರಾಜ · ಎಸ್.ಪಿ.ಬಿ",
+         "src": "ಪಲ್ಲವಿ ಅನುಪಲ್ಲವಿ · 1983",
+         "yt": "AJSeaFthdeE",
+         "st": 30,
+         "from": "ಮುಗುಳ್ನಗೆ"
+        }
        }
       ],
-      "note": "'Bud-laugh': the laugh that has not opened. A compound of exactly the kind Kannada makes best."
+      "note": "'Bud-laugh': the laugh that has not opened. A compound of exactly the kind Kannada makes best.",
+      "song": {
+       "t": "ನಗುವ ನಯನ ಮಧುರ ಮೌನ",
+       "by": "ಇಳಯರಾಜ · ಎಸ್.ಪಿ.ಬಿ",
+       "src": "ಪಲ್ಲವಿ ಅನುಪಲ್ಲವಿ · 1983",
+       "yt": "AJSeaFthdeE",
+       "st": 30
+      }
      }
     ],
     "sthayi": "ಹಾಸ · hāsa, laughter",
-    "note": "The rasa the English feeling wheel has no room for at all. Kannada grades laughter finely, and most of the grades are about who is being laughed at."
+    "note": "The rasa the English feeling wheel has no room for at all. Kannada grades laughter finely, and most of the grades are about who is being laughed at. Absurd on purpose. Kannada cinema's most quoted joke.",
+    "song": {
+     "t": "If You Come Today",
+     "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ರಾಜಕುಮಾರ್",
+     "src": "ಆಪರೇಷನ್ ಡೈಮಂಡ್ ರಾಕೆಟ್ · 1978",
+     "yt": "sWXw4DD7P8Q",
+     "st": 20
+    }
    },
    {
     "kn": "ಕರುಣ",
@@ -3498,17 +3696,40 @@
           "tr": "aḷalu",
           "en": "the wail"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
+         "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
+         "src": "ಆಕಸ್ಮಿಕ · 1993",
+         "yt": "BOoWZEhCh8s",
+         "st": 40,
+         "from": "ಅಳಲು"
+        }
        },
        {
         "kn": "ಕಣ್ಣೀರು",
         "tr": "kaṇṇīru",
         "en": "tears",
         "kids": [],
-        "note": "Eye-water. Plain compound, no ceremony: Kannada saves the ceremony for the phrases around it."
+        "note": "Eye-water. Plain compound, no ceremony: Kannada saves the ceremony for the phrases around it.",
+        "song": {
+         "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
+         "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
+         "src": "ಆಕಸ್ಮಿಕ · 1993",
+         "yt": "BOoWZEhCh8s",
+         "st": 40,
+         "from": "ಅಳಲು"
+        }
        }
       ],
       "note": "Native, and it is the sound before it is the feeling.",
+      "song": {
+       "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
+       "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
+       "src": "ಆಕಸ್ಮಿಕ · 1993",
+       "yt": "BOoWZEhCh8s",
+       "st": 40
+      },
       "also": [
        {
         "kn": "ಶೋಕ",
@@ -3537,17 +3758,40 @@
         "tr": "maruka",
         "en": "pity, ruth",
         "kids": [],
-        "note": "'Turning back toward': pity as the movement of turning to look again at someone."
+        "note": "'Turning back toward': pity as the movement of turning to look again at someone.",
+        "song": {
+         "t": "ಕರುಣಾಳು ಬಾ ಬೆಳಕೆ",
+         "by": "ಮೈಸೂರು ಅನಂತಸ್ವಾಮಿ · ಬಿ.ಆರ್. ಛಾಯಾ",
+         "src": "ಬಿ.ಎಂ. ಶ್ರೀಕಂಠಯ್ಯ",
+         "yt": "giYhVJBhKXU",
+         "st": 30,
+         "from": "ಕನಿಕರ"
+        }
        },
        {
         "kn": "ಕರುಳು ಚುರುಕ್",
         "tr": "karuḷu curuk",
         "en": "the gut-pang",
         "kids": [],
-        "note": "The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex."
+        "note": "The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex.",
+        "song": {
+         "t": "ಕರುಣಾಳು ಬಾ ಬೆಳಕೆ",
+         "by": "ಮೈಸೂರು ಅನಂತಸ್ವಾಮಿ · ಬಿ.ಆರ್. ಛಾಯಾ",
+         "src": "ಬಿ.ಎಂ. ಶ್ರೀಕಂಠಯ್ಯ",
+         "yt": "giYhVJBhKXU",
+         "st": 30,
+         "from": "ಕನಿಕರ"
+        }
        }
       ],
-      "note": "What you feel toward someone whose situation you can see clearly. Not quite pity: there is less height in it.",
+      "note": "What you feel toward someone whose situation you can see clearly. Not quite pity: there is less height in it. Newman's Lead Kindly Light in Kannada; the mercy is asked for.",
+      "song": {
+       "t": "ಕರುಣಾಳು ಬಾ ಬೆಳಕೆ",
+       "by": "ಮೈಸೂರು ಅನಂತಸ್ವಾಮಿ · ಬಿ.ಆರ್. ಛಾಯಾ",
+       "src": "ಬಿ.ಎಂ. ಶ್ರೀಕಂಠಯ್ಯ",
+       "yt": "giYhVJBhKXU",
+       "st": 30
+      },
       "also": [
        {
         "kn": "ಅನುಕಂಪ",
@@ -3581,17 +3825,40 @@
         "tr": "ummaḷa",
         "en": "grief welling up",
         "kids": [],
-        "note": "Names the swell, not the weeping: the moment before it breaks."
+        "note": "Names the swell, not the weeping: the moment before it breaks.",
+        "song": {
+         "t": "ಕಾಣದ ಕಡಲಿಗೆ ಹಂಬಲಿಸಿದೆ ಮನ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
+         "yt": "n66FGCYtWBc",
+         "st": 35,
+         "from": "ಸಂಕಟ"
+        }
        },
        {
         "kn": "ಕೊರಗು",
         "tr": "koragu",
         "en": "pining",
         "kids": [],
-        "note": "The grief that thins you over years rather than days."
+        "note": "The grief that thins you over years rather than days.",
+        "song": {
+         "t": "ಕಾಣದ ಕಡಲಿಗೆ ಹಂಬಲಿಸಿದೆ ಮನ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
+         "yt": "n66FGCYtWBc",
+         "st": 35,
+         "from": "ಸಂಕಟ"
+        }
        }
       ],
       "note": "Felt as constriction: the chest closing. Used equally for a dying person's distress and for an impossible choice.",
+      "song": {
+       "t": "ಕಾಣದ ಕಡಲಿಗೆ ಹಂಬಲಿಸಿದೆ ಮನ",
+       "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+       "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
+       "yt": "n66FGCYtWBc",
+       "st": 35
+      },
       "also": [
        {
         "kn": "ತಳಮಳ",
@@ -3620,21 +3887,51 @@
         "tr": "paścāttāpa",
         "en": "remorse",
         "kids": [],
-        "note": "'After-heat': the burn that arrives once the act is over."
+        "note": "'After-heat': the burn that arrives once the act is over.",
+        "song": {
+         "t": "ಎಂದೆಂದೂ ನಿನ್ನನು ಮರೆತು ಬದುಕಿರಲಾರೆ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ಎರಡು ಕನಸು · 1974",
+         "yt": "oB01cnveBIU",
+         "st": 25,
+         "from": "ಹಳಹಳಿಕೆ"
+        }
        },
        {
         "kn": "ವಿಷಾದ",
         "tr": "viṣāda",
         "en": "melancholy",
         "kids": [],
-        "note": "Sadness with the edges worn off. The word Kannada writers reach for when nothing in particular is wrong."
+        "note": "Sadness with the edges worn off. The word Kannada writers reach for when nothing in particular is wrong.",
+        "song": {
+         "t": "ಎಂದೆಂದೂ ನಿನ್ನನು ಮರೆತು ಬದುಕಿರಲಾರೆ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ಎರಡು ಕನಸು · 1974",
+         "yt": "oB01cnveBIU",
+         "st": 25,
+         "from": "ಹಳಹಳಿಕೆ"
+        }
        }
       ],
-      "note": "Remorse for something you would, honestly, do again. English has to use a whole sentence."
+      "note": "Remorse for something you would, honestly, do again. English has to use a whole sentence.",
+      "song": {
+       "t": "ಎಂದೆಂದೂ ನಿನ್ನನು ಮರೆತು ಬದುಕಿರಲಾರೆ",
+       "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+       "src": "ಎರಡು ಕನಸು · 1974",
+       "yt": "oB01cnveBIU",
+       "st": 25
+      }
      }
     ],
     "sthayi": "ಶೋಕ · śōka, grief",
-    "note": "The rasa Kannada literature is most at home in. Note that it names not grief itself but grief-made-shareable: the feeling an audience has, not the one the character has."
+    "note": "The rasa Kannada literature is most at home in. Note that it names not grief itself but grief-made-shareable: the feeling an audience has, not the one the character has. Bendre to his wife. The most exposed grief in Kannada.",
+    "song": {
+     "t": "ನೀ ಹೀಂಗ ನೋಡಬ್ಯಾಡ ನನ್ನ",
+     "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+     "src": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+     "yt": "L4f3c63uSkU",
+     "st": 45
+    }
    },
    {
     "kn": "ರೌದ್ರ",
@@ -3683,17 +3980,40 @@
           "tr": "tāpa",
           "en": "heat"
          }
-        ]
+        ],
+        "song": {
+         "t": "ತಗರು ಬಂತು ತಗರು",
+         "by": "ಚರಣ್ ರಾಜ್",
+         "src": "ತಗರು · 2018",
+         "yt": "V3-Fd8wPuRA",
+         "st": 20,
+         "from": "ಸಿಟ್ಟು"
+        }
        },
        {
         "kn": "ಸಿಡುಕು",
         "tr": "siḍuku",
         "en": "irritability",
         "kids": [],
-        "note": "Not an episode but a temperament, and one you wear on your face."
+        "note": "Not an episode but a temperament, and one you wear on your face.",
+        "song": {
+         "t": "ತಗರು ಬಂತು ತಗರು",
+         "by": "ಚರಣ್ ರಾಜ್",
+         "src": "ತಗರು · 2018",
+         "yt": "V3-Fd8wPuRA",
+         "st": 20,
+         "from": "ಸಿಟ್ಟು"
+        }
        }
       ],
       "note": "Hot and quick, and the most-used of the anger words.",
+      "song": {
+       "t": "ತಗರು ಬಂತು ತಗರು",
+       "by": "ಚರಣ್ ರಾಜ್",
+       "src": "ತಗರು · 2018",
+       "yt": "V3-Fd8wPuRA",
+       "st": 20
+      },
       "also": [
        {
         "kn": "ಕೋಪ",
@@ -3727,17 +4047,40 @@
         "tr": "keṇḍā-maṇḍala",
         "en": "incandescent",
         "kids": [],
-        "note": "'A whole mandala of live coals.' One of the finest anger words in the language."
+        "note": "'A whole mandala of live coals.' One of the finest anger words in the language.",
+        "song": {
+         "t": "ಸುಲ್ತಾನ",
+         "by": "ರವಿ ಬಸ್ರೂರು",
+         "src": "ಕೆ.ಜಿ.ಎಫ್ ೨ · 2022",
+         "yt": "kwa9JRcqKeE",
+         "st": 30,
+         "from": "ರೊಚ್ಚು"
+        }
        },
        {
         "kn": "ಆವೇಶ",
         "tr": "āvēśa",
         "en": "frenzy",
         "kids": [],
-        "note": "Also the word for being possessed by a deity. The grammar says the feeling is driving, not you."
+        "note": "Also the word for being possessed by a deity. The grammar says the feeling is driving, not you.",
+        "song": {
+         "t": "ಸುಲ್ತಾನ",
+         "by": "ರವಿ ಬಸ್ರೂರು",
+         "src": "ಕೆ.ಜಿ.ಎಫ್ ೨ · 2022",
+         "yt": "kwa9JRcqKeE",
+         "st": 30,
+         "from": "ರೊಚ್ಚು"
+        }
        }
       ],
       "note": "ರೊಚ್ಚಿಗೇಳು: to rise into ರೊಚ್ಚು. Anger that has got into the body and lifted you out of your seat.",
+      "song": {
+       "t": "ಸುಲ್ತಾನ",
+       "by": "ರವಿ ಬಸ್ರೂರು",
+       "src": "ಕೆ.ಜಿ.ಎಫ್ ೨ · 2022",
+       "yt": "kwa9JRcqKeE",
+       "st": 30
+      },
       "also": [
        {
         "kn": "ರೋಷ",
@@ -3771,17 +4114,40 @@
         "tr": "dvēṣa",
         "en": "hatred",
         "kids": [],
-        "note": "Settled and directed. One of the six enemies in the moral vocabulary."
+        "note": "Settled and directed. One of the six enemies in the moral vocabulary.",
+        "song": {
+         "t": "ಜಗವೇ ಒಂದು ರಣರಂಗ",
+         "by": "ಹಂಸಲೇಖ · ಶಿವರಾಜ್‌ಕುಮಾರ್",
+         "src": "ರಣರಂಗ · 1988",
+         "yt": "MpzlmO8OLH8",
+         "st": 25,
+         "from": "ಹಗೆ"
+        }
        },
        {
         "kn": "ಸೇಡು",
         "tr": "sēḍu",
         "en": "revenge",
         "kids": [],
-        "note": "Native. ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle the revenge, treats it as a debt."
+        "note": "Native. ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle the revenge, treats it as a debt.",
+        "song": {
+         "t": "ಜಗವೇ ಒಂದು ರಣರಂಗ",
+         "by": "ಹಂಸಲೇಖ · ಶಿವರಾಜ್‌ಕುಮಾರ್",
+         "src": "ರಣರಂಗ · 1988",
+         "yt": "MpzlmO8OLH8",
+         "st": 25,
+         "from": "ಹಗೆ"
+        }
        }
       ],
-      "note": "The old native word for an enemy, and heavy: the enmity of feuds, not of office politics."
+      "note": "The old native word for an enemy, and heavy: the enmity of feuds, not of office politics.",
+      "song": {
+       "t": "ಜಗವೇ ಒಂದು ರಣರಂಗ",
+       "by": "ಹಂಸಲೇಖ · ಶಿವರಾಜ್‌ಕುಮಾರ್",
+       "src": "ರಣರಂಗ · 1988",
+       "yt": "MpzlmO8OLH8",
+       "st": 25
+      }
      },
      {
       "kn": "ಆಕ್ರೋಶ",
@@ -3793,21 +4159,51 @@
         "tr": "asamādhāna",
         "en": "discontent",
         "kids": [],
-        "note": "'Un-settledness': the negation of consolation. A grievance nobody talked down."
+        "note": "'Un-settledness': the negation of consolation. A grievance nobody talked down.",
+        "song": {
+         "t": "ಯಾರೇ ಕೂಗಾಡಲಿ ಊರೇ ಹೋರಾಡಲಿ",
+         "by": "ಜಿ.ಕೆ. ವೆಂಕಟೇಶ್ · ರಾಜಕುಮಾರ್",
+         "src": "ಸಂಪತ್ತಿಗೆ ಸವಾಲ್ · 1974",
+         "yt": "3VkLPCrDB6c",
+         "st": 20,
+         "from": "ಆಕ್ರೋಶ"
+        }
        },
        {
         "kn": "ಬಂಡಾಯ",
         "tr": "baṇḍāya",
         "en": "revolt",
         "kids": [],
-        "note": "Also the name of a Kannada literary movement, which is the right amount of baggage."
+        "note": "Also the name of a Kannada literary movement, which is the right amount of baggage.",
+        "song": {
+         "t": "ಯಾರೇ ಕೂಗಾಡಲಿ ಊರೇ ಹೋರಾಡಲಿ",
+         "by": "ಜಿ.ಕೆ. ವೆಂಕಟೇಶ್ · ರಾಜಕುಮಾರ್",
+         "src": "ಸಂಪತ್ತಿಗೆ ಸವಾಲ್ · 1974",
+         "yt": "3VkLPCrDB6c",
+         "st": 20,
+         "from": "ಆಕ್ರೋಶ"
+        }
        }
       ],
-      "note": "Anger with a case to argue. The word every Kannada news bulletin uses for public anger."
+      "note": "Anger with a case to argue. The word every Kannada news bulletin uses for public anger. The outcry that refuses to argue back.",
+      "song": {
+       "t": "ಯಾರೇ ಕೂಗಾಡಲಿ ಊರೇ ಹೋರಾಡಲಿ",
+       "by": "ಜಿ.ಕೆ. ವೆಂಕಟೇಶ್ · ರಾಜಕುಮಾರ್",
+       "src": "ಸಂಪತ್ತಿಗೆ ಸವಾಲ್ · 1974",
+       "yt": "3VkLPCrDB6c",
+       "st": 20
+      }
      }
     ],
     "sthayi": "ಕ್ರೋಧ · krōdha, wrath",
-    "note": "Named for Rudra. The rasa is deliberately grand, a god's anger, not a bad mood, which is why the daily words underneath it feel so much smaller and so much more used."
+    "note": "Named for Rudra. The rasa is deliberately grand, a god's anger, not a bad mood, which is why the daily words underneath it feel so much smaller and so much more used. Fury with an address. Not a temper but an accusation.",
+    "song": {
+     "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+     "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+     "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+     "yt": "s90VmReOoco",
+     "st": 15
+    }
    },
    {
     "kn": "ವೀರ",
@@ -3824,17 +4220,40 @@
         "tr": "keccu",
         "en": "fierce courage",
         "kids": [],
-        "note": "Heat held in the body. Kannada's bravery word is thermal, not moral."
+        "note": "Heat held in the body. Kannada's bravery word is thermal, not moral.",
+        "song": {
+         "t": "ಆಗದು ಎಂದು ಕೈಲಾಗದು ಎಂದು",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+         "yt": "-Oryie1c-gs",
+         "st": 50,
+         "from": "ಧೈರ್ಯ"
+        }
        },
        {
         "kn": "ಎದೆಗಾರಿಕೆ",
         "tr": "edegārike",
         "en": "nerve",
         "kids": [],
-        "note": "'Chest-having': the willingness to stand up and say it."
+        "note": "'Chest-having': the willingness to stand up and say it.",
+        "song": {
+         "t": "ಆಗದು ಎಂದು ಕೈಲಾಗದು ಎಂದು",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+         "yt": "-Oryie1c-gs",
+         "st": 50,
+         "from": "ಧೈರ್ಯ"
+        }
        }
       ],
       "note": "Steadiness under fear. The everyday word, and the one you tell someone to have.",
+      "song": {
+       "t": "ಆಗದು ಎಂದು ಕೈಲಾಗದು ಎಂದು",
+       "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+       "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+       "yt": "-Oryie1c-gs",
+       "st": 50
+      },
       "also": [
        {
         "kn": "ಕೆಚ್ಚು",
@@ -3868,17 +4287,40 @@
         "tr": "haṭha",
         "en": "insistence",
         "kids": [],
-        "note": "ಛಲ's difficult sibling. A child throwing ಹಠ and a satyagrahi holding it are the same noun."
+        "note": "ಛಲ's difficult sibling. A child throwing ಹಠ and a satyagrahi holding it are the same noun.",
+        "song": {
+         "t": "ಧೀರ ಧೀರ",
+         "by": "ರವಿ ಬಸ್ರೂರು",
+         "src": "ಕೆ.ಜಿ.ಎಫ್ · 2018",
+         "yt": "IuS4LL_ALrU",
+         "st": 40,
+         "from": "ಛಲ"
+        }
        },
        {
         "kn": "ಪಟ್ಟು",
         "tr": "paṭṭu",
         "en": "a hold, a grip",
         "kids": [],
-        "note": "From wrestling. ಪಟ್ಟು ಬಿಡದೆ, without letting go of the hold, is how persistence is described."
+        "note": "From wrestling. ಪಟ್ಟು ಬಿಡದೆ, without letting go of the hold, is how persistence is described.",
+        "song": {
+         "t": "ಧೀರ ಧೀರ",
+         "by": "ರವಿ ಬಸ್ರೂರು",
+         "src": "ಕೆ.ಜಿ.ಎಫ್ · 2018",
+         "yt": "IuS4LL_ALrU",
+         "st": 40,
+         "from": "ಛಲ"
+        }
        }
       ],
-      "note": "One of the most-used words in Kannada self-description. Not stubbornness: the refusal to be finished with something."
+      "note": "One of the most-used words in Kannada self-description. Not stubbornness: the refusal to be finished with something.",
+      "song": {
+       "t": "ಧೀರ ಧೀರ",
+       "by": "ರವಿ ಬಸ್ರೂರು",
+       "src": "ಕೆ.ಜಿ.ಎಫ್ · 2018",
+       "yt": "IuS4LL_ALrU",
+       "st": 40
+      }
      },
      {
       "kn": "ಹೆಮ್ಮೆ",
@@ -3890,17 +4332,40 @@
         "tr": "abhimāna",
         "en": "pride-as-loyalty",
         "kids": [],
-        "note": "For your language, your team, your people. Its second sense is the wound when that loyalty is slighted."
+        "note": "For your language, your team, your people. Its second sense is the wound when that loyalty is slighted.",
+        "song": {
+         "t": "ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಕುವೆಂಪು · ನಾಡಗೀತೆ",
+         "yt": "wMc3jzeog1s",
+         "st": 15,
+         "from": "ಹೆಮ್ಮೆ"
+        }
        },
        {
         "kn": "ಗತ್ತು",
         "tr": "gattu",
         "en": "swagger",
         "kids": [],
-        "note": "Native, and affectionately used: the carriage of someone who knows they are good."
+        "note": "Native, and affectionately used: the carriage of someone who knows they are good.",
+        "song": {
+         "t": "ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಕುವೆಂಪು · ನಾಡಗೀತೆ",
+         "yt": "wMc3jzeog1s",
+         "st": 15,
+         "from": "ಹೆಮ್ಮೆ"
+        }
        }
       ],
-      "note": "Warm pride, usually in someone else. Distinct from ಅಹಂಕಾರ, which is the pride that has gone bad.",
+      "note": "Warm pride, usually in someone else. Distinct from ಅಹಂಕಾರ, which is the pride that has gone bad. ಹೆಮ್ಮೆ as loyalty rather than vanity; the state sings it standing.",
+      "song": {
+       "t": "ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ",
+       "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+       "src": "ಕುವೆಂಪು · ನಾಡಗೀತೆ",
+       "yt": "wMc3jzeog1s",
+       "st": 15
+      },
       "also": [
        {
         "kn": "ಅಭಿಮಾನ",
@@ -3934,21 +4399,51 @@
         "tr": "umēdu",
         "en": "zest",
         "kids": [],
-        "note": "Borrowed and thoroughly domesticated. 'ಉಮೇದು ಇಲ್ಲ' is a complete diagnosis."
+        "note": "Borrowed and thoroughly domesticated. 'ಉಮೇದು ಇಲ್ಲ' is a complete diagnosis.",
+        "song": {
+         "t": "ಬಾರಿಸು ಕನ್ನಡ ಡಿಂಡಿಮವ",
+         "by": "ಶಿವಮೊಗ್ಗ ಸುಬ್ಬಣ್ಣ",
+         "src": "ಕುವೆಂಪು",
+         "yt": "48T3gr4AFJo",
+         "st": 15,
+         "from": "ಹುರುಪು"
+        }
        },
        {
         "kn": "ಸಂಭ್ರಮ",
         "tr": "sambhrama",
         "en": "festive elation",
         "kids": [],
-        "note": "Busy, shared, slightly frantic joy: a wedding house at six in the morning. Nobody has ಸಂಭ್ರಮ alone."
+        "note": "Busy, shared, slightly frantic joy: a wedding house at six in the morning. Nobody has ಸಂಭ್ರಮ alone.",
+        "song": {
+         "t": "ಬಾರಿಸು ಕನ್ನಡ ಡಿಂಡಿಮವ",
+         "by": "ಶಿವಮೊಗ್ಗ ಸುಬ್ಬಣ್ಣ",
+         "src": "ಕುವೆಂಪು",
+         "yt": "48T3gr4AFJo",
+         "st": 15,
+         "from": "ಹುರುಪು"
+        }
        }
       ],
-      "note": "Native. The energy you start a thing with, before ಛಲ has to take over."
+      "note": "Native. The energy you start a thing with, before ಛಲ has to take over.",
+      "song": {
+       "t": "ಬಾರಿಸು ಕನ್ನಡ ಡಿಂಡಿಮವ",
+       "by": "ಶಿವಮೊಗ್ಗ ಸುಬ್ಬಣ್ಣ",
+       "src": "ಕುವೆಂಪು",
+       "yt": "48T3gr4AFJo",
+       "st": 15
+      }
      }
     ],
     "sthayi": "ಉತ್ಸಾಹ · utsāha, vigour",
-    "note": "The rasa with no home on the English wheel at all. Its ಸ್ಥಾಯಿಭಾವ is not courage but ಉತ್ಸಾಹ, energy, which quietly claims that heroism is a kind of enthusiasm."
+    "note": "The rasa with no home on the English wheel at all. Its ಸ್ಥಾಯಿಭಾವ is not courage but ಉತ್ಸಾಹ, energy, which quietly claims that heroism is a kind of enthusiasm.",
+    "song": {
+     "t": "ಹುಟ್ಟಿದರೆ ಕನ್ನಡ ನಾಡಲ್ಲಿ ಹುಟ್ಟಬೇಕು",
+     "by": "ಹಂಸಲೇಖ · ರಾಜಕುಮಾರ್",
+     "src": "ಆಕಸ್ಮಿಕ · 1993",
+     "yt": "dSqQkqqq8fM",
+     "st": 35
+    }
    },
    {
     "kn": "ಭಯಾನಕ",
@@ -3965,7 +4460,15 @@
         "tr": "añjike",
         "en": "timidity",
         "kids": [],
-        "note": "Fear as a disposition. ಅಂಜುಬುರುಕ, one who is full of it, is a mild insult."
+        "note": "Fear as a disposition. ಅಂಜುಬುರುಕ, one who is full of it, is a mild insult.",
+        "song": {
+         "t": "ಗರನೆ ಗರ ಗರನೆ",
+         "by": "ಗುರುಕಿರಣ್",
+         "src": "ಆಪ್ತರಕ್ಷಕ · 2010",
+         "yt": "QuUFeWG9qZQ",
+         "st": 25,
+         "from": "ಹೆದರಿಕೆ"
+        }
        },
        {
         "kn": "ಬೆದರಿಕೆ",
@@ -3989,10 +4492,25 @@
           "tr": "apāya",
           "en": "danger"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಗರನೆ ಗರ ಗರನೆ",
+         "by": "ಗುರುಕಿರಣ್",
+         "src": "ಆಪ್ತರಕ್ಷಕ · 2010",
+         "yt": "QuUFeWG9qZQ",
+         "st": 25,
+         "from": "ಹೆದರಿಕೆ"
+        }
        }
       ],
-      "note": "The plain daily word, and the one children are told not to have."
+      "note": "The plain daily word, and the one children are told not to have.",
+      "song": {
+       "t": "ಗರನೆ ಗರ ಗರನೆ",
+       "by": "ಗುರುಕಿರಣ್",
+       "src": "ಆಪ್ತರಕ್ಷಕ · 2010",
+       "yt": "QuUFeWG9qZQ",
+       "st": 25
+      }
      },
      {
       "kn": "ದಿಗಿಲು",
@@ -4026,17 +4544,40 @@
           "tr": "vyākula",
           "en": "distress"
          }
-        ]
+        ],
+        "song": {
+         "t": "ದೆನ್ನಾನ ದೆನ್ನಾನ",
+         "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
+         "src": "ರಂಗಿತರಂಗ · 2015",
+         "yt": "oepLylgqSKU",
+         "st": 20,
+         "from": "ದಿಗಿಲು"
+        }
        },
        {
         "kn": "ತಳಮಳ",
         "tr": "taḷamaḷa",
         "en": "churn",
         "kids": [],
-        "note": "The word for boiling liquid and for a mind that will not settle."
+        "note": "The word for boiling liquid and for a mind that will not settle.",
+        "song": {
+         "t": "ದೆನ್ನಾನ ದೆನ್ನಾನ",
+         "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
+         "src": "ರಂಗಿತರಂಗ · 2015",
+         "yt": "oepLylgqSKU",
+         "st": 20,
+         "from": "ದಿಗಿಲು"
+        }
        }
       ],
       "note": "Heavier and more still than ಹೆದರಿಕೆ. The fear that has settled in and is waiting.",
+      "song": {
+       "t": "ದೆನ್ನಾನ ದೆನ್ನಾನ",
+       "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
+       "src": "ರಂಗಿತರಂಗ · 2015",
+       "yt": "oepLylgqSKU",
+       "st": 20
+      },
       "also": [
        {
         "kn": "ಆತಂಕ",
@@ -4065,17 +4606,40 @@
         "tr": "beccu",
         "en": "a startle",
         "kids": [],
-        "note": "ಬೆಚ್ಚಿಬೀಳು: to be startled and drop. Kannada builds the flinch out of a fall."
+        "note": "ಬೆಚ್ಚಿಬೀಳು: to be startled and drop. Kannada builds the flinch out of a fall.",
+        "song": {
+         "t": "ಕರೆಯೋಲೆ",
+         "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
+         "src": "ರಂಗಿತರಂಗ · 2015",
+         "yt": "54VIJ2jomMc",
+         "st": 20,
+         "from": "ಗಾಬರಿ"
+        }
        },
        {
         "kn": "ನಡುಕ",
         "tr": "naḍuka",
         "en": "the tremble",
         "kids": [],
-        "note": "The body named, the feeling left to be inferred."
+        "note": "The body named, the feeling left to be inferred.",
+        "song": {
+         "t": "ಕರೆಯೋಲೆ",
+         "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
+         "src": "ರಂಗಿತರಂಗ · 2015",
+         "yt": "54VIJ2jomMc",
+         "st": 20,
+         "from": "ಗಾಬರಿ"
+        }
        }
       ],
-      "note": "Sudden, visible, and slightly undignified: the fear other people can see you having."
+      "note": "Sudden, visible, and slightly undignified: the fear other people can see you having. A summons you did not want. Panic as something calling you by name.",
+      "song": {
+       "t": "ಕರೆಯೋಲೆ",
+       "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
+       "src": "ರಂಗಿತರಂಗ · 2015",
+       "yt": "54VIJ2jomMc",
+       "st": 20
+      }
      },
      {
       "kn": "ಅಳುಕು",
@@ -4087,7 +4651,15 @@
         "tr": "hiñjarike",
         "en": "hesitation",
         "kids": [],
-        "note": "To slide backwards: the foot that starts to move and then does not."
+        "note": "To slide backwards: the foot that starts to move and then does not.",
+        "song": {
+         "t": "ಈ ಸಂಜೆ ಯಾಕಾಗಿದೆ",
+         "by": "ಮನೋಮೂರ್ತಿ · ಸೋನು ನಿಗಮ್",
+         "src": "ಗೆಳೆಯ · 2007",
+         "yt": "-1TEJkzEgYc",
+         "st": 40,
+         "from": "ಅಳುಕು"
+        }
        },
        {
         "kn": "ಅನುಮಾನ",
@@ -4111,10 +4683,25 @@
           "tr": "sandēha",
           "en": "uncertainty about a fact"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಈ ಸಂಜೆ ಯಾಕಾಗಿದೆ",
+         "by": "ಮನೋಮೂರ್ತಿ · ಸೋನು ನಿಗಮ್",
+         "src": "ಗೆಳೆಯ · 2007",
+         "yt": "-1TEJkzEgYc",
+         "st": 40,
+         "from": "ಅಳುಕು"
+        }
        }
       ],
-      "note": "The small inward flinch before you do the thing anyway. ಅಭದ್ರತೆ carries the other sense of <i>insecure</i>: physically unguarded, a word for buildings and borders.",
+      "note": "The small inward flinch before you do the thing anyway. ಅಭದ್ರತೆ carries the other sense of <i>insecure</i>: physically unguarded, a word for buildings and borders. The misgiving that arrives at dusk with no reason attached.",
+      "song": {
+       "t": "ಈ ಸಂಜೆ ಯಾಕಾಗಿದೆ",
+       "by": "ಮನೋಮೂರ್ತಿ · ಸೋನು ನಿಗಮ್",
+       "src": "ಗೆಳೆಯ · 2007",
+       "yt": "-1TEJkzEgYc",
+       "st": 40
+      },
       "also": [
        {
         "kn": "ಅಭದ್ರತೆ",
@@ -4135,7 +4722,14 @@
      }
     ],
     "sthayi": "ಭಯ · bhaya, fear",
-    "note": "Kannada's richest sector by count. Fear is graded by intensity and by whether you can see it coming."
+    "note": "Kannada's richest sector by count. Fear is graded by intensity and by whether you can see it coming. Seduction and dread in one throat.",
+    "song": {
+     "t": "ರಾ ರಾ ಸರಸಕು",
+     "by": "ಗುರುಕಿರಣ್ · ರಾಜೇಶ್ ನಂದಿತಾ",
+     "src": "ಆಪ್ತಮಿತ್ರ · 2004",
+     "yt": "ReeQgwpRO88",
+     "st": 30
+    }
    },
    {
     "kn": "ಬೀಭತ್ಸ",
@@ -4169,17 +4763,40 @@
           "tr": "jugupse",
           "en": "revulsion"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಆಚಾರವಿಲ್ಲದ ನಾಲಿಗೆ",
+         "by": "ಆರತಿ",
+         "src": "ಪುರಂದರದಾಸ · ಉಪಾಸನೆ · 1974",
+         "yt": "VhSeotVnR08",
+         "st": 20,
+         "from": "ಅಸಹ್ಯ"
+        }
        },
        {
         "kn": "ಕೊಳಕು",
         "tr": "koḷaku",
         "en": "dirt",
         "kids": [],
-        "note": "Native and blunt. Calling a person ಕೊಳಕು is not a comment on hygiene."
+        "note": "Native and blunt. Calling a person ಕೊಳಕು is not a comment on hygiene.",
+        "song": {
+         "t": "ಆಚಾರವಿಲ್ಲದ ನಾಲಿಗೆ",
+         "by": "ಆರತಿ",
+         "src": "ಪುರಂದರದಾಸ · ಉಪಾಸನೆ · 1974",
+         "yt": "VhSeotVnR08",
+         "st": 20,
+         "from": "ಅಸಹ್ಯ"
+        }
        }
       ],
       "note": "'Unbearable.' The daily word, used for a smell and for a politician with equal ease.",
+      "song": {
+       "t": "ಆಚಾರವಿಲ್ಲದ ನಾಲಿಗೆ",
+       "by": "ಆರತಿ",
+       "src": "ಪುರಂದರದಾಸ · ಉಪಾಸನೆ · 1974",
+       "yt": "VhSeotVnR08",
+       "st": 20
+      },
       "also": [
        {
         "kn": "ಜಿಗುಪ್ಸೆ",
@@ -4218,17 +4835,40 @@
         "tr": "ōkarike",
         "en": "retching",
         "kids": [],
-        "note": "Onomatopoeic and unglamorous."
+        "note": "Onomatopoeic and unglamorous.",
+        "song": {
+         "t": "ಮಾಡಿ ಮಾಡಿ ಕೆಟ್ಟರು ಮನವಿಲ್ಲದೆ",
+         "by": "ಕೂಡಲಸಂಗಮ ದೃಶ್ಯರೂಪಕ",
+         "src": "ಬಸವಣ್ಣ · ವಚನ",
+         "yt": "WouMhm9UMkU",
+         "st": 30,
+         "from": "ವಾಕರಿಕೆ"
+        }
        },
        {
         "kn": "ಹೊಟ್ಟೆ ತೊಳಸು",
         "tr": "hoṭṭe toḷasu",
         "en": "the stomach stirs",
         "kids": [],
-        "note": "Used for moral revulsion and actual nausea with nothing between the two senses."
+        "note": "Used for moral revulsion and actual nausea with nothing between the two senses.",
+        "song": {
+         "t": "ಮಾಡಿ ಮಾಡಿ ಕೆಟ್ಟರು ಮನವಿಲ್ಲದೆ",
+         "by": "ಕೂಡಲಸಂಗಮ ದೃಶ್ಯರೂಪಕ",
+         "src": "ಬಸವಣ್ಣ · ವಚನ",
+         "yt": "WouMhm9UMkU",
+         "st": 30,
+         "from": "ವಾಕರಿಕೆ"
+        }
        }
       ],
-      "note": "The bodily end of the sector, and Kannada moves between it and the moral end without a signal."
+      "note": "The bodily end of the sector, and Kannada moves between it and the moral end without a signal. The gorge rising at ritual done without the mind in it.",
+      "song": {
+       "t": "ಮಾಡಿ ಮಾಡಿ ಕೆಟ್ಟರು ಮನವಿಲ್ಲದೆ",
+       "by": "ಕೂಡಲಸಂಗಮ ದೃಶ್ಯರೂಪಕ",
+       "src": "ಬಸವಣ್ಣ · ವಚನ",
+       "yt": "WouMhm9UMkU",
+       "st": 30
+      }
      },
      {
       "kn": "ರೋಸು",
@@ -4257,17 +4897,40 @@
           "tr": "jaḍa",
           "en": "inert"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಲೈಫು ಇಷ್ಟೇನೆ",
+         "by": "ಮನೋಮೂರ್ತಿ",
+         "src": "ಪಂಚರಂಗಿ · 2010",
+         "yt": "OurLEFrIHDo",
+         "st": 30,
+         "from": "ರೋಸು"
+        }
        },
        {
         "kn": "ರೇಜಿಗೆ",
         "tr": "rējige",
         "en": "exasperation",
         "kids": [],
-        "note": "Disgust at something that keeps not working, rather than at something foul."
+        "note": "Disgust at something that keeps not working, rather than at something foul.",
+        "song": {
+         "t": "ಲೈಫು ಇಷ್ಟೇನೆ",
+         "by": "ಮನೋಮೂರ್ತಿ",
+         "src": "ಪಂಚರಂಗಿ · 2010",
+         "yt": "OurLEFrIHDo",
+         "st": 30,
+         "from": "ರೋಸು"
+        }
        }
       ],
-      "note": "ರೋಸಿಹೋಗಿದೆ: fed up to the point of nausea. The most useful word in this sector."
+      "note": "ರೋಸಿಹೋಗಿದೆ: fed up to the point of nausea. The most useful word in this sector.",
+      "song": {
+       "t": "ಲೈಫು ಇಷ್ಟೇನೆ",
+       "by": "ಮನೋಮೂರ್ತಿ",
+       "src": "ಪಂಚರಂಗಿ · 2010",
+       "yt": "OurLEFrIHDo",
+       "st": 30
+      }
      },
      {
       "kn": "ತಾತ್ಸಾರ",
@@ -4296,21 +4959,51 @@
           "tr": "tātsāra",
           "en": "disdain"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಉಳ್ಳವರು ಶಿವಾಲಯ ಮಾಡುವರು",
+         "by": "ಝಂಕಾರ್ ಭಕ್ತಿ",
+         "src": "ಬಸವಣ್ಣ · ವಚನ",
+         "yt": "hJSk5l3Na7A",
+         "st": 40,
+         "from": "ತಾತ್ಸಾರ"
+        }
        },
        {
         "kn": "ಕೊಂಕು",
         "tr": "koṅku",
         "en": "the crooked remark",
         "kids": [],
-        "note": "Fault-finding delivered sideways, which is how it usually arrives."
+        "note": "Fault-finding delivered sideways, which is how it usually arrives.",
+        "song": {
+         "t": "ಉಳ್ಳವರು ಶಿವಾಲಯ ಮಾಡುವರು",
+         "by": "ಝಂಕಾರ್ ಭಕ್ತಿ",
+         "src": "ಬಸವಣ್ಣ · ವಚನ",
+         "yt": "hJSk5l3Na7A",
+         "st": 40,
+         "from": "ತಾತ್ಸಾರ"
+        }
        }
       ],
-      "note": "Disgust cooled into a social posture: the version you can hold at a wedding."
+      "note": "Disgust cooled into a social posture: the version you can hold at a wedding. Contempt done politely: my legs are the pillars, my body the shrine.",
+      "song": {
+       "t": "ಉಳ್ಳವರು ಶಿವಾಲಯ ಮಾಡುವರು",
+       "by": "ಝಂಕಾರ್ ಭಕ್ತಿ",
+       "src": "ಬಸವಣ್ಣ · ವಚನ",
+       "yt": "hJSk5l3Na7A",
+       "st": 40
+      }
      }
     ],
     "sthayi": "ಜುಗುಪ್ಸೆ · jugupse, revulsion",
-    "note": "The rasa nobody wants and every tradition keeps. Kannada files disgust under endurance: ಅಸಹ್ಯ literally means what cannot be borne."
+    "note": "The rasa nobody wants and every tradition keeps. Kannada files disgust under endurance: ಅಸಹ್ಯ literally means what cannot be borne. Blind money dancing on a dead man's chest. Revulsion with its eyes open.",
+    "song": {
+     "t": "ಕುರುಡು ಕಾಂಚಾಣ ಕುಣಿಯುತಲಿತ್ತು",
+     "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+     "src": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+     "yt": "HKPetWFxqZM",
+     "st": 20
+    }
    },
    {
     "kn": "ಅದ್ಭುತ",
@@ -4344,7 +5037,15 @@
           "tr": "beragu",
           "en": "wonder that stops you"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಎಂಥ ಸೌಂದರ್ಯ ನೋಡು",
+         "by": "ಇಳಯರಾಜ",
+         "src": "ಮಾತು ತಪ್ಪದ ಮಗ · 1985",
+         "yt": "nTXVFaSNYiE",
+         "st": 25,
+         "from": "ಬೆರಗು"
+        }
        },
        {
         "kn": "ದಂಗು",
@@ -4373,10 +5074,25 @@
           "tr": "digbhrame",
           "en": "stupefaction"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಎಂಥ ಸೌಂದರ್ಯ ನೋಡು",
+         "by": "ಇಳಯರಾಜ",
+         "src": "ಮಾತು ತಪ್ಪದ ಮಗ · 1985",
+         "yt": "nTXVFaSNYiE",
+         "st": 25,
+         "from": "ಬೆರಗು"
+        }
        }
       ],
       "note": "Native. Wonder that stops you where you are.",
+      "song": {
+       "t": "ಎಂಥ ಸೌಂದರ್ಯ ನೋಡು",
+       "by": "ಇಳಯರಾಜ",
+       "src": "ಮಾತು ತಪ್ಪದ ಮಗ · 1985",
+       "yt": "nTXVFaSNYiE",
+       "st": 25
+      },
       "also": [
        {
         "kn": "ವಿಸ್ಮಯ",
@@ -4405,17 +5121,40 @@
         "tr": "āsakti",
         "en": "interest",
         "kids": [],
-        "note": "Literally attachment: interest as a mild binding to a thing."
+        "note": "Literally attachment: interest as a mild binding to a thing.",
+        "song": {
+         "t": "ಎಲ್ಲೋ ಹುಡುಕಿದೆ ಇಲ್ಲದ ದೇವರ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
+         "yt": "qBAoqZOSMpM",
+         "st": 25,
+         "from": "ಕುತೂಹಲ"
+        }
        },
        {
         "kn": "ತವಕ",
         "tr": "tavaka",
         "en": "eagerness",
         "kids": [],
-        "note": "Eagerness with an edge of ache in it."
+        "note": "Eagerness with an edge of ache in it.",
+        "song": {
+         "t": "ಎಲ್ಲೋ ಹುಡುಕಿದೆ ಇಲ್ಲದ ದೇವರ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
+         "yt": "qBAoqZOSMpM",
+         "st": 25,
+         "from": "ಕುತೂಹಲ"
+        }
        }
       ],
-      "note": "Wonder that has turned into a question. Kannada treats it as a virtue."
+      "note": "Wonder that has turned into a question. Kannada treats it as a virtue.",
+      "song": {
+       "t": "ಎಲ್ಲೋ ಹುಡುಕಿದೆ ಇಲ್ಲದ ದೇವರ",
+       "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+       "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
+       "yt": "qBAoqZOSMpM",
+       "st": 25
+      }
      },
      {
       "kn": "ಪುಳಕ",
@@ -4427,17 +5166,40 @@
         "tr": "rōmāñca",
         "en": "horripilation",
         "kids": [],
-        "note": "'Hair-motion.' The Sanskrit register of the same event."
+        "note": "'Hair-motion.' The Sanskrit register of the same event.",
+        "song": {
+         "t": "ತುಂತುರು ಅಲ್ಲಿ ನೀರ ಹಾಡು",
+         "by": "ಹಂಸಲೇಖ",
+         "src": "ಅಮೃತವರ್ಷಿಣಿ · 1997",
+         "yt": "e5byqxOkzRw",
+         "st": 40,
+         "from": "ಪುಳಕ"
+        }
        },
        {
         "kn": "ಮೈ ಝುಮ್",
         "tr": "mai jhum",
         "en": "the body tingles",
         "kids": [],
-        "note": "The spoken version, and specifically aesthetic: you say it about a raga."
+        "note": "The spoken version, and specifically aesthetic: you say it about a raga.",
+        "song": {
+         "t": "ತುಂತುರು ಅಲ್ಲಿ ನೀರ ಹಾಡು",
+         "by": "ಹಂಸಲೇಖ",
+         "src": "ಅಮೃತವರ್ಷಿಣಿ · 1997",
+         "yt": "e5byqxOkzRw",
+         "st": 40,
+         "from": "ಪುಳಕ"
+        }
        }
       ],
-      "note": "Classical poetics counts it as visible evidence of an inner state, which is why it has its own noun."
+      "note": "Classical poetics counts it as visible evidence of an inner state, which is why it has its own noun.",
+      "song": {
+       "t": "ತುಂತುರು ಅಲ್ಲಿ ನೀರ ಹಾಡು",
+       "by": "ಹಂಸಲೇಖ",
+       "src": "ಅಮೃತವರ್ಷಿಣಿ · 1997",
+       "yt": "e5byqxOkzRw",
+       "st": 40
+      }
      },
      {
       "kn": "ಭಯಭಕ್ತಿ",
@@ -4449,21 +5211,51 @@
         "tr": "gaurava",
         "en": "respect",
         "kids": [],
-        "note": "Something you give, actively, not something you passively have."
+        "note": "Something you give, actively, not something you passively have.",
+        "song": {
+         "t": "ವರಾಹ ರೂಪಂ",
+         "by": "ಅಜನೀಶ್ ಲೋಕನಾಥ್",
+         "src": "ಕಾಂತಾರ · 2022",
+         "yt": "gH_RYRwVrVM",
+         "st": 30,
+         "from": "ಭಯಭಕ್ತಿ"
+        }
        },
        {
         "kn": "ದಿಗ್ಭ್ರಮೆ",
         "tr": "digbhrame",
         "en": "stupefaction",
         "kids": [],
-        "note": "'Directions-confusion': the compass spins and you cannot tell which way is which."
+        "note": "'Directions-confusion': the compass spins and you cannot tell which way is which.",
+        "song": {
+         "t": "ವರಾಹ ರೂಪಂ",
+         "by": "ಅಜನೀಶ್ ಲೋಕನಾಥ್",
+         "src": "ಕಾಂತಾರ · 2022",
+         "yt": "gH_RYRwVrVM",
+         "st": 30,
+         "from": "ಭಯಭಕ್ತಿ"
+        }
        }
       ],
-      "note": "Fear-and-devotion, in one compound. Awe as a social posture: how one stands before a deity or a formidable elder."
+      "note": "Fear-and-devotion, in one compound. Awe as a social posture: how one stands before a deity or a formidable elder. Where awe and fear stop being separable.",
+      "song": {
+       "t": "ವರಾಹ ರೂಪಂ",
+       "by": "ಅಜನೀಶ್ ಲೋಕನಾಥ್",
+       "src": "ಕಾಂತಾರ · 2022",
+       "yt": "gH_RYRwVrVM",
+       "st": 30
+      }
      }
     ],
     "sthayi": "ವಿಸ್ಮಯ · vismaya, astonishment",
-    "note": "The rasa that most resembles a modern emotion. Kannada keeps a native word for it, ಬೆರಗು, which is rarer than it should be."
+    "note": "The rasa that most resembles a modern emotion. Kannada keeps a native word for it, ಬೆರಗು, which is rarer than it should be.",
+    "song": {
+     "t": "ನಾದಮಯ ಈ ಲೋಕವೆಲ್ಲಾ",
+     "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
+     "src": "ಜೀವನ ಚೈತ್ರ · 1992",
+     "yt": "EkPOkT_a2U0",
+     "st": 60
+    }
    },
    {
     "kn": "ಶಾಂತ",
@@ -4480,7 +5272,15 @@
         "tr": "nirāḷa",
         "en": "unclenched",
         "kids": [],
-        "note": "The breath after the weight comes off. Freedom as a bodily state, not a political one."
+        "note": "The breath after the weight comes off. Freedom as a bodily state, not a political one.",
+        "song": {
+         "t": "ಈ ಸುಂದರ ಬೆಳದಿಂಗಳಲಿ",
+         "by": "ಹಂಸಲೇಖ",
+         "src": "ಅಮೃತವರ್ಷಿಣಿ · 1997",
+         "yt": "1mY9GP17p5Y",
+         "st": 25,
+         "from": "ನೆಮ್ಮದಿ"
+        }
        },
        {
         "kn": "ಸಮಾಧಾನ",
@@ -4504,10 +5304,25 @@
           "tr": "taṇṇagāgu",
           "en": "to cool down"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಈ ಸುಂದರ ಬೆಳದಿಂಗಳಲಿ",
+         "by": "ಹಂಸಲೇಖ",
+         "src": "ಅಮೃತವರ್ಷಿಣಿ · 1997",
+         "yt": "1mY9GP17p5Y",
+         "st": 25,
+         "from": "ನೆಮ್ಮದಿ"
+        }
        }
       ],
       "note": "Sharply distinct from ಶಾಂತಿ, which is peace as the absence of conflict. You can have ಶಾಂತಿ in a house with no ನೆಮ್ಮದಿ in it.",
+      "song": {
+       "t": "ಈ ಸುಂದರ ಬೆಳದಿಂಗಳಲಿ",
+       "by": "ಹಂಸಲೇಖ",
+       "src": "ಅಮೃತವರ್ಷಿಣಿ · 1997",
+       "yt": "1mY9GP17p5Y",
+       "st": 25
+      },
       "also": [
        {
         "kn": "ಶಾಂತಿ",
@@ -4536,17 +5351,40 @@
         "tr": "taṇivu",
         "en": "slaked",
         "kids": [],
-        "note": "Satisfaction as cooling rather than filling: the other half of how Kannada thinks about want."
+        "note": "Satisfaction as cooling rather than filling: the other half of how Kannada thinks about want.",
+        "song": {
+         "t": "ಬಾನಿಗೊಂದು ಎಲ್ಲೆ ಎಲ್ಲಿದೆ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ರಾಜಕುಮಾರ್",
+         "src": "ಪ್ರೇಮದ ಕಾಣಿಕೆ · 1976",
+         "yt": "PUEBih5-Nu4",
+         "st": 20,
+         "from": "ತೃಪ್ತಿ"
+        }
        },
        {
         "kn": "ಸಾರ್ಥಕ",
         "tr": "sārthaka",
         "en": "it was worth it",
         "kids": [],
-        "note": "'Having meaning.' The feeling, where ಯಶಸ್ವಿ is only the outcome."
+        "note": "'Having meaning.' The feeling, where ಯಶಸ್ವಿ is only the outcome.",
+        "song": {
+         "t": "ಬಾನಿಗೊಂದು ಎಲ್ಲೆ ಎಲ್ಲಿದೆ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ರಾಜಕುಮಾರ್",
+         "src": "ಪ್ರೇಮದ ಕಾಣಿಕೆ · 1976",
+         "yt": "PUEBih5-Nu4",
+         "st": 20,
+         "from": "ತೃಪ್ತಿ"
+        }
        }
       ],
       "note": "The feeling after a meal, and after a life. Kannada uses the same word without irony.",
+      "song": {
+       "t": "ಬಾನಿಗೊಂದು ಎಲ್ಲೆ ಎಲ್ಲಿದೆ",
+       "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ರಾಜಕುಮಾರ್",
+       "src": "ಪ್ರೇಮದ ಕಾಣಿಕೆ · 1976",
+       "yt": "PUEBih5-Nu4",
+       "st": 20
+      },
       "also": [
        {
         "kn": "ಸಂತೃಪ್ತಿ",
@@ -4575,17 +5413,40 @@
         "tr": "udāsīna",
         "en": "equanimity, or the cold shoulder",
         "kids": [],
-        "note": "In philosophy the sage's evenness. In an argument, the coldest insult available. Same word."
+        "note": "In philosophy the sage's evenness. In an argument, the coldest insult available. Same word.",
+        "song": {
+         "t": "ಸೋರುತಿಹುದು ಮನೆಯ ಮಾಳಿಗೆ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಶಿಶುನಾಳ ಶರೀಫ",
+         "yt": "XyI6hPU_GrM",
+         "st": 25,
+         "from": "ವೈರಾಗ್ಯ"
+        }
        },
        {
         "kn": "ನಿರ್ಲಿಪ್ತ",
         "tr": "nirlipta",
         "en": "unsmeared",
         "kids": [],
-        "note": "Literally not stuck to anything: the lotus-leaf image, worn down into an ordinary adjective."
+        "note": "Literally not stuck to anything: the lotus-leaf image, worn down into an ordinary adjective.",
+        "song": {
+         "t": "ಸೋರುತಿಹುದು ಮನೆಯ ಮಾಳಿಗೆ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಶಿಶುನಾಳ ಶರೀಫ",
+         "yt": "XyI6hPU_GrM",
+         "st": 25,
+         "from": "ವೈರಾಗ್ಯ"
+        }
        }
       ],
-      "note": "Ordinary speech in Kannada, not only monastic: said of anyone who has stopped wanting a thing they used to want."
+      "note": "Ordinary speech in Kannada, not only monastic: said of anyone who has stopped wanting a thing they used to want. The roof leaks and the tenant stops minding. Detachment as a house in the rain.",
+      "song": {
+       "t": "ಸೋರುತಿಹುದು ಮನೆಯ ಮಾಳಿಗೆ",
+       "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+       "src": "ಶಿಶುನಾಳ ಶರೀಫ",
+       "yt": "XyI6hPU_GrM",
+       "st": 25
+      }
      },
      {
       "kn": "ಮೌನ",
@@ -4597,21 +5458,51 @@
         "tr": "ēkānta",
         "en": "solitude, chosen",
         "kids": [],
-        "note": "The good kind of alone. Kannada draws the line English blurs: ಒಂಟಿತನ hurts, ಏಕಾಂತ is sought."
+        "note": "The good kind of alone. Kannada draws the line English blurs: ಒಂಟಿತನ hurts, ಏಕಾಂತ is sought.",
+        "song": {
+         "t": "ಮೌನವೇ ಆಭರಣ",
+         "by": "ವಿಜಯಭಾಸ್ಕರ್ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ತೂಗುದೀಪ · 1966",
+         "yt": "0PosS9zq20k",
+         "st": 20,
+         "from": "ಮೌನ"
+        }
        },
        {
         "kn": "ತಂಪು",
         "tr": "tampu",
         "en": "coolness",
         "kids": [],
-        "note": "Native, and the whole thermal vocabulary in one word: the opposite pole from ಸಿಟ್ಟು, ಕಿಚ್ಚು, ಬಿಸಿ and ಉರಿ."
+        "note": "Native, and the whole thermal vocabulary in one word: the opposite pole from ಸಿಟ್ಟು, ಕಿಚ್ಚು, ಬಿಸಿ and ಉರಿ.",
+        "song": {
+         "t": "ಮೌನವೇ ಆಭರಣ",
+         "by": "ವಿಜಯಭಾಸ್ಕರ್ · ಪಿ.ಬಿ.ಎಸ್",
+         "src": "ತೂಗುದೀಪ · 1966",
+         "yt": "0PosS9zq20k",
+         "st": 20,
+         "from": "ಮೌನ"
+        }
        }
       ],
-      "note": "Treated as an action, not an absence. ಮೌನ ವಹಿಸು, to take up silence, is something you do to someone."
+      "note": "Treated as an action, not an absence. ಮೌನ ವಹಿಸು, to take up silence, is something you do to someone.",
+      "song": {
+       "t": "ಮೌನವೇ ಆಭರಣ",
+       "by": "ವಿಜಯಭಾಸ್ಕರ್ · ಪಿ.ಬಿ.ಎಸ್",
+       "src": "ತೂಗುದೀಪ · 1966",
+       "yt": "0PosS9zq20k",
+       "st": 20
+      }
      }
     ],
     "sthayi": "ಶಮ · śama, quiet",
-    "note": "The ninth rasa, added late and argued over for centuries: can the absence of agitation be a flavour? The English wheel files peace under happiness; the rasa tradition insists it is a state of its own."
+    "note": "The ninth rasa, added late and argued over for centuries: can the absence of agitation be a flavour? The English wheel files peace under happiness; the rasa tradition insists it is a state of its own.",
+    "song": {
+     "t": "ತಂಬೂರಿ ಮೀಟಿದವ",
+     "by": "ಕುಲದೀಪ್ ಎಂ. ಪೈ",
+     "src": "ಪುರಂದರದಾಸ",
+     "yt": "uCCaFqRoihQ",
+     "st": 30
+    }
    }
   ]
  }

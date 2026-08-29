@@ -5,7 +5,6 @@ build.py: assemble the site and the README from data/wheels/*.json.
   data/wheels/{bhava,odalu,rasa}.json
       -> index.html       three wheels behind one slider, no build step at serve time
       -> README.md        every word as flat markdown, plus the dictionary evidence
-      -> data/words.csv   one row per word across all three wheels
 
 The site is for reading the words. The README is the extended cut: it carries
 the rala lookups, the misfires and the counts, which are diagnostics and do not
@@ -30,7 +29,7 @@ DATA, SRC = ROOT / "data", ROOT / "src"
 RINGS = ["core", "branch", "leaf"]
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from wheels import load, walk           # noqa: E402
+from wheels import load, walk, inherit  # noqa: E402
 
 WHEELS = [
  {"id": "bhava",
@@ -137,6 +136,7 @@ WHEELS = [
 
 PROSE = {w["id"]: w for w in WHEELS}
 WHEELS = [dict(PROSE[w["id"]], **w) for w in load(DATA / "words.csv")]
+SONG_OWN, SONG_BORROWED = inherit(WHEELS)
 
 SOURCES = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
 
@@ -158,7 +158,8 @@ def md(t):
 def build_html():
     head = (SRC / "head.html").read_text(encoding="utf-8")
     body = (SRC / "body.html").read_text(encoding="utf-8")
-    js = (SRC / "wheel.js").read_text(encoding="utf-8") + "\n" + (SRC / "app.js").read_text(encoding="utf-8")
+    js = "\n".join((SRC / f).read_text(encoding="utf-8")
+                   for f in ("wheel.js", "player.js", "app.js"))
     payload = "const WHEELS = " + json.dumps(
         [{k: v for k, v in w.items() if k != "file"} for w in WHEELS],
         ensure_ascii=False, separators=(",", ":")) + ";"
@@ -359,3 +360,4 @@ if __name__ == "__main__":
     r = build_readme()
     m = build_method()
     print(f"index.html {h:,} · README.md {r:,} · METHOD.md {m:,} · wheels.json · words.csv")
+    print(f"songs: {SONG_OWN} of their own, {SONG_BORROWED} borrowed from a parent")

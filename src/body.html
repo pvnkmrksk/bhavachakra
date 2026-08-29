@@ -50,3 +50,13 @@
   </footer>
 </section>
 </main>
+
+<!-- The player. Two of them, so one song can fade across into the next.
+     Kept at the edge of visibility on purpose: the wheel is for reading and
+     the songs are background. `inert` and pointer-events:none put it out of
+     reach of the mouse, the Tab key and the screen reader alike, and it stays
+     inside the viewport so the browser keeps rendering it. -->
+<div class="deck" id="deck" hidden inert>
+  <div id="ytdeck0"></div>
+  <div id="ytdeck1"></div>
+</div>

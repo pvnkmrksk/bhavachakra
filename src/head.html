@@ -208,4 +208,49 @@ footer{margin-top:clamp(44px,6vw,76px); padding:24px 0 56px; border-top:1px soli
   color:var(--ink-3); font-size:13px; max-width:80ch}
 footer a{color:var(--ink-2)}
 @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+/* ------------------------------------------------------------- the song */
+.song{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule-soft)}
+.song .from{margin:0 0 10px;font-size:11.5px;color:var(--ink-3);line-height:1.4}
+.song .from b{color:var(--ink-2);font-weight:500}
+.song .play{display:flex;align-items:center;gap:11px;width:100%;text-align:left;
+  padding:10px 12px;border:1px solid var(--rule);border-radius:11px;
+  background:var(--plate);color:var(--ink);font:inherit;cursor:pointer;
+  transition:border-color .2s,background .2s}
+.song .play:hover{border-color:var(--accent)}
+.song.on .play{border-color:var(--accent);background:var(--accent-soft)}
+.song .glyph{flex:0 0 auto;width:17px;height:17px;position:relative}
+.song .glyph::before{content:"";position:absolute;inset:0;margin:auto;
+  width:0;height:0;border-left:12px solid var(--accent);
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.song.on .glyph::before{width:12px;height:15px;border:0;background:var(--accent)}
+.song .pt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.song .pt b{font-weight:600;font-size:14px;line-height:1.35}
+.song .pt i{font-style:normal;font-size:11.5px;color:var(--ink-3)}
+.song .by{margin:8px 0 0;font-size:12px;color:var(--ink-2)}
+.song .snote{margin:8px 0 0;font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.song .src{display:inline-block;margin-top:10px;font-size:11.5px;color:var(--accent);
+  text-decoration:none;border-bottom:1px solid transparent}
+.song .src:hover{border-color:var(--accent)}
+.song.borrowed .play{opacity:.82}
+/* ------------------------------------------------------------- the player */
+/* Deep transparent rather than moved off the page: an iframe parked outside
+   the viewport is the first thing a browser throttles, and a throttled player
+   is a silent one. This one is really there, really playing, and all but
+   invisible. Nothing on the page can click it or focus it.                  */
+.deck{position:fixed; right:8px; bottom:8px; z-index:0; width:200px; height:200px;
+  opacity:.012; pointer-events:none; overflow:hidden; border-radius:10px}
+.deck[hidden]{display:none}
+.deck iframe{display:block; width:200px; height:200px; border:0}
+#ytdeck1{margin-top:-200px}          /* the two decks share the one square */
+
+/* the song, when it will not play */
+.song .oops{margin:9px 0 0; font-size:12px; color:var(--ink-2); line-height:1.5}
+.song .oops a{color:var(--accent); text-decoration:none;
+  border-bottom:1px solid transparent}
+.song .oops a:hover{border-color:var(--accent)}
+
+/* cover: the video's own frame, which for a song upload is the sleeve */
+.song .art{float:left; width:54px; height:54px; margin:0 12px 4px 0;
+  border-radius:8px; object-fit:cover; background:var(--sunk)}
+
 </style>

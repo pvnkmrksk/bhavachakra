@@ -92,6 +92,9 @@
         e.stopPropagation();
         if (!focus) drill(n, true);   // open the sector first: drilling resets
         show(n); held = n;            // ...then keep the word that was tapped
+        // the click is the gesture the browser wants, so the song starts here
+        // and never in show(), which also runs on hover
+        if (n.d.song && window.Song && !Song.playing(n.d.song.yt)) Song.play(songChain(n));
         onChange();
       });
       gRoot.appendChild(g);
@@ -244,10 +247,59 @@
       (n.d.also ? `<div class="also"><h4>ಹೀಗೂ ಹೇಳುತ್ತಾರೆ · also said</h4><ul>` +
         n.d.also.map(a => `<li><b>${esc(a.kn)}</b> <i>${esc(a.tr)}</i> <span>${esc(a.en)}</span></li>`)
           .join("") + `</ul></div>` : "") +
-      (n.d.note ? `<p class="note">${n.d.note}</p>` : "");
+      (n.d.note ? `<p class="note">${n.d.note}</p>` : "") +
+      songCard(n.d.song);
+    wireSong(n);
   }
 
-  /* --------------------------------------------- shareable link state */
+  /* --------------------------------------------------------------- song */
+  /* Most specific first: this word's song, then the song of the word above it.
+     If an id has gone private since it was last checked the player falls to
+     the next one, which is the same borrowing the wheel already does for a
+     word that never had a song of its own.                                  */
+  function songChain(n) {
+    const seen = new Set(), out = [];
+    for (let x = n; x; x = x.parent) {
+      const s = x.d.song;
+      if (s && !seen.has(s.yt)) { seen.add(s.yt); out.push(s); }
+    }
+    return out;
+  }
+
+  function songCard(s) {
+    if (!s) return "";
+    return `<div class="song${s.from ? " borrowed" : ""}">` +
+      (s.from ? `<p class="from">ಈ ಪದಕ್ಕೆ ತನ್ನದೇ ಹಾಡಿಲ್ಲ · borrowed from <b>${esc(s.from)}</b></p>` : "") +
+      `<button class="play" type="button" aria-pressed="false">
+         <img class="art" alt="" loading="lazy" decoding="async"
+              src="https://i.ytimg.com/vi/${esc(s.yt)}/mqdefault.jpg">
+         <span class="glyph" aria-hidden="true"></span>
+         <span class="pt"><b>${esc(s.t)}</b><i>${esc(s.src)}</i></span></button>` +
+      `<p class="by">${esc(s.by)}</p>` +
+      `<p class="oops" hidden></p>` +
+      `<a class="src" href="https://www.youtube.com/watch?v=${esc(s.yt)}&t=${s.st | 0}"
+          target="_blank" rel="noopener">ಯೂಟ್ಯೂಬ್‌ನಲ್ಲಿ ಕೇಳಿ · the artist's own channel ↗</a>` +
+      `</div>`;
+  }
+
+  function wireSong(n) {
+    const s = n.d.song, b = detail.querySelector(".song .play");
+    if (!b || !s || !window.Song) return;
+    const oops = detail.querySelector(".song .oops");
+    const sync = (id, err) => {
+      const on = Song.playing(s.yt);
+      b.setAttribute("aria-pressed", String(on));
+      b.closest(".song").classList.toggle("on", on);
+      if (oops) {
+        oops.hidden = !(on && err);
+        oops.textContent = on && err ? err : "";
+      }
+    };
+    b.addEventListener("click", () => Song.toggle(songChain(n)));
+    Song.onChange(sync);
+    sync();
+  }
+
   function state() {
     return { open: focus ? focus.d.kn : "", sel: held ? chain(held).map(x => x.d.kn) : [] };
   }

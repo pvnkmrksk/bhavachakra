@@ -620,14 +620,14 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
       - also said: **ಪ್ರಶಂಸೆ** *praśaṁse* praise, **ಒಲವು** *olavu* leaning toward, **ಇಷ್ಟ** *iṣṭa* liking
       - Both the feeling and its expression: to ಮೆಚ್ಚು silently is incomplete.
   - **ಸರಸ** · *sarasa* · playful flirtation
-    - Literally 'with rasa'. The word for banter between people who like each other, and it is not coy about it.
+    - Literally 'with rasa'. The word for banter between people who like each other, and it is not coy about it. ಸರಸ is the asking, not the having.
     - **ಚೆಲ್ಲಾಟ** · *cellāṭa* · dalliance
       - Play with a loose edge to it: used affectionately and as a mild accusation.
     - **ನಾಚಿಕೆ** · *nāchike* · bashfulness
       - also said: **ಸಂಕೋಚ** *saṅkōca* shrinking, reticence, **ಮುಜುಗರ** *mujugara* awkwardness, **ಲಜ್ಜೆ** *lajje* modesty, shame
       - Shyness, modesty and shame in one noun. A bride's ನಾಚಿಕೆ and a thief's are the same word.
   - **ವಿರಹ** · *viraha* · the pain of separation
-    - A whole genre of Kannada poetry sits here. English has no single word, which is why so much of it gets translated as 'longing' and loses the ache.
+    - A whole genre of Kannada poetry sits here. English has no single word, which is why so much of it gets translated as 'longing' and loses the ache. A poem before it was a film song; the separation is from a flute you cannot find.
     - **ಹಂಬಲ** · *hambala* · yearning
       - also said: **ಕಾತರ** *kātara* aching eagerness, **ತವಕ** *tavaka* eagerness, **ಹಪಹಪಿ** *hapahapi* craving
       - The pull toward something absent: a place, a person, a life not lived.
@@ -644,7 +644,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
 ಸ್ಥಾಯಿಭಾವ · ಹಾಸ · hāsa, laughter
 
 - **ಹಾಸ್ಯ** · *hāsya* · mirth, the comic
-  - The rasa the English feeling wheel has no room for at all. Kannada grades laughter finely, and most of the grades are about who is being laughed at.
+  - The rasa the English feeling wheel has no room for at all. Kannada grades laughter finely, and most of the grades are about who is being laughed at. Absurd on purpose. Kannada cinema's most quoted joke.
   - **ನಗು** · *nagu* · laughter
     - The plain native verb-noun. Everything else in this sector is a shade of it.
     - **ನಗೆ** · *nage* · a laugh
@@ -659,7 +659,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
       - Teasing you are allowed to do, which means it is a claim about the relationship.
   - **ಗೇಲಿ** · *gēli* · mockery
     - also said: **ಅಪಹಾಸ್ಯ** *apahāsya* ridicule, **ಅಣಕ** *aṇaka* mimicry, **ಅವಹೇಳನ** *avahēḷana* belittling, **ಕುಚೋದ್ಯ** *kucōdya* malicious teasing
-    - Laughter turned and pointed. The wound is that a good thing was aimed at you.
+    - Laughter turned and pointed. The wound is that a good thing was aimed at you. ಗೇಲಿ with the safety off: the song calls the whole audience a fool.
     - **ಅಣಕ** · *aṇaka* · mimicry
       - Doing an impression of someone to their disadvantage.
     - **ವ್ಯಂಗ್ಯ** · *vyaṅgya* · sarcasm
@@ -675,7 +675,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
 ಸ್ಥಾಯಿಭಾವ · ಶೋಕ · śōka, grief
 
 - **ಕರುಣ** · *karuṇa* · compassion, pathos
-  - The rasa Kannada literature is most at home in. Note that it names not grief itself but grief-made-shareable: the feeling an audience has, not the one the character has.
+  - The rasa Kannada literature is most at home in. Note that it names not grief itself but grief-made-shareable: the feeling an audience has, not the one the character has. Bendre to his wife. The most exposed grief in Kannada.
   - **ಅಳಲು** · *aḷalu* · the wail
     - also said: **ಶೋಕ** *śōka* mourning, **ಗೋಳು** *gōḷu* wretched crying, **ರೋದನ** *rōdana* lamentation
     - Native, and it is the sound before it is the feeling.
@@ -686,7 +686,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
       - Eye-water. Plain compound, no ceremony: Kannada saves the ceremony for the phrases around it.
   - **ಕನಿಕರ** · *kanikara* · compassion
     - also said: **ಅನುಕಂಪ** *anukampa* fellow-feeling, **ಮರುಕ** *maruka* pity, ruth, **ಕರುಣೆ** *karuṇe* mercy, **ದಯೆ** *daye* kindness
-    - What you feel toward someone whose situation you can see clearly. Not quite pity: there is less height in it.
+    - What you feel toward someone whose situation you can see clearly. Not quite pity: there is less height in it. Newman's Lead Kindly Light in Kannada; the mercy is asked for.
     - **ಮರುಕ** · *maruka* · pity, ruth
       - 'Turning back toward': pity as the movement of turning to look again at someone.
     - **ಕರುಳು ಚುರುಕ್** · *karuḷu curuk* · the gut-pang
@@ -709,7 +709,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
 ಸ್ಥಾಯಿಭಾವ · ಕ್ರೋಧ · krōdha, wrath
 
 - **ರೌದ್ರ** · *raudra* · fury
-  - Named for Rudra. The rasa is deliberately grand, a god's anger, not a bad mood, which is why the daily words underneath it feel so much smaller and so much more used.
+  - Named for Rudra. The rasa is deliberately grand, a god's anger, not a bad mood, which is why the daily words underneath it feel so much smaller and so much more used. Fury with an address. Not a temper but an accusation.
   - **ಸಿಟ್ಟು** · *siṭṭu* · anger
     - also said: **ಕೋಪ** *kōpa* anger, composed, **ಕ್ರೋಧ** *krōdha* wrath, **ಮುನಿಸು** *munisu* the loving sulk, **ಸೆಡವು** *seḍavu* a huff
     - Hot and quick, and the most-used of the anger words.
@@ -732,7 +732,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
     - **ಸೇಡು** · *sēḍu* · revenge
       - Native. ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle the revenge, treats it as a debt.
   - **ಆಕ್ರೋಶ** · *ākrōśa* · outcry
-    - Anger with a case to argue. The word every Kannada news bulletin uses for public anger.
+    - Anger with a case to argue. The word every Kannada news bulletin uses for public anger. The outcry that refuses to argue back.
     - **ಅಸಮಾಧಾನ** · *asamādhāna* · discontent
       - 'Un-settledness': the negation of consolation. A grievance nobody talked down.
     - **ಬಂಡಾಯ** · *baṇḍāya* · revolt
@@ -758,7 +758,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
       - From wrestling. ಪಟ್ಟು ಬಿಡದೆ, without letting go of the hold, is how persistence is described.
   - **ಹೆಮ್ಮೆ** · *hemme* · pride
     - also said: **ಅಭಿಮಾನ** *abhimāna* pride as loyalty, **ಗರ್ವ** *garva* pride, tipping toward vanity, **ಅಹಂಕಾರ** *ahaṅkāra* the pride that has gone bad, **ಗತ್ತು** *gattu* swagger
-    - Warm pride, usually in someone else. Distinct from ಅಹಂಕಾರ, which is the pride that has gone bad.
+    - Warm pride, usually in someone else. Distinct from ಅಹಂಕಾರ, which is the pride that has gone bad. ಹೆಮ್ಮೆ as loyalty rather than vanity; the state sings it standing.
     - **ಅಭಿಮಾನ** · *abhimāna* · pride-as-loyalty
       - For your language, your team, your people. Its second sense is the wound when that loyalty is slighted.
     - **ಗತ್ತು** · *gattu* · swagger
@@ -774,7 +774,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
 ಸ್ಥಾಯಿಭಾವ · ಭಯ · bhaya, fear
 
 - **ಭಯಾನಕ** · *bhayānaka* · terror
-  - Kannada's richest sector by count. Fear is graded by intensity and by whether you can see it coming.
+  - Kannada's richest sector by count. Fear is graded by intensity and by whether you can see it coming. Seduction and dread in one throat.
   - **ಹೆದರಿಕೆ** · *hedarike* · being scared
     - The plain daily word, and the one children are told not to have.
     - **ಅಂಜಿಕೆ** · *añjike* · timidity
@@ -791,14 +791,14 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
     - **ತಳಮಳ** · *taḷamaḷa* · churn
       - The word for boiling liquid and for a mind that will not settle.
   - **ಗಾಬರಿ** · *gābari* · panic
-    - Sudden, visible, and slightly undignified: the fear other people can see you having.
+    - Sudden, visible, and slightly undignified: the fear other people can see you having. A summons you did not want. Panic as something calling you by name.
     - **ಬೆಚ್ಚು** · *beccu* · a startle
       - ಬೆಚ್ಚಿಬೀಳು: to be startled and drop. Kannada builds the flinch out of a fall.
     - **ನಡುಕ** · *naḍuka* · the tremble
       - The body named, the feeling left to be inferred.
   - **ಅಳುಕು** · *aḷuku* · misgiving
     - also said: **ಅಭದ್ರತೆ** *abhadrate* insecurity, of a thing unguarded, **ಹಿಂಜರಿಕೆ** *hiñjarike* hesitation, **ಶಂಕೆ** *śaṅke* misgiving with fear in it
-    - The small inward flinch before you do the thing anyway. ಅಭದ್ರತೆ carries the other sense of *insecure*: physically unguarded, a word for buildings and borders.
+    - The small inward flinch before you do the thing anyway. ಅಭದ್ರತೆ carries the other sense of *insecure*: physically unguarded, a word for buildings and borders. The misgiving that arrives at dusk with no reason attached.
     - **ಹಿಂಜರಿಕೆ** · *hiñjarike* · hesitation
       - To slide backwards: the foot that starts to move and then does not.
     - **ಅನುಮಾನ** · *anumāna* · doubt
@@ -809,7 +809,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
 ಸ್ಥಾಯಿಭಾವ · ಜುಗುಪ್ಸೆ · jugupse, revulsion
 
 - **ಬೀಭತ್ಸ** · *bībhatsa* · disgust, the odious
-  - The rasa nobody wants and every tradition keeps. Kannada files disgust under endurance: ಅಸಹ್ಯ literally means what cannot be borne.
+  - The rasa nobody wants and every tradition keeps. Kannada files disgust under endurance: ಅಸಹ್ಯ literally means what cannot be borne. Blind money dancing on a dead man's chest. Revulsion with its eyes open.
   - **ಅಸಹ್ಯ** · *asahya* · disgust
     - also said: **ಜಿಗುಪ್ಸೆ** *jigupse* world-weary revulsion, **ಜುಗುಪ್ಸೆ** *jugupse* the same, other spelling, **ಹೇಸಿಗೆ** *hēsige* filth, loathing, **ರೋಸು** *rōsu* fed up to nausea, **ವಾಕರಿಕೆ** *vākarike* nausea
     - 'Unbearable.' The daily word, used for a smell and for a politician with equal ease.
@@ -819,7 +819,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
     - **ಕೊಳಕು** · *koḷaku* · dirt
       - Native and blunt. Calling a person ಕೊಳಕು is not a comment on hygiene.
   - **ವಾಕರಿಕೆ** · *vākarike* · nausea
-    - The bodily end of the sector, and Kannada moves between it and the moral end without a signal.
+    - The bodily end of the sector, and Kannada moves between it and the moral end without a signal. The gorge rising at ritual done without the mind in it.
     - **ಓಕರಿಕೆ** · *ōkarike* · retching
       - Onomatopoeic and unglamorous.
     - **ಹೊಟ್ಟೆ ತೊಳಸು** · *hoṭṭe toḷasu* · the stomach stirs
@@ -832,7 +832,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
     - **ರೇಜಿಗೆ** · *rējige* · exasperation
       - Disgust at something that keeps not working, rather than at something foul.
   - **ತಾತ್ಸಾರ** · *tātsāra* · disdain
-    - Disgust cooled into a social posture: the version you can hold at a wedding.
+    - Disgust cooled into a social posture: the version you can hold at a wedding. Contempt done politely: my legs are the pillars, my body the shrine.
     - **ಅಸಡ್ಡೆ** · *asaḍḍe* · not caring, coldly
       - also said: **ನಿರಾಸಕ್ತಿ** *nirāsakti* disinterest, **ಉದಾಸೀನ** *udāsīna* indifference, or the cold shoulder, **ತಾತ್ಸಾರ** *tātsāra* disdain
       - Not caring, and not quite bothering to hide that you are not caring.
@@ -866,7 +866,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
     - **ಮೈ ಝುಮ್** · *mai jhum* · the body tingles
       - The spoken version, and specifically aesthetic: you say it about a raga.
   - **ಭಯಭಕ್ತಿ** · *bhaya-bhakti* · awe
-    - Fear-and-devotion, in one compound. Awe as a social posture: how one stands before a deity or a formidable elder.
+    - Fear-and-devotion, in one compound. Awe as a social posture: how one stands before a deity or a formidable elder. Where awe and fear stop being separable.
     - **ಗೌರವ** · *gaurava* · respect
       - Something you give, actively, not something you passively have.
     - **ದಿಗ್ಭ್ರಮೆ** · *digbhrame* · stupefaction
@@ -893,7 +893,7 @@ rasa   2      ಪ್ರೀತಿ     prīti      love                           
     - **ಸಾರ್ಥಕ** · *sārthaka* · it was worth it
       - 'Having meaning.' The feeling, where ಯಶಸ್ವಿ is only the outcome.
   - **ವೈರಾಗ್ಯ** · *vairāgya* · detachment
-    - Ordinary speech in Kannada, not only monastic: said of anyone who has stopped wanting a thing they used to want.
+    - Ordinary speech in Kannada, not only monastic: said of anyone who has stopped wanting a thing they used to want. The roof leaks and the tenant stops minding. Detachment as a house in the rain.
     - **ಉದಾಸೀನ** · *udāsīna* · equanimity, or the cold shoulder
       - In philosophy the sage's evenness. In an argument, the coldest insult available. Same word.
     - **ನಿರ್ಲಿಪ್ತ** · *nirlipta* · unsmeared
