@@ -21,23 +21,30 @@ there, which turns the log into a graph of moves.
 | `ms` | dwell on `prev`, or milliseconds of song that actually sounded |
 | `yt` | the song, when one played |
 
-Not stored: IP, user agent, referrer, country, or anything typed. No cookies.
+Not stored on an event: IP, user agent, referrer, or anything typed. No cookies.
+
+City and country **are** recorded, once per visit, in a separate `geo` table
+that carries no `aid` and no `sid`. That separation is the whole point. You
+can ask how many people opened the wheel in Bengaluru on Tuesday; you cannot
+ask what the reader in Bengaluru looked at, because the schema has no column
+that would join the two.
 Readers who send Do Not Track or Global Privacy Control are not counted at
 all, and `localStorage['bhava.notrack'] = 1` opts out by hand.
 
 ## Deploy
 
+Deployed and live at **https://bhava-log.rala-search.workers.dev**, writing to
+the D1 database `bhava-log`. `ENDPOINT` in [`src/track.js`](../src/track.js)
+already points at it.
+
+`/stats` stays closed until you give it a key:
+
 ```sh
 cd worker
-npx wrangler d1 create bhava-log          # paste the id into wrangler.toml
-npx wrangler d1 execute bhava-log --remote --file=schema.sql
-npx wrangler deploy
-npx wrangler secret put STATS_KEY         # optional, opens /stats
+npx wrangler secret put STATS_KEY
 ```
 
-Then put the deployed URL into `ENDPOINT` at the top of
-[`src/track.js`](../src/track.js) and push. Until that line is filled in the
-tracker is inert: nothing is sent, and no id is even minted.
+To redeploy after editing `analytics.js`: `npx wrangler deploy`.
 
 ## Reading it
 
@@ -88,4 +95,11 @@ A song with many plays and a low `avg_secs` is one people skip: either the
 SELECT prev AS word, COUNT(*) n, AVG(ms)/1000 avg_secs
   FROM events WHERE ev='sel' AND prev IS NOT NULL AND ms < 600000
  GROUP BY prev HAVING n > 5 ORDER BY avg_secs DESC LIMIT 30;
+```
+
+**Where the audience is**
+
+```sql
+SELECT country, city, SUM(visits) visits
+  FROM geo GROUP BY country, city ORDER BY visits DESC LIMIT 30;
 ```

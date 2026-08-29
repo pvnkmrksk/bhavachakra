@@ -59,6 +59,18 @@ export default {
       }
       if (!rows.length) return new Response("nothing to do", { status: 400, headers: cors(ok) });
 
+      // Audience, counted once per visit and kept in its own table with no id
+      // on the row: a place per day, never a place per person per word.
+      if (body.first) {
+        const cf = request.cf || {};
+        const day = new Date(now).toISOString().slice(0, 10);
+        rows.push(env.DB.prepare(
+          `INSERT INTO geo (day, country, region, city, visits) VALUES (?,?,?,?,1)
+             ON CONFLICT(day, country, region, city) DO UPDATE SET visits = visits + 1`)
+          .bind(day, clip(cf.country, 8) || "??", clip(cf.region, 40) || "",
+                clip(cf.city, 60) || ""));
+      }
+
       await env.DB.batch(rows);
       return new Response(String(rows.length), { status: 202, headers: cors(ok) });
     }
@@ -71,7 +83,7 @@ export default {
       const since = Date.now() - days * 86_400_000;
       const q = sql => env.DB.prepare(sql).bind(since).all().then(r => r.results);
 
-      const [words, edges, listens, reach, funnel] = await Promise.all([
+      const [words, edges, listens, reach, funnel, places] = await Promise.all([
         q(`SELECT wheel, word, COUNT(*) n, COUNT(DISTINCT aid) people
              FROM events WHERE ts > ? AND ev='sel' AND word IS NOT NULL
             GROUP BY wheel, word ORDER BY n DESC LIMIT 200`),
@@ -85,10 +97,16 @@ export default {
              FROM events WHERE ts > ?`),
         q(`SELECT wheel, COUNT(DISTINCT sid) visits FROM events
             WHERE ts > ? AND ev='open' GROUP BY wheel ORDER BY visits DESC`),
+        env.DB.prepare(
+          `SELECT country, city, SUM(visits) visits FROM geo
+             WHERE day >= date(?/1000, 'unixepoch')
+            GROUP BY country, city ORDER BY visits DESC LIMIT 100`)
+          .bind(since).all().then(r => r.results),
       ]);
 
-      return Response.json({ days, reach: reach[0], wheels: funnel, words, edges, listens },
-                           { headers: cors(ok) });
+      return Response.json(
+        { days, reach: reach[0], wheels: funnel, places, words, edges, listens },
+        { headers: cors(ok) });
     }
 
     return new Response("bhava-log", { status: 200, headers: cors(ok) });

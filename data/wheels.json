@@ -631,11 +631,12 @@
         "en": "Shocked",
         "kids": [],
         "song": {
-         "t": "ಸೋಲ್ ಆಫ್ ದಿಯಾ",
-         "by": "",
-         "src": "ದಿಯಾ",
-         "yt": "cO4eJxbCedc",
-         "st": 28
+         "t": "ದೆನ್ನಾನ ದೆನ್ನಾನ",
+         "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
+         "src": "ರಂಗಿತರಂಗ · 2015",
+         "yt": "oepLylgqSKU",
+         "st": 20,
+         "from": "ಬೆಚ್ಚು"
         }
        },
        {
@@ -1033,12 +1034,11 @@
         "kids": [],
         "note": "English uses one <i>overwhelmed</i> in two places on this wheel. Kannada splits them by how you are swamped: ಹೈರಾಣ is worn down to nothing by too much work; ಕಳವಳ, over in ಭಯ, is being swamped by dread.",
         "song": {
-         "t": "ಈ ಸಂಜೆ ಯಾಕಾಗಿದೆ",
-         "by": "ಮನೋಮೂರ್ತಿ · ಸೋನು ನಿಗಮ್",
-         "src": "ಗೆಳೆಯ · 2007",
-         "yt": "-1TEJkzEgYc",
-         "st": 40,
-         "from": "ತಳಮಳ"
+         "t": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ",
+         "by": "ಇಳಯರಾಜ",
+         "src": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ · 2016",
+         "yt": "6Osq8CFCPkY",
+         "st": 120
         }
        },
        {
@@ -1094,12 +1094,12 @@
          }
         ],
         "song": {
-         "t": "ಆಡಿಸಿದಾತ ಬೇಸರ ಮೂಡಿ",
-         "by": "",
-         "src": "ಕಸ್ತೂರಿ ನಿವಾಸ",
-         "yt": "nszeqsxnK_g",
-         "st": 42,
-         "from": "ಬೇಸರ"
+         "t": "ಬಲೂನ್ ಸಾಂಗ್",
+         "by": "ವಾಸುಕಿ ವೈಭವ್ · ಶಿಶು ತಾನ್ಸೆನ್ ಜ್ಞಾನೇಶ್ವರ್",
+         "src": "ಸರ್ಕಾರಿ ಹಿ.ಪ್ರಾ. ಶಾಲೆ ಕಾಸರಗೋಡು · 2018",
+         "yt": "GsZ3OcBNM8Q",
+         "st": 95,
+         "from": "ದಣಿವು"
         }
        },
        {
@@ -1118,6 +1118,13 @@
        }
       ],
       "note": "Used of a body and of a day alike.",
+      "song": {
+       "t": "ಬಲೂನ್ ಸಾಂಗ್",
+       "by": "ವಾಸುಕಿ ವೈಭವ್ · ಶಿಶು ತಾನ್ಸೆನ್ ಜ್ಞಾನೇಶ್ವರ್",
+       "src": "ಸರ್ಕಾರಿ ಹಿ.ಪ್ರಾ. ಶಾಲೆ ಕಾಸರಗೋಡು · 2018",
+       "yt": "GsZ3OcBNM8Q",
+       "st": 95
+      },
       "also": [
        {
         "kn": "ಆಯಾಸ",
@@ -1134,15 +1141,7 @@
         "tr": "sustu",
         "en": "done in"
        }
-      ],
-      "song": {
-       "t": "ಆಡಿಸಿದಾತ ಬೇಸರ ಮೂಡಿ",
-       "by": "",
-       "src": "ಕಸ್ತೂರಿ ನಿವಾಸ",
-       "yt": "nszeqsxnK_g",
-       "st": 42,
-       "from": "ಬೇಸರ"
-      }
+      ]
      }
     ],
     "note": "The hardest sector. Kannada's ಕೆಟ್ಟ is moral or qualitative, a bad man, spoiled milk, and cannot be a feeling. But look at what the English wheel actually files under 'Bad': bored, busy, stressed, tired. That whole zone has one Kannada name, ಬೇಸರ: a fused weariness-with-things that English needs four words to circle.",
@@ -1261,11 +1260,12 @@
         "kids": [],
         "note": "The second of the split: see ಹೈರಾಣ under ಬೇಸರ. ಕಳವಳ is being flooded by apprehension rather than by workload.",
         "song": {
-         "t": "ಕಣ್ಣೀರ ಧಾರೆ ಇದೇತಕೆ",
+         "t": "ನೀನಿರದೆ",
          "by": "",
-         "src": "ಹೊಸ ಬೆಳಕು",
-         "yt": "K7RXspdkHmc",
-         "st": 28
+         "src": "ಗೂಗ್ಲಿ",
+         "yt": "g5O5ufz8w34",
+         "st": 32,
+         "from": "ಆತಂಕ"
         }
        }
       ],
@@ -1468,11 +1468,11 @@
          }
         ],
         "song": {
-         "t": "ಕಾಣದಂತೆ ಮಾಯವಾದನು",
-         "by": "",
-         "src": "ಚಲಿಸುವ ಮೋಡಗಳು",
-         "yt": "_N80F5mJDEk",
-         "st": 32,
+         "t": "ಜೀವ್ನಾನೇ ಶ್ಯಾನೆ ಬೇಜಾರು",
+         "by": "ಆರ್. ಹರಿ ಬಾಬು · ವಿಜಯ್ ಪ್ರಕಾಶ್",
+         "src": "ಸಿಂಹ ಹಾಕಿದ ಹೆಜ್ಜೆ · 2017",
+         "yt": "UXRlbjyYYdk",
+         "st": 8,
          "from": "ತಿರಸ್ಕಾರ"
         }
        },
@@ -1492,11 +1492,11 @@
       ],
       "note": "ತಿರಸ್ಕಾರ is what the other person did. As with ಒಪ್ಪಿಗೆ, Kannada gives you no noun for the receiving end: rejection is only ever described from outside.",
       "song": {
-       "t": "ಕಾಣದಂತೆ ಮಾಯವಾದನು",
-       "by": "",
-       "src": "ಚಲಿಸುವ ಮೋಡಗಳು",
-       "yt": "_N80F5mJDEk",
-       "st": 32
+       "t": "ಜೀವ್ನಾನೇ ಶ್ಯಾನೆ ಬೇಜಾರು",
+       "by": "ಆರ್. ಹರಿ ಬಾಬು · ವಿಜಯ್ ಪ್ರಕಾಶ್",
+       "src": "ಸಿಂಹ ಹಾಕಿದ ಹೆಜ್ಜೆ · 2017",
+       "yt": "UXRlbjyYYdk",
+       "st": 8
       }
      },
      {
@@ -2637,11 +2637,11 @@
         "kids": [],
         "note": "The spoken form: 'the hands not managing it'.",
         "song": {
-         "t": "ನೀರ ಬಿಟ್ಟು ನೆಲದ ಮೇಲೆ",
-         "by": "",
-         "src": "ಹೊಂಬಿಸಿಲು",
-         "yt": "1UKpmhCzNKE",
-         "st": 28
+         "t": "ಏನು ಮಾಡಲಿ ನಾನು",
+         "by": "ಜಿ. ಕೆ. ವೆಂಕಟೇಶ್ · ಡಾ. ರಾಜ್‌ಕುಮಾರ್",
+         "src": "ತ್ರಿಮೂರ್ತಿ · 1975",
+         "yt": "Ijl821eHZWc",
+         "st": 5
         }
        }
       ],
@@ -3288,12 +3288,11 @@
         "kids": [],
         "note": "ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle it, treats revenge as a debt.",
         "song": {
-         "t": "ಜಗವೇ ಒಂದು ರಣರಂಗ",
-         "by": "ಹಂಸಲೇಖ · ಶಿವರಾಜ್‌ಕುಮಾರ್",
-         "src": "ರಣರಂಗ · 1988",
-         "yt": "MpzlmO8OLH8",
-         "st": 25,
-         "from": "ಹೊಟ್ಟೆಯುರಿ"
+         "t": "ಹಾವಿನ ದ್ವೇಷ ಹನ್ನೆರಡು ವರುಷ",
+         "by": "ವಿಜಯ ಭಾಸ್ಕರ್ · ಎಸ್. ಪಿ. ಬಾಲಸುಬ್ರಹ್ಮಣ್ಯಂ",
+         "src": "ನಾಗರಹಾವು · 1972",
+         "yt": "2-hWiBxhJ7I",
+         "st": 5
         }
        }
       ],
@@ -3520,11 +3519,12 @@
         "lit": "turning back toward",
         "note": "'Turning back toward': pity as the movement of turning to look again at someone.",
         "song": {
-         "t": "ಜಗದೋದ್ಧಾರನ",
+         "t": "ಬ್ರಹ್ಮ ವಿಷ್ಣು ಶಿವ ಎದೆ ಹಾಲು ಕುಡಿದರೋ",
          "by": "",
-         "src": "ಪುರಂದರದಾಸರ ಪದ",
-         "yt": "P-Z90NNbD6U",
-         "st": 28
+         "src": "ಎಕ್ಸ್‌ಕ್ಯೂಸ್ ಮಿ",
+         "yt": "klZyF45XGgQ",
+         "st": 32,
+         "from": "ಕನಿಕರ"
         }
        }
       ],
@@ -3572,11 +3572,12 @@
         "lit": "the gut is wrung",
         "note": "The image is wringing a wet cloth. Used for watching suffering you cannot stop.",
         "song": {
-         "t": "ಕಣ್ಣೀರ ಧಾರೆ ಇದೇತಕೆ",
+         "t": "ನೀನೇ ಸಾಕಿದ ಗಿಣಿ",
          "by": "",
-         "src": "ಹೊಸ ಬೆಳಕು",
-         "yt": "K7RXspdkHmc",
-         "st": 28
+         "src": "ಮಾನಸ ಸರೋವರ",
+         "yt": "ZjNABpeGfwA",
+         "st": 32,
+         "from": "ಮರುಗು"
         }
        },
        {
@@ -3801,11 +3802,12 @@
         "lit": "the mind shrinks down",
         "note": "What Kannada said before ಖಿನ್ನತೆ was coined. A description, where the new word is a diagnosis.",
         "song": {
-         "t": "ಕಣ್ಣೀರ ಧಾರೆ ಇದೇತಕೆ",
+         "t": "ಒಂದೇ ಸಮನೆ ನಿಟ್ಟುಸಿರು",
          "by": "",
-         "src": "ಹೊಸ ಬೆಳಕು",
-         "yt": "K7RXspdkHmc",
-         "st": 28
+         "src": "ಗಾಳಿಪಟ",
+         "yt": "tVWtj9bTomg",
+         "st": 32,
+         "from": "ಖಿನ್ನತೆ"
         }
        },
        {
@@ -4202,8 +4204,7 @@
          "by": "",
          "src": "ಲೂಸಿಯಾ",
          "yt": "udlrKIs0b-o",
-         "st": 32,
-         "from": "ಗೊಂದಲ"
+         "st": 33
         }
        }
       ],
@@ -4246,12 +4247,12 @@
         "lit": "the head spins",
         "note": "Physical dizziness and being overwhelmed share the phrase entirely.",
         "song": {
-         "t": "ಯಾರೋ ನಾನು",
-         "by": "",
-         "src": "ಕನ್ನಡ ಚಿತ್ರಗೀತೆ",
-         "yt": "uvMAUAKivio",
-         "st": 44,
-         "from": "ತಲೆ"
+         "t": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ",
+         "by": "ಇಳಯರಾಜ",
+         "src": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ · 2016",
+         "yt": "6Osq8CFCPkY",
+         "st": 120,
+         "from": "ಹೈರಾಣ"
         }
        },
        {
@@ -4260,6 +4261,13 @@
         "en": "tiredness",
         "kids": [],
         "note": "The native word, used of a body and of a day alike.",
+        "song": {
+         "t": "ಬಲೂನ್ ಸಾಂಗ್",
+         "by": "ವಾಸುಕಿ ವೈಭವ್ · ಶಿಶು ತಾನ್ಸೆನ್ ಜ್ಞಾನೇಶ್ವರ್",
+         "src": "ಸರ್ಕಾರಿ ಹಿ.ಪ್ರಾ. ಶಾಲೆ ಕಾಸರಗೋಡು · 2018",
+         "yt": "GsZ3OcBNM8Q",
+         "st": 95
+        },
         "also": [
          {
           "kn": "ಆಯಾಸ",
@@ -4276,25 +4284,16 @@
           "tr": "sustu",
           "en": "done in"
          }
-        ],
-        "song": {
-         "t": "ಯಾರೋ ನಾನು",
-         "by": "",
-         "src": "ಕನ್ನಡ ಚಿತ್ರಗೀತೆ",
-         "yt": "uvMAUAKivio",
-         "st": 44,
-         "from": "ತಲೆ"
-        }
+        ]
        }
       ],
       "note": "Overwhelm as depletion rather than dread.",
       "song": {
-       "t": "ಯಾರೋ ನಾನು",
-       "by": "",
-       "src": "ಕನ್ನಡ ಚಿತ್ರಗೀತೆ",
-       "yt": "uvMAUAKivio",
-       "st": 44,
-       "from": "ತಲೆ"
+       "t": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ",
+       "by": "ಇಳಯರಾಜ",
+       "src": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ · 2016",
+       "yt": "6Osq8CFCPkY",
+       "st": 120
       }
      },
      {
@@ -4325,11 +4324,12 @@
         "lit": "to lower the head",
         "note": "The same axis in the other direction. Kannada's shame is visible before it is internal.",
         "song": {
-         "t": "ಬಿಂಕದ ಸಿಂಗಾರಿ",
+         "t": "ಕನ್ನಡ ನಾಡಿನ ವೀರ ರಮಣಿಯ",
          "by": "",
-         "src": "ಕನ್ಯಾರತ್ನ",
-         "yt": "URetKS2ebzQ",
-         "st": 28
+         "src": "ನಾಗರಹಾವು",
+         "yt": "ziNXOdlPLLE",
+         "st": 32,
+         "from": "ಮರ್ಯಾದೆ"
         }
        }
       ],
@@ -4415,11 +4415,11 @@
         "lit": "the fine hair stands",
         "note": "Which of the two it is comes from context alone. Kannada declines to separate the physiology.",
         "song": {
-         "t": "ರಾ ರಾ ಸರಸಕು",
-         "by": "ಗುರುಕಿರಣ್ · ರಾಜೇಶ್ ನಂದಿತಾ",
-         "src": "ಆಪ್ತಮಿತ್ರ · 2004",
-         "yt": "ReeQgwpRO88",
-         "st": 47
+         "t": "ವರಾಹ ರೂಪಂ",
+         "by": "ಅಜನೀಶ್ ಲೋಕನಾಥ್",
+         "src": "ಕಾಂತಾರ · 2022",
+         "yt": "gH_RYRwVrVM",
+         "st": 30
         }
        },
        {
@@ -4429,11 +4429,11 @@
         "kids": [],
         "note": "'ಬೆವರಿಬಿಟ್ಟೆ', I broke into a sweat, is a complete statement about fear.",
         "song": {
-         "t": "ತಗರು ಬಂತು ತಗರು",
-         "by": "ಚರಣ್ ರಾಜ್",
-         "src": "ತಗರು · 2018",
-         "yt": "V3-Fd8wPuRA",
-         "st": 20
+         "t": "ಬೆಳುವಲದ ಮಡಿಲಲ್ಲಿ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಎಸ್. ಪಿ. ಬಾಲಸುಬ್ರಹ್ಮಣ್ಯಂ · ಎಸ್. ಜಾನಕಿ",
+         "src": "ಬೆಳುವಲದ ಮಡಿಲಲ್ಲಿ · 1975",
+         "yt": "JD7GFdzbhE8",
+         "st": 5
         }
        }
       ],
@@ -4459,11 +4459,12 @@
         "lit": "the body burns",
         "note": "Also literally a fever or a rash: the phrase does not choose.",
         "song": {
-         "t": "ಸುಲ್ತಾನ",
-         "by": "ರವಿ ಬಸ್ರೂರು",
-         "src": "ಕೆ.ಜಿ.ಎಫ್ ೨ · 2022",
-         "yt": "kwa9JRcqKeE",
-         "st": 30
+         "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+         "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+         "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+         "yt": "s90VmReOoco",
+         "st": 46,
+         "from": "ಉರಿ"
         }
        },
        {
@@ -4563,12 +4564,11 @@
         "lit": "to puff the face",
         "note": "Described as something you actively do to your own face. The performance is the point.",
         "song": {
-         "t": "ಸೂರ್ಯಂಗೂ ಚಂದ್ರಂಗೂ",
-         "by": "",
-         "src": "ಶುಭಮಂಗಳ",
-         "yt": "f3vfrCf6jEI",
-         "st": 32,
-         "from": "ಮುನಿಸು"
+         "t": "ಮುನಿಸು ತರವೇ ಮುಗುದೆ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್ · ಪುತ್ತೂರು ನರಸಿಂಹ ನಾಯಕ್",
+         "src": "ಸಲ್ಲಾಪ · ಭಾವಗೀತೆ",
+         "yt": "DCz_4Kb7hLc",
+         "st": 10
         }
        },
        {
@@ -4626,11 +4626,12 @@
         "lit": "the face darkens",
         "note": "The visible fall when someone hears they were left out.",
         "song": {
-         "t": "ಕಣ್ಣೀರ ಧಾರೆ ಇದೇತಕೆ",
-         "by": "",
-         "src": "ಹೊಸ ಬೆಳಕು",
-         "yt": "K7RXspdkHmc",
-         "st": 28
+         "t": "ಲೈಫು ಇಷ್ಟೇನೆ",
+         "by": "ಮನೋಮೂರ್ತಿ",
+         "src": "ಪಂಚರಂಗಿ · 2010",
+         "yt": "OurLEFrIHDo",
+         "st": 30,
+         "from": "ಸಪ್ಪೆ"
         }
        },
        {
@@ -4716,11 +4717,12 @@
         "lit": "red eyes",
         "note": "A warning read by everyone present. The threat is in the description, not in any word for anger.",
         "song": {
-         "t": "ಸುಲ್ತಾನ",
-         "by": "ರವಿ ಬಸ್ರೂರು",
-         "src": "ಕೆ.ಜಿ.ಎಫ್ ೨ · 2022",
-         "yt": "kwa9JRcqKeE",
-         "st": 30
+         "t": "ತಗರು ಬಂತು ತಗರು",
+         "by": "ಚರಣ್ ರಾಜ್",
+         "src": "ತಗರು · 2018",
+         "yt": "V3-Fd8wPuRA",
+         "st": 20,
+         "from": "ಸಿಟ್ಟು"
         }
        },
        {
@@ -4824,11 +4826,11 @@
       ],
       "note": "A bride's ನಾಚಿಕೆ and a thief's are the same noun. English needs three words and grades them differently; Kannada trusts context completely.",
       "song": {
-       "t": "ಬಿಂಕದ ಸಿಂಗಾರಿ",
-       "by": "",
-       "src": "ಕನ್ಯಾರತ್ನ",
-       "yt": "URetKS2ebzQ",
-       "st": 32
+       "t": "ನಾಚಿಕೆ ಇನ್ನೇಕೆ",
+       "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಎಸ್. ಪಿ. ಬಾಲಸುಬ್ರಹ್ಮಣ್ಯಂ · ಎಸ್. ಜಾನಕಿ",
+       "src": "ಕಿಲಾಡಿ ಜೋಡಿ · 1978",
+       "yt": "2025drFL5ks",
+       "st": 20
       },
       "also": [
        {
@@ -5815,12 +5817,11 @@
         "kids": [],
         "note": "Native. ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle the revenge, treats it as a debt.",
         "song": {
-         "t": "ಜಗವೇ ಒಂದು ರಣರಂಗ",
-         "by": "ಹಂಸಲೇಖ · ಶಿವರಾಜ್‌ಕುಮಾರ್",
-         "src": "ರಣರಂಗ · 1988",
-         "yt": "MpzlmO8OLH8",
-         "st": 25,
-         "from": "ಹಗೆ"
+         "t": "ಹಾವಿನ ದ್ವೇಷ ಹನ್ನೆರಡು ವರುಷ",
+         "by": "ವಿಜಯ ಭಾಸ್ಕರ್ · ಎಸ್. ಪಿ. ಬಾಲಸುಬ್ರಹ್ಮಣ್ಯಂ",
+         "src": "ನಾಗರಹಾವು · 1972",
+         "yt": "2-hWiBxhJ7I",
+         "st": 5
         }
        }
       ],
@@ -6592,22 +6593,22 @@
         "kids": [],
         "note": "Disgust at something that keeps not working, rather than at something foul.",
         "song": {
-         "t": "ಬಿಟ್ಟಾಕು ಬಿಟ್ಟಾಕು",
-         "by": "",
-         "src": "ಸೂಪರ್ ಸ್ಟಾರ್",
-         "yt": "NORO0x0V8oA",
-         "st": 32,
+         "t": "ಜೀವ್ನಾನೇ ಶ್ಯಾನೆ ಬೇಜಾರು",
+         "by": "ಆರ್. ಹರಿ ಬಾಬು · ವಿಜಯ್ ಪ್ರಕಾಶ್",
+         "src": "ಸಿಂಹ ಹಾಕಿದ ಹೆಜ್ಜೆ · 2017",
+         "yt": "UXRlbjyYYdk",
+         "st": 8,
          "from": "ರೋಸು"
         }
        }
       ],
       "note": "ರೋಸಿಹೋಗಿದೆ: fed up to the point of nausea. The most useful word in this sector.",
       "song": {
-       "t": "ಬಿಟ್ಟಾಕು ಬಿಟ್ಟಾಕು",
-       "by": "",
-       "src": "ಸೂಪರ್ ಸ್ಟಾರ್",
-       "yt": "NORO0x0V8oA",
-       "st": 32
+       "t": "ಜೀವ್ನಾನೇ ಶ್ಯಾನೆ ಬೇಜಾರು",
+       "by": "ಆರ್. ಹರಿ ಬಾಬು · ವಿಜಯ್ ಪ್ರಕಾಶ್",
+       "src": "ಸಿಂಹ ಹಾಕಿದ ಹೆಜ್ಜೆ · 2017",
+       "yt": "UXRlbjyYYdk",
+       "st": 8
       }
      },
      {

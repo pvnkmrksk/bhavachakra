@@ -29,3 +29,21 @@ CREATE INDEX IF NOT EXISTS ix_events_ts    ON events(ts);
 CREATE INDEX IF NOT EXISTS ix_events_word  ON events(wheel, word);
 CREATE INDEX IF NOT EXISTS ix_events_edge  ON events(wheel, prev, word);
 CREATE INDEX IF NOT EXISTS ix_events_aid   ON events(aid);
+
+-- Audience, kept deliberately separate from behaviour.
+--
+-- Cloudflare hands the Worker a city and country for free. Putting them on the
+-- events table would have made every row a place plus a person plus a word,
+-- which is a profile. So they live here instead: a count per place per day,
+-- with no aid and no sid on the row. You can ask how many people read the
+-- wheel in Bengaluru on Tuesday. You cannot ask what the person in Bengaluru
+-- read, because that link does not exist in the schema.
+
+CREATE TABLE IF NOT EXISTS geo (
+  day      TEXT NOT NULL,          -- YYYY-MM-DD, UTC
+  country  TEXT,
+  region   TEXT,
+  city     TEXT,
+  visits   INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (day, country, region, city)
+);

@@ -16,7 +16,7 @@
    tracked: Do Not Track and Global Privacy Control are both honoured, and
    `localStorage['bhava.notrack'] = 1` opts out by hand.                     */
 (function () {
-  const ENDPOINT = "";            // e.g. "https://bhava-log.you.workers.dev/e"
+  const ENDPOINT = "https://bhava-log.rala-search.workers.dev/e";
 
   const off = !ENDPOINT ||
     navigator.doNotTrack === "1" || window.doNotTrack === "1" ||
@@ -35,17 +35,29 @@
   } catch (e) { aid = id(); }        // private window: a one-visit id is fine
   const sid = id();
 
-  let queue = [], timer = null;
+  let queue = [], timer = null, first = true;
 
   function flush() {
     clearTimeout(timer); timer = null;
     if (!queue.length) return;
-    const body = JSON.stringify({ aid, sid, ev: queue.splice(0, 60) });
+    // `first` asks the worker to count one visit against the city it sees.
+    // That count lands in its own table with no id on the row, so it can
+    // never be joined back to what this reader looked at.
+    const body = JSON.stringify({ aid, sid, first, ev: queue.splice(0, 60) });
+    first = false;
     // sendBeacon survives the page being closed, which is exactly when the
     // last and most interesting events are sitting in the queue
+    // text/plain, not application/json, and it matters: application/json is
+    // not a CORS-safelisted content type, so the browser would want a preflight
+    // first, and sendBeacon cannot preflight. It returns true, queues nothing
+    // that survives, and the events vanish without an error anywhere. The
+    // worker reads the body as text and parses it itself, so the header is
+    // decoration either way.
+    const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
     try {
-      if (!navigator.sendBeacon || !navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "application/json" })))
-        fetch(ENDPOINT, { method: "POST", body, keepalive: true, headers: { "content-type": "application/json" } }).catch(() => {});
+      if (!navigator.sendBeacon || !navigator.sendBeacon(ENDPOINT, blob))
+        fetch(ENDPOINT, { method: "POST", body, keepalive: true,
+                          headers: { "content-type": "text/plain;charset=UTF-8" } }).catch(() => {});
     } catch (e) {}
   }
 

@@ -1,7 +1,5 @@
 # Deploy:
 #   cd worker
-#   npx wrangler d1 create bhava-log
-#   # paste the database_id it prints into the block below
 #   npx wrangler d1 execute bhava-log --remote --file=schema.sql
 #   npx wrangler deploy
 #
@@ -13,9 +11,12 @@ main = "analytics.js"
 compatibility_date = "2026-01-01"
 
 [[d1_databases]]
+# `binding` is the name the Worker code uses (env.DB). It does not have to
+# match the database name, and wrangler's suggested "bhava_log" is only a
+# suggestion: what matters is that this line and analytics.js agree.
 binding = "DB"
 database_name = "bhava-log"
-database_id = "PASTE_THE_ID_FROM_d1_create_HERE"
+database_id = "9a638d07-3c4c-47ee-8c15-c239ec43d60c"
 
 [vars]
 # Only these origins may post. Anything else is refused.
