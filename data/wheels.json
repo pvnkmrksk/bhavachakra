@@ -1098,7 +1098,7 @@
          "by": "ವಾಸುಕಿ ವೈಭವ್ · ಶಿಶು ತಾನ್ಸೆನ್ ಜ್ಞಾನೇಶ್ವರ್",
          "src": "ಸರ್ಕಾರಿ ಹಿ.ಪ್ರಾ. ಶಾಲೆ ಕಾಸರಗೋಡು · 2018",
          "yt": "GsZ3OcBNM8Q",
-         "st": 95,
+         "st": 124,
          "from": "ದಣಿವು"
         }
        },
@@ -1123,7 +1123,7 @@
        "by": "ವಾಸುಕಿ ವೈಭವ್ · ಶಿಶು ತಾನ್ಸೆನ್ ಜ್ಞಾನೇಶ್ವರ್",
        "src": "ಸರ್ಕಾರಿ ಹಿ.ಪ್ರಾ. ಶಾಲೆ ಕಾಸರಗೋಡು · 2018",
        "yt": "GsZ3OcBNM8Q",
-       "st": 95
+       "st": 124
       },
       "also": [
        {
@@ -1260,23 +1260,16 @@
         "kids": [],
         "note": "The second of the split: see ಹೈರಾಣ under ಬೇಸರ. ಕಳವಳ is being flooded by apprehension rather than by workload.",
         "song": {
-         "t": "ನೀನಿರದೆ",
-         "by": "",
-         "src": "ಗೂಗ್ಲಿ",
-         "yt": "g5O5ufz8w34",
-         "st": 32,
-         "from": "ಆತಂಕ"
+         "t": "ರಾ ರಾ ಸರಸಕು",
+         "by": "ಗುರುಕಿರಣ್ · ರಾಜೇಶ್ ನಂದಿತಾ",
+         "src": "ಆಪ್ತಮಿತ್ರ · 2004",
+         "yt": "ReeQgwpRO88",
+         "st": 47,
+         "from": "ಭಯ"
         }
        }
       ],
       "note": "ಆತಂಕ is now the standard clinical word too. Its older sense is closer to 'impediment': anxiety as the thing in your way.",
-      "song": {
-       "t": "ನೀನಿರದೆ",
-       "by": "",
-       "src": "ಗೂಗ್ಲಿ",
-       "yt": "g5O5ufz8w34",
-       "st": 32
-      },
       "also": [
        {
         "kn": "ಕಳವಳ",
@@ -1298,7 +1291,15 @@
         "tr": "vyākula",
         "en": "distress"
        }
-      ]
+      ],
+      "song": {
+       "t": "ರಾ ರಾ ಸರಸಕು",
+       "by": "ಗುರುಕಿರಣ್ · ರಾಜೇಶ್ ನಂದಿತಾ",
+       "src": "ಆಪ್ತಮಿತ್ರ · 2004",
+       "yt": "ReeQgwpRO88",
+       "st": 47,
+       "from": "ಭಯ"
+      }
      },
      {
       "kn": "ಅಳುಕು",
@@ -1422,21 +1423,22 @@
          }
         ],
         "song": {
-         "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
-         "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
-         "src": "ಆಕಸ್ಮಿಕ · 1993",
-         "yt": "BOoWZEhCh8s",
-         "st": 40,
-         "from": "ದುರ್ಬಲ"
+         "t": "ರಾ ರಾ ಸರಸಕು",
+         "by": "ಗುರುಕಿರಣ್ · ರಾಜೇಶ್ ನಂದಿತಾ",
+         "src": "ಆಪ್ತಮಿತ್ರ · 2004",
+         "yt": "ReeQgwpRO88",
+         "st": 47,
+         "from": "ಭಯ"
         }
        }
       ],
       "song": {
-       "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
-       "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
-       "src": "ಆಕಸ್ಮಿಕ · 1993",
-       "yt": "BOoWZEhCh8s",
-       "st": 40
+       "t": "ರಾ ರಾ ಸರಸಕು",
+       "by": "ಗುರುಕಿರಣ್ · ರಾಜೇಶ್ ನಂದಿತಾ",
+       "src": "ಆಪ್ತಮಿತ್ರ · 2004",
+       "yt": "ReeQgwpRO88",
+       "st": 47,
+       "from": "ಭಯ"
       }
      },
      {
@@ -1696,13 +1698,6 @@
         "en": "Ridiculed",
         "kids": [],
         "note": "Laughter turned and pointed. The wound is that a good thing was aimed at you.",
-        "song": {
-         "t": "ಓಳು ಬರಿ ಓಳು",
-         "by": "ಗುರುಕಿರಣ್",
-         "src": "ಉಪೇಂದ್ರ · 1999",
-         "yt": "-MKlrMx2k1c",
-         "st": 30
-        },
         "also": [
          {
           "kn": "ಅಪಹಾಸ್ಯ",
@@ -1724,7 +1719,15 @@
           "tr": "kucōdya",
           "en": "malicious teasing"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+         "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+         "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+         "yt": "s90VmReOoco",
+         "st": 46,
+         "from": "ಕೋಪ"
+        }
        }
       ],
       "note": "ತೇಜೋವಧೆ, the murder of someone's lustre, is the other word for it: humiliation as an assassination of light.",
@@ -1965,12 +1968,12 @@
         "kids": [],
         "note": "'A whole mandala of live coals.' One of the finest anger words in the language, and unfindable from English.",
         "song": {
-         "t": "ಬಿಟ್ಟಾಕು ಬಿಟ್ಟಾಕು",
-         "by": "",
-         "src": "ಸೂಪರ್ ಸ್ಟಾರ್",
-         "yt": "NORO0x0V8oA",
-         "st": 32,
-         "from": "ರೇಜಿಗೆ"
+         "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+         "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+         "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+         "yt": "s90VmReOoco",
+         "st": 46,
+         "from": "ಕೋಪ"
         }
        },
        {
@@ -1980,22 +1983,23 @@
         "kids": [],
         "note": "Onomatopoeia again: the sound of a small grating thing. Kannada builds its minor irritations out of noise.",
         "song": {
-         "t": "ಬಿಟ್ಟಾಕು ಬಿಟ್ಟಾಕು",
-         "by": "",
-         "src": "ಸೂಪರ್ ಸ್ಟಾರ್",
-         "yt": "NORO0x0V8oA",
-         "st": 32,
-         "from": "ರೇಜಿಗೆ"
+         "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+         "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+         "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+         "yt": "s90VmReOoco",
+         "st": 46,
+         "from": "ಕೋಪ"
         }
        }
       ],
       "note": "Frustration as an ongoing state: exasperation at something that keeps not working.",
       "song": {
-       "t": "ಬಿಟ್ಟಾಕು ಬಿಟ್ಟಾಕು",
-       "by": "",
-       "src": "ಸೂಪರ್ ಸ್ಟಾರ್",
-       "yt": "NORO0x0V8oA",
-       "st": 32
+       "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+       "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+       "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+       "yt": "s90VmReOoco",
+       "st": 46,
+       "from": "ಕೋಪ"
       }
      },
      {
@@ -2381,13 +2385,6 @@
         "tr": "digilu",
         "en": "Horrified",
         "kids": [],
-        "song": {
-         "t": "ದೆನ್ನಾನ ದೆನ್ನಾನ",
-         "by": "ಅನೂಪ್ ಭಂಡಾರಿ",
-         "src": "ರಂಗಿತರಂಗ · 2015",
-         "yt": "oepLylgqSKU",
-         "st": 20
-        },
         "also": [
          {
           "kn": "ಆತಂಕ",
@@ -2404,7 +2401,15 @@
           "tr": "bhīti",
           "en": "terror"
          }
-        ]
+        ],
+        "song": {
+         "t": "ಮಾಡಿ ಮಾಡಿ ಕೆಟ್ಟರು ಮನವಿಲ್ಲದೆ",
+         "by": "ಕೂಡಲಸಂಗಮ ದೃಶ್ಯರೂಪಕ",
+         "src": "ಬಸವಣ್ಣ · ವಚನ",
+         "yt": "WouMhm9UMkU",
+         "st": 30,
+         "from": "ಜಿಗುಪ್ಸೆ"
+        }
        },
        {
         "kn": "ಹಿಂಜರಿಕೆ",
@@ -2787,11 +2792,11 @@
         "kids": [],
         "note": "The other 'embarrassed'. ಮುಜುಗರ is the wince at a social scene; ಸಂಕೋಚ is the shrinking-in-on-yourself, the hesitation to ask, to take, to take up room.",
         "song": {
-         "t": "ಬಿಂಕದ ಸಿಂಗಾರಿ",
-         "by": "",
-         "src": "ಕನ್ಯಾರತ್ನ",
-         "yt": "URetKS2ebzQ",
-         "st": 28
+         "t": "ನಾಚಿಕೆ ಇನ್ನೇಕೆ",
+         "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಎಸ್. ಪಿ. ಬಾಲಸುಬ್ರಹ್ಮಣ್ಯಂ · ಎಸ್. ಜಾನಕಿ",
+         "src": "ಕಿಲಾಡಿ ಜೋಡಿ · 1978",
+         "yt": "2025drFL5ks",
+         "st": 20
         }
        }
       ],
@@ -2955,11 +2960,12 @@
         "lit": "the chest sinks",
         "note": "The standard word. Kannada names the physical drop and leaves the feeling to be inferred.",
         "song": {
-         "t": "ಬಾನ ದಾರಿಯಲ್ಲಿ ಸೂರ್ಯ ಜಾರಿ ಹೋದ",
+         "t": "ಹೃದಯ ಸಮುದ್ರ ಕಲಕಿ",
          "by": "",
-         "src": "ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ",
-         "yt": "keMpTLBzX50",
-         "st": 28
+         "src": "ಅಶ್ವಮೇಧ",
+         "yt": "BxAaThBvMQo",
+         "st": 51,
+         "from": "ಎದೆ"
         }
        },
        {
@@ -2970,21 +2976,23 @@
         "lit": "the chest breaks",
         "note": "Reserved for news that arrives all at once. English 'heartbreak' drifted toward romance; this did not.",
         "song": {
-         "t": "ನೀನೇ ಸಾಕಿದ ಗಿಣಿ",
+         "t": "ಹೃದಯ ಸಮುದ್ರ ಕಲಕಿ",
          "by": "",
-         "src": "ಮಾನಸ ಸರೋವರ",
-         "yt": "ZjNABpeGfwA",
-         "st": 28
+         "src": "ಅಶ್ವಮೇಧ",
+         "yt": "BxAaThBvMQo",
+         "st": 51,
+         "from": "ಎದೆ"
         }
        }
       ],
       "note": "The English wheel repeats <i>inferior</i> in two branches. Kannada usefully does not: under fear it is ಕೀಳರಿಮೆ, a belief about your rank; here under sadness it is simply shrinking.",
       "song": {
-       "t": "ಕಾಣದ ಕಡಲಿಗೆ ಹಂಬಲಿಸಿದೆ ಮನ",
-       "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
-       "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
-       "yt": "n66FGCYtWBc",
-       "st": 44
+       "t": "ಹೃದಯ ಸಮುದ್ರ ಕಲಕಿ",
+       "by": "",
+       "src": "ಅಶ್ವಮೇಧ",
+       "yt": "BxAaThBvMQo",
+       "st": 51,
+       "from": "ಎದೆ"
       }
      },
      {
@@ -3129,11 +3137,12 @@
         "lit": "the chest is heavy",
         "note": "The state just before tears, named as a load rather than a mood.",
         "song": {
-         "t": "ಒಂದೇ ಸಮನೆ ನಿಟ್ಟುಸಿರು",
-         "by": "",
-         "src": "ಗಾಳಿಪಟ",
-         "yt": "tVWtj9bTomg",
-         "st": 28
+         "t": "ನೀ ಹೀಂಗ ನೋಡಬ್ಯಾಡ ನನ್ನ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+         "yt": "L4f3c63uSkU",
+         "st": 33,
+         "from": "ಸಂಕಟ"
         }
        },
        {
@@ -4186,11 +4195,12 @@
         "lit": "the head spoils",
         "note": "Same verb as milk going off. Covers exam season and genuine breakdown, with tone doing the work.",
         "song": {
-         "t": "ಬಿಟ್ಟಾಕು ಬಿಟ್ಟಾಕು",
+         "t": "ಹೇಳು ಶಿವ",
          "by": "",
-         "src": "ಸೂಪರ್ ಸ್ಟಾರ್",
-         "yt": "NORO0x0V8oA",
-         "st": 28
+         "src": "ಲೂಸಿಯಾ",
+         "yt": "udlrKIs0b-o",
+         "st": 32,
+         "from": "ಗೊಂದಲ"
         }
        },
        {
@@ -4266,7 +4276,7 @@
          "by": "ವಾಸುಕಿ ವೈಭವ್ · ಶಿಶು ತಾನ್ಸೆನ್ ಜ್ಞಾನೇಶ್ವರ್",
          "src": "ಸರ್ಕಾರಿ ಹಿ.ಪ್ರಾ. ಶಾಲೆ ಕಾಸರಗೋಡು · 2018",
          "yt": "GsZ3OcBNM8Q",
-         "st": 95
+         "st": 124
         },
         "also": [
          {
@@ -4309,11 +4319,12 @@
         "lit": "to raise the head",
         "note": "Dignity described as a posture: the head carried level in front of other people.",
         "song": {
-         "t": "ಆಕಾಶವೇ ಬೀಳಲಿ ಮೇಲೆ",
-         "by": "",
-         "src": "ನ್ಯಾಯವೇ ದೇವರು",
-         "yt": "9dtaiMx6Rl4",
-         "st": 28
+         "t": "ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಕುವೆಂಪು · ನಾಡಗೀತೆ",
+         "yt": "wMc3jzeog1s",
+         "st": 15,
+         "from": "ಮರ್ಯಾದೆ"
         }
        },
        {
@@ -4324,22 +4335,22 @@
         "lit": "to lower the head",
         "note": "The same axis in the other direction. Kannada's shame is visible before it is internal.",
         "song": {
-         "t": "ಕನ್ನಡ ನಾಡಿನ ವೀರ ರಮಣಿಯ",
-         "by": "",
-         "src": "ನಾಗರಹಾವು",
-         "yt": "ziNXOdlPLLE",
-         "st": 32,
+         "t": "ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ಕುವೆಂಪು · ನಾಡಗೀತೆ",
+         "yt": "wMc3jzeog1s",
+         "st": 15,
          "from": "ಮರ್ಯಾದೆ"
         }
        }
       ],
       "note": "One of the most-used words in Kannada. Self-respect described entirely as a posture held in public.",
       "song": {
-       "t": "ಕನ್ನಡ ನಾಡಿನ ವೀರ ರಮಣಿಯ",
-       "by": "",
-       "src": "ನಾಗರಹಾವು",
-       "yt": "ziNXOdlPLLE",
-       "st": 32
+       "t": "ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ",
+       "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+       "src": "ಕುವೆಂಪು · ನಾಡಗೀತೆ",
+       "yt": "wMc3jzeog1s",
+       "st": 15
       }
      }
     ],
@@ -4672,11 +4683,12 @@
         "lit": "the eyes fill",
         "note": "Reversible in a way English is not: a sight can also ಕಣ್ಣು ತುಂಬು you, by being beautiful.",
         "song": {
-         "t": "ನೀನೇ ಸಾಕಿದ ಗಿಣಿ",
-         "by": "",
-         "src": "ಮಾನಸ ಸರೋವರ",
-         "yt": "ZjNABpeGfwA",
-         "st": 28
+         "t": "ನೀ ಹೀಂಗ ನೋಡಬ್ಯಾಡ ನನ್ನ",
+         "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+         "src": "ದ.ರಾ. ಬೇಂದ್ರೆ",
+         "yt": "L4f3c63uSkU",
+         "st": 33,
+         "from": "ಅಳು"
         }
        },
        {
@@ -4687,11 +4699,11 @@
         "lit": "eye-water",
         "note": "Plain compound, no ceremony. Kannada saves its ceremony for the phrases around it.",
         "song": {
-         "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
-         "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
-         "src": "ಆಕಸ್ಮಿಕ · 1993",
-         "yt": "BOoWZEhCh8s",
-         "st": 40
+         "t": "ಕಣ್ಣೀರ ಧಾರೆ ಇದೇತಕೆ",
+         "by": "",
+         "src": "ಹೊಸ ಬೆಳಕು",
+         "yt": "K7RXspdkHmc",
+         "st": 41
         }
        }
       ],
