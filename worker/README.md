@@ -31,6 +31,25 @@ that would join the two.
 Readers who send Do Not Track or Global Privacy Control are not counted at
 all, and `localStorage['bhava.notrack'] = 1` opts out by hand.
 
+## What the key does and does not protect
+
+`/stats` is a public URL with a shared secret in front of it. It is **not**
+behind your Cloudflare login: anyone holding that string can read the
+aggregates from anywhere, and 2FA on the dashboard does not apply. If you want
+it behind a real login, put [Cloudflare
+Access](https://developers.cloudflare.com/cloudflare-one/policies/access/) in
+front of the Worker route in Zero Trust and require your identity provider;
+then the key becomes a second lock rather than the only one.
+
+`POST /e` has no key at all, and cannot have one: it is called by every
+reader's browser, so any secret shipped to it would be public by the second
+page view. It is guarded by an Origin allowlist, which stops other websites
+from posting but not `curl`, which can claim any Origin it likes. The exposure
+is junk rows, not disclosure: nothing is readable through that path.
+
+Rotate the key any time with `npx wrangler secret put STATS_KEY`. The old one
+stops working the moment the new one deploys.
+
 ## Deploy
 
 Deployed and live at **https://bhava-log.rala-search.workers.dev**, writing to
@@ -48,8 +67,27 @@ To redeploy after editing `analytics.js`: `npx wrangler deploy`.
 
 ## Reading it
 
-`GET /stats?key=…&days=30` returns the aggregates below as JSON. Or ask D1
-directly:
+`GET /stats` returns the aggregates below as JSON. Send the key as a header,
+not in the URL:
+
+```sh
+curl -H "Authorization: Bearer $BHAVA_STATS_KEY" \
+     "https://bhava-log.rala-search.workers.dev/stats?days=30"
+```
+
+`?key=` still works so the endpoint can be opened in a browser in a pinch, but
+a key in a query string is written into every log it passes, into browser
+history, and into the Referer of anything clicked from that page. The Worker
+has `redact_query_string` on so its own logs will not keep it, which does
+nothing about the other three.
+
+The comparison is done on SHA-256 digests rather than with `===`, so a wrong
+key takes the same time to reject however much of it was right, and a wrong
+key gets a 404 rather than a 401: an endpoint that answers differently when
+the key is merely wrong is an endpoint that confirms it exists. `/stats`
+returns no CORS headers, so no page in any browser can read it.
+
+Or ask D1 directly:
 
 ```sh
 npx wrangler d1 execute bhava-log --remote --command "..."

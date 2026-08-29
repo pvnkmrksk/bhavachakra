@@ -24,3 +24,26 @@ ALLOWED = "https://bhava.kutuhula.in,http://localhost:8732"
 
 # /stats is closed unless you set a secret:
 #   npx wrangler secret put STATS_KEY
+
+# Logs and traces in the dashboard, under the Worker's Observability tab.
+# head_sampling_rate = 1 keeps everything, which is right at this traffic.
+#
+# redact_query_string matters here: logs are persisted, and /stats still
+# accepts ?key= as a fallback. Without this, the first time anyone opens that
+# URL in a browser the key is written into the log in plain text and stays
+# there. Use the Authorization header and it never appears at all.
+[observability]
+enabled = true
+head_sampling_rate = 1
+redact_query_string = true
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+persist = true
+invocation_logs = true
+
+[observability.traces]
+enabled = true
+head_sampling_rate = 1
+persist = true

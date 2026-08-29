@@ -21,6 +21,33 @@ const cors = origin => ({
 });
 
 const clip = (v, n) => (typeof v === "string" ? v.slice(0, n) : null);
+
+/* Compare by digest, not by ===.
+   A plain string comparison returns as soon as two bytes differ, and the time
+   it took is a measurement of how much of the key was right. Hashing both
+   sides first makes every comparison the same length and the same shape.   */
+async function keyOk(given, expected) {
+  if (!given || !expected) return false;
+  const enc = new TextEncoder();
+  const [a, b] = await Promise.all([
+    crypto.subtle.digest("SHA-256", enc.encode(given)),
+    crypto.subtle.digest("SHA-256", enc.encode(expected)),
+  ]);
+  const x = new Uint8Array(a), y = new Uint8Array(b);
+  let diff = 0;
+  for (let i = 0; i < x.length; i++) diff |= x[i] ^ y[i];
+  return diff === 0;
+}
+
+/* Header first. A key in a query string is written into every server log it
+   passes, into browser history, and into the Referer of anything clicked from
+   the page. ?key= still works so a browser can be pointed at it in a pinch,
+   but the header is the one to use.                                        */
+function statsKey(request, url) {
+  const auth = request.headers.get("Authorization") || "";
+  if (auth.startsWith("Bearer ")) return auth.slice(7).trim();
+  return request.headers.get("X-Stats-Key") || url.searchParams.get("key") || "";
+}
 const num = v => (Number.isFinite(+v) ? Math.max(0, Math.min(+v, 86_400_000)) | 0 : null);
 
 export default {
@@ -72,12 +99,15 @@ export default {
       }
 
       await env.DB.batch(rows);
-      return new Response(String(rows.length), { status: 202, headers: cors(ok) });
+      return new Response(String(rows.length),
+        { status: 202, headers: { ...cors(ok), "Cache-Control": "no-store" } });
     }
 
     if (url.pathname === "/stats" && request.method === "GET") {
-      if (!env.STATS_KEY || url.searchParams.get("key") !== env.STATS_KEY)
-        return new Response("closed", { status: 404, headers: cors(ok) });
+      // 404 rather than 401: an endpoint that answers differently when the key
+      // is merely wrong is an endpoint that confirms it exists.
+      if (!await keyOk(statsKey(request, url), env.STATS_KEY))
+        return new Response("not found", { status: 404, headers: { "Cache-Control": "no-store" } });
 
       const days = Math.min(parseInt(url.searchParams.get("days") || "30", 10) || 30, 365);
       const since = Date.now() - days * 86_400_000;
@@ -104,9 +134,12 @@ export default {
           .bind(since).all().then(r => r.results),
       ]);
 
+      // No CORS headers here on purpose: this is private, and handing a
+      // browser permission to read it from another origin is the opposite of
+      // what a key is for. Use curl, or the address bar, not a fetch().
       return Response.json(
         { days, reach: reach[0], wheels: funnel, places, words, edges, listens },
-        { headers: cors(ok) });
+        { headers: { "Cache-Control": "no-store" } });
     }
 
     return new Response("bhava-log", { status: 200, headers: cors(ok) });
