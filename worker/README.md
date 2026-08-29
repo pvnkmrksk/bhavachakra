@@ -31,63 +31,41 @@ that would join the two.
 Readers who send Do Not Track or Global Privacy Control are not counted at
 all, and `localStorage['bhava.notrack'] = 1` opts out by hand.
 
-## What the key does and does not protect
+## Nothing can read it over the internet
 
-`/stats` is a public URL with a shared secret in front of it. It is **not**
-behind your Cloudflare login: anyone holding that string can read the
-aggregates from anywhere, and 2FA on the dashboard does not apply. If you want
-it behind a real login, put [Cloudflare
-Access](https://developers.cloudflare.com/cloudflare-one/policies/access/) in
-front of the Worker route in Zero Trust and require your identity provider;
-then the key becomes a second lock rather than the only one.
+The Worker has one route, `POST /e`. There is no stats endpoint, no key, and
+nothing to leak or rotate. Every other path returns 404:
 
-`POST /e` has no key at all, and cannot have one: it is called by every
-reader's browser, so any secret shipped to it would be public by the second
-page view. It is guarded by an Origin allowlist, which stops other websites
-from posting but not `curl`, which can claim any Origin it likes. The exposure
-is junk rows, not disclosure: nothing is readable through that path.
-
-Rotate the key any time with `npx wrangler secret put STATS_KEY`. The old one
-stops working the moment the new one deploys.
-
-## Deploy
-
-Deployed and live at **https://bhava-log.rala-search.workers.dev**, writing to
-the D1 database `bhava-log`. `ENDPOINT` in [`src/track.js`](../src/track.js)
-already points at it.
-
-`/stats` stays closed until you give it a key:
-
-```sh
-cd worker
-npx wrangler secret put STATS_KEY
+```
+GET /stats  ->  404      GET /       ->  404
+GET /e      ->  404      GET /geo    ->  404
 ```
 
-To redeploy after editing `analytics.js`: `npx wrangler deploy`.
+The data is read with `wrangler`, which goes through your Cloudflare login and
+its 2FA. That is the only lock here worth trusting, and it is the one you
+already have.
+
+The write path cannot be authenticated: it is called by every reader's
+browser, so any secret shipped to it is public by the second page view. The
+Origin allowlist stops other websites but not `curl`, which can claim any
+Origin. That is an accepted cost, and a cheap one: the worst case is junk rows
+in a table nobody but you can read.
+
+Worker logs are on, persisted, and visible only in your own Cloudflare
+dashboard. Nothing in `analytics.js` ever writes an event, a word or an id
+into a log line, so the logs hold request metadata and nothing else.
 
 ## Reading it
 
-`GET /stats` returns the aggregates below as JSON. Send the key as a header,
-not in the URL:
-
 ```sh
-curl -H "Authorization: Bearer $BHAVA_STATS_KEY" \
-     "https://bhava-log.rala-search.workers.dev/stats?days=30"
+cd worker
+./stats.sh          # the last 30 days
+./stats.sh 7        # the last 7
 ```
 
-`?key=` still works so the endpoint can be opened in a browser in a pinch, but
-a key in a query string is written into every log it passes, into browser
-history, and into the Referer of anything clicked from that page. The Worker
-has `redact_query_string` on so its own logs will not keep it, which does
-nothing about the other three.
-
-The comparison is done on SHA-256 digests rather than with `===`, so a wrong
-key takes the same time to reject however much of it was right, and a wrong
-key gets a 404 rather than a 401: an endpoint that answers differently when
-the key is merely wrong is an endpoint that confirms it exists. `/stats`
-returns no CORS headers, so no page in any browser can read it.
-
-Or ask D1 directly:
+That prints reach, which wheels get opened, where readers are, the words they
+open, **how they move**, where they stop, and how much of each song actually
+played. Or ask D1 whatever you like directly:
 
 ```sh
 npx wrangler d1 execute bhava-log --remote --command "..."

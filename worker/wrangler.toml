@@ -3,8 +3,8 @@
 #   npx wrangler d1 execute bhava-log --remote --file=schema.sql
 #   npx wrangler deploy
 #
-# Then put the URL it prints into ENDPOINT at the top of src/track.js,
-# push, and the build workflow does the rest.
+# Reading the data is ./stats.sh, which goes through your Cloudflare login.
+# The Worker itself has no read route at all.
 
 name = "bhava-log"
 main = "analytics.js"
@@ -21,9 +21,6 @@ database_id = "9a638d07-3c4c-47ee-8c15-c239ec43d60c"
 [vars]
 # Only these origins may post. Anything else is refused.
 ALLOWED = "https://bhava.kutuhula.in,http://localhost:8732"
-
-# /stats is closed unless you set a secret:
-#   npx wrangler secret put STATS_KEY
 
 # Logs and traces in the dashboard, under the Worker's Observability tab.
 # head_sampling_rate = 1 keeps everything, which is right at this traffic.
