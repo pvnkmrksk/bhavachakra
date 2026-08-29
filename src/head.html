@@ -140,9 +140,13 @@ svg.wheel .hublabel .he{fill:var(--ink-2); font-weight:500}
 svg.wheel .hublabel .hb{fill:var(--accent); font-weight:500}
 
 /* ---------- detail ---------- */
+/* overscroll-behavior:contain here was eating the gesture: when the panel has
+   less content than height it is still a scroll container, so a drag that
+   started inside it had nowhere to go and was not allowed to reach the page.
+   Let it chain, and below 900px stop being a scroll container at all.       */
 .detail{grid-column:3; justify-self:stretch; background:var(--plate); border:1px solid var(--rule); border-radius:2px;
   padding:20px; box-shadow:var(--shadow); position:sticky; top:16px;
-  max-height:calc(100vh - 32px); overflow-y:auto; overscroll-behavior:contain}
+  max-height:calc(100vh - 32px); overflow-y:auto}
 .detail .crumb{font-size:12px; color:var(--ink-3); margin-bottom:12px; line-height:1.5}
 .detail .crumb b{color:var(--ink-2); font-weight:600; font-size:13px}
 .detail .crumb i{font-style:normal; opacity:.75}
@@ -176,7 +180,11 @@ svg.wheel .hublabel .hb{fill:var(--accent); font-weight:500}
   .stage{grid-template-columns:1fr}
   .stage::before{display:none}
   .wheelbox{grid-column:1; width:100%; max-width:min(100%,52vh); margin:0 auto}
-  .detail{grid-column:1; position:static; max-height:none; margin-top:12px; border-radius:8px}
+  .detail{grid-column:1; position:static; max-height:none; margin-top:12px; border-radius:8px;
+    overflow:visible}                 /* never a scroll container on a phone */
+  .deck{width:96px; height:96px}      /* smaller to paint, still rendering */
+  .deck iframe{width:96px; height:96px}
+  #ytdeck1{margin-top:-96px}
   .detail .word{font-size:26px}
   .detail .means{font-size:16px}
   .zoomout{font-size:12px; padding:6px 12px}

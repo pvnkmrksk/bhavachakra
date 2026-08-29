@@ -10,15 +10,33 @@
 | **ಒಡಲ ಚಕ್ರ** `odalu` | the part of the body Kannada sites each feeling in | 106 |
 | **ರಸಚಕ್ರ** `rasa` | the nine rasas of the Nāṭyaśāstra, opened out into daily Kannada | 117 |
 
-**Everything lives in one file: [`data/words.csv`](data/words.csv).** One row per word, hierarchy from the `level` column and row order, exactly like an indented outline. Edit it in a spreadsheet or a text editor, run `python3 scripts/build.py`, and the site, this README and [`data/wheels.json`](data/wheels.json) all follow. Nothing else needs touching. How the words were found is in [METHOD.md](METHOD.md).
+**Everything lives in one file: [`data/words.csv`](data/words.csv).** One row per word, hierarchy from the `level` column and row order, exactly like an indented outline. Edit it in a spreadsheet or a text editor, commit, and push: [the build workflow](.github/workflows/build.yml) runs `scripts/build.py` and commits the rebuilt site back, so the CSV is the only file you ever touch. How the words were found is in [METHOD.md](METHOD.md).
 
 ```
-wheel  level  kannada  roman      english           literal  sthayi  also  note
-rasa   wheel  ರಸಚಕ್ರ    nava-rasa  <caption>         ನವರಸ
-rasa   0      ಶೃಂಗಾರ    śṛṅgāra    love, the erotic           ರತಿ · rati
-rasa   1      ಒಲವು      olavu      fondness
-rasa   2      ಪ್ರೀತಿ     prīti      love                                    ಮಮತೆ|mamate|attachment-love
+wheel  level  kannada  roman     english          sthayi  note  song  by  source  yt  start
+rasa   wheel  ರಸಚಕ್ರ    nava-rasa  <caption>
+rasa   0      ಶೃಂಗಾರ    śṛṅgāra    love, the erotic  ರತಿ           ಜೊತೆಯಲಿ ಜೊತೆ ಜೊತೆಯಲಿ  ಇಳಯರಾಜ  ಗೀತಾ · 1981  8HbwsAOfoRY  25
+rasa   1      ಒಲವು      olavu      fondness                       ಒಲವಿನ ಉಡುಗೊರೆ         ಎಂ. ರಂಗರಾವ್  ...  19r6J7zYjcA  20
+rasa   2      ಪ್ರೀತಿ     prīti      love
 ```
+
+### Changing a song
+
+Five columns carry it, all in the same row as the word:
+
+| column | what goes in it |
+|---|---|
+| `song` | the title, in Kannada |
+| `by` | composer, singer, poet |
+| `source` | the film and year, or the poet and the form |
+| `yt` | the eleven characters after `v=` in a YouTube URL |
+| `start` | the second the pallavi lands, set by ear |
+
+`start` is worth setting. Old film songs open on a long orchestral prelude, and thirty seconds of strings is not what the word means. Play the song, note where the voice arrives, put that number in.
+
+A word with no `yt` borrows from the nearest word above it that has one, and the panel says whose song it is, so you only fill in the rows worth filling in. If an id stops working the player falls back the same way.
+
+Before pushing a new id it is worth running `python3 scripts/check_songs.py`, which asks YouTube whether every id is still public and still embeddable and exits non-zero if one has rotted.
 
 ## ಭಾವಚಕ್ರ · the English feeling wheel, translated and then argued with
 

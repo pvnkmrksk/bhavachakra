@@ -85,8 +85,15 @@
       g.setAttribute("aria-label", `${n.d.kn}, ${n.d.tr}, ${n.d.en}`);
       n.g = g;
 
-      g.addEventListener("pointerenter", () => { setHot(n); if (!held) show(n); });
-      g.addEventListener("pointerleave", () => { if (hot === n) setHot(null); });
+      // mouse only: on a touchscreen pointerenter fires while the finger is
+      // dragging the page and would swap the panel out mid-scroll
+      g.addEventListener("pointerenter", e => {
+        if (e.pointerType !== "mouse") return;
+        setHot(n); if (!held) show(n);
+      });
+      g.addEventListener("pointerleave", e => {
+        if (e.pointerType === "mouse" && hot === n) setHot(null);
+      });
       g.addEventListener("focus", () => show(n));
       g.addEventListener("click", e => {
         e.stopPropagation();
@@ -278,7 +285,7 @@
       `<p class="by">${esc(s.by)}</p>` +
       `<p class="oops" hidden></p>` +
       `<a class="src" href="https://www.youtube.com/watch?v=${esc(s.yt)}&t=${s.st | 0}"
-          target="_blank" rel="noopener">ಯೂಟ್ಯೂಬ್‌ನಲ್ಲಿ ಕೇಳಿ · the artist's own channel ↗</a>` +
+          target="_blank" rel="noopener">ಯೂಟ್ಯೂಬ್‌ನಲ್ಲಿ ಕೇಳಿ · official / rights-holder upload ↗</a>` +
       `</div>`;
   }
 

@@ -1,0 +1,54 @@
+# Edit data/words.csv, push, and the site rebuilds itself.
+#
+# index.html carries its data inlined, so the CSV alone changes nothing until
+# build.py has run. This runs it for you, on the push, and commits the result
+# back to main, which is what GitHub Pages serves.
+#
+# The paths below deliberately exclude everything the build writes
+# (index.html, README.md, METHOD.md, data/wheels.json). Without that this
+# workflow's own commit would trigger it again, forever.
+
+name: build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/words.csv
+      - src/**
+      - scripts/**
+      - .github/workflows/build.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # stdlib only: nothing to install
+      - name: build the site, the README and the JSON
+        run: python3 scripts/build.py
+
+      - name: commit whatever changed
+        run: |
+          git config user.name "bhavachakra"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html README.md METHOD.md data/wheels.json
+          if git diff --staged --quiet; then
+            echo "nothing to rebuild"
+          else
+            git commit -m "Rebuild from words.csv [skip ci]"
+            git push
+          fi
