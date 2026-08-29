@@ -51,9 +51,23 @@ Origin allowlist stops other websites but not `curl`, which can claim any
 Origin. That is an accepted cost, and a cheap one: the worst case is junk rows
 in a table nobody but you can read.
 
-Worker logs are on, persisted, and visible only in your own Cloudflare
-dashboard. Nothing in `analytics.js` ever writes an event, a word or an id
-into a log line, so the logs hold request metadata and nothing else.
+## Observability is not where the walks are
+
+The Worker's **Observability** tab shows invocation logs: a request arrived,
+it answered 202, it took 4ms. That is for asking *is the counter alive*. It is
+not the data, and it never will be, because nothing in `analytics.js` writes a
+word, an id or an event into a log line. If a reader's path showed up in the
+logs, that would be the privacy bug, not the feature.
+
+What a reader did is rows in D1. Two ways to read them:
+
+```sh
+cd worker && ./stats.sh
+```
+
+or, in the dashboard, open the **bhava-log** D1 database and use its
+**Console** tab, which takes the SQL below. Both go through your Cloudflare
+login; there is no third way, by design.
 
 ## Reading it
 

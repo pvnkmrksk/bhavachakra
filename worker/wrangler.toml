@@ -25,14 +25,18 @@ ALLOWED = "https://bhava.kutuhula.in,http://localhost:8732"
 # Logs and traces in the dashboard, under the Worker's Observability tab.
 # head_sampling_rate = 1 keeps everything, which is right at this traffic.
 #
-# redact_query_string matters here: logs are persisted, and /stats still
-# accepts ?key= as a fallback. Without this, the first time anyone opens that
-# URL in a browser the key is written into the log in plain text and stays
-# there. Use the Authorization header and it never appears at all.
+# These are invocation logs: which request arrived, and what it answered. They
+# are not the data. Nothing here ever writes a word, an id or an event into a
+# log line, and what a reader did is in D1, read with ./stats.sh.
+#
+# There was a redact_query_string = true here. Wrangler 4.86 does not know the
+# field, warns "Unexpected fields found in observability", and deploys without
+# it, so it was never doing anything. It is also moot now: no route takes a
+# key, so no secret can appear in a URL to be redacted. If you upgrade
+# wrangler and later add a route that takes one, put it back.
 [observability]
 enabled = true
 head_sampling_rate = 1
-redact_query_string = true
 
 [observability.logs]
 enabled = true
