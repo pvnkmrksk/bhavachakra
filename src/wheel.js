@@ -102,8 +102,7 @@
         show(n); held = n;            // ...then keep the word that was tapped
         // the click is the gesture the browser wants, so the song starts here
         // and never in show(), which also runs on hover
-        if (n.d.song && window.Song && !Song.playing(n.d.song.yt))
-          Song.play(songChain(n), n.d.kn);
+        if (n.d.songs && window.Song) Song.play(songChain(n), n.d.kn);
         trackSel(n);
         onChange();
       });
@@ -261,7 +260,7 @@
         n.d.also.map(a => `<li><b>${esc(a.kn)}</b> <i>${esc(a.tr)}</i> <span>${esc(a.en)}</span></li>`)
           .join("") + `</ul></div>` : "") +
       (n.d.note ? `<p class="note">${n.d.note}</p>` : "") +
-      songCard(n.d.song);
+      songCard(n);
     wireSong(n);
   }
 
@@ -283,15 +282,42 @@
      word that never had a song of its own.                                  */
   function songChain(n) {
     const seen = new Set(), out = [];
-    for (let x = n; x; x = x.parent) {
-      const s = x.d.song;
-      if (s && !seen.has(s.yt)) { seen.add(s.yt); out.push(s); }
+    const take = list => (list || []).forEach(x => {
+      if (!seen.has(x.yt)) { seen.add(x.yt); out.push(x); }
+    });
+
+    // The word's own songs first, in the order they are written, because that
+    // order is a judgement and shuffling it would throw the judgement away.
+    take(n.d.songs);
+
+    // Then the family, shuffled. A parent is supposed to be the superset of
+    // everything under it, so its children's songs belong to it too: opening
+    // ಕರುಣ should keep going through ಅಳಲು and ಸಂಕಟ rather than stopping. If a
+    // child turns out not to belong under its parent, this is where you will
+    // hear it.
+    const kids = [];
+    (function walk(node) {
+      (node.kids || []).forEach(k => {
+        if (k.songs && !k.songs[0].from) kids.push(...k.songs);
+        walk(k);
+      });
+    })(n.d);
+    for (let i = kids.length - 1; i > 0; i--) {      // Fisher-Yates
+      const j = Math.floor(Math.random() * (i + 1));
+      [kids[i], kids[j]] = [kids[j], kids[i]];
     }
+    take(kids);
+
+    // Last, the words above this one, so a leaf with a dead id still has
+    // somewhere to fall back to.
+    for (let x = n.parent; x; x = x.parent) take(x.d.songs);
     return out;
   }
 
-  function songCard(s) {
+  function songCard(n) {
+    const list = n.d.songs, s = list && list[0];
     if (!s) return "";
+    const more = songChain(n).length - 1;   // the whole family, not just this word
     return `<div class="song${s.from ? " borrowed" : ""}">` +
       (s.from ? `<p class="from">ಈ ಪದಕ್ಕೆ ತನ್ನದೇ ಹಾಡಿಲ್ಲ · borrowed from <b>${esc(s.from)}</b></p>` : "") +
       `<button class="play" type="button" aria-pressed="false">
@@ -300,6 +326,8 @@
          <span class="glyph" aria-hidden="true"></span>
          <span class="pt"><b>${esc(s.t)}</b><i>${esc(s.src)}</i></span></button>` +
       `<p class="by">${esc(s.by)}</p>` +
+      (more > 0 ? `<p class="more">ಮತ್ತೆ ${more} ${more === 1 ? "ಹಾಡು" : "ಹಾಡುಗಳು"} · ` +
+        `then ${more} more from this family</p>` : "") +
       `<p class="oops" hidden></p>` +
       `<a class="src" href="https://www.youtube.com/watch?v=${esc(s.yt)}&t=${s.st | 0}"
           target="_blank" rel="noopener">ಯೂಟ್ಯೂಬ್‌ನಲ್ಲಿ ಕೇಳಿ · official / rights-holder upload ↗</a>` +
@@ -307,11 +335,17 @@
   }
 
   function wireSong(n) {
-    const s = n.d.song, b = detail.querySelector(".song .play");
+    const list = n.d.songs, s = list && list[0], b = detail.querySelector(".song .play");
     if (!b || !s || !window.Song) return;
+    const title = b.querySelector(".pt b"), sub = b.querySelector(".pt i");
     const oops = detail.querySelector(".song .oops");
     const sync = (id, err) => {
-      const on = Song.playing(s.yt);
+      // the queue moves on without another click, so the card follows what is
+      // actually sounding rather than what was tapped
+      const heard = id && list.concat(songChain(n)).find(x => x.yt === id);
+      if (heard && title) { title.textContent = heard.t; sub.textContent = heard.src; }
+      else if (title) { title.textContent = s.t; sub.textContent = s.src; }
+      const on = !!id && !!heard;
       b.setAttribute("aria-pressed", String(on));
       b.closest(".song").classList.toggle("on", on);
       if (oops) {

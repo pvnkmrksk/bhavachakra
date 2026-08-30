@@ -8,10 +8,14 @@
    Every play is a standard embed on the rights holder's own channel, so the
    artist gets the view. We host no audio and cache nothing.
 
-   `play` takes a chain, most specific first: the word's own song, then the
-   song of the word above it, and so on. If an id has gone private or had
-   embedding switched off since it was checked, the next one up is tried, which
-   is the same fallback the wheel does for a word with no song of its own.   */
+   `play` takes a queue: the word's own songs in the order they are written,
+   then its family's, shuffled, then the words above it. Tapping ಕರುಣ does not
+   play one song, it opens the whole of ಕರುಣ and keeps going through ಅಳಲು and
+   ಸಂಕಟ until you stop it.
+
+   The queue is also the fallback. If an id has gone private or had embedding
+   switched off since it was checked, the next entry simply takes its turn, so
+   a dead link is a track that never plays rather than a silence.            */
 (function () {
   const API = "https://www.youtube.com/iframe_api";
   // YouTube will not embed into a page with no real origin. Opened over
@@ -27,7 +31,7 @@
 
   let decks = [], live = 0, ready = false, booted = false;
   let cur = null, err = null, want = null, chain = [], rung = 0;
-  let word = null, since = 0;          // what is playing, and since when
+  let word = null, since = 0, tail = null;   // what is playing, since when
 
   const other = () => (live + 1) % 2;
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g,
@@ -68,7 +72,7 @@
         onError: e => { if (i === live) next(CODES[e.data] || "error " + e.data); },
         onStateChange: e => {
           if (i !== live) return;
-          if (e.data === YT.PlayerState.ENDED) stop();
+          if (e.data === YT.PlayerState.ENDED) advance();
           else if (e.data === YT.PlayerState.PLAYING && decks[i].isMuted()) decks[i].unMute();
         }
       }
@@ -122,11 +126,26 @@
     start(list);
   }
 
-  /* try the next song up the chain when this one will not embed */
-  function next(why) {
+  /* The next thing in the queue, whether this one ended or never played. */
+  function advance(why) {
     if (rung + 1 < chain.length) { rung += 1; start(chain, rung); return; }
-    err = "ಈ ಹಾಡು ನುಡಿಯಲಿಲ್ಲ · " + why;
-    emit();
+    if (why) { err = "ಈ ಹಾಡು ನುಡಿಯಲಿಲ್ಲ · " + why; emit(); }
+    else stop();                       // the whole family has played
+  }
+  const next = advance;
+
+  /* Move on a crossfade's width before the end, so one song reaches into the
+     next instead of stopping dead and starting again. Checked on a timer
+     rather than scheduled: a paused or buffering player would make any
+     schedule set at play time a lie.                                        */
+  function watchTail() {
+    clearInterval(tail);
+    tail = setInterval(() => {
+      const d = decks[live];
+      if (!ready || !d || d.getPlayerState() !== 1) return;
+      const left = d.getDuration() - d.getCurrentTime();
+      if (left > 0 && left <= CROSS / 1000 + 0.4) { clearInterval(tail); advance(); }
+    }, 1000);
   }
 
   function start(list, at) {
@@ -145,6 +164,7 @@
       fadeTo(outgoing, 0, CROSS, () => outgoing.pauseVideo());
     }
     live = other();
+    watchTail();
 
     /* If the player came up without activation it will sit in CUED rather than
        play. Ask once more, explicitly: sometimes the gesture is still live and
@@ -161,15 +181,18 @@
 
   function stop() {
     done();
+    clearInterval(tail); tail = null;
     want = null; chain = []; cur = null; err = null;
     const d = decks[live];
     if (ready && d) fadeTo(d, 0, CROSS / 2, () => d.pauseVideo());
     emit();
   }
 
+  // tapping the card while anything from this queue is sounding means stop
   const toggle = (songs, forWord) => {
-    const first = [].concat(songs).filter(Boolean)[0];
-    return first && cur === first.yt ? stop() : play(songs, forWord);
+    const list = [].concat(songs).filter(Boolean);
+    const inQueue = cur && list.some(x => x.yt === cur);
+    return inQueue ? stop() : play(songs, forWord);
   };
   const playing = id => cur === id;
   const onChange = fn => listeners.add(fn);
@@ -189,10 +212,12 @@
     const id = ((d.getVideoUrl() || "").match(/[?&]v=([\w-]{11})/) || [])[1] || null;
     return { yt: id, wanted: cur, at: Math.round(d.getCurrentTime()),
              state: d.getPlayerState(), vol: d.getVolume(), muted: d.isMuted(),
-             deck: live, rung: rung, error: err,
+             deck: live, rung: rung, queue: chain.length, error: err,
              // both decks, so a crossfade can be seen to overlap rather than cut
              mix: decks.map(x => [x.getVolume(), x.getPlayerState()]) };
   }
 
-  window.Song = { play, toggle, stop, playing, onChange, now, esc };
+  // skip: the next thing in the queue, for a control on the page and for
+  // checking by hand that the queue advances without waiting out a song
+  window.Song = { play, toggle, stop, skip: () => advance(), playing, onChange, now, esc };
 })();

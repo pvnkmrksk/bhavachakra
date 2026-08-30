@@ -23,9 +23,13 @@ spreadsheet and diffs cleanly in git.
   song    the song for this word, in Kannada
   by      composer, singer, poet
   source  the film and year, or the poet and the form
-  yt      an eleven-character YouTube id
+  yt      an eleven-character YouTube id. Several, comma separated, make a
+          little catalogue for that word, played in the order written.
   start   the second the pallavi lands, set by ear: old film songs open on a
           long orchestral prelude and nobody wants thirty seconds of strings
+
+  song, by, source and start take either one value, which applies to every
+  song in `yt`, or one value per song, comma separated in the same order.
 
 A word with no `yt` inherits the nearest ancestor that has one, so ಕೊಂಕು plays
 ಬೀಭತ್ಸ's song and the page says whose it is.
@@ -70,15 +74,33 @@ def load(path):
             for key, col in (("lit", "literal"), ("sthayi", "sthayi"), ("note", "note")):
                 if r.get(col, "").strip():
                     node[key] = r[col].strip()
-            yt = (r.get("yt") or "").strip()
-            if yt:
-                if len(yt) != 11:
-                    raise ValueError(f"{path}:{i}: {r['kannada']!r} has a bad "
-                                     f"YouTube id {yt!r}")
-                node["song"] = {
-                    "t": r["song"].strip(), "by": r["by"].strip(),
-                    "src": r["source"].strip(), "yt": yt,
-                    "st": int((r.get("start") or "0").strip() or 0)}
+            ids = [v.strip() for v in (r.get("yt") or "").split(",") if v.strip()]
+            if ids:
+                for v in ids:
+                    if len(v) != 11:
+                        raise ValueError(f"{path}:{i}: {r['kannada']!r} has a bad "
+                                         f"YouTube id {v!r}")
+
+                # One value applies to every song, or give one per song. So a
+                # run of songs from the same film needs `source` written once,
+                # but each can have its own `start`.
+                def column(name, default=""):
+                    vals = [v.strip() for v in (r.get(name) or "").split(",")]
+                    vals = [v for v in vals if v] or [default]
+                    if len(vals) == 1:
+                        return vals * len(ids)
+                    if len(vals) != len(ids):
+                        raise ValueError(
+                            f"{path}:{i}: {r['kannada']!r} lists {len(ids)} songs "
+                            f"but {len(vals)} values in `{name}`. Give one, or one each.")
+                    return vals
+
+                titles, bys = column("song"), column("by")
+                srcs, starts = column("source"), column("start", "0")
+                node["songs"] = [
+                    {"t": titles[k], "by": bys[k], "src": srcs[k],
+                     "yt": ids[k], "st": int(starts[k] or 0)}
+                    for k in range(len(ids))]
             if r.get("also", "").strip():
                 node["also"] = [
                     {"kn": p[0].strip(), "tr": p[1].strip(), "en": "|".join(p[2:]).strip()}
@@ -109,12 +131,13 @@ def inherit(wheels):
     def walk(nodes, carried):
         nonlocal own, borrowed
         for n in nodes:
-            if "song" in n:
-                own += 1
-                carry = (n["song"], n["kn"])
+            if "songs" in n:
+                own += len(n["songs"])
+                carry = (n["songs"], n["kn"])
             elif carried:
-                song, src = carried
-                n["song"] = dict(song, **{"from": src}); borrowed += 1
+                songs, src = carried
+                n["songs"] = [dict(x, **{"from": src}) for x in songs]
+                borrowed += 1
                 carry = carried
             else:
                 carry = None

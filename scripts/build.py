@@ -325,6 +325,25 @@ def build_readme():
     add("`start` is worth setting. Old film songs open on a long orchestral prelude, and "
         "thirty seconds of strings is not what the word means. Play the song, note where "
         "the voice arrives, put that number in.\n")
+
+    add("### More than one song\n")
+    add("Separate them with commas, in whatever order feels right; that order is kept.\n")
+    add("```\n"
+        "song    ನೀ ಹೀಂಗ ನೋಡಬ್ಯಾಡ ನನ್ನ,ಆಡಿಸಿದಾತ ಬೇಸರ ಮೂಡಿ,ಯಾರಿಗೆ ಯಾರುಂಟು\n"
+        "by      ಸಿ. ಅಶ್ವತ್ಥ್,ಪಿ.ಬಿ. ಶ್ರೀನಿವಾಸ್,ಘಂಟಸಾಲ\n"
+        "yt      L4f3c63uSkU,nszeqsxnK_g,bTE4wLWROYU\n"
+        "start   45,10,20\n```\n")
+    add("`song`, `by`, `source` and `start` take either one value, which applies to "
+        "every song in `yt`, or one value each in the same order. So a run of songs from "
+        "one film needs `source` written once, while each can still have its own "
+        "`start`. A mismatched count fails the build rather than quietly pairing the "
+        "wrong singer with the wrong song.\n")
+    add("Tapping a word plays its own songs in the order written, and then keeps going "
+        "through everything below it in the wheel, shuffled. Tapping ಕರುಣ does not play "
+        "one song; it opens the whole of ಕರುಣ and carries on into ಅಳಲು and ಸಂಕಟ until you "
+        "stop it. This assumes a parent really is the superset of its children, which is "
+        "what the wheel claims. Where that is not true you will now hear it, and the "
+        "words are what needs fixing, not the queue.\n")
     add("A word with no `yt` borrows from the nearest word above it that has one, and the "
         "panel says whose song it is, so you only fill in the rows worth filling in. If an "
         "id stops working the player falls back the same way.\n")
