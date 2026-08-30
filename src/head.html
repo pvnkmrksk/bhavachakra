@@ -120,7 +120,15 @@ a{color:var(--accent)}
 .zoomout[hidden]{display:none}
 svg.wheel{width:100%; height:auto; display:block; touch-action:manipulation; overflow:hidden}
 svg.wheel g.seg{cursor:pointer}
-svg.wheel g.seg path{transition:opacity .2s ease, d .22s cubic-bezier(.22,.8,.3,1)}
+/* The `d` transition is for the hover lift, and only a mouse can hover. On a
+   touchscreen it was pure cost: drilling animates `d` from JavaScript on every
+   frame, and a CSS transition on the same attribute makes the browser
+   interpolate all 117 paths again on top of that, on the one thread a phone
+   can least spare. Animating `d` is not composited, so none of it is free. */
+svg.wheel g.seg path{transition:opacity .2s ease}
+@media (hover:hover) and (pointer:fine){
+  svg.wheel g.seg path{transition:opacity .2s ease, d .22s cubic-bezier(.22,.8,.3,1)}
+}
 svg.wheel g.seg:focus,svg.wheel g.seg:focus-visible{outline:none}
 svg.wheel g.seg{transition:opacity .18s ease}
 svg.wheel g.seg text{transition:opacity .2s ease}

@@ -41,6 +41,24 @@
     document.head.appendChild(s);
   }
 
+  /* Warm up on the reader's first touch of the page, not on their first tap
+     of a word.
+
+     A cross-origin iframe only has user activation if it existed when the
+     gesture happened. Booting inside the first tap means the script loads, the
+     players are built a second or two later, and by then the tap is over: the
+     video loads and refuses to play. The second tap works because the iframes
+     are there to receive it. That is the whole of the first-click bug, and it
+     only shows on phones because desktop Chrome hands out autoplay far more
+     freely.
+
+     Deliberately not on page load: a reader who opens the wheel and never
+     touches it never contacts YouTube at all. The first scroll or touch is
+     enough of a head start, and almost nobody taps a sector as their very
+     first act.                                                              */
+  ["pointerdown", "touchstart", "keydown", "scroll"].forEach(e =>
+    addEventListener(e, boot, { once: true, passive: true, capture: true }));
+
   window.onYouTubeIframeAPIReady = function () {
     decks = [0, 1].map(i => new YT.Player("ytdeck" + i, {
       height: "200", width: "200", videoId: "",
@@ -127,6 +145,17 @@
       fadeTo(outgoing, 0, CROSS, () => outgoing.pauseVideo());
     }
     live = other();
+
+    /* If the player came up without activation it will sit in CUED rather than
+       play. Ask once more, explicitly: sometimes the gesture is still live and
+       this is all it needed.                                                 */
+    const deck = incoming;
+    setTimeout(() => {
+      if (cur === song.yt && deck.getPlayerState && deck.getPlayerState() !== 1) {
+        try { deck.playVideo(); } catch (e) {}
+      }
+    }, 900);
+
     emit();
   }
 

@@ -6,9 +6,9 @@
    worker lives. This way a reader online always gets the current build, and a
    reader on a train still gets the wheel.
 
-   bdd5ec2f030d is replaced at build time with a hash of index.html, so a new
+   7aac2d51dfed is replaced at build time with a hash of index.html, so a new
    build is a new cache and the old one is deleted on activate.              */
-const CACHE = "bhava-bdd5ec2f030d";
+const CACHE = "bhava-7aac2d51dfed";
 const SHELL = ["./", "./index.html", "./assets/icon-192.png", "./assets/icon-512.png"];
 
 self.addEventListener("install", e => {

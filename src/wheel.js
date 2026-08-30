@@ -164,7 +164,10 @@
     const lift = n === hot ? 4 : 0;
     n.path.setAttribute("d", arc(g.a0, g.a1, g.r0, g.r1 + lift * g.o));
     n.g.style.opacity = g.o;
-    n.g.style.pointerEvents = g.o > .5 ? "auto" : "none";
+    // only when it actually flips: this ran 117 times a frame to write the
+    // value it already held
+    const hit = g.o > .5 ? "auto" : "none";
+    if (n.hit !== hit) { n.g.style.pointerEvents = hit; n.hit = hit; }
     return g;
   }
 
