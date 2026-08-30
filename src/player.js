@@ -134,6 +134,13 @@
   }
   const next = advance;
 
+  /* Back one. Restarts the current song if you are already at the head of the
+     queue, which is what a back button does everywhere else.                */
+  function back() {
+    if (!chain.length) return;
+    start(chain, Math.max(0, rung - 1));
+  }
+
   /* Move on a crossfade's width before the end, so one song reaches into the
      next instead of stopping dead and starting again. Checked on a timer
      rather than scheduled: a paused or buffering player would make any
@@ -219,5 +226,6 @@
 
   // skip: the next thing in the queue, for a control on the page and for
   // checking by hand that the queue advances without waiting out a song
-  window.Song = { play, toggle, stop, skip: () => advance(), playing, onChange, now, esc };
+  window.Song = { play, toggle, stop, skip: () => advance(), back,
+                  playing, onChange, now, esc };
 })();

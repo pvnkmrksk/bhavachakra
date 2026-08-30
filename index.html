@@ -262,6 +262,12 @@ footer a{color:var(--ink-2)}
 .song .pt i{font-style:normal;font-size:11.5px;color:var(--ink-3)}
 .song .by{margin:8px 0 0;font-size:12px;color:var(--ink-2)}
 .song .more{margin:6px 0 0;font-size:11.5px;color:var(--ink-3)}
+.song .step{display:flex;align-items:center;gap:10px;margin-top:9px}
+.song .step button{width:30px;height:30px;padding:0;border-radius:50%;
+  border:1px solid var(--rule);background:var(--plate);color:var(--ink-2);
+  font:400 16px/1 system-ui,sans-serif;cursor:pointer}
+.song .step button:hover{border-color:var(--accent);color:var(--accent)}
+.song .step .pos{font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .song .snote{margin:8px 0 0;font-size:12.5px;color:var(--ink-2);line-height:1.5}
 .song .src{display:inline-block;margin-top:10px;font-size:11.5px;color:var(--accent);
   text-decoration:none;border-bottom:1px solid transparent}
@@ -759,6 +765,11 @@ const WHEELS = [{"id":"bhava","hint":"Tap or hover any segment: the panel names 
               src="https://i.ytimg.com/vi/${esc(s.yt)}/mqdefault.jpg">
          <span class="glyph" aria-hidden="true"></span>
          <span class="pt"><b>${esc(s.t)}</b><i>${esc(s.src)}</i></span></button>` +
+      `<div class="step">
+         <button class="prev" type="button" title="ಹಿಂದಿನ ಹಾಡು">‹</button>
+         <span class="pos"></span>
+         <button class="next" type="button" title="ಮುಂದಿನ ಹಾಡು">›</button>
+       </div>` +
       `<p class="by">${esc(s.by)}</p>` +
       (more > 0 ? `<p class="more">ಮತ್ತೆ ${more} ${more === 1 ? "ಹಾಡು" : "ಹಾಡುಗಳು"} · ` +
         `then ${more} more from this family</p>` : "") +
@@ -780,6 +791,9 @@ const WHEELS = [{"id":"bhava","hint":"Tap or hover any segment: the panel names 
       if (heard && title) { title.textContent = heard.t; sub.textContent = heard.src; }
       else if (title) { title.textContent = s.t; sub.textContent = s.src; }
       const on = !!id && !!heard;
+      const pos = detail.querySelector(".song .pos"), st = Song.now();
+      if (pos) pos.textContent = on && st && st.queue
+        ? `${st.rung + 1} / ${st.queue}` : "";
       b.setAttribute("aria-pressed", String(on));
       b.closest(".song").classList.toggle("on", on);
       if (oops) {
@@ -788,6 +802,15 @@ const WHEELS = [{"id":"bhava","hint":"Tap or hover any segment: the panel names 
       }
     };
     b.addEventListener("click", () => Song.toggle(songChain(n), n.d.kn));
+    const step = (fn) => (e) => {
+      e.stopPropagation();
+      // stepping before anything is playing starts the family from the top
+      if (!Song.now()) Song.play(songChain(n), n.d.kn);
+      else fn();
+    };
+    const pv = detail.querySelector(".song .prev"), nx = detail.querySelector(".song .next");
+    if (pv) pv.addEventListener("click", step(Song.back));
+    if (nx) nx.addEventListener("click", step(Song.skip));
     Song.onChange(sync);
     sync();
   }
@@ -1004,6 +1027,13 @@ const WHEELS = [{"id":"bhava","hint":"Tap or hover any segment: the panel names 
   }
   const next = advance;
 
+  /* Back one. Restarts the current song if you are already at the head of the
+     queue, which is what a back button does everywhere else.                */
+  function back() {
+    if (!chain.length) return;
+    start(chain, Math.max(0, rung - 1));
+  }
+
   /* Move on a crossfade's width before the end, so one song reaches into the
      next instead of stopping dead and starting again. Checked on a timer
      rather than scheduled: a paused or buffering player would make any
@@ -1089,7 +1119,8 @@ const WHEELS = [{"id":"bhava","hint":"Tap or hover any segment: the panel names 
 
   // skip: the next thing in the queue, for a control on the page and for
   // checking by hand that the queue advances without waiting out a song
-  window.Song = { play, toggle, stop, skip: () => advance(), playing, onChange, now, esc };
+  window.Song = { play, toggle, stop, skip: () => advance(), back,
+                  playing, onChange, now, esc };
 })();
 
 /* Page shell: wheel switching, the language slider, and the URL.

@@ -325,6 +325,11 @@
               src="https://i.ytimg.com/vi/${esc(s.yt)}/mqdefault.jpg">
          <span class="glyph" aria-hidden="true"></span>
          <span class="pt"><b>${esc(s.t)}</b><i>${esc(s.src)}</i></span></button>` +
+      `<div class="step">
+         <button class="prev" type="button" title="ಹಿಂದಿನ ಹಾಡು">‹</button>
+         <span class="pos"></span>
+         <button class="next" type="button" title="ಮುಂದಿನ ಹಾಡು">›</button>
+       </div>` +
       `<p class="by">${esc(s.by)}</p>` +
       (more > 0 ? `<p class="more">ಮತ್ತೆ ${more} ${more === 1 ? "ಹಾಡು" : "ಹಾಡುಗಳು"} · ` +
         `then ${more} more from this family</p>` : "") +
@@ -346,6 +351,9 @@
       if (heard && title) { title.textContent = heard.t; sub.textContent = heard.src; }
       else if (title) { title.textContent = s.t; sub.textContent = s.src; }
       const on = !!id && !!heard;
+      const pos = detail.querySelector(".song .pos"), st = Song.now();
+      if (pos) pos.textContent = on && st && st.queue
+        ? `${st.rung + 1} / ${st.queue}` : "";
       b.setAttribute("aria-pressed", String(on));
       b.closest(".song").classList.toggle("on", on);
       if (oops) {
@@ -354,6 +362,15 @@
       }
     };
     b.addEventListener("click", () => Song.toggle(songChain(n), n.d.kn));
+    const step = (fn) => (e) => {
+      e.stopPropagation();
+      // stepping before anything is playing starts the family from the top
+      if (!Song.now()) Song.play(songChain(n), n.d.kn);
+      else fn();
+    };
+    const pv = detail.querySelector(".song .prev"), nx = detail.querySelector(".song .next");
+    if (pv) pv.addEventListener("click", step(Song.back));
+    if (nx) nx.addEventListener("click", step(Song.skip));
     Song.onChange(sync);
     sync();
   }
