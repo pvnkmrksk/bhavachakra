@@ -3591,18 +3591,19 @@
         ]
        },
        {
-        "kn": "ಸೇಡು",
-        "tr": "sēḍu",
-        "en": "revenge",
+        "kn": "ಮತ್ಸರ",
+        "tr": "matsara",
+        "en": "rivalrous spite",
         "kids": [],
-        "note": "ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle it, treats revenge as a debt.",
+        "note": "Revenge is not sited in the belly. Spite is.",
         "songs": [
          {
-          "t": "ಹಾವಿನ ದ್ವೇಷ ಹನ್ನೆರಡು ವರುಷ",
-          "by": "ವಿಜಯ ಭಾಸ್ಕರ್ · ಎಸ್. ಪಿ. ಬಾಲಸುಬ್ರಹ್ಮಣ್ಯಂ",
-          "src": "ನಾಗರಹಾವು · 1972",
-          "yt": "2-hWiBxhJ7I",
-          "st": 5
+          "t": "ಜಗವೇ ಒಂದು ರಣರಂಗ",
+          "by": "ಹಂಸಲೇಖ · ಶಿವರಾಜ್‌ಕುಮಾರ್",
+          "src": "ರಣರಂಗ · 1988",
+          "yt": "MpzlmO8OLH8",
+          "st": 25,
+          "from": "ಹೊಟ್ಟೆಯುರಿ"
          }
         ]
        }
@@ -4668,35 +4669,19 @@
         ]
        },
        {
-        "kn": "ದಣಿವು",
-        "tr": "daṇivu",
-        "en": "tiredness",
+        "kn": "ತಲೆನೋವು",
+        "tr": "talenōvu",
+        "en": "a headache, and a burden",
         "kids": [],
-        "note": "The native word, used of a body and of a day alike.",
+        "note": "Kannada uses ತಲೆನೋವು for both the ache and the thing causing it.",
         "songs": [
          {
-          "t": "ಬಲೂನ್ ಸಾಂಗ್",
-          "by": "ವಾಸುಕಿ ವೈಭವ್ · ಶಿಶು ತಾನ್ಸೆನ್ ಜ್ಞಾನೇಶ್ವರ್",
-          "src": "ಸರ್ಕಾರಿ ಹಿ.ಪ್ರಾ. ಶಾಲೆ ಕಾಸರಗೋಡು · 2018",
-          "yt": "GsZ3OcBNM8Q",
-          "st": 124
-         }
-        ],
-        "also": [
-         {
-          "kn": "ಆಯಾಸ",
-          "tr": "āyāsa",
-          "en": "fatigue"
-         },
-         {
-          "kn": "ಬಳಲಿಕೆ",
-          "tr": "baḷalike",
-          "en": "exhaustion"
-         },
-         {
-          "kn": "ಸುಸ್ತು",
-          "tr": "sustu",
-          "en": "done in"
+          "t": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ",
+          "by": "ಇಳಯರಾಜ",
+          "src": "ಇದೊಳ್ಳೆ ರಾಮಾಯಣ · 2016",
+          "yt": "6Osq8CFCPkY",
+          "st": 120,
+          "from": "ಹೈರಾಣ"
          }
         ]
        }
@@ -4907,18 +4892,19 @@
         ]
        },
        {
-        "kn": "ಸಿಡುಕು",
-        "tr": "siḍuku",
-        "en": "worn-in irritability",
+        "kn": "ಕೆರಳು",
+        "tr": "keraḷu",
+        "en": "inflamed",
         "kids": [],
-        "note": "Not an episode but a temperament, and one you wear on your face.",
+        "note": "Irritability is a temperament, not a body burning.",
         "songs": [
          {
-          "t": "ಬಿಟ್ಟಾಕು ಬಿಟ್ಟಾಕು",
-          "by": "",
-          "src": "ಸೂಪರ್ ಸ್ಟಾರ್",
-          "yt": "NORO0x0V8oA",
-          "st": 28
+          "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+          "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+          "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+          "yt": "s90VmReOoco",
+          "st": 46,
+          "from": "ಉರಿ"
          }
         ]
        }
@@ -5649,18 +5635,19 @@
       "en": "laughter",
       "kids": [
        {
-        "kn": "ನಗೆ",
-        "tr": "nage",
-        "en": "a laugh",
+        "kn": "ಅಟ್ಟಹಾಸ",
+        "tr": "aṭṭahāsa",
+        "en": "the loud laugh",
         "kids": [],
-        "note": "The countable one: you can have a ನಗೆ, you cannot have a ನಗು.",
+        "note": "ನಗೆ was ನಗು again with a different ending, which is a synonym rather than a kind.",
         "songs": [
          {
-          "t": "ನಗಿಸಲು ನೀನು ನಗುವೆನು ನಾನು",
-          "by": "",
-          "src": "ಗಾಳಿ ಮಾತು",
-          "yt": "Px_0a24kwQA",
-          "st": 28
+          "t": "ನಗು ನಗುತಾ ನಲಿ ನಲಿ",
+          "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+          "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+          "yt": "uJRbb59gN0s",
+          "st": 55,
+          "from": "ನಗು"
          }
         ]
        },
@@ -5816,23 +5803,23 @@
       ]
      },
      {
-      "kn": "ಮುಗುಳ್ನಗೆ",
-      "tr": "muguḷnage",
-      "en": "a smile",
+      "kn": "ಸಂತಸ",
+      "tr": "santasa",
+      "en": "gladness",
       "kids": [
        {
-        "kn": "ಸಂತಸ",
-        "tr": "santasa",
-        "en": "gladness",
+        "kn": "ಮುಗುಳ್ನಗೆ",
+        "tr": "muguḷnage",
+        "en": "a smile",
         "kids": [],
-        "note": "Gladness, with a quieter and more inward feel than ಸಂತೋಷ.",
+        "note": "'Bud-laugh': the laugh that has not opened. A compound of exactly the kind Kannada makes best.",
         "songs": [
          {
-          "t": "ಸಂತೋಷಕ್ಕೆ ಹಾಡು ಸಂತೋಷಕ್ಕೆ",
-          "by": "",
-          "src": "ಗೀತಾ",
-          "yt": "neLfupVwObI",
-          "st": 39
+          "t": "ನಗುವ ನಯನ ಮಧುರ ಮೌನ",
+          "by": "ಇಳಯರಾಜ · ಎಸ್.ಪಿ.ಬಿ",
+          "src": "ಪಲ್ಲವಿ ಅನುಪಲ್ಲವಿ · 1983",
+          "yt": "AJSeaFthdeE",
+          "st": 34
          }
         ]
        },
@@ -5853,14 +5840,14 @@
         ]
        }
       ],
-      "note": "'Bud-laugh': the laugh that has not opened. A compound of exactly the kind Kannada makes best.",
+      "note": "Gladness, with a quieter and more inward feel than ಸಂತೋಷ.",
       "songs": [
        {
-        "t": "ನಗುವ ನಯನ ಮಧುರ ಮೌನ",
-        "by": "ಇಳಯರಾಜ · ಎಸ್.ಪಿ.ಬಿ",
-        "src": "ಪಲ್ಲವಿ ಅನುಪಲ್ಲವಿ · 1983",
-        "yt": "AJSeaFthdeE",
-        "st": 34
+        "t": "ಸಂತೋಷಕ್ಕೆ ಹಾಡು ಸಂತೋಷಕ್ಕೆ",
+        "by": "",
+        "src": "ಗೀತಾ",
+        "yt": "neLfupVwObI",
+        "st": 39
        }
       ]
      }
@@ -5883,55 +5870,40 @@
     "en": "compassion, pathos",
     "kids": [
      {
-      "kn": "ಅಳಲು",
-      "tr": "aḷalu",
-      "en": "the wail",
+      "kn": "ದುಃಖ",
+      "tr": "duḥkha",
+      "en": "sorrow",
       "kids": [
        {
-        "kn": "ದುಃಖ",
-        "tr": "duḥkha",
-        "en": "sorrow",
+        "kn": "ಅಳಲು",
+        "tr": "aḷalu",
+        "en": "the wail",
         "kids": [],
-        "note": "The general word, and also the technical Buddhist one. Kannada uses it for a bad afternoon.",
+        "note": "Native, and it is the sound before it is the feeling.",
         "songs": [
          {
-          "t": "ನೀನೇ ಸಾಕಿದ ಗಿಣಿ",
-          "by": "",
-          "src": "ಮಾನಸ ಸರೋವರ",
-          "yt": "ZjNABpeGfwA",
-          "st": 28
+          "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
+          "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
+          "src": "ಆಕಸ್ಮಿಕ · 1993",
+          "yt": "BOoWZEhCh8s",
+          "st": 40
          }
         ],
         "also": [
          {
           "kn": "ಶೋಕ",
           "tr": "śōka",
-          "en": "formal mourning"
+          "en": "mourning"
          },
          {
-          "kn": "ವ್ಯಥೆ",
-          "tr": "vyathe",
-          "en": "affliction"
+          "kn": "ಗೋಳು",
+          "tr": "gōḷu",
+          "en": "wretched crying"
          },
          {
-          "kn": "ಸಂಕಟ",
-          "tr": "saṅkaṭa",
-          "en": "the chest closing"
-         },
-         {
-          "kn": "ಕೊರಗು",
-          "tr": "koragu",
-          "en": "the grief that thins you"
-         },
-         {
-          "kn": "ವಿಷಾದ",
-          "tr": "viṣāda",
-          "en": "melancholy"
-         },
-         {
-          "kn": "ಅಳಲು",
-          "tr": "aḷalu",
-          "en": "the wail"
+          "kn": "ರೋದನ",
+          "tr": "rōdana",
+          "en": "lamentation"
          }
         ]
        },
@@ -5952,31 +5924,46 @@
         ]
        }
       ],
-      "note": "Native, and it is the sound before it is the feeling.",
+      "note": "The general word, and also the technical Buddhist one. Kannada uses it for a bad afternoon.",
       "songs": [
        {
-        "t": "ಬಾಳುವಂತ ಹೂವೇ ಬಾಡುವಾಸೆ ಏಕೆ",
-        "by": "ಉಪೇಂದ್ರ ಕುಮಾರ್ · ರಾಜಕುಮಾರ್",
-        "src": "ಆಕಸ್ಮಿಕ · 1993",
-        "yt": "BOoWZEhCh8s",
-        "st": 40
+        "t": "ನೀನೇ ಸಾಕಿದ ಗಿಣಿ",
+        "by": "",
+        "src": "ಮಾನಸ ಸರೋವರ",
+        "yt": "ZjNABpeGfwA",
+        "st": 28
        }
       ],
       "also": [
        {
         "kn": "ಶೋಕ",
         "tr": "śōka",
-        "en": "mourning"
+        "en": "formal mourning"
        },
        {
-        "kn": "ಗೋಳು",
-        "tr": "gōḷu",
-        "en": "wretched crying"
+        "kn": "ವ್ಯಥೆ",
+        "tr": "vyathe",
+        "en": "affliction"
        },
        {
-        "kn": "ರೋದನ",
-        "tr": "rōdana",
-        "en": "lamentation"
+        "kn": "ಸಂಕಟ",
+        "tr": "saṅkaṭa",
+        "en": "the chest closing"
+       },
+       {
+        "kn": "ಕೊರಗು",
+        "tr": "koragu",
+        "en": "the grief that thins you"
+       },
+       {
+        "kn": "ವಿಷಾದ",
+        "tr": "viṣāda",
+        "en": "melancholy"
+       },
+       {
+        "kn": "ಅಳಲು",
+        "tr": "aḷalu",
+        "en": "the wail"
        }
       ]
      },
@@ -6201,21 +6188,30 @@
     "en": "fury",
     "kids": [
      {
-      "kn": "ಸಿಟ್ಟು",
-      "tr": "siṭṭu",
-      "en": "anger",
+      "kn": "ಕೋಪ",
+      "tr": "kōpa",
+      "en": "anger, the general word",
       "kids": [
        {
-        "kn": "ಕೋಪ",
-        "tr": "kōpa",
-        "en": "anger, the general word",
+        "kn": "ಸಿಟ್ಟು",
+        "tr": "siṭṭu",
+        "en": "anger",
         "kids": [],
-        "note": "Slightly more composed than ಸಿಟ್ಟು: you can have ಕೋಪ quietly.",
+        "note": "Hot and quick, and the most-used of the anger words.",
+        "songs": [
+         {
+          "t": "ತಗರು ಬಂತು ತಗರು",
+          "by": "ಚರಣ್ ರಾಜ್",
+          "src": "ತಗರು · 2018",
+          "yt": "V3-Fd8wPuRA",
+          "st": 20
+         }
+        ],
         "also": [
          {
-          "kn": "ಸಿಟ್ಟು",
-          "tr": "siṭṭu",
-          "en": "hot, quick anger"
+          "kn": "ಕೋಪ",
+          "tr": "kōpa",
+          "en": "anger, composed"
          },
          {
           "kn": "ಕ್ರೋಧ",
@@ -6223,34 +6219,14 @@
           "en": "wrath"
          },
          {
-          "kn": "ರೋಷ",
-          "tr": "rōṣa",
-          "en": "fury"
-         },
-         {
-          "kn": "ಸಿಡುಕು",
-          "tr": "siḍuku",
-          "en": "worn-in irritability"
-         },
-         {
           "kn": "ಮುನಿಸು",
           "tr": "munisu",
           "en": "the loving sulk"
          },
          {
-          "kn": "ತಾಪ",
-          "tr": "tāpa",
-          "en": "heat"
-         }
-        ],
-        "songs": [
-         {
-          "t": "ತಗರು ಬಂತು ತಗರು",
-          "by": "ಚರಣ್ ರಾಜ್",
-          "src": "ತಗರು · 2018",
-          "yt": "V3-Fd8wPuRA",
-          "st": 20,
-          "from": "ಸಿಟ್ಟು"
+          "kn": "ಸೆಡವು",
+          "tr": "seḍavu",
+          "en": "a huff"
          }
         ]
        },
@@ -6262,31 +6238,22 @@
         "note": "Not an episode but a temperament, and one you wear on your face.",
         "songs": [
          {
-          "t": "ತಗರು ಬಂತು ತಗರು",
-          "by": "ಚರಣ್ ರಾಜ್",
-          "src": "ತಗರು · 2018",
-          "yt": "V3-Fd8wPuRA",
-          "st": 20,
-          "from": "ಸಿಟ್ಟು"
+          "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+          "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+          "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+          "yt": "s90VmReOoco",
+          "st": 46,
+          "from": "ರೌದ್ರ"
          }
         ]
        }
       ],
-      "note": "Hot and quick, and the most-used of the anger words.",
-      "songs": [
-       {
-        "t": "ತಗರು ಬಂತು ತಗರು",
-        "by": "ಚರಣ್ ರಾಜ್",
-        "src": "ತಗರು · 2018",
-        "yt": "V3-Fd8wPuRA",
-        "st": 20
-       }
-      ],
+      "note": "Slightly more composed than ಸಿಟ್ಟು: you can have ಕೋಪ quietly.",
       "also": [
        {
-        "kn": "ಕೋಪ",
-        "tr": "kōpa",
-        "en": "anger, composed"
+        "kn": "ಸಿಟ್ಟು",
+        "tr": "siṭṭu",
+        "en": "hot, quick anger"
        },
        {
         "kn": "ಕ್ರೋಧ",
@@ -6294,14 +6261,34 @@
         "en": "wrath"
        },
        {
+        "kn": "ರೋಷ",
+        "tr": "rōṣa",
+        "en": "fury"
+       },
+       {
+        "kn": "ಸಿಡುಕು",
+        "tr": "siḍuku",
+        "en": "worn-in irritability"
+       },
+       {
         "kn": "ಮುನಿಸು",
         "tr": "munisu",
         "en": "the loving sulk"
        },
        {
-        "kn": "ಸೆಡವು",
-        "tr": "seḍavu",
-        "en": "a huff"
+        "kn": "ತಾಪ",
+        "tr": "tāpa",
+        "en": "heat"
+       }
+      ],
+      "songs": [
+       {
+        "t": "ಯಾರಿಗೆ ಬಂತು ಎಲ್ಲಿಗೆ ಬಂತು ನಲವತ್ತೇಳರ ಸ್ವಾತಂತ್ರ್ಯ",
+        "by": "ಪಿಚ್ಚಳ್ಳಿ ಶ್ರೀನಿವಾಸ್",
+        "src": "ಸಿದ್ದಲಿಂಗಯ್ಯ",
+        "yt": "s90VmReOoco",
+        "st": 46,
+        "from": "ರೌದ್ರ"
        }
       ]
      },
@@ -6451,11 +6438,11 @@
         ]
        },
        {
-        "kn": "ಬಂಡಾಯ",
-        "tr": "baṇḍāya",
-        "en": "revolt",
+        "kn": "ಸಿಡಿಮಿಡಿ",
+        "tr": "siḍimiḍi",
+        "en": "seething",
         "kids": [],
-        "note": "Also the name of a Kannada literary movement, which is the right amount of baggage.",
+        "note": "Revolt is what people do. ಸಿಡಿಮಿಡಿ is the state they do it from.",
         "songs": [
          {
           "t": "ಯಾರೇ ಕೂಗಾಡಲಿ ಊರೇ ಹೋರಾಡಲಿ",
@@ -6712,18 +6699,19 @@
         ]
        },
        {
-        "kn": "ಸಂಭ್ರಮ",
-        "tr": "sambhrama",
-        "en": "festive elation",
+        "kn": "ಚುರುಕು",
+        "tr": "curuku",
+        "en": "briskness",
         "kids": [],
-        "note": "Busy, shared, slightly frantic joy: a wedding house at six in the morning. Nobody has ಸಂಭ್ರಮ alone.",
+        "note": "Festive elation belongs nearer gladness than vigour.",
         "songs": [
          {
-          "t": "ಚುಟು ಚುಟು",
-          "by": "",
-          "src": "ರಾಂಬೊ 2",
-          "yt": "mK9C6wViwn4",
-          "st": 28
+          "t": "ಬಾರಿಸು ಕನ್ನಡ ಡಿಂಡಿಮವ",
+          "by": "ಶಿವಮೊಗ್ಗ ಸುಬ್ಬಣ್ಣ",
+          "src": "ಕುವೆಂಪು",
+          "yt": "48T3gr4AFJo",
+          "st": 15,
+          "from": "ಹುರುಪು"
          }
         ]
        }
@@ -6780,28 +6768,11 @@
         ]
        },
        {
-        "kn": "ಬೆದರಿಕೆ",
-        "tr": "bedarike",
-        "en": "a threat",
+        "kn": "ಭೀತಿ",
+        "tr": "bhīti",
+        "en": "fright",
         "kids": [],
-        "note": "The threat itself. Kannada places it outside you: 'ಬೆದರಿಕೆ ಇದೆ', there is a threat.",
-        "also": [
-         {
-          "kn": "ಹೆದರಿಕೆ",
-          "tr": "hedarike",
-          "en": "being scared"
-         },
-         {
-          "kn": "ಬೆಚ್ಚು",
-          "tr": "beccu",
-          "en": "a startle"
-         },
-         {
-          "kn": "ಅಪಾಯ",
-          "tr": "apāya",
-          "en": "danger"
-         }
-        ],
+        "note": "ಬೆದರಿಕೆ is a threat, something done to you. ಭೀತಿ is what it leaves behind.",
         "songs": [
          {
           "t": "ಕರ್ಮ ಥೀಮ್",
@@ -7109,11 +7080,11 @@
         ]
        },
        {
-        "kn": "ಕೊಳಕು",
-        "tr": "koḷaku",
-        "en": "dirt",
+        "kn": "ಕಸಿವಿಸಿ",
+        "tr": "kasivisi",
+        "en": "squeamish unease",
         "kids": [],
-        "note": "Native and blunt. Calling a person ಕೊಳಕು is not a comment on hygiene.",
+        "note": "Dirt is a property of things. This is the feeling it causes.",
         "songs": [
          {
           "t": "ಆಚಾರವಿಲ್ಲದ ನಾಲಿಗೆ",
@@ -7578,18 +7549,19 @@
       "en": "awe",
       "kids": [
        {
-        "kn": "ಗೌರವ",
-        "tr": "gaurava",
-        "en": "respect",
+        "kn": "ಭಕ್ತಿ",
+        "tr": "bhakti",
+        "en": "devotion",
         "kids": [],
-        "note": "Something you give, actively, not something you passively have.",
+        "note": "Respect is a social posture. ಭಯಭಕ್ತಿ asks for the devotion half of its own name.",
         "songs": [
          {
-          "t": "ಜಗದೋದ್ಧಾರನ",
-          "by": "",
-          "src": "ಪುರಂದರದಾಸರ ಪದ",
-          "yt": "P-Z90NNbD6U",
-          "st": 28
+          "t": "ವರಾಹ ರೂಪಂ",
+          "by": "ಅಜನೀಶ್ ಲೋಕನಾಥ್",
+          "src": "ಕಾಂತಾರ · 2022",
+          "yt": "gH_RYRwVrVM",
+          "st": 30,
+          "from": "ಭಯಭಕ್ತಿ"
          }
         ]
        },
@@ -7862,18 +7834,19 @@
         ]
        },
        {
-        "kn": "ತಂಪು",
-        "tr": "tampu",
-        "en": "coolness",
+        "kn": "ಅಂತರ್ಮುಖ",
+        "tr": "antarmukha",
+        "en": "turned inward",
         "kids": [],
-        "note": "Native, and the whole thermal vocabulary in one word: the opposite pole from ಸಿಟ್ಟು, ಕಿಚ್ಚು, ಬಿಸಿ and ಉರಿ.",
+        "note": "Coolness is a temperature. Silence keeps better company than that.",
         "songs": [
          {
-          "t": "ಜೋಗದ ಸಿರಿ ಬೆಳಕಿನಲ್ಲಿ",
-          "by": "",
-          "src": "ನಿತ್ಯೋತ್ಸವ",
-          "yt": "HaPlvfRS7EI",
-          "st": 28
+          "t": "ಮೌನವೇ ಆಭರಣ",
+          "by": "ವಿಜಯಭಾಸ್ಕರ್ · ಪಿ.ಬಿ.ಎಸ್",
+          "src": "ತೂಗುದೀಪ · 1966",
+          "yt": "0PosS9zq20k",
+          "st": 20,
+          "from": "ಮೌನ"
          }
         ]
        }

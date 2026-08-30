@@ -442,8 +442,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - Distinct from envy: the heat of having been wronged, not of wanting what another has.
     - **ಅಸಮಾಧಾನ** · *asamādhāna* · discontent
       - 'Un-settledness': a grievance nobody talked down.
-    - **ಸೇಡು** · *sēḍu* · revenge
-      - ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle it, treats revenge as a debt.
+    - **ಮತ್ಸರ** · *matsara* · rivalrous spite
+      - Revenge is not sited in the belly. Spite is.
   - **ತೃಪ್ತಿ** · *tṛpti* · satiety
     - also said: **ಸಂತೃಪ್ತಿ** *santṛpti* full satisfaction, **ತಣಿವು** *taṇivu* slaked, **ಸಮಾಧಾನ** *samādhāna* settledness
     - The belly at rest.
@@ -565,9 +565,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - Overwhelm as depletion rather than dread.
     - **ತಲೆ ಸುತ್ತು** · *tale suttu* · can't take any more · literally the head spins
       - Physical dizziness and being overwhelmed share the phrase entirely.
-    - **ದಣಿವು** · *daṇivu* · tiredness
-      - also said: **ಆಯಾಸ** *āyāsa* fatigue, **ಬಳಲಿಕೆ** *baḷalike* exhaustion, **ಸುಸ್ತು** *sustu* done in
-      - The native word, used of a body and of a day alike.
+    - **ತಲೆನೋವು** · *talenōvu* · a headache, and a burden
+      - Kannada uses ತಲೆನೋವು for both the ache and the thing causing it.
   - **ಮರ್ಯಾದೆ** · *maryāde* · standing, face
     - One of the most-used words in Kannada. Self-respect described entirely as a posture held in public.
     - **ತಲೆ ಎತ್ತು** · *tale ettu* · dignity · literally to raise the head
@@ -595,8 +594,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - The point at which anger stops being an opinion.
     - **ಮೈ ಉರಿ** · *mai uri* · rage gone physical · literally the body burns
       - Also literally a fever or a rash: the phrase does not choose.
-    - **ಸಿಡುಕು** · *siḍuku* · worn-in irritability
-      - Not an episode but a temperament, and one you wear on your face.
+    - **ಕೆರಳು** · *keraḷu* · inflamed
+      - Irritability is a temperament, not a body burning.
   - **ಮೈಮರೆವು** · *maimarevu* · absorption
     - The body forgotten: the highest praise available for listening to music.
     - **ಮೈ ಮರೆ** · *mai mare* · lost in it · literally to forget the body
@@ -688,8 +687,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
   - The rasa the English feeling wheel has no room for at all. Kannada grades laughter finely, and most of the grades are about who is being laughed at. Absurd on purpose. Kannada cinema's most quoted joke.
   - **ನಗು** · *nagu* · laughter
     - The plain native verb-noun. Everything else in this sector is a shade of it.
-    - **ನಗೆ** · *nage* · a laugh
-      - The countable one: you can have a ನಗೆ, you cannot have a ನಗು.
+    - **ಅಟ್ಟಹಾಸ** · *aṭṭahāsa* · the loud laugh
+      - ನಗೆ was ನಗು again with a different ending, which is a synonym rather than a kind.
     - **ಕಿಸಿಕಿಸಿ** · *kisikisi* · giggling
       - Sound-word. The laughter you are trying and failing to suppress.
   - **ತಮಾಷೆ** · *tamāṣe* · fun
@@ -705,10 +704,10 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
       - Doing an impression of someone to their disadvantage.
     - **ವ್ಯಂಗ್ಯ** · *vyaṅgya* · sarcasm
       - In poetics ವ್ಯಂಗ್ಯ is suggested meaning: the good kind. In an argument it is the knife.
-  - **ಮುಗುಳ್ನಗೆ** · *muguḷnage* · a smile
-    - 'Bud-laugh': the laugh that has not opened. A compound of exactly the kind Kannada makes best.
-    - **ಸಂತಸ** · *santasa* · gladness
-      - Gladness, with a quieter and more inward feel than ಸಂತೋಷ.
+  - **ಸಂತಸ** · *santasa* · gladness
+    - Gladness, with a quieter and more inward feel than ಸಂತೋಷ.
+    - **ಮುಗುಳ್ನಗೆ** · *muguḷnage* · a smile
+      - 'Bud-laugh': the laugh that has not opened. A compound of exactly the kind Kannada makes best.
     - **ಹಗುರ** · *hagura* · lightness
       - The change in weight after something is resolved.
 
@@ -717,12 +716,12 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
 
 - **ಕರುಣ** · *karuṇa* · compassion, pathos
   - The rasa Kannada literature is most at home in. Note that it names not grief itself but grief-made-shareable: the feeling an audience has, not the one the character has. Bendre to his wife. The most exposed grief in Kannada.
-  - **ಅಳಲು** · *aḷalu* · the wail
-    - also said: **ಶೋಕ** *śōka* mourning, **ಗೋಳು** *gōḷu* wretched crying, **ರೋದನ** *rōdana* lamentation
-    - Native, and it is the sound before it is the feeling.
-    - **ದುಃಖ** · *duḥkha* · sorrow
-      - also said: **ಶೋಕ** *śōka* formal mourning, **ವ್ಯಥೆ** *vyathe* affliction, **ಸಂಕಟ** *saṅkaṭa* the chest closing, **ಕೊರಗು** *koragu* the grief that thins you, **ವಿಷಾದ** *viṣāda* melancholy, **ಅಳಲು** *aḷalu* the wail
-      - The general word, and also the technical Buddhist one. Kannada uses it for a bad afternoon.
+  - **ದುಃಖ** · *duḥkha* · sorrow
+    - also said: **ಶೋಕ** *śōka* formal mourning, **ವ್ಯಥೆ** *vyathe* affliction, **ಸಂಕಟ** *saṅkaṭa* the chest closing, **ಕೊರಗು** *koragu* the grief that thins you, **ವಿಷಾದ** *viṣāda* melancholy, **ಅಳಲು** *aḷalu* the wail
+    - The general word, and also the technical Buddhist one. Kannada uses it for a bad afternoon.
+    - **ಅಳಲು** · *aḷalu* · the wail
+      - also said: **ಶೋಕ** *śōka* mourning, **ಗೋಳು** *gōḷu* wretched crying, **ರೋದನ** *rōdana* lamentation
+      - Native, and it is the sound before it is the feeling.
     - **ಕಣ್ಣೀರು** · *kaṇṇīru* · tears
       - Eye-water. Plain compound, no ceremony: Kannada saves the ceremony for the phrases around it.
   - **ಕನಿಕರ** · *kanikara* · compassion
@@ -751,12 +750,12 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
 
 - **ರೌದ್ರ** · *raudra* · fury
   - Named for Rudra. The rasa is deliberately grand, a god's anger, not a bad mood, which is why the daily words underneath it feel so much smaller and so much more used. Fury with an address. Not a temper but an accusation.
-  - **ಸಿಟ್ಟು** · *siṭṭu* · anger
-    - also said: **ಕೋಪ** *kōpa* anger, composed, **ಕ್ರೋಧ** *krōdha* wrath, **ಮುನಿಸು** *munisu* the loving sulk, **ಸೆಡವು** *seḍavu* a huff
-    - Hot and quick, and the most-used of the anger words.
-    - **ಕೋಪ** · *kōpa* · anger, the general word
-      - also said: **ಸಿಟ್ಟು** *siṭṭu* hot, quick anger, **ಕ್ರೋಧ** *krōdha* wrath, **ರೋಷ** *rōṣa* fury, **ಸಿಡುಕು** *siḍuku* worn-in irritability, **ಮುನಿಸು** *munisu* the loving sulk, **ತಾಪ** *tāpa* heat
-      - Slightly more composed than ಸಿಟ್ಟು: you can have ಕೋಪ quietly.
+  - **ಕೋಪ** · *kōpa* · anger, the general word
+    - also said: **ಸಿಟ್ಟು** *siṭṭu* hot, quick anger, **ಕ್ರೋಧ** *krōdha* wrath, **ರೋಷ** *rōṣa* fury, **ಸಿಡುಕು** *siḍuku* worn-in irritability, **ಮುನಿಸು** *munisu* the loving sulk, **ತಾಪ** *tāpa* heat
+    - Slightly more composed than ಸಿಟ್ಟು: you can have ಕೋಪ quietly.
+    - **ಸಿಟ್ಟು** · *siṭṭu* · anger
+      - also said: **ಕೋಪ** *kōpa* anger, composed, **ಕ್ರೋಧ** *krōdha* wrath, **ಮುನಿಸು** *munisu* the loving sulk, **ಸೆಡವು** *seḍavu* a huff
+      - Hot and quick, and the most-used of the anger words.
     - **ಸಿಡುಕು** · *siḍuku* · irritability
       - Not an episode but a temperament, and one you wear on your face.
   - **ರೊಚ್ಚು** · *roccu* · rage
@@ -776,8 +775,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - Anger with a case to argue. The word every Kannada news bulletin uses for public anger. The outcry that refuses to argue back.
     - **ಅಸಮಾಧಾನ** · *asamādhāna* · discontent
       - 'Un-settledness': the negation of consolation. A grievance nobody talked down.
-    - **ಬಂಡಾಯ** · *baṇḍāya* · revolt
-      - Also the name of a Kannada literary movement, which is the right amount of baggage.
+    - **ಸಿಡಿಮಿಡಿ** · *siḍimiḍi* · seething
+      - Revolt is what people do. ಸಿಡಿಮಿಡಿ is the state they do it from.
 
 ### ವೀರ · the heroic · *vīra*  
 ಸ್ಥಾಯಿಭಾವ · ಉತ್ಸಾಹ · utsāha, vigour
@@ -808,8 +807,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - Native. The energy you start a thing with, before ಛಲ has to take over.
     - **ಉಮೇದು** · *umēdu* · zest
       - Borrowed and thoroughly domesticated. 'ಉಮೇದು ಇಲ್ಲ' is a complete diagnosis.
-    - **ಸಂಭ್ರಮ** · *sambhrama* · festive elation
-      - Busy, shared, slightly frantic joy: a wedding house at six in the morning. Nobody has ಸಂಭ್ರಮ alone.
+    - **ಚುರುಕು** · *curuku* · briskness
+      - Festive elation belongs nearer gladness than vigour.
 
 ### ಭಯಾನಕ · terror · *bhayānaka*  
 ಸ್ಥಾಯಿಭಾವ · ಭಯ · bhaya, fear
@@ -820,9 +819,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - The plain daily word, and the one children are told not to have.
     - **ಅಂಜಿಕೆ** · *añjike* · timidity
       - Fear as a disposition. ಅಂಜುಬುರುಕ, one who is full of it, is a mild insult.
-    - **ಬೆದರಿಕೆ** · *bedarike* · a threat
-      - also said: **ಹೆದರಿಕೆ** *hedarike* being scared, **ಬೆಚ್ಚು** *beccu* a startle, **ಅಪಾಯ** *apāya* danger
-      - The threat itself. Kannada places it outside you: 'ಬೆದರಿಕೆ ಇದೆ', there is a threat.
+    - **ಭೀತಿ** · *bhīti* · fright
+      - ಬೆದರಿಕೆ is a threat, something done to you. ಭೀತಿ is what it leaves behind.
   - **ದಿಗಿಲು** · *digilu* · dread
     - also said: **ಆತಂಕ** *ātaṅka* anxiety, **ತಳಮಳ** *taḷamaḷa* churn, **ಭೀತಿ** *bhīti* terror
     - Heavier and more still than ಹೆದರಿಕೆ. The fear that has settled in and is waiting.
@@ -857,8 +855,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - **ಹೇಸಿಗೆ** · *hēsige* · filth, loathing
       - also said: **ಅಸಹ್ಯ** *asahya* disgust, **ಕೊಳಕು** *koḷaku* dirt, **ಜುಗುಪ್ಸೆ** *jugupse* revulsion
       - Also literally filth. The moral and the physical are one word: no metaphor required.
-    - **ಕೊಳಕು** · *koḷaku* · dirt
-      - Native and blunt. Calling a person ಕೊಳಕು is not a comment on hygiene.
+    - **ಕಸಿವಿಸಿ** · *kasivisi* · squeamish unease
+      - Dirt is a property of things. This is the feeling it causes.
   - **ವಾಕರಿಕೆ** · *vākarike* · nausea
     - The bodily end of the sector, and Kannada moves between it and the moral end without a signal. The gorge rising at ritual done without the mind in it.
     - **ಓಕರಿಕೆ** · *ōkarike* · retching
@@ -908,8 +906,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
       - The spoken version, and specifically aesthetic: you say it about a raga.
   - **ಭಯಭಕ್ತಿ** · *bhaya-bhakti* · awe
     - Fear-and-devotion, in one compound. Awe as a social posture: how one stands before a deity or a formidable elder. Where awe and fear stop being separable.
-    - **ಗೌರವ** · *gaurava* · respect
-      - Something you give, actively, not something you passively have.
+    - **ಭಕ್ತಿ** · *bhakti* · devotion
+      - Respect is a social posture. ಭಯಭಕ್ತಿ asks for the devotion half of its own name.
     - **ದಿಗ್ಭ್ರಮೆ** · *digbhrame* · stupefaction
       - 'Directions-confusion': the compass spins and you cannot tell which way is which.
 
@@ -943,8 +941,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - Treated as an action, not an absence. ಮೌನ ವಹಿಸು, to take up silence, is something you do to someone.
     - **ಏಕಾಂತ** · *ēkānta* · solitude, chosen
       - The good kind of alone. Kannada draws the line English blurs: ಒಂಟಿತನ hurts, ಏಕಾಂತ is sought.
-    - **ತಂಪು** · *tampu* · coolness
-      - Native, and the whole thermal vocabulary in one word: the opposite pole from ಸಿಟ್ಟು, ಕಿಚ್ಚು, ಬಿಸಿ and ಉರಿ.
+    - **ಅಂತರ್ಮುಖ** · *antarmukha* · turned inward
+      - Coolness is a temperature. Silence keeps better company than that.
 
 ## Appendix: words with nowhere to sit
 
