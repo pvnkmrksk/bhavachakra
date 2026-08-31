@@ -39,17 +39,36 @@ def check(vid):
     return True, chan.group(1).encode().decode("unicode_escape") if chan else ""
 
 
+def repeats(rows):
+    """A song may appear in more than one wheel: the wheels are different maps
+       of the same territory and a song can sit honestly in each. Twice inside
+       one wheel is a mistake, because one of the two words is being told a
+       lie about itself."""
+    seen = {}
+    for r in rows:
+        for v in (r.get("yt") or "").split(","):
+            v = v.strip()
+            if v:
+                seen.setdefault((r["wheel"], v), []).append(r["kannada"])
+    return {k: v for k, v in seen.items() if len(v) > 1}
+
+
 def main():
     only = sys.argv[1] if len(sys.argv) > 1 else None
     rows = [r for r in csv.DictReader((ROOT / "data/words.csv").open(encoding="utf-8"))
             if r.get("yt", "").strip() and (not only or r["wheel"] == only)]
+    dup = repeats(rows)
+    for (wheel, vid), words in dup.items():
+        print(f"REPEAT  {wheel}  {vid}  ->  {', '.join(words)}")
+
     bad = []
     for r in rows:
         ok, why = check(r["yt"].strip())
         print(f"{'ok  ' if ok else 'DEAD'}  {r['wheel']:6}  {r['kannada']:14}  {r['yt']}  {why}")
         if not ok:
             bad.append((r["kannada"], r["yt"], why))
-    print(f"\n{len(rows) - len(bad)} of {len(rows)} playable")
+    print(f"\n{len(rows) - len(bad)} of {len(rows)} playable"
+          f"{f', {len(dup)} repeated inside a wheel' if dup else ''}")
     if bad:
         print("\nreplace these:")
         for kn, vid, why in bad:
