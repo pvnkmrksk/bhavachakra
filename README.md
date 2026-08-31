@@ -552,8 +552,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - ಚಿಂತೆ is also simply 'thought'. To worry and to think are the same word.
     - **ತಲೆಬಿಸಿ** · *talebisi* · worry as overheating · literally head-heat
       - You can tell someone not to take ತಲೆಬಿಸಿ the way you would tell them to cool down.
-    - **ಯೋಚನೆ** · *yōcane* · thinking it over
-      - Neutral by itself; 'ಯೋಚನೆ ಮಾಡಬೇಡ' means stop worrying.
+    - **ಕಳವಳ** · *kaḷavaḷa* · agitation
+      - ಯೋಚನೆ is thinking, which the head does but does not feel.
   - **ಗೊಂದಲ** · *gondala* · confusion
     - also said: **ಕಕ್ಕಾಬಿಕ್ಕಿ** *kakkābikki* flustered, **ತಬ್ಬಿಬ್ಬು** *tabbibbu* thrown, at a loss, **ಗಲಿಬಿಲಿ** *galibili* muddle
     - Also the word for a noisy crowd: confusion as too many voices at once.
@@ -656,9 +656,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - **ಪ್ರೀತಿ** · *prīti* · love
       - also said: **ಮಮತೆ** *mamate* attachment-love, **ವಾತ್ಸಲ್ಯ** *vātsalya* tenderness flowing downward, **ಅಕ್ಕರೆ** *akkare* fondness, **ಒಲವು** *olavu* leaning toward
       - The general word, used for parents, friends and lovers without embarrassment.
-    - **ಮೆಚ್ಚುಗೆ** · *meccuge* · liking, approval
-      - also said: **ಪ್ರಶಂಸೆ** *praśaṁse* praise, **ಒಲವು** *olavu* leaning toward, **ಇಷ್ಟ** *iṣṭa* liking
-      - Both the feeling and its expression: to ಮೆಚ್ಚು silently is incomplete.
+    - **ಅಕ್ಕರೆ** · *akkare* · affection
+      - ಮೆಚ್ಚುಗೆ is admiration, which is a judgement. ಒಲವು is a leaning, and ಅಕ್ಕರೆ is what a leaning feels like.
   - **ಸರಸ** · *sarasa* · playful flirtation
     - Literally 'with rasa'. The word for banter between people who like each other, and it is not coy about it. ಸರಸ is the asking, not the having.
     - **ಚೆಲ್ಲಾಟ** · *cellāṭa* · dalliance
@@ -773,8 +772,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
       - Native. ಸೇಡು ತೀರಿಸಿಕೊಳ್ಳು, to settle the revenge, treats it as a debt.
   - **ಆಕ್ರೋಶ** · *ākrōśa* · outcry
     - Anger with a case to argue. The word every Kannada news bulletin uses for public anger. The outcry that refuses to argue back.
-    - **ಅಸಮಾಧಾನ** · *asamādhāna* · discontent
-      - 'Un-settledness': the negation of consolation. A grievance nobody talked down.
+    - **ಕಿಡಿಕಾರು** · *kiḍikāru* · spitting fire
+      - Discontent is the quiet before an outcry, not a kind of one.
     - **ಸಿಡಿಮಿಡಿ** · *siḍimiḍi* · seething
       - Revolt is what people do. ಸಿಡಿಮಿಡಿ is the state they do it from.
 
@@ -908,8 +907,8 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - Fear-and-devotion, in one compound. Awe as a social posture: how one stands before a deity or a formidable elder. Where awe and fear stop being separable.
     - **ಭಕ್ತಿ** · *bhakti* · devotion
       - Respect is a social posture. ಭಯಭಕ್ತಿ asks for the devotion half of its own name.
-    - **ದಿಗ್ಭ್ರಮೆ** · *digbhrame* · stupefaction
-      - 'Directions-confusion': the compass spins and you cannot tell which way is which.
+    - **ಶರಣಾಗತಿ** · *śaraṇāgati* · surrender
+      - Stupefaction belongs with ಬೆರಗು, next door. What awe has that amazement does not is the giving in.
 
 ### ಶಾಂತ · repose · *śānta*  
 ಸ್ಥಾಯಿಭಾವ · ಶಮ · śama, quiet
