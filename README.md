@@ -687,7 +687,7 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
   - **ನಗು** · *nagu* · laughter
     - The plain native verb-noun. Everything else in this sector is a shade of it.
     - **ಅಟ್ಟಹಾಸ** · *aṭṭahāsa* · the loud laugh
-      - ನಗೆ was ನಗು again with a different ending, which is a synonym rather than a kind.
+      - ನಗೆ was ನಗು again with a different ending, which is a synonym rather than a kind. ಬೊಂಡ ನಾ ಬಜ್ಜಿ ನಾ is a food novelty. ಅಟ್ಟಹಾಸ is a laugh with a threat in it.
     - **ಕಿಸಿಕಿಸಿ** · *kisikisi* · giggling
       - Sound-word. The laughter you are trying and failing to suppress.
   - **ತಮಾಷೆ** · *tamāṣe* · fun
@@ -729,7 +729,7 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - **ಮರುಕ** · *maruka* · pity, ruth
       - 'Turning back toward': pity as the movement of turning to look again at someone.
     - **ಕರುಳು ಚುರುಕ್** · *karuḷu curuk* · the gut-pang
-      - The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex.
+      - The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex. ಅಮ್ಮಾ ಎಂದರೆ ಏನೋ ಹರುಷವು is warmth. ಕರುಳು ಚುರುಕ್ is a sting.
   - **ಸಂಕಟ** · *saṅkaṭa* · anguish
     - also said: **ತಳಮಳ** *taḷamaḷa* churn, **ಒದ್ದಾಟ** *oddāṭa* thrashing about, **ಪರದಾಟ** *paradāṭa* floundering
     - Felt as constriction: the chest closing. Used equally for a dying person's distress and for an impossible choice.
@@ -873,7 +873,7 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
     - Disgust cooled into a social posture: the version you can hold at a wedding. Contempt done politely: my legs are the pillars, my body the shrine.
     - **ಅಸಡ್ಡೆ** · *asaḍḍe* · not caring, coldly
       - also said: **ನಿರಾಸಕ್ತಿ** *nirāsakti* disinterest, **ಉದಾಸೀನ** *udāsīna* indifference, or the cold shoulder, **ತಾತ್ಸಾರ** *tātsāra* disdain
-      - Not caring, and not quite bothering to hide that you are not caring.
+      - Not caring, and not quite bothering to hide that you are not caring. ಕುಲ ಕುಲ ಕುಲವೆಂದು is indignation, which is hot. ಅಸಡ್ಡೆ is cold.
     - **ಕೊಂಕು** · *koṅku* · the crooked remark
       - Fault-finding delivered sideways, which is how it usually arrives.
 
@@ -894,7 +894,7 @@ Before pushing a new id it is worth running `python3 scripts/check_songs.py`, wh
   - **ಕುತೂಹಲ** · *kutūhala* · curiosity
     - Wonder that has turned into a question. Kannada treats it as a virtue.
     - **ಆಸಕ್ತಿ** · *āsakti* · interest
-      - Literally attachment: interest as a mild binding to a thing.
+      - Literally attachment: interest as a mild binding to a thing. ಯಾವ ಕವಿಯು ಬರೆಯಲಾರ is beauty past writing, which is ಬೆರಗು. It is not wanting to know.
     - **ತವಕ** · *tavaka* · eagerness
       - Eagerness with an edge of ache in it.
   - **ಪುಳಕ** · *puḷaka* · the thrill

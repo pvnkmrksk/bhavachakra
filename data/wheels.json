@@ -5674,14 +5674,15 @@
         "tr": "aṭṭahāsa",
         "en": "the loud laugh",
         "kids": [],
-        "note": "ನಗೆ was ನಗು again with a different ending, which is a synonym rather than a kind.",
+        "note": "ನಗೆ was ನಗು again with a different ending, which is a synonym rather than a kind. ಬೊಂಡ ನಾ ಬಜ್ಜಿ ನಾ is a food novelty. ಅಟ್ಟಹಾಸ is a laugh with a threat in it.",
         "songs": [
          {
-          "t": "ಬೊಂಡ ನಾ ಬಜ್ಜಿ ನಾ",
-          "by": "",
-          "src": "ಕೋತಿಗಳು ಸಾರ್ ಕೋತಿಗಳು",
-          "yt": "63rWWFGLMMQ",
-          "st": 34
+          "t": "ನಗು ನಗುತಾ ನಲಿ ನಲಿ",
+          "by": "ರಾಜನ್-ನಾಗೇಂದ್ರ · ಪಿ.ಬಿ.ಎಸ್",
+          "src": "ಬಂಗಾರದ ಮನುಷ್ಯ · 1972",
+          "yt": "uJRbb59gN0s",
+          "st": 55,
+          "from": "ನಗು"
          }
         ]
        },
@@ -6040,7 +6041,7 @@
         "tr": "karuḷu curuk",
         "en": "the gut-pang",
         "kids": [],
-        "note": "The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex.",
+        "note": "The involuntary sting on seeing a child or an animal in distress. Pity is a judgement; this is a reflex. ಅಮ್ಮಾ ಎಂದರೆ ಏನೋ ಹರುಷವು is warmth. ಕರುಳು ಚುರುಕ್ is a sting.",
         "songs": [
          {
           "t": "ಕರುಣಾಳು ಬಾ ಬೆಳಕೆ",
@@ -7323,16 +7324,7 @@
         "tr": "asaḍḍe",
         "en": "not caring, coldly",
         "kids": [],
-        "note": "Not caring, and not quite bothering to hide that you are not caring.",
-        "songs": [
-         {
-          "t": "ಕುಲ ಕುಲ ಕುಲವೆಂದು",
-          "by": "ಕನಕದಾಸ · ರಾಜಕುಮಾರ",
-          "src": "ಭಕ್ತ ಕನಕದಾಸ · 1960",
-          "yt": "F3A0kVdMqB4",
-          "st": 20
-         }
-        ],
+        "note": "Not caring, and not quite bothering to hide that you are not caring. ಕುಲ ಕುಲ ಕುಲವೆಂದು is indignation, which is hot. ಅಸಡ್ಡೆ is cold.",
         "also": [
          {
           "kn": "ನಿರಾಸಕ್ತಿ",
@@ -7348,6 +7340,16 @@
           "kn": "ತಾತ್ಸಾರ",
           "tr": "tātsāra",
           "en": "disdain"
+         }
+        ],
+        "songs": [
+         {
+          "t": "ಕುರಿಗಳು ಸಾರ್ ಕುರಿಗಳು",
+          "by": "",
+          "src": "ಕೆ.ಎಸ್. ನಿಸಾರ್ ಅಹಮದ್",
+          "yt": "CQF6jSS9NSw",
+          "st": 32,
+          "from": "ತಾತ್ಸಾರ"
          }
         ]
        },
@@ -7512,14 +7514,15 @@
         "tr": "āsakti",
         "en": "interest",
         "kids": [],
-        "note": "Literally attachment: interest as a mild binding to a thing.",
+        "note": "Literally attachment: interest as a mild binding to a thing. ಯಾವ ಕವಿಯು ಬರೆಯಲಾರ is beauty past writing, which is ಬೆರಗು. It is not wanting to know.",
         "songs": [
          {
-          "t": "ಯಾವ ಕವಿಯು ಬರೆಯಲಾರ",
-          "by": "",
-          "src": "ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ",
-          "yt": "67azQ_PEjv0",
-          "st": 28
+          "t": "ಎಲ್ಲೋ ಹುಡುಕಿದೆ ಇಲ್ಲದ ದೇವರ",
+          "by": "ಸಿ. ಅಶ್ವತ್ಥ್",
+          "src": "ಜಿ.ಎಸ್. ಶಿವರುದ್ರಪ್ಪ",
+          "yt": "qBAoqZOSMpM",
+          "st": 25,
+          "from": "ಕುತೂಹಲ"
          }
         ]
        },
